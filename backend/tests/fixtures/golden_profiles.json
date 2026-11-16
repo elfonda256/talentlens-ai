@@ -1,0 +1,908 @@
+{
+ "cv_andi.docx": {
+  "candidate_id": "C-6861485F",
+  "chunks": [
+   "Backend software engineer with 3 years of experience building web services. Software Engineer | PT Solusi Teknologi Andalan | Sep 2023 - Present",
+   "Built REST services with Python and SQL Maintained React dashboards and CI pipelines Python, JavaScript, SQL, React, Docker",
+   "Bachelor of Computer Science (S1), [INSTITUSI], 2023"
+  ],
+  "education": [
+   {
+    "degree": "Bachelor of Computer Science (S1), [INSTITUSI], 2023",
+    "field": "computer science",
+    "institution": "",
+    "level": 4
+   }
+  ],
+  "experiences": [
+   {
+    "company": "PT Solusi Teknologi Andalan",
+    "description": "Built REST services with Python and SQL\nMaintained React dashboards and CI pipelines",
+    "end": "present",
+    "months": 38,
+    "start": "2023",
+    "title": "Software Engineer"
+   }
+  ],
+  "extraction_confidence": 1.0,
+  "extraction_method": "text",
+  "file_name": "cv_andi.docx",
+  "pii": {
+   "address": "Jl. Pettarani 15, Makassar",
+   "birth": "Makassar, 3 July 1997",
+   "email": "andi.wijaya@example.com",
+   "gender": "Laki-laki",
+   "institution": "Universitas Hasanuddin",
+   "marital_status": "Single",
+   "name": "Andi Wijaya",
+   "phone": "081203262628",
+   "religion": "Islam"
+  },
+  "redacted_text": "[NAMA]\n[EMAIL] | [TELEPON]\n\nSUMMARY\nBackend software engineer with 3 years of experience building web services.\n\nWORK EXPERIENCE\nSoftware Engineer | PT Solusi Teknologi Andalan | Sep 2023 - Present\n- Built REST services with Python and SQL\n- Maintained React dashboards and CI pipelines\n\nEDUCATION\nBachelor of Computer Science (S1), [INSTITUSI], 2023\n\nSKILLS\nPython, JavaScript, SQL, React, Docker",
+  "skills": [
+   "programming"
+  ],
+  "source": "upload",
+  "summary": "Backend software engineer with 3 years of experience building web services.",
+  "total_experience_months": 38,
+  "warnings": []
+ },
+ "cv_bayu.docx": {
+  "candidate_id": "C-6E19FBAB",
+  "chunks": [
+   "Civil engineer with 5 years of experience in structural design and construction project management. Structural Engineer | PT Wijaya Konstruksi | Jan 2023 - Present",
+   "Performed structural analysis using SAP2000 and ETABS for mid-rise buildings Prepared structural shop drawing in AutoCAD Managed project schedule and site supervision",
+   "Site Engineer | PT Beton Perkasa | Jun 2021 - Dec 2022 Supervised concrete works and quality control on site",
+   "SAP2000, ETABS, AutoCAD, MS Project, Structural Analysis, Project Management Bachelor of Civil Engineering (S1), [INSTITUSI], 2021"
+  ],
+  "education": [
+   {
+    "degree": "Bachelor of Civil Engineering (S1), [INSTITUSI], 2021",
+    "field": "civil engineering",
+    "institution": "",
+    "level": 4
+   }
+  ],
+  "experiences": [
+   {
+    "company": "PT Wijaya Konstruksi",
+    "description": "Performed structural analysis using SAP2000 and ETABS for mid-rise buildings\nPrepared structural shop drawing in AutoCAD\nManaged project schedule and site supervision",
+    "end": "present",
+    "months": 46,
+    "start": "2023",
+    "title": "Structural Engineer"
+   },
+   {
+    "company": "PT Beton Perkasa",
+    "description": "Supervised concrete works and quality control on site",
+    "end": "2022",
+    "months": 18,
+    "start": "2021",
+    "title": "Site Engineer"
+   }
+  ],
+  "extraction_confidence": 1.0,
+  "extraction_method": "text",
+  "file_name": "cv_bayu.docx",
+  "pii": {
+   "address": "Jl. Darmo 5, Surabaya",
+   "birth": "Surabaya, 30 October 1994",
+   "email": "bayu.setiawan@example.com",
+   "gender": "Laki-laki",
+   "institution": "Institut Teknologi Sepuluh Nopember",
+   "marital_status": "Married",
+   "name": "Bayu Setiawan",
+   "phone": "081203428927",
+   "religion": "Islam"
+  },
+  "redacted_text": "[NAMA]\n[EMAIL] | [TELEPON]\n\nSUMMARY\nCivil engineer with 5 years of experience in structural design and construction project management.\n\nWORK EXPERIENCE\nStructural Engineer | PT Wijaya Konstruksi | Jan 2023 - Present\n- Performed structural analysis using SAP2000 and ETABS for mid-rise buildings\n- Prepared structural shop drawing in AutoCAD\n- Managed project schedule and site supervision\n\nSite Engineer | PT Beton Perkasa | Jun 2021 - Dec 2022\n- Supervised concrete works and quality control on site\n\nEDUCATION\nBachelor of Civil Engineering (S1), [INSTITUSI], 2021\n\nSKILLS\nSAP2000, ETABS, AutoCAD, MS Project, Structural Analysis, Project Management",
+  "skills": [
+   "autocad",
+   "technical_drawing",
+   "project_management",
+   "structural_analysis"
+  ],
+  "source": "upload",
+  "summary": "Civil engineer with 5 years of experience in structural design and construction project management.",
+  "total_experience_months": 64,
+  "warnings": []
+ },
+ "cv_citra.txt": {
+  "candidate_id": "C-A9C54544",
+  "chunks": [
+   "Staf akuntansi dengan pengalaman 5 tahun menyusun laporan keuangan dan pajak. Staf Akuntansi | PT Sumber Makmur Sejahtera | Okt 2021 - Sekarang",
+   "Menyusun laporan keuangan bulanan dan rekonsiliasi bank Mengelola pelaporan pajak dengan Accurate Akuntansi, Accurate, Pajak, Microsoft Excel",
+   "S1 Akuntansi, [INSTITUSI], 2021"
+  ],
+  "education": [
+   {
+    "degree": "S1 Akuntansi, [INSTITUSI], 2021",
+    "field": "accounting",
+    "institution": "",
+    "level": 4
+   }
+  ],
+  "experiences": [
+   {
+    "company": "PT Sumber Makmur Sejahtera",
+    "description": "Menyusun laporan keuangan bulanan dan rekonsiliasi bank\nMengelola pelaporan pajak dengan Accurate",
+    "end": "present",
+    "months": 61,
+    "start": "2021",
+    "title": "Staf Akuntansi"
+   }
+  ],
+  "extraction_confidence": 1.0,
+  "extraction_method": "text",
+  "file_name": "cv_citra.txt",
+  "pii": {
+   "address": "Jl. Gatot Subroto 100, Medan",
+   "birth": "Medan, 19 Maret 1995",
+   "email": "citra.dewi@example.com",
+   "gender": "Perempuan",
+   "institution": "Universitas Sumatera Utara",
+   "marital_status": "Menikah",
+   "name": "Citra Dewi",
+   "phone": "081204204989",
+   "religion": "Buddha"
+  },
+  "redacted_text": "[NAMA]\n[EMAIL] | [TELEPON]\n\nPROFIL\nStaf akuntansi dengan pengalaman 5 tahun menyusun laporan keuangan dan pajak.\n\nPENGALAMAN KERJA\nStaf Akuntansi | PT Sumber Makmur Sejahtera | Okt 2021 - Sekarang\n- Menyusun laporan keuangan bulanan dan rekonsiliasi bank\n- Mengelola pelaporan pajak dengan Accurate\n\nPENDIDIKAN\nS1 Akuntansi, [INSTITUSI], 2021\n\nKEAHLIAN\nAkuntansi, Accurate, Pajak, Microsoft Excel",
+  "skills": [
+   "accounting"
+  ],
+  "source": "upload",
+  "summary": "Staf akuntansi dengan pengalaman 5 tahun menyusun laporan keuangan dan pajak.",
+  "total_experience_months": 61,
+  "warnings": []
+ },
+ "cv_dewi.pdf": {
+  "candidate_id": "C-93ADE8E9",
+  "chunks": [
+   "Interior designer with 2.5 years of design and build experience for villas and hospitality projects. Interior Designer | PT Bali Karya Interior | May 2024 - Present",
+   "Developed concept design and space planning for villa and restaurant projects Prepared technical drawing and detail drawing in AutoCAD, 3D modelling in SketchUp",
+   "Sourced material specification with supplier for furniture, lighting, accessories and decorations",
+   "Planned and monitored project timeline with the design and build contractor Presented design proposals to clients",
+   "AutoCAD, SketchUp, Enscape, Interior Design, Conceptual Design, Procurement, Project Management, Presentation Bachelor of Interior Design (S1), [INSTITUSI], 2024"
+  ],
+  "education": [
+   {
+    "degree": "Bachelor of Interior Design (S1), [INSTITUSI], 2024",
+    "field": "interior design",
+    "institution": "",
+    "level": 4
+   }
+  ],
+  "experiences": [
+   {
+    "company": "PT Bali Karya Interior",
+    "description": "Developed concept design and space planning for villa and restaurant projects\nPrepared technical drawing and detail drawing in AutoCAD, 3D modelling in SketchUp\nSourced material specification with supplier for furniture, lighting, accessories and decorations\nPlanned and monitored project timeline with the design and build contractor\nPresented design proposals to clients",
+    "end": "present",
+    "months": 30,
+    "start": "2024",
+    "title": "Interior Designer"
+   }
+  ],
+  "extraction_confidence": 1.0,
+  "extraction_method": "text",
+  "file_name": "cv_dewi.pdf",
+  "pii": {
+   "address": "Jl. Teuku Umar 45, Denpasar",
+   "birth": "Denpasar, 12 February 1998",
+   "email": "dewi.anjani@example.com",
+   "gender": "Perempuan",
+   "institution": "Institut Seni Indonesia Denpasar",
+   "marital_status": "Single",
+   "name": "Dewi Anjani",
+   "phone": "081203365575",
+   "religion": "Hindu"
+  },
+  "redacted_text": "[NAMA]\n[EMAIL] | [TELEPON]\nSUMMARY\nInterior designer with 2.5 years of design and build experience for villas and hospitality projects.\nWORK EXPERIENCE\nInterior Designer | PT Bali Karya Interior | May 2024 - Present\n- Developed concept design and space planning for villa and restaurant projects\n- Prepared technical drawing and detail drawing in AutoCAD, 3D modelling in SketchUp\n- Sourced material specification with supplier for furniture, lighting, accessories and decorations\n- Planned and monitored project timeline with the design and build contractor\n- Presented design proposals to clients\nEDUCATION\nBachelor of Interior Design (S1), [INSTITUSI], 2024\nSKILLS\nAutoCAD, SketchUp, Enscape, Interior Design, Conceptual Design, Procurement, Project Management, Presentation",
+  "skills": [
+   "autocad",
+   "sketchup",
+   "rendering",
+   "technical_drawing",
+   "conceptual_design",
+   "interior_design",
+   "design_build",
+   "space_modelling",
+   "project_management",
+   "procurement",
+   "presentation"
+  ],
+  "source": "upload",
+  "summary": "Interior designer with 2.5 years of design and build experience for villas and hospitality projects.",
+  "total_experience_months": 30,
+  "warnings": []
+ },
+ "cv_dimas.pdf": {
+  "candidate_id": "C-69D59AA6",
+  "chunks": [
+   "Arsitek dengan pengalaman 2,5 tahun di konsultan perencana. Terbiasa bekerja dengan BIM dan menyusun gambar ke",
+   "Arsitek Junior | PT Arsitama Konsultan | Mei 2024 - Sekarang Menyusun desain konseptual dan gambar kerja gedung kantor menggunakan Revit dan AutoCAD",
+   "Membuat pemodelan 3D dan visualisasi dengan SketchUp Memastikan desain sesuai peraturan bangunan, SNI dan persyaratan PBG",
+   "Koordinasi proyek dengan tim struktur dan MEP serta presentasi kepada klien Revit, BIM, AutoCAD, SketchUp, Gambar Teknik, Desain Arsitektur, Presentasi",
+   "S1 Arsitektur, [INSTITUSI], 2023"
+  ],
+  "education": [
+   {
+    "degree": "S1 Arsitektur, [INSTITUSI], 2023",
+    "field": "architecture",
+    "institution": "",
+    "level": 4
+   }
+  ],
+  "experiences": [
+   {
+    "company": "PT Arsitama Konsultan",
+    "description": "Menyusun desain konseptual dan gambar kerja gedung kantor menggunakan Revit dan AutoCAD\nMembuat pemodelan 3D dan visualisasi dengan SketchUp\nMemastikan desain sesuai peraturan bangunan, SNI dan persyaratan PBG\nKoordinasi proyek dengan tim struktur dan MEP serta presentasi kepada klien",
+    "end": "present",
+    "months": 30,
+    "start": "2024",
+    "title": "Arsitek Junior"
+   }
+  ],
+  "extraction_confidence": 1.0,
+  "extraction_method": "text",
+  "file_name": "cv_dimas.pdf",
+  "pii": {
+   "address": "Jl. Kaliurang Km 5, Sleman",
+   "birth": "Yogyakarta, 9 Januari 1998",
+   "email": "dimas.wibowo@example.com",
+   "gender": "Laki-laki",
+   "institution": "Universitas Gadjah Mada",
+   "marital_status": "Belum Menikah",
+   "name": "Dimas Aryo Wibowo",
+   "phone": "081204165394",
+   "religion": "Katolik"
+  },
+  "redacted_text": "[NAMA]\n[EMAIL] | [TELEPON]\nPROFIL\nArsitek dengan pengalaman 2,5 tahun di konsultan perencana. Terbiasa bekerja dengan BIM dan menyusun gambar ke\nPENGALAMAN KERJA\nArsitek Junior | PT Arsitama Konsultan | Mei 2024 - Sekarang\n- Menyusun desain konseptual dan gambar kerja gedung kantor menggunakan Revit dan AutoCAD\n- Membuat pemodelan 3D dan visualisasi dengan SketchUp\n- Memastikan desain sesuai peraturan bangunan, SNI dan persyaratan PBG\n- Koordinasi proyek dengan tim struktur dan MEP serta presentasi kepada klien\nPENDIDIKAN\nS1 Arsitektur, [INSTITUSI], 2023\nKEAHLIAN\nRevit, BIM, AutoCAD, SketchUp, Gambar Teknik, Desain Arsitektur, Presentasi",
+  "skills": [
+   "autocad",
+   "sketchup",
+   "revit",
+   "technical_drawing",
+   "conceptual_design",
+   "architecture_design",
+   "space_modelling",
+   "building_codes",
+   "project_management",
+   "presentation",
+   "visualization"
+  ],
+  "source": "upload",
+  "summary": "Arsitek dengan pengalaman 2,5 tahun di konsultan perencana. Terbiasa bekerja dengan BIM dan menyusun gambar ke",
+  "total_experience_months": 30,
+  "warnings": []
+ },
+ "cv_fajar.txt": {
+  "candidate_id": "C-4E3DA926",
+  "chunks": [
+   "Drafter dengan pengalaman 3 tahun menyusun gambar kerja untuk kontraktor. Drafter | PT Mitra Konstruksi Utama | Agu 2023 - Sekarang",
+   "Membuat gambar teknik, shop drawing dan as built drawing dengan AutoCAD Membantu perhitungan RAB dan koordinasi dengan pengawas lapangan",
+   "AutoCAD, Gambar Teknik, Shop Drawing, SketchUp dasar D3 Teknik Sipil, [INSTITUSI], 2023"
+  ],
+  "education": [
+   {
+    "degree": "D3 Teknik Sipil, [INSTITUSI], 2023",
+    "field": "civil engineering",
+    "institution": "",
+    "level": 3
+   }
+  ],
+  "experiences": [
+   {
+    "company": "PT Mitra Konstruksi Utama",
+    "description": "Membuat gambar teknik, shop drawing dan as built drawing dengan AutoCAD\nMembantu perhitungan RAB dan koordinasi dengan pengawas lapangan",
+    "end": "present",
+    "months": 39,
+    "start": "2023",
+    "title": "Drafter"
+   }
+  ],
+  "extraction_confidence": 1.0,
+  "extraction_method": "text",
+  "file_name": "cv_fajar.txt",
+  "pii": {
+   "address": "Jl. Majapahit 77, Semarang",
+   "birth": "Semarang, 17 Februari 1999",
+   "email": "fajar.nugroho@example.com",
+   "gender": "Laki-laki",
+   "institution": "Politeknik Negeri Semarang",
+   "marital_status": "Belum Menikah",
+   "name": "Fajar Nugroho",
+   "phone": "081204086204",
+   "religion": "Islam"
+  },
+  "redacted_text": "[NAMA]\n[EMAIL] | [TELEPON]\n\nPROFIL\nDrafter dengan pengalaman 3 tahun menyusun gambar kerja untuk kontraktor.\n\nPENGALAMAN KERJA\nDrafter | PT Mitra Konstruksi Utama | Agu 2023 - Sekarang\n- Membuat gambar teknik, shop drawing dan as built drawing dengan AutoCAD\n- Membantu perhitungan RAB dan koordinasi dengan pengawas lapangan\n\nPENDIDIKAN\nD3 Teknik Sipil, [INSTITUSI], 2023\n\nKEAHLIAN\nAutoCAD, Gambar Teknik, Shop Drawing, SketchUp dasar",
+  "skills": [
+   "autocad",
+   "sketchup",
+   "technical_drawing",
+   "procurement"
+  ],
+  "source": "upload",
+  "summary": "Drafter dengan pengalaman 3 tahun menyusun gambar kerja untuk kontraktor.",
+  "total_experience_months": 39,
+  "warnings": []
+ },
+ "cv_laras_scan.pdf": {
+  "candidate_id": "C-B7EAEBC6",
+  "chunks": [
+   "Architect with 2 years of experience at an architecture consultant, focused on residential design and build. Architect | PT Lingkar Arsitek Indonesia | Oct 2024 - Present",
+   "Prepared conceptual design and technical drawing for residential projects in AutoCAD Produced 3D modelling in SketchUp and Enscape for client presentation",
+   "Reviewed building codes and PBG permit reguirements Handled project coordination with supplier for material specification and furniture",
+   "AutoCAD, SketchUp, Enscape, Technical Drawing, Building Codes, Project Coordination, Presentation Bachelor of Architecture (S1), [INSTITUSI], 2024"
+  ],
+  "education": [
+   {
+    "degree": "Bachelor of Architecture (S1), [INSTITUSI], 2024",
+    "field": "architecture",
+    "institution": "",
+    "level": 4
+   }
+  ],
+  "experiences": [
+   {
+    "company": "PT Lingkar Arsitek Indonesia",
+    "description": "Prepared conceptual design and technical drawing for residential projects in AutoCAD\nProduced 3D modelling in SketchUp and Enscape for client presentation\nReviewed building codes and PBG permit reguirements\nHandled project coordination with supplier for material specification and furniture",
+    "end": "present",
+    "months": 25,
+    "start": "2024",
+    "title": "Architect"
+   }
+  ],
+  "extraction_confidence": 0.85,
+  "extraction_method": "ocr",
+  "file_name": "cv_laras_scan.pdf",
+  "pii": {
+   "address": "Jl. Sisingamangaraja 3, Semarang",
+   "birth": "Semarang, 25 April 1999",
+   "email": "laras.wulandari@example.com",
+   "gender": "Perempuan",
+   "institution": "Universitas Katolik Soegijapranata",
+   "marital_status": "Single",
+   "name": "Laras Wulandari",
+   "phone": "081204204989",
+   "religion": "Islam"
+  },
+  "redacted_text": "[NAMA]\n[EMAIL] | [TELEPON]\n\n\n\n\n\nSUMMARY\nArchitect with 2 years of experience at an architecture consultant, focused on residential design and build.\n\nWORK EXPERIENCE\n\nArchitect | PT Lingkar Arsitek Indonesia | Oct 2024 - Present\n\n- Prepared conceptual design and technical drawing for residential projects in AutoCAD\n- Produced 3D modelling in SketchUp and Enscape for client presentation\n\n- Reviewed building codes and PBG permit reguirements\n\n- Handled project coordination with supplier for material specification and furniture\n\nEDUCATION\nBachelor of Architecture (S1), [INSTITUSI], 2024\n\nSKILLS\nAutoCAD, SketchUp, Enscape, Technical Drawing, Building Codes, Project Coordination, Presentation",
+  "skills": [
+   "autocad",
+   "sketchup",
+   "rendering",
+   "technical_drawing",
+   "conceptual_design",
+   "architecture_design",
+   "design_build",
+   "space_modelling",
+   "building_codes",
+   "project_management",
+   "procurement",
+   "presentation"
+  ],
+  "source": "upload",
+  "summary": "Architect with 2 years of experience at an architecture consultant, focused on residential design and build.",
+  "total_experience_months": 25,
+  "warnings": [
+   "Dokumen hasil scan, dibaca dengan OCR"
+  ]
+ },
+ "cv_maya.pdf": {
+  "candidate_id": "C-D113D573",
+  "chunks": [
+   "Desainer interior senior dengan pengalaman 7 tahun pada proyek desain dan bangun hotel, kantor, dan rumah ting",
+   "Senior Interior Designer | PT Karya Griya Interior | Jan 2022 - Sekarang Memimpin desain interior dan fit-out proyek hotel dengan skema desain dan bangun",
+   "Menyusun konsep desain, gambar kerja, dan spesifikasi material menggunakan AutoCAD, SketchUp dan Revit",
+   "Bekerja sama dengan supplier dan vendor untuk pengadaan furniture, pencahayaan dan dekorasi Menyusun jadwal proyek dan RAB serta melakukan pengawasan lapangan",
+   "Memastikan kepatuhan terhadap regulasi bangunan dan standar K3 Desainer Interior | Studio Rupa Ruang | Sep 2019 - Des 2021",
+   "Desain interior rumah tinggal dan kantor, tata ruang, serta presentasi kepada klien",
+   "AutoCAD, SketchUp, Revit, V-Ray, Desain Interior, Gambar Kerja, Manajemen Proyek, Pengadaan, Presentasi S1 Desain Interior, [INSTITUSI], 2011"
+  ],
+  "education": [
+   {
+    "degree": "S1 Desain Interior, [INSTITUSI], 2011",
+    "field": "interior design",
+    "institution": "",
+    "level": 4
+   }
+  ],
+  "experiences": [
+   {
+    "company": "PT Karya Griya Interior",
+    "description": "Memimpin desain interior dan fit-out proyek hotel dengan skema desain dan bangun\nMenyusun konsep desain, gambar kerja, dan spesifikasi material menggunakan AutoCAD, SketchUp dan Revit\nBekerja sama dengan supplier dan vendor untuk pengadaan furniture, pencahayaan dan dekorasi\nMenyusun jadwal proyek dan RAB serta melakukan pengawasan lapangan\nMemastikan kepatuhan terhadap regulasi bangunan dan standar K3",
+    "end": "present",
+    "months": 58,
+    "start": "2022",
+    "title": "Senior Interior Designer"
+   },
+   {
+    "company": "Studio Rupa Ruang",
+    "description": "Desain interior rumah tinggal dan kantor, tata ruang, serta presentasi kepada klien",
+    "end": "2021",
+    "months": 27,
+    "start": "2019",
+    "title": "Desainer Interior"
+   }
+  ],
+  "extraction_confidence": 1.0,
+  "extraction_method": "text",
+  "file_name": "cv_maya.pdf",
+  "pii": {
+   "address": "Jl. Kemang Raya 21, Jakarta Selatan",
+   "birth": "Jakarta, 5 Mei 1988",
+   "email": "maya.lestari@example.com",
+   "gender": "Perempuan",
+   "institution": "Universitas Trisakti",
+   "marital_status": "Menikah",
+   "name": "Maya Lestari",
+   "phone": "081203357656",
+   "religion": "Islam"
+  },
+  "redacted_text": "[NAMA]\n[EMAIL] | [TELEPON]\nPROFIL\nDesainer interior senior dengan pengalaman 7 tahun pada proyek desain dan bangun hotel, kantor, dan rumah ting\nPENGALAMAN KERJA\nSenior Interior Designer | PT Karya Griya Interior | Jan 2022 - Sekarang\n- Memimpin desain interior dan fit-out proyek hotel dengan skema desain dan bangun\n- Menyusun konsep desain, gambar kerja, dan spesifikasi material menggunakan AutoCAD, SketchUp dan Revit\n- Bekerja sama dengan supplier dan vendor untuk pengadaan furniture, pencahayaan dan dekorasi\n- Menyusun jadwal proyek dan RAB serta melakukan pengawasan lapangan\n- Memastikan kepatuhan terhadap regulasi bangunan dan standar K3\nDesainer Interior | Studio Rupa Ruang | Sep 2019 - Des 2021\n- Desain interior rumah tinggal dan kantor, tata ruang, serta presentasi kepada klien\nPENDIDIKAN\nS1 Desain Interior, [INSTITUSI], 2011\nKEAHLIAN\nAutoCAD, SketchUp, Revit, V-Ray, Desain Interior, Gambar Kerja, Manajemen Proyek, Pengadaan, Presentasi",
+  "skills": [
+   "autocad",
+   "sketchup",
+   "revit",
+   "rendering",
+   "technical_drawing",
+   "conceptual_design",
+   "interior_design",
+   "design_build",
+   "space_modelling",
+   "building_codes",
+   "project_management",
+   "procurement",
+   "presentation"
+  ],
+  "source": "upload",
+  "summary": "Desainer interior senior dengan pengalaman 7 tahun pada proyek desain dan bangun hotel, kantor, dan rumah ting",
+  "total_experience_months": 85,
+  "warnings": []
+ },
+ "cv_nadia.docx": {
+  "candidate_id": "C-992283F0",
+  "chunks": [
+   "Interior designer with 4 years in design and build, strong in concept design, visualization and material sourcing.",
+   "Interior Designer | PT Ruang Selaras Interior | Mar 2024 - Present Led interior design and fit-out for retail and office spaces under a design & build scheme",
+   "Created concept design, moodboard and 3D modelling in SketchUp and Lumion",
+   "Worked with supplier to source material specification for fittings, furniture, lighting and decorations",
+   "Compiled project schedule and BOQ, monitored projects from beginning to end Prepared working drawing and detail drawing in AutoCAD",
+   "Junior Interior Designer | Studio Atma | Aug 2022 - Feb 2024 Space planning, furniture design and client presentation for residential interior design",
+   "AutoCAD, SketchUp, Lumion, Adobe Photoshop, Interior Design, Space Planning, Procurement, Project Management, Communication",
+   "Bachelor of Interior Design (S1), [INSTITUSI], 2022"
+  ],
+  "education": [
+   {
+    "degree": "Bachelor of Interior Design (S1), [INSTITUSI], 2022",
+    "field": "interior design",
+    "institution": "",
+    "level": 4
+   }
+  ],
+  "experiences": [
+   {
+    "company": "PT Ruang Selaras Interior",
+    "description": "Led interior design and fit-out for retail and office spaces under a design & build scheme\nCreated concept design, moodboard and 3D modelling in SketchUp and Lumion\nWorked with supplier to source material specification for fittings, furniture, lighting and decorations\nCompiled project schedule and BOQ, monitored projects from beginning to end\nPrepared working drawing and detail drawing in AutoCAD",
+    "end": "present",
+    "months": 32,
+    "start": "2024",
+    "title": "Interior Designer"
+   },
+   {
+    "company": "Studio Atma",
+    "description": "Space planning, furniture design and client presentation for residential interior design",
+    "end": "2024",
+    "months": 18,
+    "start": "2022",
+    "title": "Junior Interior Designer"
+   }
+  ],
+  "extraction_confidence": 1.0,
+  "extraction_method": "text",
+  "file_name": "cv_nadia.docx",
+  "pii": {
+   "address": "Jl. Dago 88, Bandung",
+   "birth": "Bandung, 2 June 1995",
+   "email": "nadia.kusuma@example.com",
+   "gender": "Perempuan",
+   "institution": "Institut Teknologi Bandung",
+   "marital_status": "Married",
+   "name": "Nadia Kusuma",
+   "phone": "081204030771",
+   "religion": "Kristen"
+  },
+  "redacted_text": "[NAMA]\n[EMAIL] | [TELEPON]\n\nSUMMARY\nInterior designer with 4 years in design and build, strong in concept design, visualization and material sourcing.\n\nWORK EXPERIENCE\nInterior Designer | PT Ruang Selaras Interior | Mar 2024 - Present\n- Led interior design and fit-out for retail and office spaces under a design & build scheme\n- Created concept design, moodboard and 3D modelling in SketchUp and Lumion\n- Worked with supplier to source material specification for fittings, furniture, lighting and decorations\n- Compiled project schedule and BOQ, monitored projects from beginning to end\n- Prepared working drawing and detail drawing in AutoCAD\n\nJunior Interior Designer | Studio Atma | Aug 2022 - Feb 2024\n- Space planning, furniture design and client presentation for residential interior design\n\nEDUCATION\nBachelor of Interior Design (S1), [INSTITUSI], 2022\n\nSKILLS\nAutoCAD, SketchUp, Lumion, Adobe Photoshop, Interior Design, Space Planning, Procurement, Project Management, Communication",
+  "skills": [
+   "autocad",
+   "sketchup",
+   "rendering",
+   "technical_drawing",
+   "conceptual_design",
+   "interior_design",
+   "design_build",
+   "space_modelling",
+   "project_management",
+   "procurement",
+   "presentation",
+   "visualization"
+  ],
+  "source": "upload",
+  "summary": "Interior designer with 4 years in design and build, strong in concept design, visualization and material sourcing.",
+  "total_experience_months": 50,
+  "warnings": []
+ },
+ "cv_putri.pdf": {
+  "candidate_id": "C-C5695E56",
+  "chunks": [
+   "Graphic designer with 4 years of experience in branding and digital campaigns. Graphic Designer | PT Kreasi Digital Nusantara | Apr 2024 - Present",
+   "Designed branding, social media content and marketing collateral Created UI/UX mockups in Figma for landing pages",
+   "Junior Designer | Agency Titik Temu | Sep 2022 - Mar 2024 Produced illustrations and layouts using Illustrator and CorelDRAW",
+   "Adobe Photoshop, Illustrator, Figma, CorelDRAW, Branding, Communication Bachelor of Visual Communication Design (S1), [INSTITUSI], 2022"
+  ],
+  "education": [
+   {
+    "degree": "Bachelor of Visual Communication Design (S1), [INSTITUSI], 2022",
+    "field": "visual communication design",
+    "institution": "",
+    "level": 4
+   }
+  ],
+  "experiences": [
+   {
+    "company": "PT Kreasi Digital Nusantara",
+    "description": "Designed branding, social media content and marketing collateral\nCreated UI/UX mockups in Figma for landing pages",
+    "end": "present",
+    "months": 31,
+    "start": "2024",
+    "title": "Graphic Designer"
+   },
+   {
+    "company": "Agency Titik Temu",
+    "description": "Produced illustrations and layouts using Illustrator and CorelDRAW",
+    "end": "2024",
+    "months": 18,
+    "start": "2022",
+    "title": "Junior Designer"
+   }
+  ],
+  "extraction_confidence": 1.0,
+  "extraction_method": "text",
+  "file_name": "cv_putri.pdf",
+  "pii": {
+   "address": "Jl. Ijen 9, Malang",
+   "birth": "Malang, 11 December 1996",
+   "email": "putri.anggraini@example.com",
+   "gender": "Perempuan",
+   "institution": "Universitas Negeri Malang",
+   "marital_status": "Single",
+   "name": "Putri Anggraini",
+   "phone": "081204466316",
+   "religion": "Hindu"
+  },
+  "redacted_text": "[NAMA]\n[EMAIL] | [TELEPON]\nSUMMARY\nGraphic designer with 4 years of experience in branding and digital campaigns.\nWORK EXPERIENCE\nGraphic Designer | PT Kreasi Digital Nusantara | Apr 2024 - Present\n- Designed branding, social media content and marketing collateral\n- Created UI/UX mockups in Figma for landing pages\nJunior Designer | Agency Titik Temu | Sep 2022 - Mar 2024\n- Produced illustrations and layouts using Illustrator and CorelDRAW\nEDUCATION\nBachelor of Visual Communication Design (S1), [INSTITUSI], 2022\nSKILLS\nAdobe Photoshop, Illustrator, Figma, CorelDRAW, Branding, Communication",
+  "skills": [
+   "presentation",
+   "visualization",
+   "graphic_design"
+  ],
+  "source": "upload",
+  "summary": "Graphic designer with 4 years of experience in branding and digital campaigns.",
+  "total_experience_months": 49,
+  "warnings": []
+ },
+ "cv_raka.pdf": {
+  "candidate_id": "C-CBCA601A",
+  "chunks": [
+   "Architect with 3+ years of experience in design and build projects, from conceptual design to construction dra",
+   "Junior Architect | PT Graha Cipta Desain | Mar 2024 - Present Developed conceptual design and design development for residential and office projects",
+   "Produced technical drawing and construction drawing packages in AutoCAD and Revit Built 3D modelling and space planning studies in SketchUp with Enscape rendering",
+   "Coordinated with supplier and vendor for material specification, lighting and furniture procurement Checked designs against building codes, SNI and PBG requirements",
+   "Architectural Drafter | CV Bangun Karya | Jul 2023 - Feb 2024 Prepared shop drawing and as built drawing for design and build contractor",
+   "Supported project management: timeline, site supervision and client presentation",
+   "AutoCAD, SketchUp, Revit, Enscape, Technical Drawing, Conceptual Design, Building Codes, Project Management, P Bachelor of Architecture (S1), [INSTITUSI], 2023"
+  ],
+  "education": [
+   {
+    "degree": "Bachelor of Architecture (S1), [INSTITUSI], 2023",
+    "field": "architecture",
+    "institution": "",
+    "level": 4
+   }
+  ],
+  "experiences": [
+   {
+    "company": "PT Graha Cipta Desain",
+    "description": "Developed conceptual design and design development for residential and office projects\nProduced technical drawing and construction drawing packages in AutoCAD and Revit\nBuilt 3D modelling and space planning studies in SketchUp with Enscape rendering\nCoordinated with supplier and vendor for material specification, lighting and furniture procurement\nChecked designs against building codes, SNI and PBG requirements",
+    "end": "present",
+    "months": 32,
+    "start": "2024",
+    "title": "Junior Architect"
+   },
+   {
+    "company": "CV Bangun Karya",
+    "description": "Prepared shop drawing and as built drawing for design and build contractor\nSupported project management: timeline, site supervision and client presentation",
+    "end": "2024",
+    "months": 7,
+    "start": "2023",
+    "title": "Architectural Drafter"
+   }
+  ],
+  "extraction_confidence": 1.0,
+  "extraction_method": "text",
+  "file_name": "cv_raka.pdf",
+  "pii": {
+   "address": "Jl. Pandanaran 12, Semarang",
+   "birth": "Semarang, 14 March 1997",
+   "email": "raka.pratama@example.com",
+   "gender": "Laki-laki",
+   "institution": "Universitas Diponegoro",
+   "marital_status": "Single",
+   "name": "Raka Pratama",
+   "phone": "081203286385",
+   "religion": "Islam"
+  },
+  "redacted_text": "[NAMA]\n[EMAIL] | [TELEPON]\nSUMMARY\nArchitect with 3+ years of experience in design and build projects, from conceptual design to construction dra\nWORK EXPERIENCE\nJunior Architect | PT Graha Cipta Desain | Mar 2024 - Present\n- Developed conceptual design and design development for residential and office projects\n- Produced technical drawing and construction drawing packages in AutoCAD and Revit\n- Built 3D modelling and space planning studies in SketchUp with Enscape rendering\n- Coordinated with supplier and vendor for material specification, lighting and furniture procurement\n- Checked designs against building codes, SNI and PBG requirements\nArchitectural Drafter | CV Bangun Karya | Jul 2023 - Feb 2024\n- Prepared shop drawing and as built drawing for design and build contractor\n- Supported project management: timeline, site supervision and client presentation\nEDUCATION\nBachelor of Architecture (S1), [INSTITUSI], 2023\nSKILLS\nAutoCAD, SketchUp, Revit, Enscape, Technical Drawing, Conceptual Design, Building Codes, Project Management, P",
+  "skills": [
+   "autocad",
+   "sketchup",
+   "revit",
+   "rendering",
+   "technical_drawing",
+   "conceptual_design",
+   "architecture_design",
+   "design_build",
+   "space_modelling",
+   "building_codes",
+   "project_management",
+   "procurement",
+   "presentation"
+  ],
+  "source": "upload",
+  "summary": "Architect with 3+ years of experience in design and build projects, from conceptual design to construction dra",
+  "total_experience_months": 39,
+  "warnings": []
+ },
+ "cv_raka_reapply.txt": {
+  "candidate_id": "C-CBCA601A",
+  "chunks": [
+   "Architect with 3+ years of experience in design and build projects, from conceptual design to construction drawing and site coordination.",
+   "Junior Architect | PT Graha Cipta Desain | Mar 2024 - Present Developed conceptual design and design development for residential and office projects",
+   "Produced technical drawing and construction drawing packages in AutoCAD and Revit Built 3D modelling and space planning studies in SketchUp with Enscape rendering",
+   "Coordinated with supplier and vendor for material specification, lighting and furniture procurement Checked designs against building codes, SNI and PBG requirements",
+   "Architectural Drafter | CV Bangun Karya | Jul 2023 - Feb 2024 Prepared shop drawing and as built drawing for design and build contractor",
+   "Supported project management: timeline, site supervision and client presentation",
+   "AutoCAD, SketchUp, Revit, Enscape, Technical Drawing, Conceptual Design, Building Codes, Project Management, Presentation Bachelor of Architecture (S1), [INSTITUSI], 2023"
+  ],
+  "education": [
+   {
+    "degree": "Bachelor of Architecture (S1), [INSTITUSI], 2023",
+    "field": "architecture",
+    "institution": "",
+    "level": 4
+   }
+  ],
+  "experiences": [
+   {
+    "company": "PT Graha Cipta Desain",
+    "description": "Developed conceptual design and design development for residential and office projects\nProduced technical drawing and construction drawing packages in AutoCAD and Revit\nBuilt 3D modelling and space planning studies in SketchUp with Enscape rendering\nCoordinated with supplier and vendor for material specification, lighting and furniture procurement\nChecked designs against building codes, SNI and PBG requirements",
+    "end": "present",
+    "months": 32,
+    "start": "2024",
+    "title": "Junior Architect"
+   },
+   {
+    "company": "CV Bangun Karya",
+    "description": "Prepared shop drawing and as built drawing for design and build contractor\nSupported project management: timeline, site supervision and client presentation",
+    "end": "2024",
+    "months": 7,
+    "start": "2023",
+    "title": "Architectural Drafter"
+   }
+  ],
+  "extraction_confidence": 1.0,
+  "extraction_method": "text",
+  "file_name": "cv_raka_reapply.txt",
+  "pii": {
+   "address": "Jl. Pandanaran 12, Semarang",
+   "birth": "Semarang, 14 March 1997",
+   "email": "raka.pratama@example.com",
+   "gender": "Laki-laki",
+   "institution": "Universitas Diponegoro",
+   "marital_status": "Single",
+   "name": "Raka Pratama",
+   "phone": "081203286385",
+   "religion": "Islam"
+  },
+  "redacted_text": "[NAMA]\n[EMAIL] | [TELEPON]\n\nSUMMARY\nArchitect with 3+ years of experience in design and build projects, from conceptual design to construction drawing and site coordination.\n\nWORK EXPERIENCE\nJunior Architect | PT Graha Cipta Desain | Mar 2024 - Present\n- Developed conceptual design and design development for residential and office projects\n- Produced technical drawing and construction drawing packages in AutoCAD and Revit\n- Built 3D modelling and space planning studies in SketchUp with Enscape rendering\n- Coordinated with supplier and vendor for material specification, lighting and furniture procurement\n- Checked designs against building codes, SNI and PBG requirements\n\nArchitectural Drafter | CV Bangun Karya | Jul 2023 - Feb 2024\n- Prepared shop drawing and as built drawing for design and build contractor\n- Supported project management: timeline, site supervision and client presentation\n\nEDUCATION\nBachelor of Architecture (S1), [INSTITUSI], 2023\n\nSKILLS\nAutoCAD, SketchUp, Revit, Enscape, Technical Drawing, Conceptual Design, Building Codes, Project Management, Presentation",
+  "skills": [
+   "autocad",
+   "sketchup",
+   "revit",
+   "rendering",
+   "technical_drawing",
+   "conceptual_design",
+   "architecture_design",
+   "design_build",
+   "space_modelling",
+   "building_codes",
+   "project_management",
+   "procurement",
+   "presentation"
+  ],
+  "source": "upload",
+  "summary": "Architect with 3+ years of experience in design and build projects, from conceptual design to construction drawing and site coordination.",
+  "total_experience_months": 39,
+  "warnings": []
+ },
+ "cv_rizky.docx": {
+  "candidate_id": "C-1D66BC9B",
+  "chunks": [
+   "Architecture graduate working as a 3D visualizer and freelance architect. Freelance Architect | Self-employed | Jan 2026 - Present",
+   "Delivered architectural design and conceptual design for two private houses in SketchUp 3D Visualizer | Studio Lensa Ruang | Jan 2025 - Dec 2025",
+   "Produced rendering with Lumion and V-Ray for marketing visuals Post-production in Adobe Photoshop SketchUp, Lumion, V-Ray, Adobe Photoshop, Visualization",
+   "Bachelor of Architecture (S1), [INSTITUSI], 2024"
+  ],
+  "education": [
+   {
+    "degree": "Bachelor of Architecture (S1), [INSTITUSI], 2024",
+    "field": "architecture",
+    "institution": "",
+    "level": 4
+   }
+  ],
+  "experiences": [
+   {
+    "company": "Self-employed",
+    "description": "Delivered architectural design and conceptual design for two private houses in SketchUp",
+    "end": "present",
+    "months": 10,
+    "start": "2026",
+    "title": "Freelance Architect"
+   },
+   {
+    "company": "Studio Lensa Ruang",
+    "description": "Produced rendering with Lumion and V-Ray for marketing visuals\nPost-production in Adobe Photoshop",
+    "end": "2025",
+    "months": 11,
+    "start": "2025",
+    "title": "3D Visualizer"
+   }
+  ],
+  "extraction_confidence": 1.0,
+  "extraction_method": "text",
+  "file_name": "cv_rizky.docx",
+  "pii": {
+   "address": "Jl. Pajajaran 60, Bogor",
+   "birth": "Bogor, 27 November 1999",
+   "email": "rizky.hidayat@example.com",
+   "gender": "Laki-laki",
+   "institution": "Institut Pertanian Bogor",
+   "marital_status": "Single",
+   "name": "Rizky Hidayat",
+   "phone": "081204505911",
+   "religion": "Islam"
+  },
+  "redacted_text": "[NAMA]\n[EMAIL] | [TELEPON]\n\nSUMMARY\nArchitecture graduate working as a 3D visualizer and freelance architect.\n\nWORK EXPERIENCE\nFreelance Architect | Self-employed | Jan 2026 - Present\n- Delivered architectural design and conceptual design for two private houses in SketchUp\n\n3D Visualizer | Studio Lensa Ruang | Jan 2025 - Dec 2025\n- Produced rendering with Lumion and V-Ray for marketing visuals\n- Post-production in Adobe Photoshop\n\nEDUCATION\nBachelor of Architecture (S1), [INSTITUSI], 2024\n\nSKILLS\nSketchUp, Lumion, V-Ray, Adobe Photoshop, Visualization",
+  "skills": [
+   "sketchup",
+   "rendering",
+   "conceptual_design",
+   "architecture_design",
+   "visualization"
+  ],
+  "source": "upload",
+  "summary": "Architecture graduate working as a 3D visualizer and freelance architect.",
+  "total_experience_months": 21,
+  "warnings": []
+ },
+ "cv_sinta.pdf": {
+  "candidate_id": "C-D950E960",
+  "chunks": [
+   "Fresh graduate in architecture with internship experience and a strong portfolio in conceptual design. Architecture Intern | PT Studio Tata Ruang | Feb 2026 - Jul 2026",
+   "Assisted conceptual design and 3D modelling in SketchUp Drafted technical drawing in AutoCAD under supervision",
+   "AutoCAD, SketchUp, Lumion, Adobe Photoshop, Sketching, Presentation Bachelor of Architecture (S1), [INSTITUSI], 2026"
+  ],
+  "education": [
+   {
+    "degree": "Bachelor of Architecture (S1), [INSTITUSI], 2026",
+    "field": "architecture",
+    "institution": "",
+    "level": 4
+   }
+  ],
+  "experiences": [
+   {
+    "company": "PT Studio Tata Ruang",
+    "description": "Assisted conceptual design and 3D modelling in SketchUp\nDrafted technical drawing in AutoCAD under supervision",
+    "end": "2026",
+    "months": 5,
+    "start": "2026",
+    "title": "Architecture Intern"
+   }
+  ],
+  "extraction_confidence": 1.0,
+  "extraction_method": "text",
+  "file_name": "cv_sinta.pdf",
+  "pii": {
+   "address": "Jl. Slamet Riyadi 40, Surakarta",
+   "birth": "Solo, 21 August 2003",
+   "email": "sinta.maharani@example.com",
+   "gender": "Perempuan",
+   "institution": "Universitas Sebelas Maret",
+   "marital_status": "Single",
+   "name": "Sinta Maharani",
+   "phone": "081204300017",
+   "religion": "Islam"
+  },
+  "redacted_text": "[NAMA]\n[EMAIL] | [TELEPON]\nSUMMARY\nFresh graduate in architecture with internship experience and a strong portfolio in conceptual design.\nWORK EXPERIENCE\nArchitecture Intern | PT Studio Tata Ruang | Feb 2026 - Jul 2026\n- Assisted conceptual design and 3D modelling in SketchUp\n- Drafted technical drawing in AutoCAD under supervision\nEDUCATION\nBachelor of Architecture (S1), [INSTITUSI], 2026\nSKILLS\nAutoCAD, SketchUp, Lumion, Adobe Photoshop, Sketching, Presentation",
+  "skills": [
+   "autocad",
+   "sketchup",
+   "rendering",
+   "technical_drawing",
+   "conceptual_design",
+   "space_modelling",
+   "presentation",
+   "visualization"
+  ],
+  "source": "upload",
+  "summary": "Fresh graduate in architecture with internship experience and a strong portfolio in conceptual design.",
+  "total_experience_months": 5,
+  "warnings": []
+ },
+ "cv_yoga.pdf": {
+  "candidate_id": "C-51C56295",
+  "chunks": [
+   "Pengawas proyek interior dengan pengalaman 3 tahun pada kontraktor interior. Site Supervisor Interior | PT Sentra Interior Mandiri | Jun 2023 - Sekarang",
+   "Pengawasan lapangan pekerjaan fit-out kantor dan ritel Menyusun jadwal proyek dan koordinasi dengan vendor serta supplier material",
+   "Memeriksa gambar kerja dan revisi sederhana dengan AutoCAD Manajemen Proyek, Pengawasan Lapangan, AutoCAD, Pengadaan, Komunikasi D3 Arsitektur, [INSTITUSI], 2022"
+  ],
+  "education": [
+   {
+    "degree": "D3 Arsitektur, [INSTITUSI], 2022",
+    "field": "architecture",
+    "institution": "",
+    "level": 3
+   }
+  ],
+  "experiences": [
+   {
+    "company": "PT Sentra Interior Mandiri",
+    "description": "Pengawasan lapangan pekerjaan fit-out kantor dan ritel\nMenyusun jadwal proyek dan koordinasi dengan vendor serta supplier material\nMemeriksa gambar kerja dan revisi sederhana dengan AutoCAD",
+    "end": "present",
+    "months": 41,
+    "start": "2023",
+    "title": "Site Supervisor Interior"
+   }
+  ],
+  "extraction_confidence": 1.0,
+  "extraction_method": "text",
+  "file_name": "cv_yoga.pdf",
+  "pii": {
+   "address": "Jl. Kesambi 14, Cirebon",
+   "birth": "Cirebon, 8 September 1996",
+   "email": "yoga.permana@example.com",
+   "gender": "Laki-laki",
+   "institution": "Politeknik Negeri Bandung",
+   "marital_status": "Menikah",
+   "name": "Yoga Permana",
+   "phone": "081203421008",
+   "religion": "Islam"
+  },
+  "redacted_text": "[NAMA]\n[EMAIL] | [TELEPON]\nPROFIL\nPengawas proyek interior dengan pengalaman 3 tahun pada kontraktor interior.\nPENGALAMAN KERJA\nSite Supervisor Interior | PT Sentra Interior Mandiri | Jun 2023 - Sekarang\n- Pengawasan lapangan pekerjaan fit-out kantor dan ritel\n- Menyusun jadwal proyek dan koordinasi dengan vendor serta supplier material\n- Memeriksa gambar kerja dan revisi sederhana dengan AutoCAD\nPENDIDIKAN\nD3 Arsitektur, [INSTITUSI], 2022\nKEAHLIAN\nManajemen Proyek, Pengawasan Lapangan, AutoCAD, Pengadaan, Komunikasi",
+  "skills": [
+   "autocad",
+   "technical_drawing",
+   "interior_design",
+   "design_build",
+   "project_management",
+   "procurement",
+   "presentation"
+  ],
+  "source": "upload",
+  "summary": "Pengawas proyek interior dengan pengalaman 3 tahun pada kontraktor interior.",
+  "total_experience_months": 41,
+  "warnings": []
+ }
+}

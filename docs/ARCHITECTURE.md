@@ -18,6 +18,7 @@ antarmuka dari logika, sehingga keduanya bisa dijelaskan dan diuji sendiri-sendi
 | --- | --- | --- | --- |
 | Perakitan | `app/main.py` | Membuat aplikasi, memasang middleware dan router | semua lapisan |
 | API | `app/api/v1/` | Menerima request, memvalidasi, memanggil service, mengembalikan response | `schemas`, `core`, `services` |
+| Service | `app/services/` | Logika bisnis sebagai fungsi biasa, tanpa pengetahuan tentang HTTP | `schemas`, `core` |
 | Skema | `app/schemas/` | Bentuk data request dan response | tidak ada |
 | Inti | `app/core/` | Pengaturan dan logging | tidak ada |
 
@@ -59,16 +60,16 @@ Tabel ini rencana, bukan kode yang ada. Tiap baris dibuat pada sprint-nya.
 
 | Fitur | Backend | Frontend |
 | --- | --- | --- |
-| Unggah dan parsing CV | `api/v1/candidates.py`, `services/cv_parser.py` | halaman kandidat |
+| Unggah dan parsing CV | **Sudah ada (Sprint 2):** `api/v1/cvs.py`, `services/cv_parsing/` | halaman kandidat (belum) |
 | Unggah dan parsing lowongan | `api/v1/jobs.py`, `services/jd_parser.py` | halaman lowongan |
 | Embedding dan pencocokan semantik | `services/embedder.py`, `services/matcher.py` | tidak ada |
 | Peringkat, penjelasan, rekomendasi | `services/ranker.py`, `services/explainer.py` | tabel peringkat dan panel rincian |
 | Pertanyaan wawancara | `services/interview.py` (butuh LLM) | panel pada rincian kandidat |
 | Dashboard | endpoint ringkasan | halaman utama |
 
-Modul dari PoC sebelumnya (`cv-screening-poc`) yang sudah teruji, yaitu pembaca dokumen,
-redaksi data pribadi, ekstraktor, parser lowongan, pencocok, dan audit bias, akan dipindahkan
-ke `services/` alih-alih ditulis ulang.
+Pembaca dokumen, redaksi data pribadi, dan ekstraktor dari PoC sebelumnya (`cv-screening-poc`)
+sudah dipindahkan ke `services/cv_parsing/`; lihat [CV_PARSER.md](CV_PARSER.md). Parser lowongan,
+pencocok, dan audit bias akan dipindahkan dengan cara yang sama, bukan ditulis ulang.
 
 ## Sengaja tidak dibuat
 

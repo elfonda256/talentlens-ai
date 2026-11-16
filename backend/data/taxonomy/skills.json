@@ -1,0 +1,21 @@
+{
+  "autocad": {"label": "AutoCAD", "category": "software", "aliases": ["autocad", "auto cad", "cad drafting", "gambar cad"]},
+  "sketchup": {"label": "SketchUp", "category": "software", "aliases": ["sketchup", "sketch up"]},
+  "revit": {"label": "Revit / BIM", "category": "software", "aliases": ["revit", "bim", "building information modeling", "building information modelling", "archicad"]},
+  "rendering": {"label": "3D Rendering", "category": "software", "aliases": ["lumion", "enscape", "v-ray", "vray", "3ds max", "rendering", "render 3d", "d5 render"]},
+  "technical_drawing": {"label": "Technical Drawing", "category": "technical", "aliases": ["technical drawing", "gambar teknik", "gambar kerja", "shop drawing", "construction drawing", "working drawing", "detail drawing", "as built drawing", "ded"]},
+  "conceptual_design": {"label": "Conceptual Design", "category": "technical", "aliases": ["conceptual design", "concept design", "desain konseptual", "konsep desain", "schematic design", "design development", "moodboard"]},
+  "interior_design": {"label": "Interior Design", "category": "technical", "aliases": ["interior design", "desain interior", "interior designer", "desainer interior", "fit-out", "fit out", "furniture design"]},
+  "architecture_design": {"label": "Architectural Design", "category": "technical", "aliases": ["architectural design", "desain arsitektur", "architect", "arsitek", "perancangan bangunan"]},
+  "design_build": {"label": "Design & Build", "category": "technical", "aliases": ["design and build", "design & build", "design-build", "desain dan bangun", "kontraktor interior"]},
+  "space_modelling": {"label": "Space Planning & 3D Modelling", "category": "technical", "aliases": ["space planning", "3d modelling", "3d modeling", "pemodelan 3d", "maket", "work model", "tata ruang", "layout planning"]},
+  "building_codes": {"label": "Building Codes & Regulations", "category": "knowledge", "aliases": ["building code", "building codes", "regulatory standard", "sni", "imb", "pbg", "peraturan bangunan", "regulasi bangunan", "k3", "fire safety code"]},
+  "project_management": {"label": "Project Management", "category": "management", "aliases": ["project management", "manajemen proyek", "project coordination", "koordinasi proyek", "site supervision", "pengawasan lapangan", "timeline", "ms project", "project schedule", "jadwal proyek"]},
+  "procurement": {"label": "Material Sourcing & Procurement", "category": "management", "aliases": ["procurement", "pengadaan", "supplier", "vendor", "material sourcing", "material specification", "spesifikasi material", "ff&e", "bill of quantity", "boq", "rab"]},
+  "presentation": {"label": "Presentation & Communication", "category": "soft", "aliases": ["presentation", "presentasi", "client presentation", "communication", "komunikasi", "interpersonal"]},
+  "visualization": {"label": "Creative Visualization", "category": "soft", "aliases": ["visualization", "visualisasi", "photoshop", "adobe photoshop", "illustrator", "indesign", "sketching", "sketsa"]},
+  "structural_analysis": {"label": "Structural Analysis", "category": "technical", "aliases": ["sap2000", "etabs", "structural analysis", "analisis struktur", "perhitungan struktur"]},
+  "programming": {"label": "Programming", "category": "it", "aliases": ["python", "javascript", "java", "sql", "react", "laravel", "php"]},
+  "graphic_design": {"label": "Graphic Design", "category": "creative", "aliases": ["graphic design", "desain grafis", "branding", "coreldraw", "figma", "ui/ux"]},
+  "accounting": {"label": "Accounting", "category": "finance", "aliases": ["accounting", "akuntansi", "accurate", "pajak", "laporan keuangan"]}
+}

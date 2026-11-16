@@ -1,0 +1,28 @@
+RAKA PRATAMA
+raka.pratama@example.com | 081203286385
+Date of Birth: Semarang, 14 March 1997
+Gender: Laki-laki
+Religion: Islam
+Marital Status: Single
+Address: Jl. Pandanaran 12, Semarang
+
+SUMMARY
+Architect with 3+ years of experience in design and build projects, from conceptual design to construction drawing and site coordination.
+
+WORK EXPERIENCE
+Junior Architect | PT Graha Cipta Desain | Mar 2024 - Present
+- Developed conceptual design and design development for residential and office projects
+- Produced technical drawing and construction drawing packages in AutoCAD and Revit
+- Built 3D modelling and space planning studies in SketchUp with Enscape rendering
+- Coordinated with supplier and vendor for material specification, lighting and furniture procurement
+- Checked designs against building codes, SNI and PBG requirements
+
+Architectural Drafter | CV Bangun Karya | Jul 2023 - Feb 2024
+- Prepared shop drawing and as built drawing for design and build contractor
+- Supported project management: timeline, site supervision and client presentation
+
+EDUCATION
+Bachelor of Architecture (S1), Universitas Diponegoro, 2023
+
+SKILLS
+AutoCAD, SketchUp, Revit, Enscape, Technical Drawing, Conceptual Design, Building Codes, Project Management, Presentation
