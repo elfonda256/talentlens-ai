@@ -140,8 +140,10 @@ cd frontend && npm run lint && npm run build
 
 ## Dokumen lain
 
+- [Engineering Governance](docs/GOVERNANCE.md)
 - [Arsitektur](docs/ARCHITECTURE.md)
 - [Parser CV](docs/CV_PARSER.md)
 - [Technical Decision Records](docs/tdr/README.md)
+- Laporan sprint: [01](docs/SPRINT_REPORT_01.md), [02](docs/SPRINT_REPORT_02.md)
 - [Panduan pengembangan](docs/DEVELOPMENT.md)
 - [Konvensi commit, API, dan penamaan](docs/CONVENTIONS.md)

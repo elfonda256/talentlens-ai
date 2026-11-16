@@ -45,6 +45,8 @@ nama token (`bg-primary`, `text-muted-foreground`), bukan nilai warna.
 
 ## Keputusan yang diambil di Sprint 1
 
+Tiga keputusan pertama dicatat lengkap sebagai TDR-0001 sampai TDR-0003 di [docs/tdr/](tdr/README.md).
+
 | Keputusan | Alasan |
 | --- | --- |
 | Peramban memanggil backend langsung, tanpa proxy Next.js | Satu lompatan lebih sedikit untuk dijelaskan dan di-debug; CORS cukup satu baris konfigurasi |
@@ -53,6 +55,16 @@ nama token (`bg-primary`, `text-muted-foreground`), bukan nilai warna.
 | Request ID di header `X-Request-ID` | Satu baris log dapat dicocokkan dengan satu klik di antarmuka saat demo |
 | Versi API di path (`/api/v1`) | Kontrak eksplisit; Swagger tetap rapi |
 | Tidak ada folder kosong untuk fitur mendatang | Folder dibuat bersama kode pertamanya, bukan sebagai placeholder |
+
+## Pipeline target (governance v1.1)
+
+```
+Deterministic Pipeline -> Candidate JSON -> Embedding -> FAISS Similarity
+    -> Weighted Scoring -> Ranking -> Gemini Summary -> Dashboard
+```
+
+Yang sudah ada hanya dua langkah pertama (parser CV menghasilkan `CandidateProfile`).
+Skor kandidat harus tetap deterministik; Gemini hanya menulis ringkasan dan penjelasan.
 
 ## Rencana penempatan fitur (belum dibuat)
 
@@ -64,7 +76,7 @@ Tabel ini rencana, bukan kode yang ada. Tiap baris dibuat pada sprint-nya.
 | Unggah dan parsing lowongan | `api/v1/jobs.py`, `services/jd_parser.py` | halaman lowongan |
 | Embedding dan pencocokan semantik | `services/embedder.py`, `services/matcher.py` | tidak ada |
 | Peringkat, penjelasan, rekomendasi | `services/ranker.py`, `services/explainer.py` | tabel peringkat dan panel rincian |
-| Pertanyaan wawancara | `services/interview.py` (butuh LLM) | panel pada rincian kandidat |
+| Ringkasan dan penjelasan oleh Gemini | `services/llm.py` | panel pada rincian kandidat |
 | Dashboard | endpoint ringkasan | halaman utama |
 
 Pembaca dokumen, redaksi data pribadi, dan ekstraktor dari PoC sebelumnya (`cv-screening-poc`)

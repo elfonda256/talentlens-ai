@@ -55,5 +55,11 @@ logger.info("Parsed CV %s in %.0f ms", candidate_id, duration_ms)
 
 ## Alur kerja Git
 
-Satu cabang per pekerjaan (`feat/cv-upload`), commit kecil mengikuti
-[konvensi commit](CONVENTIONS.md#konvensi-commit), lalu gabung ke `main` setelah definisi selesai terpenuhi.
+Git adalah sumber kebenaran proyek ([TDR-0011](tdr/0011-git-workflow.md)).
+
+1. Buat cabang dari `main` untuk setiap sprint: `git switch -c sprint-3`.
+2. Commit kecil mengikuti [konvensi commit](CONVENTIONS.md#konvensi-commit).
+3. Sprint ditutup dengan `docs/SPRINT_REPORT_NN.md` dan TDR untuk setiap keputusan penting.
+4. Setelah Product Owner menyetujui, gabung ke `main` dan beri tag: `git tag sprint-3`.
+
+ZIP hanya dibuat atas permintaan Product Owner, sebagai cadangan milestone, atau untuk penyerahan akhir.

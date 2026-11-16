@@ -2,7 +2,7 @@
 
 Mengubah satu berkas CV menjadi profil terstruktur. Kodenya berasal dari PoC sebelumnya
 (`cv-screening-poc`) dan dipindahkan tanpa mengubah logika; keputusan di baliknya ada di
-[docs/tdr/](tdr/README.md).
+[docs/tdr/](tdr/README.md) (TDR-0004 sampai TDR-0010).
 
 ## Alur
 
