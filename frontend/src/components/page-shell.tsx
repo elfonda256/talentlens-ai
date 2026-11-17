@@ -3,11 +3,22 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+import { cn } from "@/lib/utils";
+
+const NAV = [
+  { section: "dashboard", href: "/", label: "Dasbor" },
+  { section: "sources", href: "/sources", label: "Pengumpulan CV" },
+] as const;
+
+type Section = (typeof NAV)[number]["section"];
+
 type PageShellProps = {
   title: ReactNode;
   description?: ReactNode;
   back?: { href: string; label: string };
   actions?: ReactNode;
+  /** The header link to mark as current. Job and candidate pages belong to the dashboard. */
+  section?: Section;
   children: ReactNode;
 };
 
@@ -17,6 +28,7 @@ export function PageShell({
   description,
   back,
   actions,
+  section = "dashboard",
   children,
 }: PageShellProps) {
   return (
@@ -36,11 +48,30 @@ export function PageShell({
               width={155}
               height={32}
               priority
+              className="h-7 w-auto sm:h-8"
             />
           </Link>
           <span className="hidden border-l border-border pl-3 text-sm text-muted-foreground sm:inline">
             Platform rekrutmen berbasis AI
           </span>
+          <nav
+            aria-label="Navigasi utama"
+            className="ml-auto flex items-center gap-1"
+          >
+            {NAV.map((item) => (
+              <Link
+                key={item.section}
+                href={item.href}
+                aria-current={item.section === section ? "page" : undefined}
+                className={cn(
+                  "whitespace-nowrap rounded-md px-2 py-2 text-sm font-medium sm:px-3 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground",
+                  item.section === section && "bg-secondary text-foreground",
+                )}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
         </div>
       </header>
       <main
