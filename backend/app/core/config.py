@@ -5,7 +5,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Literal
 
-from pydantic import SecretStr, model_validator
+from pydantic import Field, SecretStr, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 BACKEND_DIR = Path(__file__).resolve().parents[2]
@@ -51,7 +51,14 @@ class Settings(BaseSettings):
     # Empty key = the deterministic template is used instead of the LLM.
     gemini_api_key: str = ""
     gemini_model: str = "gemini-3.6-flash"
-    gemini_timeout_seconds: float = 30
+    # Asked once when the main model is overloaded, timing out or retired. Empty = no fallback.
+    gemini_fallback_model: str = "gemini-3.5-flash-lite"
+    # Gemini 3 thinks at "high" by default; a summary of computed facts needs little reasoning.
+    gemini_thinking_level: Literal["minimal", "low", "medium", "high"] = "low"
+    gemini_timeout_seconds: float = Field(20, gt=0)
+    # Attempts on the main model, for errors Google marks as temporary.
+    gemini_max_attempts: int = Field(2, ge=1)
+    gemini_retry_backoff_seconds: float = Field(1.0, ge=0)  # doubled after every failed attempt
 
     @model_validator(mode="after")
     def _production_needs_a_key(self) -> "Settings":

@@ -23,6 +23,7 @@ def make_settings(tmp_path: Path, **overrides) -> Settings:
         "reference_date": REFERENCE_DATE,
         "storage_dir": tmp_path,
         "gemini_api_key": "",
+        "gemini_retry_backoff_seconds": 0,
     }
     return Settings(**{**values, **overrides})
 

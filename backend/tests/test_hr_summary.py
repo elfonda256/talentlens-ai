@@ -146,3 +146,105 @@ def test_unusable_gemini_answers_fall_back_to_the_same_shape(screened, tmp_path)
         assert summary.source == "template" and "Gemini tidak dapat dipakai" in summary.note
         assert summary.headline == expected.headline
         assert summary.strengths == expected.strengths
+
+
+def scripted(*replies):
+    """A stand-in Gemini that answers each request with the next reply and records the URLs.
+    A reply is a status code, an exception to raise, or a note dict returned with 200."""
+    calls: list[str] = []
+    queue = list(replies)
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls.append(request.url.path.rsplit("/", 1)[-1].split(":")[0])
+        reply = queue.pop(0)
+        if isinstance(reply, Exception):
+            raise reply
+        if isinstance(reply, int):
+            return httpx.Response(reply, json={"error": {"code": reply}})
+        parts = [{"text": json.dumps(reply)}]
+        return httpx.Response(200, json={"candidates": [{"content": {"parts": parts}}]})
+
+    return httpx.Client(transport=httpx.MockTransport(handler)), calls
+
+
+def gemini_settings(tmp_path):
+    return make_settings(
+        tmp_path, gemini_api_key="test-key", gemini_model="main", gemini_fallback_model="lite"
+    )
+
+
+def test_request_asks_for_json_with_low_thinking(screened, tmp_path):
+    job, profile, result, breakdown = case(screened)
+    seen = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        seen.update(json.loads(request.content)["generationConfig"])
+        parts = [{"text": json.dumps(GEMINI_NOTE)}]
+        return httpx.Response(200, json={"candidates": [{"content": {"parts": parts}}]})
+
+    client = httpx.Client(transport=httpx.MockTransport(handler))
+    generate_hr_summary(job, profile, result, breakdown, gemini_settings(tmp_path), client=client)
+
+    assert seen == {
+        "responseMimeType": "application/json",
+        "thinkingConfig": {"thinkingLevel": "low"},
+    }
+
+
+def test_overloaded_model_is_retried(screened, tmp_path):
+    job, profile, result, breakdown = case(screened)
+    client, calls = scripted(503, GEMINI_NOTE)
+
+    summary = generate_hr_summary(
+        job, profile, result, breakdown, gemini_settings(tmp_path), client=client
+    )
+
+    assert (summary.source, summary.model) == ("gemini", "main")
+    assert calls == ["main", "main"]
+
+
+def test_timeouts_fall_back_to_the_lighter_model(screened, tmp_path):
+    job, profile, result, breakdown = case(screened)
+    timeout = httpx.ReadTimeout("slow")
+    client, calls = scripted(timeout, timeout, GEMINI_NOTE)
+
+    summary = generate_hr_summary(
+        job, profile, result, breakdown, gemini_settings(tmp_path), client=client
+    )
+
+    assert (summary.source, summary.model) == ("gemini", "lite")
+    assert calls == ["main", "main", "lite"]
+
+
+def test_retired_model_goes_straight_to_the_fallback(screened, tmp_path):
+    job, profile, result, breakdown = case(screened)
+    client, calls = scripted(404, GEMINI_NOTE)
+
+    summary = generate_hr_summary(
+        job, profile, result, breakdown, gemini_settings(tmp_path), client=client
+    )
+
+    assert summary.model == "lite" and calls == ["main", "lite"]
+
+
+def test_rejected_request_is_not_retried(screened, tmp_path):
+    job, profile, result, breakdown = case(screened)
+    client, calls = scripted(400)
+
+    summary = generate_hr_summary(
+        job, profile, result, breakdown, gemini_settings(tmp_path), client=client
+    )
+
+    assert summary.source == "template" and calls == ["main"]
+
+
+def test_every_attempt_failing_uses_the_template(screened, tmp_path):
+    job, profile, result, breakdown = case(screened)
+    client, calls = scripted(503, httpx.ConnectError("down"), 503)
+
+    summary = generate_hr_summary(
+        job, profile, result, breakdown, gemini_settings(tmp_path), client=client
+    )
+
+    assert summary.source == "template" and "HTTPStatusError" in summary.note
+    assert calls == ["main", "main", "lite"]

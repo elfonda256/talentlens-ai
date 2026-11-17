@@ -14,6 +14,7 @@ from __future__ import annotations
 import json
 import logging
 import re
+import time
 
 import httpx
 from pydantic import BaseModel, Field, ValidationError
@@ -26,6 +27,8 @@ from app.services.cv_parsing import pii
 logger = logging.getLogger(__name__)
 
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+# Google documents these as temporary (rate limit, overload, server error): retry with backoff.
+RETRYABLE_STATUS = {429, 500, 502, 503, 504}
 MAX_ITEMS = 4
 
 PROMPT = """Anda adalah recruiter senior dengan pengalaman bertahun-tahun merekrut untuk
@@ -290,8 +293,9 @@ def generate_hr_summary(
     template = template_note(job, profile, result, breakdown)
     if not settings.gemini_api_key:
         return _summary(template, "template", note="GEMINI_API_KEY belum diatur")
+    started = time.monotonic()
     try:
-        note = _ask_gemini(build_facts(job, result, breakdown), settings, client)
+        note, model = _ask_gemini(build_facts(job, result, breakdown), settings, client)
     except (httpx.HTTPError, KeyError, IndexError, ValueError) as error:
         # ValueError covers an empty answer, invalid JSON and a note with missing fields.
         logger.warning("Gemini summary failed (%s); using the template", type(error).__name__)
@@ -299,9 +303,12 @@ def generate_hr_summary(
             template, "template", note=f"Gemini tidak dapat dipakai ({type(error).__name__})"
         )
     logger.info(
-        "Gemini summary generated for %s with %s", result.candidate_id, settings.gemini_model
+        "Gemini summary generated for %s with %s in %.1fs",
+        result.candidate_id,
+        model,
+        time.monotonic() - started,
     )
-    return _summary(note, "gemini", model=settings.gemini_model)
+    return _summary(note, "gemini", model=model)
 
 
 def _summary(content: _Note, source: str, model: str = "", note: str = "") -> HRSummary:
@@ -322,22 +329,75 @@ def _summary(content: _Note, source: str, model: str = "", note: str = "") -> HR
     )
 
 
-def _ask_gemini(facts: dict, settings: Settings, client: httpx.Client | None) -> _Note:
+def _ask_gemini(facts: dict, settings: Settings, client: httpx.Client | None) -> tuple[_Note, str]:
+    """The note and the model that wrote it."""
     prompt = PROMPT.format(facts=json.dumps(facts, ensure_ascii=False, indent=1))
+    body = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {
+            "responseMimeType": "application/json",
+            "thinkingConfig": {"thinkingLevel": settings.gemini_thinking_level},
+        },
+    }
     http = client or httpx.Client(timeout=settings.gemini_timeout_seconds)
     try:
-        response = http.post(
-            GEMINI_URL.format(model=settings.gemini_model),
-            headers={"x-goog-api-key": settings.gemini_api_key},
-            json={"contents": [{"parts": [{"text": prompt}]}]},
-        )
-        response.raise_for_status()
+        model, response = _post_with_retry(http, body, settings)
     finally:
         if client is None:
             http.close()
     parts = response.json()["candidates"][0]["content"]["parts"]
     text = "".join(part.get("text", "") for part in parts if not part.get("thought")).strip()
-    return _parse_note(text)
+    return _parse_note(text), model
+
+
+def _post_with_retry(
+    http: httpx.Client, body: dict, settings: Settings
+) -> tuple[str, httpx.Response]:
+    """
+    Ask the main model up to `gemini_max_attempts` times, then the fallback model once.
+    Timeouts, connection errors and the statuses Google calls temporary are retried with
+    exponential backoff. A 404 (model retired) moves on to the fallback. Any other error,
+    such as a bad request or a rejected key, is raised at once. When every attempt fails the
+    last error is raised, and the caller uses the template.
+    """
+    plan = [(settings.gemini_model, settings.gemini_max_attempts)]
+    if settings.gemini_fallback_model not in ("", settings.gemini_model):
+        plan.append((settings.gemini_fallback_model, 1))
+    delay = settings.gemini_retry_backoff_seconds
+    last_error: httpx.HTTPError | None = None
+    for model, attempts in plan:
+        for attempt in range(1, attempts + 1):
+            if last_error is not None:
+                time.sleep(delay)
+                delay *= 2
+            try:
+                response = http.post(
+                    GEMINI_URL.format(model=model),
+                    headers={"x-goog-api-key": settings.gemini_api_key},
+                    json=body,
+                )
+                response.raise_for_status()
+                return model, response
+            except httpx.HTTPStatusError as error:
+                status = error.response.status_code
+                if status not in RETRYABLE_STATUS and status != 404:
+                    raise
+                last_error = error
+            except httpx.TransportError as error:  # ReadTimeout, ConnectError, ...
+                last_error = error
+            logger.warning("Gemini %s attempt %d failed (%s)", model, attempt, _reason(last_error))
+            if _status(last_error) == 404:
+                break
+    assert last_error is not None  # the plan always holds at least one attempt
+    raise last_error
+
+
+def _status(error: httpx.HTTPError) -> int | None:
+    return error.response.status_code if isinstance(error, httpx.HTTPStatusError) else None
+
+
+def _reason(error: httpx.HTTPError) -> str:
+    return str(_status(error) or type(error).__name__)
 
 
 def _parse_note(text: str) -> _Note:

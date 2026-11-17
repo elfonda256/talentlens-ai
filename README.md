@@ -126,6 +126,9 @@ Semua punya nilai default. Untuk menjalankan tanpa Docker, letakkan di `backend/
 | `EMBEDDING_BACKEND` | `auto` | `auto` = E5 bila bisa dimuat, selain itu TF-IDF; `e5` = wajib E5; `tfidf` = selalu TF-IDF |
 | `GEMINI_API_KEY` | kosong | Kunci Google AI Studio untuk ringkasan HR |
 | `GEMINI_MODEL` | `gemini-3.6-flash` | Nama model Gemini; ganti bila tidak tersedia untuk kunci Anda |
+| `GEMINI_FALLBACK_MODEL` | `gemini-3.5-flash-lite` | Dipakai sekali bila model utama sibuk (503), lambat, atau sudah tidak tersedia; kosongkan untuk mematikan |
+| `GEMINI_THINKING_LEVEL` | `low` | Kedalaman berpikir Gemini 3 (`minimal`, `low`, `medium`, `high`); bawaan Google `high` terlalu lambat untuk ringkasan |
+| `GEMINI_TIMEOUT_SECONDS` | `20` | Batas waktu per percobaan; model utama dicoba 2 kali dengan jeda bertambah, lalu model cadangan sekali |
 | `SHORTLIST_THRESHOLD` | `70` | Skor minimal untuk "Lolos" |
 | `REJECT_THRESHOLD` | `45` | Skor di bawah ini "Tidak lolos" |
 | `REFERENCE_DATE` | kosong | Tanggal acuan masa kerja "sampai sekarang"; kosong berarti hari ini |
