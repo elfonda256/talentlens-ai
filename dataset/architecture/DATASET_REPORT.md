@@ -5,6 +5,21 @@
 This is the first golden benchmark for TalentLens AI. Any change to it from here needs a new version
 number. The test and benchmark data is separate from the 5 company CVs used in the demo.
 
+## Frozen Benchmark Metadata
+
+| Field | Value |
+|---|---|
+| Status | Approved |
+| Version | 1.0.0 |
+| Frozen | Yes |
+| Purpose | Golden Regression Benchmark |
+| Baseline Sprint | Sprint 5 (commit `ea2345f`, branch `sprint-4`) |
+| Owner | Product Owner |
+| Last Updated | 17 November 2026 |
+| Breaking Changes | Not allowed without Product Owner approval |
+
+Changes to this benchmark follow [docs/GOLDEN_BENCHMARK_POLICY.md](../../docs/GOLDEN_BENCHMARK_POLICY.md).
+
 ## Contents
 
 | Item | Count |
