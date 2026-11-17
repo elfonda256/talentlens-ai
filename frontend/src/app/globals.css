@@ -1,26 +1,38 @@
 @import "tailwindcss";
 
-/* Design tokens follow the shadcn/ui convention: components read these variables only. */
+/* Design tokens. Components read these names only, never raw colour values. */
 :root {
-  --radius: 0.625rem;
-  --background: oklch(0.985 0.002 250);
-  --foreground: oklch(0.21 0.03 255);
+  --radius: 0.5rem;
+  --background: oklch(0.984 0.003 250);
+  --foreground: oklch(0.24 0.035 258);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.21 0.03 255);
-  --primary: oklch(0.31 0.07 255);
+  --card-foreground: oklch(0.24 0.035 258);
+  --primary: oklch(0.3 0.07 258);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.96 0.006 250);
-  --secondary-foreground: oklch(0.31 0.07 255);
-  --muted: oklch(0.96 0.006 250);
-  --muted-foreground: oklch(0.5 0.025 255);
-  --success: oklch(0.6 0.12 175);
-  --success-foreground: oklch(0.985 0 0);
-  --warning: oklch(0.62 0.14 70);
-  --warning-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.55 0.2 27);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.91 0.01 250);
-  --ring: oklch(0.6 0.12 175);
+  --secondary: oklch(0.955 0.008 250);
+  --secondary-foreground: oklch(0.3 0.07 258);
+  --muted: oklch(0.955 0.008 250);
+  --muted-foreground: oklch(0.47 0.03 258);
+  --border: oklch(0.905 0.012 250);
+  --ring: oklch(0.55 0.13 258);
+
+  /* Verdicts: a solid tone for icons and bars, a soft tint for surfaces, an ink for text on the tint. */
+  --success: oklch(0.56 0.12 165);
+  --success-soft: oklch(0.955 0.035 165);
+  --success-ink: oklch(0.37 0.09 165);
+  --warning: oklch(0.66 0.14 75);
+  --warning-soft: oklch(0.96 0.045 85);
+  --warning-ink: oklch(0.42 0.1 65);
+  --destructive: oklch(0.55 0.17 27);
+  --destructive-soft: oklch(0.955 0.03 27);
+  --destructive-ink: oklch(0.42 0.14 27);
+
+  /* Score components, in the order they are always shown. */
+  --part-must: oklch(0.3 0.07 258);
+  --part-bonus: oklch(0.62 0.09 255);
+  --part-experience: oklch(0.56 0.12 165);
+  --part-education: oklch(0.6 0.14 70);
+  --part-semantic: oklch(0.52 0.15 300);
 }
 
 @theme inline {
@@ -34,22 +46,71 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --color-success: var(--success);
-  --color-success-foreground: var(--success-foreground);
-  --color-warning: var(--warning);
-  --color-warning-foreground: var(--warning-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-success-ink: var(--success-ink);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-warning-ink: var(--warning-ink);
+  --color-destructive: var(--destructive);
+  --color-destructive-soft: var(--destructive-soft);
+  --color-destructive-ink: var(--destructive-ink);
+  --color-part-must: var(--part-must);
+  --color-part-bonus: var(--part-bonus);
+  --color-part-experience: var(--part-experience);
+  --color-part-education: var(--part-education);
+  --color-part-semantic: var(--part-semantic);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   /* System fonts: no network request at build or run time, so the demo works offline. */
-  --font-sans: ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-sans:
+    ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --animate-grow: grow 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-shimmer: shimmer 1.4s linear infinite;
+}
+
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* One visible focus style for every interactive element. */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* A keyword found in the CV. */
+mark {
+  background: var(--success-soft);
+  color: var(--success-ink);
+  border-radius: 3px;
+  padding: 0 0.15em;
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

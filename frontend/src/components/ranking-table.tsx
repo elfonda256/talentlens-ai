@@ -1,52 +1,109 @@
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 import { RecommendationBadge } from "@/components/recommendation-badge";
-import { ScoreBar } from "@/components/score-bar";
+import { ScoreComposition } from "@/components/score-composition";
 import type { RankingRow } from "@/lib/api";
+import { formatNumber, formatYears } from "@/lib/labels";
+import { cn } from "@/lib/utils";
 
 type RankingTableProps = { jobId: string; rows: RankingRow[]; reveal: boolean };
 
+/** Ranked candidates. Each row links to the full explanation of that candidate's score. */
 export function RankingTable({ jobId, rows, reveal }: RankingTableProps) {
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full text-sm">
-        <thead>
-          <tr className="border-b border-border text-left text-muted-foreground">
-            <th className="w-10 py-2 font-medium">#</th>
-            <th className="py-2 font-medium">Kandidat</th>
-            <th className="w-16 py-2 font-medium">Skor</th>
-            <th className="w-40 py-2 font-medium" aria-label="Grafik skor" />
-            <th className="w-36 py-2 font-medium">Rekomendasi</th>
-            <th className="py-2 font-medium">Alasan utama</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row) => (
-            <tr key={row.candidate_id} className="border-b border-border last:border-0">
-              <td className="py-3 text-muted-foreground">{row.rank}</td>
-              <td className="py-3 pr-4">
-                <Link
-                  href={`/jobs/${jobId}/candidates/${row.candidate_id}${reveal ? "?reveal=1" : ""}`}
-                  className="font-medium text-primary underline-offset-4 hover:underline"
-                >
+    <ol className="flex flex-col divide-y divide-border">
+      {rows.map((row) => {
+        const { highlights } = row;
+        const experienceMet =
+          highlights.relevant_years >= highlights.required_years;
+        return (
+          <li key={row.candidate_id}>
+            <Link
+              href={`/jobs/${jobId}/candidates/${row.candidate_id}${reveal ? "?reveal=1" : ""}`}
+              className="group grid grid-cols-[2rem_1fr_auto] items-center gap-x-4 gap-y-3 px-4 py-4 transition-colors hover:bg-secondary/60 sm:px-6 lg:grid-cols-[2rem_minmax(9rem,1.1fr)_minmax(13rem,1.4fr)_9rem_9rem_9.5rem_1rem]"
+            >
+              <span
+                className="text-sm tabular-nums text-muted-foreground"
+                aria-label={`Peringkat ${row.rank}`}
+              >
+                {row.rank}
+              </span>
+              <span className="flex min-w-0 flex-col">
+                <span className="truncate font-medium group-hover:underline">
                   {row.name || row.candidate_id}
-                </Link>
-                {row.extraction_method === "ocr" && (
-                  <span className="ml-2 text-xs text-muted-foreground">OCR</span>
-                )}
-              </td>
-              <td className="py-3 font-semibold tabular-nums">{row.score.toFixed(1)}</td>
-              <td className="py-3 pr-4">
-                <ScoreBar fraction={row.score / 100} />
-              </td>
-              <td className="py-3">
+                </span>
+                <span className="truncate text-sm text-muted-foreground">
+                  {headline(row)}
+                </span>
+              </span>
+              <span className="col-start-3 row-start-1 lg:hidden">
                 <RecommendationBadge value={row.recommendation} />
-              </td>
-              <td className="py-3 text-muted-foreground">{row.knockout_flags[0] ?? row.reasons[0]}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+              </span>
+
+              <span className="col-span-3 flex items-center gap-3 lg:col-span-1">
+                <span className="w-12 shrink-0 text-xl font-semibold tabular-nums">
+                  {formatNumber(row.score)}
+                </span>
+                <ScoreComposition components={highlights.components} />
+              </span>
+              <Fact
+                label="Keterampilan wajib"
+                value={`${highlights.must_matched} dari ${highlights.must_total}`}
+                weak={highlights.must_matched < highlights.must_total / 2}
+              />
+              <Fact
+                label="Pengalaman relevan"
+                value={formatYears(highlights.relevant_years)}
+                weak={!experienceMet}
+              />
+              <span className="hidden lg:block">
+                <RecommendationBadge value={row.recommendation} />
+              </span>
+              <ChevronRight
+                className="hidden size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 lg:block"
+                aria-hidden="true"
+              />
+            </Link>
+          </li>
+        );
+      })}
+    </ol>
+  );
+}
+
+/** The one thing HR should know about this candidate before opening the detail. */
+function headline(row: RankingRow): string {
+  const { highlights } = row;
+  const missing = highlights.must_total - highlights.must_matched;
+  if (highlights.relevant_years < highlights.required_years) {
+    return "Pengalaman di bawah syarat minimal";
+  }
+  if (row.knockout_flags.length > 0) return row.knockout_flags[0];
+  if (missing > 0) return `${missing} keterampilan wajib belum terlihat di CV`;
+  return "Semua syarat wajib terpenuhi";
+}
+
+function Fact({
+  label,
+  value,
+  weak,
+}: {
+  label: string;
+  value: string;
+  weak: boolean;
+}) {
+  return (
+    <span className="hidden flex-col lg:flex">
+      <span
+        className={cn(
+          "text-sm font-medium tabular-nums",
+          weak && "text-destructive-ink",
+        )}
+      >
+        {value}
+      </span>
+      <span className="text-xs text-muted-foreground">{label}</span>
+    </span>
   );
 }

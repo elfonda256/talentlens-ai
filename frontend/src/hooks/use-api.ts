@@ -27,5 +27,7 @@ export function useApi<T>(load: () => Promise<T>) {
 }
 
 export function errorMessage(error: unknown): string {
-  return error instanceof Error ? error.message : "Terjadi galat yang tidak dikenal";
+  return error instanceof Error
+    ? error.message
+    : "Terjadi galat yang tidak dikenal";
 }

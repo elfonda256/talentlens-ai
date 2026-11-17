@@ -1,6 +1,6 @@
 "use client";
 
-import { BriefcaseBusiness, ChevronRight } from "lucide-react";
+import { BriefcaseBusiness, ChevronRight, FileText } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -9,7 +9,9 @@ import { FilePicker } from "@/components/file-picker";
 import { PageShell } from "@/components/page-shell";
 import { SystemStatus } from "@/components/system-status";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { EmptyState } from "@/components/ui/empty-state";
+import { Notice } from "@/components/ui/notice";
+import { Skeleton } from "@/components/ui/skeleton";
 import { errorMessage, useApi } from "@/hooks/use-api";
 import { createJob, listJobs } from "@/lib/api";
 
@@ -34,49 +36,60 @@ export default function HomePage() {
   return (
     <PageShell
       title="Lowongan"
-      description="Unggah deskripsi lowongan, lalu unggah CV pelamar untuk disaring dan diperingkat."
+      description="Mulai dari deskripsi lowongan. Setelah itu unggah CV pelamar, dan sistem menyusun peringkat beserta alasannya."
+      actions={
+        <FilePicker
+          label="Unggah deskripsi lowongan"
+          busyLabel="Membaca lowongan…"
+          busy={uploading}
+          onFiles={handleJobFile}
+        />
+      }
     >
       <SystemStatus />
+      {uploadError && <Notice tone="error">{uploadError}</Notice>}
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Unggah deskripsi lowongan</CardTitle>
-          <CardDescription>
-            PDF, DOCX, atau TXT. Sistem membaca syarat minimal, bidang pendidikan, dan keterampilan.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="flex flex-col gap-3">
-          <div>
-            <FilePicker label="Pilih berkas lowongan" busy={uploading} onFiles={handleJobFile} />
-          </div>
-          {uploadError && <p className="text-sm text-destructive">{uploadError}</p>}
-        </CardContent>
-      </Card>
-
-      <section className="flex flex-col gap-3">
-        <h2 className="text-base font-semibold">Lowongan tersimpan</h2>
-        {jobs.loading && <p className="text-sm text-muted-foreground">Memuat…</p>}
+      <section aria-label="Lowongan tersimpan" className="flex flex-col gap-3">
+        {jobs.loading && (
+          <>
+            <Skeleton className="h-[74px]" />
+            <Skeleton className="h-[74px]" />
+          </>
+        )}
         {jobs.error !== undefined && (
-          <p className="text-sm text-destructive">{errorMessage(jobs.error)}</p>
+          <Notice tone="error">{errorMessage(jobs.error)}</Notice>
         )}
         {jobs.data?.length === 0 && (
-          <p className="text-sm text-muted-foreground">Belum ada lowongan. Unggah satu untuk memulai.</p>
+          <EmptyState icon={FileText} title="Belum ada lowongan">
+            Unggah berkas deskripsi lowongan (PDF, DOCX, atau TXT). Sistem
+            membaca syarat pengalaman, pendidikan, dan keterampilan dari berkas
+            itu.
+          </EmptyState>
         )}
         {jobs.data?.map((job) => (
-          <Link key={job.job_id} href={`/jobs/${job.job_id}`}>
-            <Card className="transition-colors hover:bg-secondary">
-              <CardContent className="flex items-center gap-4 p-4">
-                <BriefcaseBusiness className="size-5 text-muted-foreground" />
-                <div className="flex flex-1 flex-col">
-                  <span className="font-medium">{job.title}</span>
-                  <span className="text-sm text-muted-foreground">{job.candidate_count} kandidat</span>
-                </div>
-                <Badge variant={job.screened ? "success" : "secondary"}>
-                  {job.screened ? "Sudah disaring" : "Belum disaring"}
-                </Badge>
-                <ChevronRight className="size-4 text-muted-foreground" />
-              </CardContent>
-            </Card>
+          <Link
+            key={job.job_id}
+            href={`/jobs/${job.job_id}`}
+            className="group flex items-center gap-4 rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/40 hover:bg-secondary/60"
+          >
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-secondary text-primary">
+              <BriefcaseBusiness className="size-5" aria-hidden="true" />
+            </span>
+            <span className="flex min-w-0 flex-1 flex-col">
+              <span className="truncate font-medium">{job.title}</span>
+              <span className="text-sm text-muted-foreground">
+                {job.candidate_count === 0
+                  ? "Belum ada CV"
+                  : `${job.candidate_count} kandidat`}
+              </span>
+            </span>
+            <Badge variant={job.screened ? "success" : "secondary"}>
+              {job.screened ? "Sudah disaring" : "Belum disaring"}
+            </Badge>
+            <ChevronRight
+              className="size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5"
+              aria-hidden="true"
+            />
           </Link>
         ))}
       </section>

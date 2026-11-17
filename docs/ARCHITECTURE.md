@@ -73,7 +73,8 @@ CV       -> cv_parsing -> CandidateProfile -> embedding -> vector_index (FAISS)
 | `vector_index.py` | Indeks FAISS dan pencarian per kandidat | tidak ada |
 | `matching.py` | Kemiripan semantik dan skor berbobot | `embedding`, `vector_index`, `taxonomy` |
 | `explanation.py` | Aturan keputusan dan alasan tertulis | tidak ada |
-| `hr_summary.py` | Ringkasan HR lewat Gemini, dengan templat cadangan | pengaturan |
+| `match_breakdown.py` | Tampilan penjelasan: rincian skor, kecocokan per syarat, relevansi jabatan. Tidak ikut menilai | `matching`, `taxonomy` |
+| `hr_summary.py` | Catatan recruiter lewat Gemini, dengan templat bersusunan sama | pengaturan |
 | `store.py` | Penyimpanan JSON | skema |
 | `screening.py` | Orkestrasi; satu-satunya modul yang dipanggil API | semua di atas |
 

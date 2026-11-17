@@ -61,26 +61,47 @@ Jalankan `python scripts/check_ai_backends.py` untuk melihat nilainya di mesin A
 - Potongan CV tiap kandidat ditambahkan sebagai satu blok berurutan. Pencarian "bukti terbaik milik kandidat X" dibatasi ke blok itu dengan `IDSelectorRange`.
 - Indeks dibangun ulang setiap screening dijalankan dan tidak disimpan ke disk.
 
-## Ringkasan HR (Gemini)
+## Tampilan penjelasan (tidak ikut menilai)
+
+`services/match_breakdown.py` menyusun ulang hasil yang sudah ada menjadi bentuk yang mudah ditampilkan.
+Modul ini tidak menghitung skor apa pun.
+
+| Tampilan | Isi | Sumber |
+| --- | --- | --- |
+| Rincian skor | Lima baris: keterampilan wajib, keterampilan tambahan, pengalaman, pendidikan, kesesuaian isi CV; masing-masing dengan poin, batas poin, dan alasannya | `contributions` dan bobot lowongan |
+| Kecocokan per syarat | Status tiap keterampilan (ditemukan, tersirat, tidak ditemukan) beserta kata yang tertulis di CV | daftar keluaran pencocok dan taksonomi |
+| Relevansi tiap jabatan | Relevan, sebagian relevan, atau tidak dihitung | aturan `relevant_months` milik pencocok, ditanyakan per jabatan |
+| Syarat yang belum terpenuhi | Syarat wajib yang dilanggar dan keterampilan wajib yang tidak ditemukan | `knockout_flags`, `missing_must_skills` |
+
+Skor punya empat komponen. Komponen keterampilan ditampilkan sebagai dua baris, wajib dan tambahan,
+dengan membaginya seperti pencocok menimbangnya: 1 untuk tiap keterampilan wajib dan 0,5 untuk tiap
+keterampilan tambahan. Jumlah kedua baris itu sama dengan poin komponen keterampilan.
+
+Penanda kata kunci di antarmuka memakai daftar kata dari taksonomi. Karena pencocokannya per kata,
+nama perusahaan yang kebetulan memuat kata kunci juga ikut ditandai.
+
+## Catatan recruiter (Gemini)
 
 - Dibuat atas permintaan, per kandidat, lewat tombol di halaman rincian.
-- Gemini menerima fakta yang sudah dihitung: posisi, skor, rekomendasi, kontribusi, keterampilan cocok dan tidak ditemukan, alasan, dan tiga kutipan CV yang sudah disamarkan. Nama, kontak, ID kandidat, dan atribut pribadi tidak dikirim.
-- Prompt melarang Gemini menghitung atau mengubah skor, peringkat, dan rekomendasi.
-- Bila kunci tidak ada atau panggilan gagal, narasi deterministik dikembalikan dengan `source: "template"` dan catatan penyebabnya. Antarmuka menampilkan sumbernya.
-- Ringkasan dari Gemini disimpan; menjalankan ulang screening menghapusnya karena peringkat bisa berubah.
+- Susunannya tetap: kesimpulan, kecocokan terhadap posisi, kekuatan, kekurangan, risiko, hal yang perlu digali saat wawancara, dan alasan rekomendasi.
+- Gemini diminta membalas dalam JSON dengan susunan itu. Templat bawaan mengisi susunan yang sama dari fakta yang sama, sehingga tampilannya tidak berubah bila Gemini tidak tersedia; hanya label sumbernya yang berbeda.
+- Gemini menerima fakta yang sudah dihitung: posisi, skor, rekomendasi, keterampilan ditemukan dan tidak ditemukan, pengalaman relevan, jabatan yang relevan, status pendidikan, dan tiga kutipan CV yang sudah disamarkan. Nama, kontak, ID kandidat, dan atribut pribadi tidak dikirim.
+- Prompt melarang Gemini menghitung atau mengubah skor, peringkat, dan rekomendasi, dan memintanya mengabaikan instruksi di dalam kutipan CV.
+- Templat dipakai bila kunci tidak ada, panggilan gagal, jawaban bukan JSON, atau ada bagian yang kosong.
+- Catatan dari Gemini disimpan; menjalankan ulang screening menghapusnya karena peringkat bisa berubah.
 
 ## API
 
 | Method | Endpoint | Fungsi |
 | --- | --- | --- |
-| POST | `/api/v1/jobs` | Unggah lowongan, kembalikan kriteria |
+| POST | `/api/v1/jobs` | Unggah lowongan, kembalikan kriteria. Dokumen yang tampak seperti CV ditolak (422) |
 | GET | `/api/v1/jobs`, `/api/v1/jobs/{job_id}` | Daftar lowongan; kriteria satu lowongan |
 | POST | `/api/v1/jobs/{job_id}/candidates` | Unggah satu atau beberapa CV; hasil dilaporkan per berkas |
 | GET | `/api/v1/jobs/{job_id}/candidates` | Daftar kandidat |
 | POST | `/api/v1/jobs/{job_id}/screen` | Jalankan embedding, pencocokan, skor, dan peringkat |
-| GET | `/api/v1/jobs/{job_id}/ranking` | Peringkat dengan skor dan alasan |
-| GET | `/api/v1/jobs/{job_id}/candidates/{candidate_id}` | Rincian skor, bukti, dan profil |
-| POST | `/api/v1/jobs/{job_id}/candidates/{candidate_id}/summary` | Ringkasan HR |
+| GET | `/api/v1/jobs/{job_id}/ranking` | Peringkat dengan skor, alasan, dan ringkasan kecocokan tiap kandidat |
+| GET | `/api/v1/jobs/{job_id}/candidates/{candidate_id}` | Rincian skor, kecocokan per syarat, relevansi jabatan, bukti, dan profil |
+| POST | `/api/v1/jobs/{job_id}/candidates/{candidate_id}/summary` | Catatan recruiter |
 | POST | `/api/v1/cvs/parse` | Parsing satu CV tanpa menyimpan |
 
 Identitas kandidat tersembunyi secara default; tambahkan `?reveal=true` untuk menampilkannya.
@@ -89,14 +110,13 @@ Kode status: 404 lowongan atau kandidat tidak ada, 409 belum ada CV atau screeni
 
 ## Antarmuka
 
-| Halaman yang diminta | Lokasi |
+| Rute | Isi |
 | --- | --- |
-| Upload Job Description | `/`, kartu "Unggah deskripsi lowongan" |
-| Upload CV | `/jobs/[jobId]`, kartu "Unggah CV" |
-| Run Screening | `/jobs/[jobId]`, tombol "Jalankan screening" |
-| Candidate Ranking | `/jobs/[jobId]`, tabel "Peringkat kandidat" |
-| Candidate Detail | `/jobs/[jobId]/candidates/[candidateId]` |
-| AI Summary | `/jobs/[jobId]/candidates/[candidateId]`, kartu "Ringkasan AI untuk HR" |
+| `/` | Daftar lowongan dan unggah deskripsi lowongan |
+| `/jobs/[jobId]` | Kriteria penilaian, unggah CV, tombol screening, ringkasan (total, direkomendasikan, perlu ditinjau, tidak lolos) yang juga menyaring daftar, dan peringkat dengan bilah susunan skor |
+| `/jobs/[jobId]/candidates/[candidateId]` | Catatan recruiter, asal skor, kecocokan per syarat, bukti dari CV dengan kata kunci ditandai, tingkat kecocokan, dan kualitas pembacaan dokumen |
+
+Setiap bagian punya keadaan memuat (kerangka), kosong (petunjuk langkah berikutnya), dan galat (pesan yang menjelaskan penyebabnya).
 
 ## Batasan
 

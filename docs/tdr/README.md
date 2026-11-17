@@ -23,6 +23,10 @@ Satu berkas per keputusan penting, dengan empat bagian yang ditetapkan governanc
 | [0016](0016-json-store-no-real-cvs-in-repo.md) | Penyimpanan JSON; CV asli dan dokumen perusahaan tidak masuk repositori | 3 |
 | [0017](0017-jobs-api-blind-by-default.md) | API berpusat pada lowongan; identitas tersembunyi secara default | 3 |
 | [0018](0018-three-routes-client-fetching.md) | Enam tampilan yang diminta ditempatkan pada tiga rute | 3 |
+| [0019](0019-explanation-views-are-presentation-only.md) | Tampilan penjelasan dihitung terpisah dan tidak ikut menilai | 4 |
+| [0020](0020-one-note-shape-for-gemini-and-template.md) | Catatan recruiter punya satu susunan, siapa pun penulisnya | 4 |
+| [0021](0021-reject-cv-uploaded-as-job.md) | Dokumen yang tampak seperti CV ditolak saat diunggah sebagai lowongan | 4 |
+| [0022](0022-ui-system-for-explanation.md) | Satu bahasa visual untuk penjelasan skor | 4 |
 
 TDR baru memakai nomor berikutnya dan nama berkas `NNNN-ringkasan-singkat.md`. TDR yang sudah diterima tidak diubah isinya;
 bila keputusan berganti, buat TDR baru yang menyatakan menggantikan yang lama.

@@ -59,7 +59,7 @@ def build_breakdown(
 def build_highlights(
     job: JobProfile, profile: CandidateProfile, result: ScreeningResult
 ) -> MatchHighlights:
-    must, bonus = _skill_matches(job, profile, result)
+    must, bonus = _skill_matches(job, profile, result, with_terms=False)
     experience = _experience_match(job, profile)
     education = _education_match(job, profile, result)
     return MatchHighlights(
@@ -78,11 +78,12 @@ def _count_found(skills: list[SkillMatch]) -> int:
 
 
 def _skill_matches(
-    job: JobProfile, profile: CandidateProfile, result: ScreeningResult
+    job: JobProfile, profile: CandidateProfile, result: ScreeningResult, with_terms: bool = True
 ) -> tuple[list[SkillMatch], list[SkillMatch]]:
     """Status of every skill requirement, read back from the lists the matcher produced."""
     matched = set(result.matched_skills)
-    terms = taxonomy.find_terms(profile.redacted_text)
+    # Scanning the whole CV for keywords is only worth it where they are displayed.
+    terms = taxonomy.find_terms(profile.redacted_text) if with_terms else {}
     must: list[SkillMatch] = []
     bonus: list[SkillMatch] = []
     for unit in matching.requirement_units(job):
@@ -194,7 +195,8 @@ def _components(
             "experience",
             share["experience"],
             result.contributions["experience"],
-            f"{experience.relevant_years:.1f} tahun pengalaman yang relevan dengan posisi; "
+            f"{experience.relevant_years:.1f}".replace(".", ",")
+            + " tahun pengalaman yang relevan dengan posisi; "
             f"syarat minimal {experience.required_years:g} tahun",
         ),
         (

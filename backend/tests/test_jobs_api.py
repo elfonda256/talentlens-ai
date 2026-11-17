@@ -155,3 +155,20 @@ def test_results_survive_a_restart(service, settings):
     after, backend = reopened.get_ranking(job.job_id)
 
     assert after == before and backend == "tfidf"
+
+
+VACANCIES_THAT_MUST_BE_ACCEPTED = [
+    # has a contact address, but also a section heading
+    "Drafter\nJob Requirements:\nMinimal 1 tahun pengalaman AutoCAD\nKirim ke hr@contoh.co.id",
+    # Indonesian heading
+    "Staf Admin\nSyarat\nTeliti dan rapi dalam bekerja, mampu mengoperasikan komputer",
+    # no heading at all, and no personal contact details either
+    "Arsitek Senior, minimal 5 tahun pengalaman, menguasai Revit dan AutoCAD untuk gedung",
+]
+
+
+@pytest.mark.parametrize("text", VACANCIES_THAT_MUST_BE_ACCEPTED)
+def test_real_vacancies_are_not_mistaken_for_a_cv(client, text):
+    response = client.post(API, files={"file": ("lowongan.txt", text.encode())})
+
+    assert response.status_code == 201

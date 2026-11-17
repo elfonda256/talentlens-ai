@@ -218,9 +218,10 @@ class ScreeningService:
         return self._embedder
 
 
+# A short line that names a vacancy section, in English or Indonesian ("Job Requirements:").
 JOB_SECTION_HEADING = re.compile(
-    r"^\s*(requirements?|qualifications?|responsibilit(?:y|ies)|job description|kualifikasi|"
-    r"persyaratan|tanggung jawab|deskripsi pekerjaan)\s*:?\s*$",
+    r"^[^\n]{0,25}\b(requirements?|qualifications?|responsibilit(?:y|ies)|job description|"
+    r"kualifikasi|persyaratan|syarat|kriteria|tanggung jawab|deskripsi pekerjaan)\b[^\n]{0,15}$",
     re.IGNORECASE | re.MULTILINE,
 )
 

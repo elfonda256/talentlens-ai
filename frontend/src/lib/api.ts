@@ -1,6 +1,7 @@
 /** Single place where the frontend talks to the backend. */
 
-export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+export const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 const API_V1 = `${API_BASE_URL}/api/v1`;
 
 export const API_DOCS_URL = `${API_BASE_URL}/docs`;
@@ -86,10 +87,72 @@ export type ScreeningResult = {
   narrative: string;
 };
 
+export type ComponentKey =
+  "must_skills" | "bonus_skills" | "experience" | "education" | "semantic";
+
+export type ComponentScore = {
+  key: ComponentKey;
+  weight_percent: number;
+  score_percent: number;
+  points: number;
+  max_points: number;
+  explanation: string;
+};
+
+export type MatchStatus = "matched" | "implied" | "missing";
+
+export type SkillMatch = {
+  label: string;
+  status: MatchStatus;
+  terms: string[];
+};
+
+export type ExperienceRelevance = {
+  title: string;
+  company: string;
+  start: string;
+  end: string;
+  months: number;
+  description: string;
+  relevance: "relevant" | "partial" | "not_relevant";
+  terms: string[];
+};
+
+export type MatchBreakdown = {
+  components: ComponentScore[];
+  must_have_skills: SkillMatch[];
+  bonus_skills: SkillMatch[];
+  experience: {
+    relevant_years: number;
+    total_years: number;
+    required_years: number;
+    met: boolean;
+  };
+  experiences: ExperienceRelevance[];
+  education: {
+    status: "match" | "related" | "mismatch" | "not_required";
+    found_fields: string[];
+    required_fields: string[];
+    level_below_requirement: boolean;
+  };
+  unmet_requirements: string[];
+};
+
+export type MatchHighlights = {
+  must_matched: number;
+  must_total: number;
+  bonus_matched: number;
+  bonus_total: number;
+  relevant_years: number;
+  required_years: number;
+  components: ComponentScore[];
+};
+
 export type RankingRow = ScreeningResult & {
   file_name: string;
   extraction_method: string;
   name: string;
+  highlights: MatchHighlights;
 };
 
 export type Ranking = {
@@ -100,8 +163,8 @@ export type Ranking = {
 
 export type CandidateDetail = {
   result: ScreeningResult;
+  breakdown: MatchBreakdown;
   summary: string;
-  experiences: { title: string; company: string; start: string; end: string; months: number }[];
   education: { degree: string; level: number; field: string }[];
   skills: string[];
   total_experience_months: number;
@@ -112,7 +175,13 @@ export type CandidateDetail = {
 };
 
 export type HRSummary = {
-  text: string;
+  headline: string;
+  fit: string;
+  strengths: string[];
+  concerns: string[];
+  risks: string[];
+  interview_focus: string[];
+  recommendation_reason: string;
   source: "gemini" | "template";
   model: string;
   note: string;
@@ -129,10 +198,16 @@ export class ApiError extends Error {
 }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(`${API_V1}${path}`, { cache: "no-store", ...init });
+  const response = await fetch(`${API_V1}${path}`, {
+    cache: "no-store",
+    ...init,
+  });
   if (!response.ok) {
     const body = await response.json().catch(() => null);
-    const detail = typeof body?.detail === "string" ? body.detail : `Galat ${response.status}`;
+    const detail =
+      typeof body?.detail === "string"
+        ? body.detail
+        : `Galat ${response.status}`;
     throw new ApiError(response.status, detail);
   }
   return (await response.json()) as T;
@@ -149,7 +224,8 @@ const withReveal = (reveal: boolean) => (reveal ? "?reveal=true" : "");
 export const getHealth = () => request<HealthResponse>("/health");
 export const listJobs = () => request<JobSummary[]>("/jobs");
 export const getJob = (jobId: string) => request<JobProfile>(`/jobs/${jobId}`);
-export const createJob = (file: File) => upload<JobProfile>("/jobs", "file", [file]);
+export const createJob = (file: File) =>
+  upload<JobProfile>("/jobs", "file", [file]);
 
 export const listCandidates = (jobId: string) =>
   request<CandidateListItem[]>(`/jobs/${jobId}/candidates`);
@@ -161,9 +237,19 @@ export const runScreening = (jobId: string) =>
 export const getRanking = (jobId: string, reveal: boolean) =>
   request<Ranking>(`/jobs/${jobId}/ranking${withReveal(reveal)}`);
 
-export const getCandidateDetail = (jobId: string, candidateId: string, reveal: boolean) =>
-  request<CandidateDetail>(`/jobs/${jobId}/candidates/${candidateId}${withReveal(reveal)}`);
-export const createHRSummary = (jobId: string, candidateId: string, refresh: boolean) =>
+export const getCandidateDetail = (
+  jobId: string,
+  candidateId: string,
+  reveal: boolean,
+) =>
+  request<CandidateDetail>(
+    `/jobs/${jobId}/candidates/${candidateId}${withReveal(reveal)}`,
+  );
+export const createHRSummary = (
+  jobId: string,
+  candidateId: string,
+  refresh: boolean,
+) =>
   request<HRSummary>(
     `/jobs/${jobId}/candidates/${candidateId}/summary${refresh ? "?refresh=true" : ""}`,
     { method: "POST" },
