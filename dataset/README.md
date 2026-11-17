@@ -27,7 +27,7 @@ business-analyst, customer-service.
 
 | Category | Status |
 |---|---|
-| architecture | **Frozen: Golden Benchmark v1.0.0** (17 Nov 2026), see `architecture/DATASET_REPORT.md` |
+| architecture | **Golden Benchmark v1.0.0 (Approved)** — frozen 17 Nov 2026, see `architecture/DATASET_REPORT.md` |
 | all others | Not started |
 
 ## How the benchmark is organised

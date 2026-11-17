@@ -1,6 +1,6 @@
 # Architecture Dataset Report — Golden Benchmark v1.0.0
 
-**Status:** frozen on 17 November 2026 · **Baseline:** commit `ea2345f` (`sprint-4`), TF-IDF, reference date 2026-11-17
+**Status:** Golden Benchmark v1.0.0 (Approved by the Product Owner, 17 November 2026) · frozen on 17 November 2026 · **Baseline:** commit `ea2345f` (`sprint-4`), TF-IDF, reference date 2026-11-17
 
 This is the first golden benchmark for TalentLens AI. Any change to it from here needs a new version
 number. The test and benchmark data is separate from the 5 company CVs used in the demo.
@@ -52,34 +52,62 @@ number. The test and benchmark data is separate from the 5 company CVs used in t
 | Name extracted correctly | 12/20 |
 | Experience entries found | 11/20 |
 
-## Expected known failures
+## Findings: parser defects and business rule decisions
 
-These are findings in the application, recorded in `pipeline_baseline.known_failures`. They are not fixture errors.
+The baseline differences above have two different causes, and they are handled differently.
 
-| # | Failure | Affects | Where |
+- **Group A — Parser defects.** The application misreads a document. These are bugs, and they go to
+  the backlog for future parser work.
+- **Group B — Business rule decisions.** The application reads the document correctly and scores it
+  as its rules intend. The benchmark expects a different outcome. These rules are intentional and stay
+  unchanged until after the demo.
+
+Every item is also recorded in `pipeline_baseline.known_failures` in the fixtures. They are not
+fixture errors.
+
+### Group A — Parser defects (backlog)
+
+| ID | Defect | Affects | Where |
 |---|---|---|---|
-| 1 | VAC-05 is refused at upload as "looks like a CV" | ARC-VAC-05 | `screening._looks_like_cv` |
-| 2 | VAC-04's requirements aren't read (heading "Kualifikasi Wajib" isn't recognised), so min years = 0 and no degree is required | ARC-VAC-04 | `jd_parsing.parse_job` |
-| 3 | "A Master's degree is an advantage" is read as minimum level S2, so every S1 candidate is flagged and the perfect CV goes to Review | ARC-VAC-01 → CV-01, 03 | `jd_parsing` level rule |
-| 4 | "D3/S1" is read as minimum S1, so the D3 candidate is flagged | ARC-VAC-02 → CV-07 | `jd_parsing` level rule |
-| 5 | "2–4 years" is not read as a minimum | ARC-VAC-05 | `MIN_YEARS` regex |
-| 6 | "East/West Java" becomes the skill "programming" (open issue M-2) | ARC-VAC-03, -05, CV-10 | taxonomy |
-| 7 | 0 experience entries found in 9 CVs: two-column (03, 17), "Work"/"Pengalaman Kerja Praktik"/tables/"Where I've Worked" (04, 05, 08, 19, 20), no dates (06), no headings (15) | 9 CVs | `cv_parsing` (M-7 and others) |
-| 8 | Education not found in two-column sidebars and unusual headings | CV-10, 20 (15 no headings) | `cv_parsing` |
-| 9 | Name taken from a heading ("Data Pribadi", "Curiculum Vitae", "Riwayat Hidup"), titles kept (Ir., S.Ars., S.T.), or missing | 8 CVs | `cv_parsing` name rule |
-| 10 | No overqualification rule | CV-02 | scoring |
+| PD-01 | Vacancy misclassified as a CV: VAC-05 is refused at upload as "looks like a CV" | ARC-VAC-05 | `screening._looks_like_cv` |
+| PD-02 | Vacancy headings not recognised: "Kualifikasi Wajib" is missed, so VAC-04's requirements are not read (minimum years becomes 0, no degree required) | ARC-VAC-04 | `jd_parsing.parse_job` |
+| PD-03 | Master's degree read as mandatory: "A Master's degree is an advantage" becomes minimum level S2, so every S1 candidate is flagged and the perfect CV goes to Review | ARC-VAC-01 → CV-01, 03 | `jd_parsing` level rule |
+| PD-04 | "East/West Java" read as the skill "programming" (open issue M-2) | ARC-VAC-03, -05, CV-10 | taxonomy |
+| PD-05 | Work experience not extracted: 0 entries in 9 CVs — two-column (03, 17); "Work", "Pengalaman Kerja Praktik", tables, "Where I've Worked" (04, 05, 08, 19, 20); no dates (06); no headings (15) | 9 CVs | `cv_parsing` (M-7 and others) |
+| PD-06 | Candidate name extracted incorrectly: taken from a heading ("Data Pribadi", "Curiculum Vitae", "Riwayat Hidup"), academic titles kept (Ir., S.Ars., S.T.), or missing | 8 CVs | `cv_parsing` name rule |
+| PD-07 | "D3/S1" read as minimum S1, so the D3 candidate is flagged | ARC-VAC-02 → CV-07 | `jd_parsing` level rule |
+| PD-08 | "2–4 years" not read as a minimum | ARC-VAC-05 | `MIN_YEARS` regex |
+| PD-09 | Education not found in two-column sidebars and under unusual headings | CV-10, 20 (15: no headings) | `cv_parsing` |
 
-## Scoring-model gaps (need a decision, not a parser fix)
+PD-01 to PD-06 were classified by the Product Owner. PD-07 to PD-09 are the same kind of defect (the
+document is misread), so they are listed here too.
 
-With correctly parsed input, the app's own formulas would still score 7 benchmark "Review" candidates as Recommended: CV-06, 08, 10, 11, 14, 18 and 20. CV-02 is the same case via its overqualified override. The reasons are:
-- experience scores 100 when the job's minimum is 0 years;
-- domain experience (hospitals, remote sites) isn't modelled;
-- related majors get 0.6 credit with no knockout flag;
-- missing mandatory certificates and portfolios aren't knockouts.
+### Group B — Business rule decisions (unchanged until after the demo)
 
-Today these CVs mostly land in Review only because parser failures lower their scores. **Fixing the parser alone will therefore move them to Recommended.** Parser fixes should be planned together with these scoring rules.
+**Decision (Product Owner, 17 November 2026):** keep the current scoring rules for the demo. Do not
+tune the scoring model before the demo.
 
-The benchmark uses decision bands of 75/50. The app shortlists at 70 and rejects below 45. Each fixture carries both views. Aligning them is a Product Owner decision.
+| Rule | Current behaviour (kept) |
+|---|---|
+| Decision thresholds | Recommended at 70 or above, Review from 45 to below 70, Reject below 45. The benchmark's 75/50 bands are reference only; each fixture keeps both views. |
+| Related major | A related field of study gets 0.6 education credit, with no knockout flag |
+| Minimum experience = 0 | When a vacancy sets no minimum, the experience component scores 100 |
+
+Related scoring questions found by the benchmark, left for the same post-demo discussion:
+
+- No overqualification rule (CV-02).
+- Domain experience (hospitals, remote sites) is not modelled.
+- Missing mandatory certificates and portfolios are not knockouts.
+
+### How the two groups interact
+
+With correctly parsed input, the current rules would score 7 benchmark "Review" candidates as
+Recommended: CV-06, 08, 10, 11, 14, 18 and 20. CV-02 is the same case through its overqualified
+override. Today they mostly land in Review only because parser defects lower their scores.
+
+**Fixing Group A without revisiting Group B will therefore move these candidates to Recommended.**
+Plan the parser backlog together with the post-demo scoring discussion, and re-run this benchmark
+after each parser fix.
 
 ## Reproduce
 
