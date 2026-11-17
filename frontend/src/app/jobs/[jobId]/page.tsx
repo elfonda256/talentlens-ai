@@ -24,7 +24,6 @@ import {
   runScreening,
   type UploadOutcome,
 } from "@/lib/api";
-import { EMBEDDING_LABEL } from "@/lib/labels";
 
 const NOT_SCREENED = 409;
 
@@ -208,11 +207,9 @@ function JobView() {
               </div>
             )}
             <p className="border-t border-border px-4 py-3 text-xs text-muted-foreground sm:px-6">
-              Kemiripan makna dihitung dengan{" "}
-              {EMBEDDING_LABEL[ranking.data.embedding_backend] ??
-                ranking.data.embedding_backend}
-              . Bilah skor menunjukkan sumbangan tiap komponen terhadap skor
-              akhir.
+              Skor AI menggabungkan keterampilan, pengalaman, pendidikan, dan
+              kesesuaian isi CV dengan lowongan. Bilah menunjukkan sumbangan
+              tiap komponen; keputusan akhir tetap ada pada HR.
             </p>
           </Card>
         </>

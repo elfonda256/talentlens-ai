@@ -225,8 +225,8 @@ def _components(
             "semantic",
             share["semantic"],
             result.contributions["semantic"],
-            f"Kemiripan makna antara isi CV dan {criteria} butir pada lowongan, "
-            "dihitung dengan model embedding",
+            f"Seberapa sesuai isi CV dengan {criteria} butir pada lowongan, "
+            "dinilai AI dari makna kalimat, bukan sekadar kata yang sama",
         ),
     ]
     return [

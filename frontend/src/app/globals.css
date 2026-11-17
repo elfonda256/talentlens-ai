@@ -17,6 +17,10 @@
   --ring: oklch(0.55 0.13 258);
 
   /* Verdicts: a solid tone for icons and bars, a soft tint for surfaces, an ink for text on the tint. */
+  /* Brand blue-violet from the TalentLens AI logo */
+  --brand: oklch(0.52 0.22 275);
+  --brand-soft: oklch(0.95 0.035 275);
+  --brand-ink: oklch(0.4 0.19 275);
   --success: oklch(0.56 0.12 165);
   --success-soft: oklch(0.955 0.035 165);
   --success-ink: oklch(0.37 0.09 165);
@@ -48,6 +52,9 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-ink: var(--brand-ink);
   --color-success: var(--success);
   --color-success-soft: var(--success-soft);
   --color-success-ink: var(--success-ink);

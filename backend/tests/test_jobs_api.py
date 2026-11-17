@@ -39,7 +39,15 @@ def test_job_description_is_parsed_and_listed(client):
 
     assert job["title"] == "Junior Architect" and job["min_years_experience"] == 2
     assert listed == [
-        {"job_id": job_id, "title": "Junior Architect", "candidate_count": 0, "screened": False}
+        {
+            "job_id": job_id,
+            "title": "Junior Architect",
+            "candidate_count": 0,
+            "screened": False,
+            "shortlist": 0,
+            "review": 0,
+            "reject": 0,
+        }
     ]
 
 
@@ -88,7 +96,7 @@ def test_full_screening_flow(client):
 
     summary = client.post(f"{API}/{job_id}/candidates/{top['candidate_id']}/summary").json()
     assert summary["source"] == "template"
-    assert "layak dilanjutkan ke tahap wawancara" in summary["headline"]
+    assert "Kandidat kuat untuk" in summary["headline"]
     assert summary["strengths"] and summary["recommendation_reason"]
 
 
@@ -172,3 +180,18 @@ def test_real_vacancies_are_not_mistaken_for_a_cv(client, text):
     response = client.post(API, files={"file": ("lowongan.txt", text.encode())})
 
     assert response.status_code == 201
+
+
+def test_job_list_counts_decisions_after_screening(client):
+    job_id = create_job(client)
+    upload(client, job_id, "cv_raka.pdf", "cv_dimas.pdf", "cv_sinta.pdf", "cv_citra.txt")
+    run = client.post(f"{API}/{job_id}/screen").json()
+
+    listed = client.get(API).json()[0]
+
+    assert listed["screened"] is True
+    assert (listed["shortlist"], listed["review"], listed["reject"]) == (
+        run["shortlist"],
+        run["review"],
+        run["reject"],
+    )

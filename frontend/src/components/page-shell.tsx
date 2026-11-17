@@ -39,7 +39,7 @@ export function PageShell({
             />
           </Link>
           <span className="hidden border-l border-border pl-3 text-sm text-muted-foreground sm:inline">
-            Penyaringan CV dengan penjelasan
+            Platform rekrutmen berbasis AI
           </span>
         </div>
       </header>

@@ -31,6 +31,7 @@ Satu berkas per keputusan penting, dengan empat bagian yang ditetapkan governanc
 | [0024](0024-software-skills-are-never-implied.md) | Keterampilan perangkat lunak tidak pernah dianggap "tersirat" | QA 2 |
 | [0025](0025-parser-hardening-from-real-layouts.md) | Parser diperkuat dari tata letak CV nyata, diuji dengan fixture sintetis | QA 2 |
 | [0026](0026-server-side-relay-and-shared-key.md) | API dilindungi kunci bersama, dan peramban memanggilnya lewat relay di server frontend | Hardening |
+| [0027](0027-assessment-panels-are-presentation-only.md) | Panel keputusan dan badge kandidat hanya menafsirkan hasil, tidak ikut menilai | 5 |
 
 TDR baru memakai nomor berikutnya dan nama berkas `NNNN-ringkasan-singkat.md`. TDR yang sudah diterima tidak diubah isinya;
 bila keputusan berganti, buat TDR baru yang menyatakan menggantikan yang lama.

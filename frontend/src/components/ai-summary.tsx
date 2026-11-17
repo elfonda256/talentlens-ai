@@ -4,14 +4,13 @@ import {
   CircleAlert,
   LoaderCircle,
   MessagesSquare,
-  ShieldAlert,
+  RefreshCw,
   Sparkles,
   ThumbsUp,
   type LucideIcon,
 } from "lucide-react";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -22,25 +21,35 @@ import {
 } from "@/components/ui/card";
 import { Notice } from "@/components/ui/notice";
 import { Skeleton } from "@/components/ui/skeleton";
-import { errorMessage } from "@/hooks/use-api";
+import { errorMessage, useApi } from "@/hooks/use-api";
 import { createHRSummary, type HRSummary } from "@/lib/api";
 
 type AiSummaryProps = { jobId: string; candidateId: string };
 
-/** Recruiter-style note on request. The AI words the explanation; it never changes the score. */
+/**
+ * The recruiter's note, written as soon as the page opens. The AI words the explanation from
+ * facts the system already computed; it never changes the score. Risks have their own panel.
+ */
 export function AiSummary({ jobId, candidateId }: AiSummaryProps) {
-  const [summary, setSummary] = useState<HRSummary | null>(null);
+  const first = useApi(
+    useCallback(
+      () => createHRSummary(jobId, candidateId, false),
+      [jobId, candidateId],
+    ),
+  );
+  const [rewritten, setRewritten] = useState<HRSummary | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  const summary = rewritten ?? first.data;
+  const writing = first.loading || busy;
 
-  const handleGenerate = async () => {
+  const handleRewrite = async () => {
     setBusy(true);
     setError("");
     try {
-      // A second click asks for a fresh note instead of the stored one.
-      setSummary(await createHRSummary(jobId, candidateId, summary !== null));
-    } catch (summaryError) {
-      setError(errorMessage(summaryError));
+      setRewritten(await createHRSummary(jobId, candidateId, true));
+    } catch (rewriteError) {
+      setError(errorMessage(rewriteError));
     } finally {
       setBusy(false);
     }
@@ -50,45 +59,47 @@ export function AiSummary({ jobId, candidateId }: AiSummaryProps) {
     <Card aria-labelledby="judul-ringkasan">
       <CardHeader className="flex-row flex-wrap items-start justify-between gap-4">
         <div className="flex min-w-0 flex-1 flex-col gap-1">
-          <CardTitle id="judul-ringkasan">Catatan recruiter</CardTitle>
+          <CardTitle id="judul-ringkasan" className="flex items-center gap-2">
+            <Sparkles className="size-4 text-brand" aria-hidden="true" />
+            Ringkasan AI untuk hiring manager
+          </CardTitle>
           <CardDescription>
-            Ditulis AI dari hasil yang sudah dihitung. Skor dan peringkat tidak
-            diubah, dan data pribadi kandidat tidak dikirim.
+            Disusun dari fakta CV dan lowongan. Skor dan peringkat tidak diubah,
+            dan data pribadi kandidat tidak dikirim.
           </CardDescription>
         </div>
-        <Button
-          onClick={handleGenerate}
-          disabled={busy}
-          variant={summary ? "outline" : "default"}
-          aria-busy={busy}
-        >
-          {busy ? (
-            <LoaderCircle className="animate-spin" aria-hidden="true" />
-          ) : (
-            <Sparkles aria-hidden="true" />
-          )}
-          {busy ? "Menulis…" : summary ? "Tulis ulang" : "Buat catatan"}
-        </Button>
+        {summary && (
+          <Button
+            onClick={handleRewrite}
+            disabled={writing}
+            variant="outline"
+            size="sm"
+            aria-busy={busy}
+          >
+            {busy ? (
+              <LoaderCircle className="animate-spin" aria-hidden="true" />
+            ) : (
+              <RefreshCw aria-hidden="true" />
+            )}
+            {busy ? "Menyusun…" : "Susun ulang"}
+          </Button>
+        )}
       </CardHeader>
 
       <CardContent className="flex flex-col gap-5" aria-live="polite">
-        {error && <Notice tone="error">{error}</Notice>}
-        {busy && !summary && (
+        {(error || first.error !== undefined) && (
+          <Notice tone="error">{error || errorMessage(first.error)}</Notice>
+        )}
+        {writing && !summary && (
           <div
             className="flex flex-col gap-3"
             role="status"
-            aria-label="Sedang menulis catatan"
+            aria-label="Sedang menyusun ringkasan"
           >
             <Skeleton className="h-6 w-3/4" />
             <Skeleton className="h-4 w-full" />
             <Skeleton className="h-24 w-full" />
           </div>
-        )}
-        {!busy && !summary && !error && (
-          <p className="text-sm text-muted-foreground">
-            Catatan berisi kekuatan, kekurangan, risiko, dan hal yang perlu
-            digali saat wawancara.
-          </p>
         )}
         {summary && (
           <>
@@ -114,13 +125,6 @@ export function AiSummary({ jobId, candidateId }: AiSummaryProps) {
                 empty="Tidak ada kekurangan yang terlihat dari CV."
               />
               <NoteList
-                icon={ShieldAlert}
-                tone="text-destructive"
-                title="Risiko"
-                items={summary.risks}
-                empty="Tidak ada risiko khusus yang terdeteksi."
-              />
-              <NoteList
                 icon={MessagesSquare}
                 tone="text-primary"
                 title="Yang perlu digali saat wawancara"
@@ -128,24 +132,10 @@ export function AiSummary({ jobId, candidateId }: AiSummaryProps) {
                 empty="Tidak disarankan lanjut ke wawancara."
               />
             </div>
-            <div className="flex flex-col gap-2 border-t border-border pt-4">
-              <p className="text-sm">
-                <span className="font-medium">Alasan rekomendasi: </span>
-                {summary.recommendation_reason}
-              </p>
-              <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-                <Badge
-                  variant={
-                    summary.source === "gemini" ? "secondary" : "outline"
-                  }
-                >
-                  {summary.source === "gemini"
-                    ? `Ditulis oleh Gemini (${summary.model})`
-                    : "Ditulis dengan templat bawaan"}
-                </Badge>
-                {summary.note && <span>{summary.note}</span>}
-              </div>
-            </div>
+            <p className="border-t border-border pt-4 text-sm">
+              <span className="font-medium">Alasan rekomendasi: </span>
+              {summary.recommendation_reason}
+            </p>
           </>
         )}
       </CardContent>

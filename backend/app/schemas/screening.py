@@ -157,6 +157,10 @@ class JobSummary(BaseModel):
     title: str
     candidate_count: int
     screened: bool
+    # Decision counts of the last screening; zero until the job is screened.
+    shortlist: int = 0
+    review: int = 0
+    reject: int = 0
 
 
 class UploadOutcome(BaseModel):
@@ -185,10 +189,39 @@ class ScreeningRun(BaseModel):
     reject: int
 
 
+ConfidenceLevel = Literal["high", "medium", "low"]
+
+
+class HiringRecommendation(BaseModel):
+    """The next step for HR, worded from the system's decision."""
+
+    decision: Recommendation
+    title: str
+    summary: str
+    next_steps: list[str]
+
+
+class AssessmentConfidence(BaseModel):
+    """How firm the decision is: the CV was fully read and the score is clear of a threshold."""
+
+    level: ConfidenceLevel
+    reasons: list[str]
+
+
+class Assessment(BaseModel):
+    """Decision aid read from the screening result; it never changes a score or a decision."""
+
+    hiring: HiringRecommendation
+    confidence: AssessmentConfidence
+    risks: list[str]
+    highly_recommended: bool
+
+
 class RankingRow(ScreeningResult):
     file_name: str
     extraction_method: str
     highlights: MatchHighlights
+    assessment: Assessment
     warnings: list[str] = Field(default_factory=list)  # what the parser could not read
     name: str = ""  # only filled when identities are revealed
 
@@ -202,6 +235,7 @@ class Ranking(BaseModel):
 class CandidateDetail(BaseModel):
     result: ScreeningResult
     breakdown: MatchBreakdown
+    assessment: Assessment
     summary: str
     experiences: list[dict]
     education: list[dict]

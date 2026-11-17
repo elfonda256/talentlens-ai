@@ -28,15 +28,19 @@ logger = logging.getLogger(__name__)
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 MAX_ITEMS = 4
 
-PROMPT = """Anda adalah recruiter senior yang menulis catatan singkat kepada hiring manager
-tentang seorang kandidat. Hasil penyaringan di bawah SUDAH dihitung oleh sistem.
+PROMPT = """Anda adalah recruiter senior dengan pengalaman bertahun-tahun merekrut untuk
+perusahaan manufaktur dan konstruksi. Tulis catatan untuk hiring manager tentang satu kandidat.
+Hasil penyaringan di bawah SUDAH dihitung oleh sistem; tugas Anda menjelaskannya.
 
-Cara menulis:
-- Bahasa Indonesia yang lugas dan profesional, seperti rekan kerja yang berpengalaman.
-  Hindari istilah teknis sistem, angka poin kontribusi, dan kalimat yang berbunga-bunga.
+Gaya:
+- Bahasa Indonesia profesional, lugas, dan meyakinkan, seperti recruiter senior yang
+  menyampaikan rekomendasi kepada atasan. Langsung ke inti; tanpa basa-basi.
+- Setiap pernyataan harus merujuk fakta pada data: jabatan, lama pengalaman, keterampilan,
+  atau pendidikan. Hindari kalimat umum seperti "kandidat yang bersemangat".
+- Kesimpulan menyebut keputusan sekaligus alasan utamanya dalam satu kalimat.
+- Tiap butir satu kalimat, paling banyak 25 kata.
 - Sebut kandidat sebagai "kandidat ini". Jangan mengarang nama.
-- Setiap butir satu kalimat pendek dan konkret, merujuk pada pengalaman atau keterampilan
-  yang ada di data.
+- Jangan memakai istilah sistem seperti skor kontribusi, poin, model, atau data JSON.
 
 Batasan:
 - Jangan menghitung, mengubah, atau menilai ulang skor, peringkat, maupun rekomendasi sistem.
@@ -53,13 +57,13 @@ sebelum diputuskan, REJECT = tidak direkomendasikan.
 
 Balas HANYA dengan satu objek JSON, tanpa teks lain, dengan kunci persis seperti ini:
 {{
-  "headline": "kesimpulan dalam satu kalimat",
-  "fit": "satu atau dua kalimat tentang kecocokan kandidat terhadap posisi",
-  "strengths": ["2 sampai 4 kekuatan kandidat"],
-  "concerns": ["kelemahan atau kekurangan; kosongkan bila tidak ada"],
+  "headline": "keputusan dan alasan utamanya dalam satu kalimat",
+  "fit": "dua kalimat tentang kecocokan kandidat terhadap kebutuhan posisi",
+  "strengths": ["2 sampai 4 kekuatan, masing-masing dengan buktinya"],
+  "concerns": ["kekurangan yang terlihat dari CV; kosongkan bila tidak ada"],
   "risks": ["risiko bila kandidat ini diproses lebih lanjut; kosongkan bila tidak ada"],
   "interview_focus": ["hal yang perlu digali saat wawancara; kosongkan bila ditolak"],
-  "recommendation_reason": "satu kalimat alasan rekomendasi"
+  "recommendation_reason": "satu kalimat alasan yang dapat dipertanggungjawabkan"
 }}
 
 Data hasil penyaringan (JSON):
@@ -77,11 +81,6 @@ FIELD_LABELS = {
     "computer science": "ilmu komputer",
     "accounting": "akuntansi",
     "management": "manajemen",
-}
-VERDICT = {
-    "SHORTLIST": "layak dilanjutkan ke tahap wawancara",
-    "REVIEW": "perlu ditinjau lebih dulu sebelum diputuskan",
-    "REJECT": "belum sesuai",
 }
 
 
@@ -141,21 +140,28 @@ def template_note(
     has_minimum = experience.required_years > 0 and experience.assessed
     unread = [UNREAD_LABELS[key] for key in result.unassessed]
 
-    fit = f"CV kandidat ini menuliskan {len(found)} dari {len(must)} keterampilan wajib"
+    roles = [r.title for r in breakdown.experiences if r.relevance == "relevant" and r.title]
+    fields = _join([readable_field(f) for f in education.found_fields])
+    background = []
+    if fields:
+        background.append(f"berlatar pendidikan {fields}")
+    if roles:
+        background.append(f"berpengalaman sebagai {_join(roles[:2])}")
+    fit = f"Kandidat ini {_join(background)}. " if background else ""
+    fit += f"CV-nya mencantumkan {len(found)} dari {len(must)} keterampilan wajib"
     if unread:
         fit += f"; bagian {_join(unread)} tidak terbaca, sehingga belum dapat dinilai"
     if has_minimum:
         comparison = "memenuhi" if experience.met else "masih di bawah"
         fit += (
-            f" dan memiliki sekitar {_num(experience.relevant_years)} tahun pengalaman relevan, "
+            f", dengan sekitar {_num(experience.relevant_years)} tahun pengalaman relevan yang "
             f"{comparison} syarat minimal {experience.required_years:g} tahun"
         )
 
     strengths = []
     if found:
-        strengths.append(f"Tertulis di CV: {_join(found[:5])}.")
+        strengths.append(f"Mencantumkan pengalaman dengan {_join(found[:5])}.")
     if experience.met and experience.relevant_years > 0:
-        roles = [r.title for r in breakdown.experiences if r.relevance == "relevant" and r.title]
         role_note = f", antara lain sebagai {roles[0]}" if roles else ""
         strengths.append(
             f"Pengalaman relevan sekitar {_num(experience.relevant_years)} tahun{role_note}."
@@ -166,7 +172,7 @@ def template_note(
             f"({_join([readable_field(f) for f in education.found_fields])})."
         )
     if bonus:
-        strengths.append(f"Punya nilai tambah: {_join(bonus[:3])}.")
+        strengths.append(f"Nilai tambah untuk posisi ini: {_join(bonus[:3])}.")
 
     concerns = []
     if implied:
@@ -235,7 +241,7 @@ def template_note(
     if unread:
         reason = "CV tidak terbaca lengkap, sehingga skor bersifat sementara dan perlu ditinjau HR."
     elif result.recommendation == "SHORTLIST":
-        reason = "Syarat wajib terpenuhi dan skornya berada di zona lolos."
+        reason = "Seluruh syarat wajib terpenuhi dan kecocokannya berada di zona rekomendasi."
     elif result.recommendation == "REVIEW" and result.knockout_flags:
         reason = "Ada syarat wajib yang belum terpenuhi, sehingga keputusan perlu ditinjau HR."
     elif result.recommendation == "REVIEW":
@@ -246,7 +252,7 @@ def template_note(
         )
 
     return _Note(
-        headline=f"Kandidat ini {VERDICT[result.recommendation]} untuk posisi {job.title}.",
+        headline=_headline(job, result, found, must, experience, unread),
         fit=fit + ".",
         strengths=strengths[:MAX_ITEMS],
         concerns=concerns[:MAX_ITEMS],
@@ -254,6 +260,31 @@ def template_note(
         interview_focus=interview_focus[:MAX_ITEMS],
         recommendation_reason=reason,
     )
+
+
+def _headline(job, result, found, must, experience, unread) -> str:
+    """The decision and its main reason in one sentence, as a recruiter would open a note."""
+    years = (
+        f"{_num(experience.relevant_years)} tahun pengalaman relevan"
+        if experience.assessed and experience.required_years > 0
+        else ""
+    )
+    skills = f"{len(found)} dari {len(must)} keterampilan wajib tertulis di CV"
+    if result.recommendation == "SHORTLIST":
+        basis = f"{years} dan {skills}" if years else skills
+        return f"Kandidat kuat untuk {job.title}: {basis}."
+    if unread:
+        gap = f"bagian {_join(unread)} pada CV belum dapat dinilai"
+    elif result.knockout_flags:
+        gap = result.knockout_flags[0][0].lower() + result.knockout_flags[0][1:]
+        gap = gap.replace(".", ",")
+    elif result.missing_must_skills:
+        gap = f"{len(result.missing_must_skills)} keterampilan wajib belum terlihat di CV"
+    else:
+        gap = "kecocokannya baru sebagian"
+    if result.recommendation == "REVIEW":
+        return f"Kandidat potensial untuk {job.title}, dengan catatan: {gap}."
+    return f"Belum sesuai untuk {job.title}: {gap}."
 
 
 def generate_hr_summary(

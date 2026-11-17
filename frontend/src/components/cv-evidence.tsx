@@ -82,7 +82,7 @@ export function CvEvidence({ detail }: { detail: CandidateDetail }) {
                   />
                 </span>
                 <span className="text-xs text-muted-foreground">
-                  Kemiripan makna {formatNumber(item.similarity * 100, 0)}%
+                  Kesesuaian {formatNumber(item.similarity * 100, 0)}%
                 </span>
               </li>
             ))}
@@ -114,7 +114,7 @@ function Role({ role }: { role: ExperienceRelevance }) {
       </div>
       {role.description && (
         <ul className="mt-3 flex list-disc flex-col gap-1 pl-5 text-sm marker:text-muted-foreground">
-          {role.description.split("\n").map((line) => (
+          {sentences(role.description).map((line) => (
             <li key={line}>
               <HighlightedText text={line} terms={role.terms} />
             </li>
@@ -123,4 +123,22 @@ function Role({ role }: { role: ExperienceRelevance }) {
       )}
     </article>
   );
+}
+
+/**
+ * PDF text breaks a sentence wherever the original line wrapped. A line that starts in lower
+ * case continues the one before it, so the two are joined back into one point.
+ */
+function sentences(text: string): string[] {
+  const points: string[] = [];
+  for (const raw of text.split("\n")) {
+    const line = raw.trim().replace(/^[\u2022\u25cf\u25aa\-–*]\s*/, "");
+    if (!line) continue;
+    if (points.length > 0 && /^[a-z(,;]/.test(line)) {
+      points[points.length - 1] += ` ${line}`;
+    } else {
+      points.push(line);
+    }
+  }
+  return points;
 }

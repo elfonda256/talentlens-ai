@@ -1,9 +1,9 @@
-import type { ComponentKey, Recommendation } from "@/lib/api";
+import type { ComponentKey, ConfidenceLevel, Recommendation } from "@/lib/api";
 
 /** Indonesian labels and colours for values that the API returns as codes. */
 
 export const RECOMMENDATION_LABEL: Record<Recommendation, string> = {
-  SHORTLIST: "Lolos",
+  SHORTLIST: "Direkomendasikan",
   REVIEW: "Perlu ditinjau",
   REJECT: "Tidak lolos",
 };
@@ -25,9 +25,10 @@ export const COMPONENT_COLOR: Record<ComponentKey, string> = {
   semantic: "bg-part-semantic",
 };
 
-export const EMBEDDING_LABEL: Record<string, string> = {
-  "multilingual-e5-small": "model multilingual-e5-small",
-  tfidf: "TF-IDF (cadangan, tanpa model)",
+export const CONFIDENCE_LABEL: Record<ConfidenceLevel, string> = {
+  high: "Tinggi",
+  medium: "Sedang",
+  low: "Rendah",
 };
 
 const FIELD_LABEL: Record<string, string> = {

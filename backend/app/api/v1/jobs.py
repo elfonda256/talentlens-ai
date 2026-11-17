@@ -18,7 +18,7 @@ from app.schemas.screening import (
     ScreeningRun,
     UploadOutcome,
 )
-from app.services import match_breakdown
+from app.services import assessment, match_breakdown
 from app.services.cv_parsing import UnreadableDocumentError, UnsupportedFormatError
 from app.services.screening import (
     CandidateNotFoundError,
@@ -78,15 +78,24 @@ def create_job(
 
 @router.get("", response_model=list[JobSummary], summary="List uploaded jobs")
 def list_jobs(service: Service) -> list[JobSummary]:
-    return [
-        JobSummary(
-            job_id=job.job_id,
-            title=job.title,
-            candidate_count=len(service.list_candidates(job.job_id)),
-            screened=service.is_screened(job.job_id),
+    summaries = []
+    for job in service.list_jobs():
+        screened = service.is_screened(job.job_id)
+        decisions = (
+            [r.recommendation for r in service.get_ranking(job.job_id)[0]] if screened else []
         )
-        for job in service.list_jobs()
-    ]
+        summaries.append(
+            JobSummary(
+                job_id=job.job_id,
+                title=job.title,
+                candidate_count=len(service.list_candidates(job.job_id)),
+                screened=screened,
+                shortlist=decisions.count("SHORTLIST"),
+                review=decisions.count("REVIEW"),
+                reject=decisions.count("REJECT"),
+            )
+        )
+    return summaries
 
 
 @router.get(
@@ -190,7 +199,9 @@ def run_screening(job_id: str, service: Service) -> ScreeningRun:
     summary="Ranked candidates with scores and reasons",
     responses={**NOT_FOUND, **NOT_SCREENED},
 )
-def get_ranking(job_id: str, service: Service, reveal: Reveal = False) -> Ranking:
+def get_ranking(
+    job_id: str, service: Service, settings: AppSettings, reveal: Reveal = False
+) -> Ranking:
     job = _job_or_404(service, job_id)
     try:
         results, backend = service.get_ranking(job_id)
@@ -205,6 +216,7 @@ def get_ranking(job_id: str, service: Service, reveal: Reveal = False) -> Rankin
                 file_name=profile.file_name if reveal else "",
                 extraction_method=profile.extraction_method,
                 highlights=match_breakdown.build_highlights(job, profile, result),
+                assessment=assessment.build_assessment(job, profile, result, settings),
                 warnings=profile.warnings,
                 name=_name(profile, reveal),
             )
@@ -219,7 +231,11 @@ def get_ranking(job_id: str, service: Service, reveal: Reveal = False) -> Rankin
     responses={**NOT_FOUND, **NOT_SCREENED},
 )
 def get_candidate_detail(
-    job_id: str, candidate_id: str, service: Service, reveal: Reveal = False
+    job_id: str,
+    candidate_id: str,
+    service: Service,
+    settings: AppSettings,
+    reveal: Reveal = False,
 ) -> CandidateDetail:
     job = _job_or_404(service, job_id)
     try:
@@ -233,6 +249,7 @@ def get_candidate_detail(
     return CandidateDetail(
         result=result,
         breakdown=match_breakdown.build_breakdown(job, profile, result),
+        assessment=assessment.build_assessment(job, profile, result, settings),
         summary=profile.summary,
         experiences=[e.model_dump() for e in profile.experiences],
         education=[e.model_dump() for e in profile.education],

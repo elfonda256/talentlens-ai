@@ -23,6 +23,24 @@ export type JobSummary = {
   title: string;
   candidate_count: number;
   screened: boolean;
+  shortlist: number;
+  review: number;
+  reject: number;
+};
+
+export type ConfidenceLevel = "high" | "medium" | "low";
+
+/** Decision aid read from the screening result; it never changes a score or a decision. */
+export type Assessment = {
+  hiring: {
+    decision: Recommendation;
+    title: string;
+    summary: string;
+    next_steps: string[];
+  };
+  confidence: { level: ConfidenceLevel; reasons: string[] };
+  risks: string[];
+  highly_recommended: boolean;
 };
 
 export type SkillRequirement = {
@@ -157,6 +175,7 @@ export type RankingRow = ScreeningResult & {
   extraction_method: string;
   name: string;
   highlights: MatchHighlights;
+  assessment: Assessment;
   warnings: string[];
 };
 
@@ -169,6 +188,7 @@ export type Ranking = {
 export type CandidateDetail = {
   result: ScreeningResult;
   breakdown: MatchBreakdown;
+  assessment: Assessment;
   summary: string;
   education: { degree: string; level: number; field: string }[];
   education_in_progress: { degree: string; level: number; field: string }[];
