@@ -150,8 +150,7 @@ cd frontend && npm run lint && npm run build
 | Alur lengkap di peramban, layar lebar dan ponsel (390 px) | Lolos, dengan CV sintetis, TF-IDF, dan catatan templat |
 | Embedding `multilingual-e5-small` dengan model asli | Lolos di mesin Product Owner (17 Nov 2026): skrip pengecekan dan screening di aplikasi |
 | Panggilan Gemini dengan API asli | Lolos untuk panggilan uji (`gemini-3.6-flash`). **Prompt catatan recruiter yang baru (keluaran JSON) belum diuji terhadap API asli**; bila jawabannya tidak terbaca, templat dipakai |
-| 5 CV dari perusahaan | Terbaca tanpa galat di mesin Product Owner. **Peringkatnya belum sah**: saat itu yang terunggah sebagai lowongan adalah sebuah CV. Kesalahan itu kini ditolak aplikasi |
-| Kualitas pembacaan tiap CV perusahaan (pengalaman, pendidikan, keterampilan) | **Belum diperiksa** |
+| 5 CV dari perusahaan | **Gagal** pada QA Phase 1 (17 Nov 2026): bagian pengalaman tidak terbaca pada 4 dari 5 CV dan peringkatnya tidak sah. Lihat [QA Report 01](docs/QA_REPORT_01.md) |
 | Tablet (768 px), mode gelap, navigasi keyboard penuh, pembaca layar | **Belum diuji** |
 | `docker compose up --build` | **Belum**: lingkungan pembuatan tidak punya Docker daemon |
 
@@ -164,3 +163,4 @@ cd frontend && npm run lint && npm run build
 - [Governance](docs/GOVERNANCE.md)
 - [Technical Decision Records](docs/tdr/README.md)
 - Laporan sprint: [01](docs/SPRINT_REPORT_01.md), [02](docs/SPRINT_REPORT_02.md), [03](docs/SPRINT_REPORT_03.md), [04](docs/SPRINT_REPORT_04.md)
+- Laporan QA: [01, validasi data nyata](docs/QA_REPORT_01.md)
