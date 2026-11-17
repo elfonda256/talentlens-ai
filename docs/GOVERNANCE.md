@@ -1,4 +1,4 @@
-# TalentLens AI — Engineering Governance v1.1
+# TalentLens AI — Engineering Governance v1.2
 
 This document is the engineering governance for the entire project. It replaces all previous
 governance documents and stays in force until explicitly updated.
@@ -50,6 +50,19 @@ However:
 - Record it inside a Technical Decision Record.
 
 Do not continue to the next Sprint automatically. Always wait for approval.
+
+## Decision Autonomy
+
+Do not stop in the middle of a Sprint to ask for small decisions. Use engineering judgment,
+decide, and keep working.
+
+| Kind of decision | Examples | What to do |
+| --- | --- | --- |
+| Small | naming, file layout, library choice inside an approved approach, error messages, test design, a technical dependency allowed by the Sprint Policy | Decide, continue, and record it in the Sprint Report (and a TDR when it is important) |
+| Large | changes the architecture, adds or replaces an external service, sends data to a new third party, changes how candidates are scored, drops or adds a feature | Stop the Sprint and report: the conflict, the risk, the alternatives and a recommendation |
+
+Decisions made this way are reviewed at the end of the Sprint through the Sprint Report, not
+before the work is done.
 
 ## Technical Decision Record
 
