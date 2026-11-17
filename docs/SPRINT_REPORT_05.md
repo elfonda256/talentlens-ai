@@ -1,6 +1,6 @@
 # Sprint Report 05 — Demo Readiness
 
-**Cabang:** `sprint-4` · **Commit:** `06a0224` · **Tanggal:** 17 November 2026
+**Cabang:** `sprint-4` · **Commit:** `06a0224`, `4c0d4d0` · **Tanggal:** 17 November 2026
 
 ## Sprint Summary
 
@@ -23,7 +23,7 @@ CV perusahaan identik sebelum dan sesudah sprint.
 | 5 | Dasbor enterprise | "Dasbor rekrutmen" dengan empat angka ringkas (lowongan, kandidat, direkomendasikan, perlu ditinjau), kartu lowongan dengan bilah sebaran keputusan, dan panduan tiga langkah saat belum ada data. |
 | 6 | Audit istilah dan tampilan | Istilah teknis diganti ("Cara baca: OCR" → "Jenis dokumen: Hasil pindai"; "Kemiripan makna" → "Kesesuaian"). Baris CV yang terpotong oleh PDF digabung kembali. Diperiksa pada 1440 px dan 390 px. |
 | 7 | Regression test | 171 tes backend lolos (8 tes baru), ruff bersih, lint dan build frontend bersih. Berkas algoritma tidak tersentuh. Lima CV perusahaan: hasil identik (tabel di bawah). |
-| 8 | Deploy ulang staging | Railway disematkan ke commit `06a0224`; Vercel production dari commit yang sama. Hasil verifikasi di bagian Deployment. |
+| 8 | Deploy ulang staging | Vercel production dari `06a0224`; Railway disematkan ke `4c0d4d0` (perbaikan kalimat pendidikan). Hasil verifikasi di bagian Deployment. |
 
 ### Regression lima CV perusahaan
 
@@ -35,7 +35,22 @@ CV perusahaan identik sebelum dan sesudah sprint.
 | 4 | 53,6 | 53,6 | Perlu ditinjau |
 | 5 | 34,0 | 34,0 | Tidak lolos |
 
-Diukur di lokal dengan berkas lowongan dan CV yang sama. Berkas aslinya tidak disimpan di repositori.
+Diukur di lokal (mode TF-IDF) dengan berkas lowongan dan CV yang sama. Berkas aslinya tidak disimpan di repositori.
+
+Di staging, model bahasa E5 dipakai sehingga skornya berbeda dari lokal (91,3 / 87,8 / 83,4 / 66,5 / 46,3).
+Hasil itu dihitung oleh commit `3965831`; antara `3965831` dan `4c0d4d0` tidak ada perubahan pada
+`matching.py`, `screening.py`, `cv_parsing/`, `embedding.py`, `jd_parsing.py`, `taxonomy.py`, maupun
+`vector_index.py`, sehingga penyaringan ulang akan memberi hasil yang sama.
+
+## Deployment
+
+| Pemeriksaan | Hasil |
+| --- | --- |
+| Railway backend | `SUCCESS`, disematkan ke commit `4c0d4d0` |
+| Vercel frontend | `READY`, production, alias `talentlens-ai-azure.vercel.app` |
+| Relay `/api/backend/jobs` | 200, jumlah per keputusan tampil per lowongan |
+| Relay `/api/backend/jobs/{id}/ranking` | 200, setiap kandidat membawa `assessment` |
+| Panel keputusan pada lima CV perusahaan | Peringkat 1 "Paling cocok"; keyakinan "Sedang" untuk semua karena ada keterampilan wajib yang hanya tersirat, sehingga belum ada badge "Sangat direkomendasikan" |
 
 ## Screenshot sebelum dan sesudah
 
@@ -74,7 +89,8 @@ Tidak ada.
 ## Known Issues
 
 - **Gemini belum terverifikasi di staging** karena `GEMINI_API_KEY` belum diatur. Sampai diatur, ringkasan memakai kalimat bawaan (tetap rapi, tanpa pesan teknis).
-- **Data staging masih data uji sintetis** (lowongan "Junior Architect" dengan 8 kandidat). Lima CV perusahaan belum diunggah ke staging.
+- Staging berisi dua lowongan "Junior Architect": data uji sintetis (13 kandidat) dan lima CV perusahaan. Lowongan sintetis sebaiknya dihapus sebelum demo; belum ada tombol hapus di antarmuka.
+- Beberapa langkah tindak lanjut mengutip teks dari logika penilaian yang memakai titik desimal ("0.3 tahun").
 - Response API ringkasan masih memuat field `source` dan `note` untuk keperluan diagnosis; field ini tidak ditampilkan di UI.
 - Mode gelap, tablet (768 px), dan pembaca layar belum diuji.
 
@@ -102,7 +118,7 @@ Tidak ada perubahan arsitektur. Satu modul service dan satu field response ditam
 **Gladi demo dan penggabungan ke `main`.**
 
 1. Product Owner mengatur `GEMINI_API_KEY` (kunci baru) di Railway Variables.
-2. Ganti data uji di staging dengan lima CV perusahaan.
+2. Hapus lowongan uji sintetis dari staging agar dasbor hanya memuat data perusahaan.
 3. Uji satu ringkasan Gemini, lalu gladi alur demo dari dasbor sampai rincian kandidat.
 4. Gabungkan `sprint-4` ke `main` dan buat tag rilis.
 
