@@ -1,6 +1,13 @@
 # Rahasia dan konfigurasi lokal
 .env
 .env.local
+.env.*.local
+
+# Vercel (tautan proyek dan variabel yang ditarik CLI)
+.vercel/
+
+# Log
+*.log
 
 # Python
 __pycache__/
