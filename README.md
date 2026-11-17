@@ -119,7 +119,7 @@ talentlens-ai/
 ## Environment variables
 
 Semua punya nilai default. Untuk menjalankan tanpa Docker, letakkan di `backend/.env`
-(dan `NEXT_PUBLIC_API_URL` di `frontend/.env.local`); untuk Docker Compose, di `.env` pada akar proyek.
+(dan `BACKEND_URL` serta `BACKEND_API_KEY` di `frontend/.env.local`); untuk Docker Compose, di `.env` pada akar proyek.
 
 | Variabel | Default | Fungsi |
 | --- | --- | --- |
@@ -131,8 +131,10 @@ Semua punya nilai default. Untuk menjalankan tanpa Docker, letakkan di `backend/
 | `REFERENCE_DATE` | kosong | Tanggal acuan masa kerja "sampai sekarang"; kosong berarti hari ini |
 | `MAX_UPLOAD_MB` | `5` | Batas ukuran unggahan |
 | `CORS_ORIGINS` | `http://localhost:3000` | Asal frontend yang diizinkan |
-| `APP_ENV`, `LOG_LEVEL` | `development`, `INFO` | Lingkungan dan tingkat log |
-| `NEXT_PUBLIC_API_URL` | `http://localhost:8000` | Alamat backend dilihat dari peramban (ditanam saat build) |
+| `APP_ENV`, `LOG_LEVEL` | `development`, `INFO` | Lingkungan dan tingkat log. `production` menutup `/docs` dan mewajibkan `API_KEY` |
+| `API_KEY` | kosong | Kunci bersama untuk header `X-API-Key`; kosong berarti tanpa kunci (hanya lokal) |
+| `BACKEND_URL` (frontend) | `http://localhost:8000` | Alamat backend, dibaca relay di server Next.js |
+| `BACKEND_API_KEY` (frontend) | kosong | Sama dengan `API_KEY`; tidak pernah dikirim ke peramban |
 
 ## Tes dan pemeriksaan kode
 

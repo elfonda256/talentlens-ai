@@ -15,6 +15,7 @@ services:
       EMBEDDING_BACKEND: ${EMBEDDING_BACKEND:-auto}
       GEMINI_API_KEY: ${GEMINI_API_KEY:-}
       GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.6-flash}
+      API_KEY: ${API_KEY:-}
     volumes:
       # Parsed candidates and results survive a restart; the folder is git-ignored.
       - ./backend/storage:/srv/storage
@@ -27,8 +28,10 @@ services:
   frontend:
     build:
       context: ./frontend
-      args:
-        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8000}
+    environment:
+      # Server-side only: the relay reaches the backend over the Compose network.
+      BACKEND_URL: http://backend:8000
+      BACKEND_API_KEY: ${API_KEY:-}
     ports:
       - "3000:3000"
     depends_on:

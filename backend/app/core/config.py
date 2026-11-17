@@ -5,6 +5,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Literal
 
+from pydantic import SecretStr, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 BACKEND_DIR = Path(__file__).resolve().parents[2]
@@ -26,6 +27,8 @@ class Settings(BaseSettings):
     api_v1_prefix: str = "/api/v1"
     # Comma-separated list of origins allowed to call the API from a browser.
     cors_origins: str = "http://localhost:3000"
+    # Shared key every request except /health must send in X-API-Key. Required in production.
+    api_key: SecretStr | None = None
 
     # --- CV parsing ---
     taxonomy_path: Path = BACKEND_DIR / "data" / "taxonomy" / "skills.json"
@@ -49,6 +52,16 @@ class Settings(BaseSettings):
     gemini_api_key: str = ""
     gemini_model: str = "gemini-3.6-flash"
     gemini_timeout_seconds: float = 30
+
+    @model_validator(mode="after")
+    def _production_needs_a_key(self) -> "Settings":
+        if self.app_env == "production" and self.api_key is None:
+            raise ValueError("API_KEY must be set when APP_ENV=production")
+        return self
+
+    @property
+    def is_production(self) -> bool:
+        return self.app_env == "production"
 
     @property
     def max_upload_bytes(self) -> int:

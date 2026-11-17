@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Notice } from "@/components/ui/notice";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useApi } from "@/hooks/use-api";
-import { API_BASE_URL, getHealth } from "@/lib/api";
+import { getHealth } from "@/lib/api";
 
 const EMBEDDING_MODE: Record<string, string> = {
   auto: "model E5 (cadangan TF-IDF)",
@@ -22,8 +22,8 @@ export function SystemStatus() {
   if (error || !health) {
     return (
       <Notice tone="error">
-        Layanan tidak terhubung. Jalankan backend di {API_BASE_URL}, lalu muat
-        ulang halaman ini.
+        Layanan penyaringan tidak terhubung. Coba muat ulang halaman ini
+        beberapa saat lagi.
       </Notice>
     );
   }

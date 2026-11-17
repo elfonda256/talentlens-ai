@@ -1,10 +1,10 @@
 /** Single place where the frontend talks to the backend. */
 
-export const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
-const API_V1 = `${API_BASE_URL}/api/v1`;
-
-export const API_DOCS_URL = `${API_BASE_URL}/docs`;
+/**
+ * Requests go to this app's own server-side relay (app/api/backend), which adds the API key
+ * and forwards them to the backend. The browser never sees the key or the backend address.
+ */
+const API_V1 = "/api/backend";
 
 export type Recommendation = "SHORTLIST" | "REVIEW" | "REJECT";
 
