@@ -135,7 +135,10 @@ function Overview({ jobs }: { jobs: JobSummary[] }) {
   return (
     <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
       {items.map(({ label, value, icon: Icon, tone }) => (
-        <Card key={label} className="flex items-center gap-4 p-4 sm:p-5">
+        <Card
+          key={label}
+          className="flex flex-col items-start gap-3 p-4 sm:flex-row sm:items-center sm:gap-4 sm:p-5"
+        >
           <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-secondary">
             <Icon className={cn("size-5", tone)} aria-hidden="true" />
           </span>

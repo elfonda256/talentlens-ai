@@ -112,10 +112,10 @@ function CandidateView() {
           </div>
         </CardContent>
       </Card>
+      <AiSummary jobId={jobId} candidateId={candidateId} />
       <AssessmentPanels assessment={assessment} />
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_20rem]">
         <div className="flex min-w-0 flex-col gap-6">
-          <AiSummary jobId={jobId} candidateId={candidateId} />
           <ScoreExplainer
             components={breakdown.components}
             score={result.score}
@@ -153,6 +153,9 @@ function InsightCard({ detail }: { detail: CandidateDetail }) {
   const mustFound = breakdown.must_have_skills.filter(
     (skill) => skill.status !== "missing",
   ).length;
+  const mustImplied = breakdown.must_have_skills.filter(
+    (skill) => skill.status === "implied",
+  ).length;
   return (
     <Card aria-labelledby="judul-insight">
       <CardHeader className="pb-4">
@@ -169,7 +172,7 @@ function InsightCard({ detail }: { detail: CandidateDetail }) {
           <Meter
             label="Keterampilan"
             percent={result.breakdown.skills * 100}
-            hint={`${mustFound} dari ${breakdown.must_have_skills.length} keterampilan wajib`}
+            hint={`${mustFound} dari ${breakdown.must_have_skills.length} keterampilan wajib${mustImplied > 0 ? ` (${mustImplied} tersirat, dinilai sebagian)` : ""}`}
           />
           <Meter
             label="Pengalaman"

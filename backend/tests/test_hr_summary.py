@@ -45,7 +45,7 @@ def test_without_api_key_the_template_fills_every_section(screened, tmp_path):
     assert summary.source == "template" and "GEMINI_API_KEY" in summary.note
     assert summary.headline == (
         "Kandidat kuat untuk Junior Architect: 3,2 tahun pengalaman relevan "
-        "dan 9 dari 9 keterampilan wajib tertulis di CV."
+        "dan 9 dari 9 keterampilan wajib terpenuhi."
     )
     assert "9 dari 9 keterampilan wajib" in summary.fit and "3,2 tahun" in summary.fit
     assert any("AutoCAD" in item for item in summary.strengths)
@@ -65,7 +65,8 @@ def test_template_follows_the_recommendation_and_names_the_gaps(screened):
     assert rejected.interview_focus == []  # nothing to prepare for a rejected candidate
     assert review.headline.startswith("Kandidat potensial untuk Junior Architect, dengan catatan:")
     assert any("di bawah syarat 2 tahun" in item for item in review.concerns)
-    assert any("Konfirmasi lama" in item for item in review.interview_focus)
+    assert any("berapa lama" in item for item in review.interview_focus)
+    assert all(item.endswith("?") for item in review.interview_focus)  # questions, ready to ask
 
 
 def test_scanned_cv_is_reported_as_a_risk(service):

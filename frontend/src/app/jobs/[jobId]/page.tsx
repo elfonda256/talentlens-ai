@@ -51,6 +51,9 @@ function JobView() {
   );
 
   const candidateCount = candidates.data?.length ?? 0;
+  // Until the first answer arrives the page cannot tell "screened" from "not screened".
+  const rankingPending =
+    ranking.loading && !ranking.data && ranking.error === undefined;
   const notScreened =
     ranking.error instanceof ApiError && ranking.error.status === NOT_SCREENED;
   const rows = ranking.data?.results ?? [];
@@ -88,12 +91,12 @@ function JobView() {
     );
   }
 
-  const needsScreening = candidateCount > 0 && (notScreened || ranking.loading);
+  const needsScreening = candidateCount > 0 && notScreened;
   return (
     <PageShell
       title={job.data?.title ?? <Skeleton className="h-9 w-64" />}
       description={
-        candidates.loading
+        candidates.loading || rankingPending
           ? undefined
           : candidateCount === 0
             ? "Belum ada CV untuk lowongan ini."
@@ -113,23 +116,25 @@ function JobView() {
               ranking.reload();
             }}
           />
-          <Button
-            onClick={handleScreen}
-            disabled={screening || candidateCount === 0}
-            variant={needsScreening ? "default" : "outline"}
-            aria-busy={screening}
-          >
-            {screening ? (
-              <LoaderCircle className="animate-spin" aria-hidden="true" />
-            ) : (
-              <Play aria-hidden="true" />
-            )}
-            {screening
-              ? "Menyaring…"
-              : ranking.data
-                ? "Saring ulang"
-                : "Jalankan screening"}
-          </Button>
+          {!rankingPending && (
+            <Button
+              onClick={handleScreen}
+              disabled={screening || candidateCount === 0}
+              variant={needsScreening ? "default" : "outline"}
+              aria-busy={screening}
+            >
+              {screening ? (
+                <LoaderCircle className="animate-spin" aria-hidden="true" />
+              ) : (
+                <Play aria-hidden="true" />
+              )}
+              {screening
+                ? "Menyaring…"
+                : ranking.data
+                  ? "Saring ulang"
+                  : "Jalankan screening"}
+            </Button>
+          )}
         </div>
       }
     >
@@ -146,10 +151,14 @@ function JobView() {
         <Notice tone="error">{errorMessage(ranking.error)}</Notice>
       )}
 
-      {screening && (
+      {(screening || rankingPending) && (
         <div
           className="flex flex-col gap-3"
-          aria-label="Sedang menyaring kandidat"
+          aria-label={
+            screening
+              ? "Sedang menyaring kandidat"
+              : "Memuat peringkat kandidat"
+          }
           role="status"
         >
           <Skeleton className="h-[86px]" />

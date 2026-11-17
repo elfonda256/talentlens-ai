@@ -2,7 +2,7 @@
 
 import pytest
 
-from app.services import assessment
+from app.services import assessment, matching
 from app.services.screening import ScreeningService
 
 
@@ -98,6 +98,21 @@ def test_missing_and_implied_skills_appear_as_risks(ranked):
                 skill in risk for risk in view.risks for skill in result.missing_must_skills
             ) or any("keterampilan wajib belum terlihat" in risk for risk in view.risks)
         assert len(view.risks) <= assessment.MAX_RISKS
+
+
+def test_implied_count_names_must_and_bonus_skills_separately(screened):
+    service, job_id = screened
+    job = service.get_job(job_id)
+    units = matching.requirement_units(job)
+    must = next(u["label"] for u in units if u["priority"] == "must")
+    bonus = next(u["label"] for u in units if u["priority"] == "nice")
+
+    assert assessment._implied_count(job, [must]) == "1 keterampilan wajib"
+    assert assessment._implied_count(job, [bonus]) == "1 keterampilan tambahan"
+    assert (
+        assessment._implied_count(job, [must, bonus])
+        == "1 keterampilan wajib dan 1 keterampilan tambahan"
+    )
 
 
 def test_ranking_and_detail_responses_carry_the_assessment(screened, settings):

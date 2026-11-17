@@ -36,7 +36,7 @@ def build_assessment(
         s.removesuffix(IMPLIED_SUFFIX) for s in result.matched_skills if s.endswith(IMPLIED_SUFFIX)
     ]
     relevant_years = matching.relevant_months(job, profile) / 12
-    confidence = _confidence(profile, result, settings, implied)
+    confidence = _confidence(job, profile, result, settings, implied)
     return Assessment(
         hiring=_hiring(job, result, implied),
         confidence=confidence,
@@ -50,7 +50,11 @@ def build_assessment(
 
 
 def _confidence(
-    profile: CandidateProfile, result: ScreeningResult, settings: Settings, implied: list[str]
+    job: JobProfile,
+    profile: CandidateProfile,
+    result: ScreeningResult,
+    settings: Settings,
+    implied: list[str],
 ) -> AssessmentConfidence:
     """How firm the decision is: is the CV fully read, and is the score clear of a threshold?"""
     low, medium = [], []
@@ -73,7 +77,7 @@ def _confidence(
         if abs(result.score - threshold) < NEAR_THRESHOLD_POINTS:
             medium.append(f"Skor berada dekat batas keputusan ({threshold:g})")
     if implied:
-        medium.append(f"{len(implied)} keterampilan wajib hanya terindikasi, belum tertulis jelas")
+        medium.append(f"{_implied_count(job, implied)} hanya tersirat, belum tertulis jelas")
 
     if low:
         return AssessmentConfidence(level="low", reasons=low + medium)
@@ -178,6 +182,18 @@ def _risks(
     if profile.extraction_method == "ocr":
         risks.append("CV hasil pindai; cocokkan angka dan tanggal penting dengan dokumen asli.")
     return risks[:MAX_RISKS]
+
+
+def _implied_count(job: JobProfile, implied: list[str]) -> str:
+    """'1 keterampilan wajib dan 1 keterampilan tambahan', counted the way the ranking counts."""
+    must = {u["label"] for u in matching.requirement_units(job) if u["priority"] == "must"}
+    must_count = sum(label in must for label in implied)
+    parts = [
+        f"{count} keterampilan {kind}"
+        for count, kind in ((must_count, "wajib"), (len(implied) - must_count, "tambahan"))
+        if count
+    ]
+    return _join(parts)
 
 
 def _join(items: list[str]) -> str:

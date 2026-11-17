@@ -54,7 +54,7 @@ export function StatStrip({ counts, active, onSelect }: StatStripProps) {
           aria-pressed={active === key}
           onClick={() => onSelect(key)}
           className={cn(
-            "flex cursor-pointer items-center gap-3 border-border p-4 text-left transition-colors hover:bg-secondary/70 sm:px-5",
+            "flex cursor-pointer flex-col items-start gap-2 border-border p-4 text-left transition-colors hover:bg-secondary/70 sm:flex-row sm:items-center sm:gap-3 sm:px-5",
             "border-b even:border-l lg:border-b-0 lg:border-l lg:first:border-l-0",
             active === key && "bg-secondary",
           )}

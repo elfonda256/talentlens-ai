@@ -27,8 +27,9 @@ import { createHRSummary, type HRSummary } from "@/lib/api";
 type AiSummaryProps = { jobId: string; candidateId: string };
 
 /**
- * The recruiter's note, written as soon as the page opens. The AI words the explanation from
- * facts the system already computed; it never changes the score. Risks have their own panel.
+ * The recruiter's note and the interview questions, written as soon as the page opens. The AI
+ * words them from facts the system already computed; it never changes the score. Risks have
+ * their own panel.
  */
 export function AiSummary({ jobId, candidateId }: AiSummaryProps) {
   const first = useApi(
@@ -56,87 +57,142 @@ export function AiSummary({ jobId, candidateId }: AiSummaryProps) {
   };
 
   return (
-    <Card aria-labelledby="judul-ringkasan">
-      <CardHeader className="flex-row flex-wrap items-start justify-between gap-4">
-        <div className="flex min-w-0 flex-1 flex-col gap-1">
-          <CardTitle id="judul-ringkasan" className="flex items-center gap-2">
-            <Sparkles className="size-4 text-brand" aria-hidden="true" />
-            Ringkasan AI untuk hiring manager
-          </CardTitle>
-          <CardDescription>
-            Disusun dari fakta CV dan lowongan. Skor dan peringkat tidak diubah,
-            dan data pribadi kandidat tidak dikirim.
-          </CardDescription>
-        </div>
-        {summary && (
-          <Button
-            onClick={handleRewrite}
-            disabled={writing}
-            variant="outline"
-            size="sm"
-            aria-busy={busy}
-          >
-            {busy ? (
-              <LoaderCircle className="animate-spin" aria-hidden="true" />
-            ) : (
-              <RefreshCw aria-hidden="true" />
-            )}
-            {busy ? "Menyusun…" : "Susun ulang"}
-          </Button>
-        )}
-      </CardHeader>
+    <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
+      <Card aria-labelledby="judul-ringkasan">
+        <CardHeader className="flex-row flex-wrap items-start justify-between gap-4">
+          <div className="flex min-w-0 flex-1 flex-col gap-1">
+            <CardTitle id="judul-ringkasan" className="flex items-center gap-2">
+              <Sparkles className="size-4 text-brand" aria-hidden="true" />
+              Ringkasan AI untuk hiring manager
+            </CardTitle>
+            <CardDescription>
+              Disusun dari fakta CV dan lowongan. Skor dan peringkat tidak
+              diubah, dan data pribadi kandidat tidak dikirim.
+            </CardDescription>
+          </div>
+          {summary && (
+            <Button
+              onClick={handleRewrite}
+              disabled={writing}
+              variant="outline"
+              size="sm"
+              aria-busy={busy}
+            >
+              {busy ? (
+                <LoaderCircle className="animate-spin" aria-hidden="true" />
+              ) : (
+                <RefreshCw aria-hidden="true" />
+              )}
+              {busy ? "Menyusun…" : "Susun ulang"}
+            </Button>
+          )}
+        </CardHeader>
 
-      <CardContent className="flex flex-col gap-5" aria-live="polite">
-        {(error || first.error !== undefined) && (
-          <Notice tone="error">{error || errorMessage(first.error)}</Notice>
-        )}
-        {writing && !summary && (
+        <CardContent className="flex flex-col gap-5" aria-live="polite">
+          {(error || first.error !== undefined) && (
+            <Notice tone="error">{error || errorMessage(first.error)}</Notice>
+          )}
+          {writing && !summary && (
+            <div
+              className="flex flex-col gap-3"
+              role="status"
+              aria-label="Sedang menyusun ringkasan"
+            >
+              <Skeleton className="h-6 w-3/4" />
+              <Skeleton className="h-4 w-full" />
+              <Skeleton className="h-24 w-full" />
+            </div>
+          )}
+          {summary && (
+            <>
+              <div className="flex flex-col gap-1.5">
+                <p className="text-lg font-semibold leading-snug">
+                  {summary.headline}
+                </p>
+                <p className="max-w-3xl text-muted-foreground">{summary.fit}</p>
+              </div>
+              <div className="grid gap-x-8 gap-y-5 md:grid-cols-2">
+                <NoteList
+                  icon={ThumbsUp}
+                  tone="text-success"
+                  title="Kekuatan"
+                  items={summary.strengths}
+                  empty="Tidak ada kekuatan menonjol untuk posisi ini."
+                />
+                <NoteList
+                  icon={CircleAlert}
+                  tone="text-warning"
+                  title="Kekurangan"
+                  items={summary.concerns}
+                  empty="Tidak ada kekurangan yang terlihat dari CV."
+                />
+              </div>
+              <p className="border-t border-border pt-4 text-sm">
+                <span className="font-medium">Alasan rekomendasi: </span>
+                {summary.recommendation_reason}
+              </p>
+            </>
+          )}
+        </CardContent>
+      </Card>
+      <InterviewQuestions
+        questions={summary?.interview_focus}
+        loading={writing && !summary}
+      />
+    </div>
+  );
+}
+
+/** Questions HR can ask as written, starting with what the CV leaves unproven. */
+function InterviewQuestions({
+  questions,
+  loading,
+}: {
+  questions: string[] | undefined;
+  loading: boolean;
+}) {
+  return (
+    <Card aria-labelledby="judul-wawancara">
+      <CardHeader className="pb-4">
+        <CardTitle id="judul-wawancara" className="flex items-center gap-2">
+          <MessagesSquare className="size-4 text-brand" aria-hidden="true" />
+          Pertanyaan wawancara
+        </CardTitle>
+        <CardDescription>
+          Siap diajukan, dimulai dari hal yang belum terbukti di CV.
+        </CardDescription>
+      </CardHeader>
+      <CardContent aria-live="polite">
+        {loading && (
           <div
             className="flex flex-col gap-3"
             role="status"
-            aria-label="Sedang menyusun ringkasan"
+            aria-label="Sedang menyusun pertanyaan wawancara"
           >
-            <Skeleton className="h-6 w-3/4" />
-            <Skeleton className="h-4 w-full" />
-            <Skeleton className="h-24 w-full" />
+            <Skeleton className="h-10 w-full" />
+            <Skeleton className="h-10 w-full" />
+            <Skeleton className="h-10 w-full" />
           </div>
         )}
-        {summary && (
-          <>
-            <div className="flex flex-col gap-1.5">
-              <p className="text-lg font-semibold leading-snug">
-                {summary.headline}
-              </p>
-              <p className="max-w-3xl text-muted-foreground">{summary.fit}</p>
-            </div>
-            <div className="grid gap-x-8 gap-y-5 md:grid-cols-2">
-              <NoteList
-                icon={ThumbsUp}
-                tone="text-success"
-                title="Kekuatan"
-                items={summary.strengths}
-                empty="Tidak ada kekuatan menonjol untuk posisi ini."
-              />
-              <NoteList
-                icon={CircleAlert}
-                tone="text-warning"
-                title="Kekurangan"
-                items={summary.concerns}
-                empty="Tidak ada kekurangan yang terlihat dari CV."
-              />
-              <NoteList
-                icon={MessagesSquare}
-                tone="text-primary"
-                title="Yang perlu digali saat wawancara"
-                items={summary.interview_focus}
-                empty="Tidak disarankan lanjut ke wawancara."
-              />
-            </div>
-            <p className="border-t border-border pt-4 text-sm">
-              <span className="font-medium">Alasan rekomendasi: </span>
-              {summary.recommendation_reason}
-            </p>
-          </>
+        {questions && questions.length === 0 && (
+          <p className="text-sm text-muted-foreground">
+            Tidak disarankan lanjut ke wawancara.
+          </p>
+        )}
+        {questions && questions.length > 0 && (
+          <ol className="flex flex-col gap-3">
+            {questions.map((question, index) => (
+              <li key={question} className="flex gap-3 text-sm leading-relaxed">
+                <span
+                  className="flex size-6 shrink-0 items-center justify-center rounded-full bg-secondary text-xs font-semibold tabular-nums"
+                  aria-hidden="true"
+                >
+                  {index + 1}
+                </span>
+                {question}
+              </li>
+            ))}
+          </ol>
         )}
       </CardContent>
     </Card>
