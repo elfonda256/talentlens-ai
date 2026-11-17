@@ -1,484 +1,512 @@
-# TalentLens AI — Demo Playbook
+# TalentLens AI — Panduan Demo
 
-**For:** the TalentLens AI presentation to Allure Industries, 18 November 2026
-**Audience:** HR Director, Head of Talent Acquisition, CIO, CEO
-**Demo URL:** `https://talentlens-ai-azure.vercel.app`
-**Live state (checked 18 Nov, 01:15 WIB):** 1 vacancy (Junior Architect), 5 company CVs,
-3 Direkomendasikan, 2 Perlu ditinjau, 0 Tidak lolos. Scores 91,3 · 87,8 · 83,4 · 66,5 · 46,3.
-All 5 AI summaries are already generated and saved, so they open instantly.
+**Acara:** presentasi TalentLens AI untuk Allure Industries, 18 November 2026
+**Audiens:** HR Director, Head of Talent Acquisition, CIO, CEO
+**Alamat demo:** `https://talentlens-ai-azure.vercel.app`
+**Kondisi staging (dicek 18 November, 01.45 WIB):** 1 lowongan (Junior Architect), 5 CV dari
+perusahaan, 3 Direkomendasikan, 2 Perlu ditinjau, 0 Tidak lolos. Skor 91,3 · 87,8 · 83,4 · 66,5 · 46,3.
+Kelima ringkasan AI sudah dibuat dan tersimpan, jadi terbuka seketika.
 
-Speaking lines are written in English. Say them in Indonesian if the room speaks Indonesian; the
-interface is already in Indonesian.
+**Tiga kalimat yang perlu dihafal**
 
-**Three lines to memorise**
-
-- "The rules score. The AI explains. HR decides."
-- "Same CV, same vacancy, same score, every time."
-- "Every number on this screen can be traced back to a sentence in the CV."
+- "Aturan yang memberi skor. AI yang menjelaskan. HR yang memutuskan."
+- "CV yang sama, lowongan yang sama, skornya selalu sama."
+- "Setiap angka di layar ini bisa ditelusuri sampai ke kalimat di CV."
 
 ---
 
-## Candidate map
+## Peta kandidat
 
-Names are hidden on screen. Use rank numbers when you speak.
+Nama disembunyikan di layar. Sebut kandidat dengan nomor peringkatnya.
 
-| Rank | Score | Decision | Use it to show |
+| Peringkat | Skor | Keputusan | Dipakai untuk menunjukkan |
 |---|---|---|---|
-| #1 | 91,3 | Direkomendasikan, "Paling cocok" | The full explanation: score, AI summary, interview questions, breakdown |
-| #2 | 87,8 | Direkomendasikan | Why 6,5 years of experience ranks below 3,9 years |
-| #3 | 83,4 | Direkomendasikan | Missing Revit: recommended, with a gap flagged for the interview |
-| #4 | 66,5 | Perlu ditinjau | Human-in-the-loop: education field and level do not match |
-| #5 | 46,3 | Perlu ditinjau | Only if asked: 0,3 years of relevant experience, just above the reject line |
+| #1 | 91,3 | Direkomendasikan, "Paling cocok" | Penjelasan lengkap: skor, ringkasan AI, pertanyaan wawancara, alasan keputusan, rincian skor |
+| #2 | 87,8 | Direkomendasikan | Kenapa 6,5 tahun pengalaman kalah dari 3,9 tahun |
+| #3 | 83,4 | Direkomendasikan | Revit belum terlihat di CV: mengurangi skor, tetapi bukan syarat gugur |
+| #4 | 66,5 | Perlu ditinjau | Zona tinjau, ditambah bidang dan jenjang pendidikan tidak sesuai |
+| #5 | 46,3 | Perlu ditinjau | Hanya bila ditanya: pengalaman relevan 0,3 tahun, sedikit di atas batas 45 |
 
 ---
 
-## 1. Before you start, and which page to open first
+## Persiapan
 
-### The evening before or the morning of the demo
+### Malam ini atau pagi sebelum demo
 
-1. **Read all 5 AI summaries and their interview questions.** They are saved, so what you read is
-   what the audience will see. Check that none contradicts the numbers on screen, and note which
-   question on #1 targets an implied skill, so you can point to it.
-2. **Take backup screenshots** (see section 9) and put them in one folder on the desktop.
-3. **Record a 5-minute screen video** of the 5-minute version (section 10). It is your last resort.
-4. **Rehearse the 10-minute version once, out loud, with a timer.**
+1. **Baca kelima ringkasan AI dan pertanyaan wawancaranya.** Semuanya tersimpan, jadi yang Anda
+   baca sama dengan yang dilihat audiens. Pastikan tidak ada yang bertentangan dengan angka di layar.
+2. **Ambil screenshot cadangan** (lihat bagian "Rencana cadangan: internet lambat").
+3. **Rekam layar 5 menit** dengan alur versi 5 menit. Ini cadangan terakhir.
+4. **Latihan alur 10 menit sekali, bersuara, dengan timer.**
 
-### 30 minutes before
+### 30 menit sebelum mulai
 
-1. **Sign in to Vercel** in the demo browser (the account that owns the project). Every page is
-   behind Vercel login. A share link exists, but it **expires 18 Nov at 12:24 WIB**; do not rely on it.
-2. **Warm up the system.** Open the dashboard, the vacancy, and each of the 5 candidates once.
-3. **Open tabs in this order**, so you can switch instead of loading during the talk:
-   1. Dasbor rekrutmen (`/`)
-   2. Pengumpulan CV (`/sources`)
-   3. Vacancy page (Junior Architect)
-   4. Candidate #1
-   5. Candidate #2
-   6. Candidate #4
-4. Browser zoom 110–125% for the projector. Close other apps and notifications.
-5. Confirm **"Tampilkan nama kandidat" is off**. These are real applicants.
-6. Have the phone hotspot ready (section 9).
+1. **Login ke Vercel** di browser demo, dengan akun pemilik proyek. Semua halaman dilindungi login
+   Vercel. Ada tautan akses, tetapi **berakhir 18 November pukul 12.24 WIB**; jangan diandalkan.
+2. **Panaskan sistem:** buka Dashboard, halaman lowongan, dan kelima kandidat sekali.
+3. **Buka tab dengan urutan ini**, supaya Anda tinggal berpindah tab:
+   Dashboard → Pengumpulan CV → Halaman lowongan → Kandidat #1 → Kandidat #2 → Kandidat #4.
+4. Zoom browser 110–125% untuk proyektor. Tutup aplikasi lain dan notifikasi.
+5. Pastikan **"Tampilkan nama kandidat" tidak dicentang**. Mereka pelamar sungguhan.
+6. Siapkan hotspot ponsel.
 
-### First page to open
+### Halaman pertama yang dibuka
 
-**Dasbor rekrutmen** (`/`). It shows the whole picture in one glance: one vacancy, five
-candidates, three recommended, two to review. Start there, not on a candidate page.
+**Dashboard rekrutmen.** Satu layar langsung menunjukkan gambaran utuh: satu lowongan, lima
+kandidat, tiga direkomendasikan, dua perlu ditinjau.
 
 ---
 
-## 2 and 3. Screen by screen: what to click and what to say
+## Layar demi layar
 
-### Screen 1 — Dasbor rekrutmen
+Setiap layar berisi: apa yang diklik, apa yang diucapkan, pertanyaan HR yang mungkin muncul, dan
+jawaban terbaiknya. Aturan menjawab: **satu atau dua kalimat, tunjukkan di layar, lalu berhenti.**
 
-**Click:** nothing. Let them read the four numbers.
+### Layar 1 — Dashboard rekrutmen
 
-**Say:**
-> "A recruiter's first pass through CVs takes minutes per CV, and it is the least valuable part of
-> the job. TalentLens does that first pass in seconds and explains every decision. Here is one real
-> vacancy from your team, Junior Architect, and the five CVs you gave us: three recommended for
-> interview, two that need a human decision."
+**Klik:** tidak ada. Biarkan audiens membaca empat angka di atas.
 
-**Point to:** the four totals, then the colour bar on the job card (green recommended, amber review).
+**Ucapkan:**
+> "Membaca CV tahap pertama memakan waktu beberapa menit per CV, dan itu bagian pekerjaan recruiter
+> yang paling sedikit nilainya. TalentLens mengerjakan tahap pertama itu dalam hitungan detik, dan
+> menjelaskan setiap keputusannya. Ini satu lowongan sungguhan dari tim Bapak/Ibu, Junior Architect,
+> dengan lima CV yang diberikan kepada kami: tiga direkomendasikan untuk wawancara, dua perlu keputusan
+> HR."
 
-### Screen 2 — Pengumpulan CV (optional in the 5-minute version)
+**Tunjuk:** empat angka ringkasan, lalu bilah warna pada kartu lowongan (hijau direkomendasikan,
+kuning perlu ditinjau).
 
-**Click:** **Pengumpulan CV** in the header.
+**Pertanyaan HR:** "Berapa lama proses penyaringannya?"
+**Jawaban:** "Beberapa detik untuk lima CV ini. Membaca setiap CV dan mencocokkannya dengan lowongan
+dilakukan otomatis; HR tinggal meninjau hasilnya."
 
-**Say:**
-> "Today CVs come in by manual upload, which is what we use in this demo. This page shows where the
-> product goes next: career site, email inbox, shared folders, LinkedIn, Jobstreet, Kalibrr and Indeed.
-> Each one is marked as a future production integration. They will connect through official partner
-> access, never by scraping, and every source feeds the same screening engine and the same rules."
+**Pertanyaan HR:** "Apa nilai bisnisnya?"
+**Jawaban:** "Waktu membaca CV tahap pertama turun dari menit per CV menjadi detik per batch, semua
+kandidat dinilai dengan aturan yang sama, dan hiring manager menerima ringkasan beralasan serta
+pertanyaan wawancara, bukan tumpukan PDF. Berapa CV yang biasanya masuk untuk satu lowongan di sini?"
+Jangan menyebut angka ROI yang belum diukur.
 
-**Point to:** the architecture row: Sumber lamaran → Lapisan integrasi (future) → Mesin penyaringan
-TalentLens (already running). Then the four principles at the bottom.
+### Layar 2 — Pengumpulan CV
 
-**Do not say** that any of these sources is connected. None is.
+**Klik:** **Pengumpulan CV** di header.
 
-### Screen 3 — Vacancy page, criteria
+**Ucapkan:**
+> "Saat ini CV masuk lewat unggahan manual, dan itu yang kami pakai di demo ini. Halaman ini
+> menunjukkan arah produk berikutnya: situs karier, kotak masuk email, folder bersama, LinkedIn,
+> Jobstreet, Kalibrr, dan Indeed. Semuanya ditandai sebagai integrasi tahap produksi berikutnya. Semua
+> akan terhubung lewat akses resmi, tidak dengan scraping, dan semua sumber masuk ke mesin penyaringan
+> dan aturan yang sama."
 
-**Click:** **Dasbor** → the **Junior Architect** card → expand **Kriteria penilaian**.
+**Tunjuk:** diagram Sumber lamaran → Lapisan integrasi (tahap berikutnya) → Mesin penyaringan
+TalentLens (sudah berjalan), lalu empat prinsip integrasi di bawah.
 
-**Say:**
-> "Before screening anyone, the system read the job description and turned it into criteria:
-> two years minimum, an architecture or interior design degree, eight required skills and two
-> nice-to-haves. HR can check these before trusting the ranking. If the job description is wrong,
-> you see it here first."
+**Jangan** mengatakan ada sumber yang sudah terhubung. Belum ada.
 
-### Screen 4 — Vacancy page, ranking
+**Pertanyaan HR:** "Sekarang sudah tersambung ke LinkedIn atau Jobstreet?"
+**Jawaban:** "Belum. Itu tahap produksi berikutnya. Saat ini CV masuk lewat unggahan. Halaman ini
+menunjukkan cara tiap sumber akan terhubung dan apa yang dibutuhkan."
 
-**Click:** scroll to **Peringkat kandidat**. Leave the filter on all candidates.
+**Pertanyaan HR:** "Kenapa tidak di-scrape saja?"
+**Jawaban:** "Scraping melanggar ketentuan penggunaan platform tersebut dan berisiko terhadap data
+pribadi menurut UU PDP. Kami hanya menghubungkan lewat program mitra atau API resmi dari setiap
+platform."
 
-**Say:**
-> "This is the ranking. The large number is the AI score out of 100. Number one has the badge
-> 'Paling cocok'. Names are hidden by default, so the first pass is blind. Each row already says the
-> one thing HR should know, for example how many required skills were found and the relevant years."
+**Pertanyaan HR:** "Berapa lama integrasinya?"
+**Jawaban:** Jangan menjanjikan tanggal. "Kotak masuk email dan folder bersama paling cepat, karena
+hanya butuh akses dari tim IT. Portal lowongan bergantung pada persetujuan akses mitra dari setiap
+platform."
 
-**Point to:** the score ring of #1, the badge, the "Keterampilan wajib" and "Pengalaman" facts, the
-recommendation badge on the right.
+### Layar 3 — Halaman lowongan: kriteria penilaian
 
-### Screen 5 — Candidate #1 (the main screen)
+**Klik:** **Dashboard** → kartu **Junior Architect** → buka **Kriteria penilaian**.
 
-**Click:** row **#1**.
+**Ucapkan:**
+> "Sebelum menilai siapa pun, sistem membaca deskripsi lowongan dan mengubahnya menjadi kriteria:
+> minimal dua tahun pengalaman, pendidikan arsitektur atau desain interior, delapan keterampilan wajib,
+> dan dua keterampilan tambahan. HR bisa memeriksa kriteria ini sebelum memercayai peringkatnya. Kalau
+> deskripsi lowongannya keliru, kelihatan di sini lebih dulu."
 
-Walk down the page in this order:
+**Pertanyaan HR:** "Bisakah kriteria atau bobotnya diubah per posisi?"
+**Jawaban:** "Kriteria diambil otomatis dari deskripsi lowongan dan ditampilkan sebelum penyaringan.
+Bobotnya sengaja sama untuk semua kandidat, supaya hasilnya konsisten dan bisa diaudit. Pengaturan per
+posisi adalah tahap berikutnya."
 
-1. **Score and decision (top card).**
-   > "91,3 out of 100, recommended, best match. The bar shows what made up that score."
+### Layar 4 — Halaman lowongan: peringkat dan cara keputusan dibuat
+
+**Klik:** gulir ke **Peringkat kandidat**. Biarkan filter pada semua kandidat. Lalu gulir sedikit ke
+bawah ke kartu **Cara keputusan dibuat**.
+
+**Ucapkan (peringkat):**
+> "Ini peringkatnya. Angka besar adalah skor AI dari 100. Peringkat satu mendapat badge 'Paling
+> cocok'. Nama disembunyikan secara bawaan, jadi penilaian tahap pertama berlangsung tanpa melihat
+> identitas. Setiap baris sudah menyebut satu hal yang perlu HR ketahui, misalnya berapa keterampilan
+> wajib yang ditemukan dan berapa tahun pengalaman relevannya."
+
+**Ucapkan (cara keputusan dibuat):**
+> "Dan ini aturannya. Setiap titik adalah satu kandidat pada skala 0 sampai 100. Skor 70 ke atas
+> direkomendasikan, 45 sampai di bawah 70 perlu ditinjau, di bawah 45 tidak lolos. Skor tinggi pun
+> tetap masuk tinjauan bila ada syarat gugur: pengalaman minimal, atau bidang dan jenjang pendidikan.
+> Zona merah kosong karena tidak ada kandidat di lowongan ini yang skornya di bawah 45."
+
+**Pertanyaan HR:** "Bisakah AI ini diskriminatif soal gender, usia, agama, atau kampus?"
+**Jawaban:** "Skor hanya memakai empat hal: keterampilan, pengalaman relevan, bidang pendidikan, dan
+kesesuaian isi CV dengan lowongan. Nama, foto, usia, gender, agama, dan alamat tidak pernah masuk ke
+skor, dan nama disembunyikan di layar secara bawaan."
+
+**Pertanyaan HR:** "Kenapa #5 tidak ditolak?"
+**Jawaban:** "Skornya 46,3, sedikit di atas batas 45, jadi sistem menyerahkannya ke HR alih-alih
+menolaknya. Alasannya tertulis di halaman kandidat: pengalaman relevan baru 0,3 tahun dan pendidikannya
+belum sesuai. Batasnya adalah aturan bisnis yang bisa diperketat."
+Jangan dibahas kalau tidak ditanya.
+
+### Layar 5 — Kandidat #1 (layar utama)
+
+**Klik:** baris **#1**. Telusuri halaman dari atas ke bawah:
+
+1. **Skor dan keputusan.**
+   > "91,3 dari 100, direkomendasikan, paling cocok. Bilah ini menunjukkan dari mana skornya."
 2. **Ringkasan AI untuk hiring manager.**
-   > "This is what a hiring manager reads instead of the CV: a verdict, strengths, gaps, and the
-   > reason for the recommendation. The AI writes these words from facts the system already
-   > calculated. It never changes the score, and the candidate's name and contact details are never
-   > sent to it."
+   > "Inilah yang dibaca hiring manager sebagai pengganti CV: kesimpulan, kekuatan, kekurangan, dan
+   > alasan rekomendasinya. AI menuliskan kalimatnya dari fakta yang sudah dihitung sistem. AI tidak
+   > mengubah skor, dan nama serta kontak kandidat tidak pernah dikirim ke AI."
 3. **Pertanyaan wawancara.**
-   > "And these are interview questions written for this candidate's own gaps, not a generic list,
-   > such as the skills the CV only implies."
-4. **The three panels: Rekomendasi tindak lanjut, Keyakinan AI, Potensi risiko.**
-   > "Next steps for HR, how confident the system is and why, and what to watch for."
-5. **Dari mana skor ini berasal.**
-   > "This is the part that matters most for trust. Five components, each with its weight and its
-   > points. They add up exactly to 91,3. Nothing is hidden."
-6. **Kecocokan dengan syarat lowongan.**
-   > "Each required skill shows whether it is written in the CV, only implied, or not found.
-   > 'Tersirat' means the work described shows the skill even though the CV doesn't name it. It gets
-   > partial credit and is flagged for HR to confirm in the interview."
-7. **Bukti dari CV** (top of the section only).
-   > "And here is the exact sentence from the CV behind each match."
+   > "Ini pertanyaan wawancara yang disusun dari kekurangan kandidat ini sendiri, bukan daftar umum."
+4. **Mengapa keputusannya seperti ini.**
+   > "Di sini aturan keputusan diperiksa satu per satu untuk kandidat ini: CV terbaca lengkap, skor
+   > mencapai batas 70, tidak ada syarat gugur yang dilanggar. Karena itu hasilnya Direkomendasikan.
+   > AI tidak ikut menentukan keputusan ini."
+5. **Tiga panel: Rekomendasi tindak lanjut, Keyakinan AI, Potensi risiko.**
+   > "Langkah berikutnya untuk HR, seberapa yakin sistem dan kenapa, serta hal yang perlu diwaspadai."
+6. **Dari mana skor ini berasal.**
+   > "Bagian ini paling penting untuk kepercayaan. Lima komponen, masing-masing dengan bobot dan
+   > poinnya, jumlahnya tepat 91,3. Tidak ada yang disembunyikan."
+7. **Kecocokan dengan syarat lowongan,** lalu bagian atas **Bukti dari CV**.
+   > "Setiap keterampilan wajib menunjukkan apakah tertulis di CV, hanya tersirat, atau belum
+   > ditemukan. Dan ini kalimat dari CV yang menjadi bukti setiap kecocokan."
 
-### Screen 6 — Candidate #2 (the planned "aha" moment)
+**Pertanyaan HR:** "ATS kami sudah bisa menyaring kata kunci. Apa bedanya?"
+**Jawaban:** "Penyaringan kata kunci melewatkan orang yang menuliskan keterampilan yang sama dengan
+kata berbeda. TalentLens mencocokkan makna, mengenali keterampilan yang tersirat dari pekerjaan yang
+diceritakan, dan setiap kecocokan menunjukkan kalimat CV asalnya." Tunjuk keterampilan berlabel
+"Tersirat".
 
-**Click:** back → row **#2**.
+**Pertanyaan HR:** "Apa arti 'Tersirat'?"
+**Jawaban:** "CV tidak menyebut nama keterampilannya, tetapi pekerjaan yang diceritakan menunjukkannya.
+Nilainya sebagian, dan HR diminta memastikannya saat wawancara."
 
-**Say:**
-> "You may ask: why does someone with 6,5 years rank below someone with 3,9 years? Experience counts
-> until the requirement is clearly met, then extra years add little. Both pass the two-year minimum,
-> so their experience points are almost the same. Number one wins on skills written explicitly in the
-> CV, and on how closely the CV matches the job. Every point is visible here."
+**Pertanyaan HR:** "Bisakah ringkasan AI mengarang?"
+**Jawaban:** "AI hanya merangkai kata dari fakta yang sudah dihitung sistem. AI tidak bisa mengubah
+skor maupun keputusan, keterampilan yang tersirat ditandai perlu dikonfirmasi, dan bila layanan AI
+gagal, ringkasan standar yang ditampilkan."
 
-**Point to:** **Dari mana skor ini berasal**, compare the *Pengalaman* and *Kesesuaian isi CV* rows
-with what you showed for #1. Then **Potensi risiko**: the system notes that experience is far above
-the requirement, so salary and role expectations should be checked.
+**Pertanyaan HR:** "Kenapa keyakinan AI 'Sedang' untuk semua kandidat?"
+**Jawaban:** "Keyakinan diukur dari kelengkapan pembacaan CV dan jarak skor dari batas keputusan.
+Setiap kandidat ini punya setidaknya satu keterampilan yang hanya tersirat, jadi sistem memilih
+'sedang' daripada terlalu yakin. Peringkatnya tidak berubah."
 
-### Screen 7 — Candidate #4 (human in the loop)
+**Pertanyaan HR:** "Bisakah sistem mendeteksi CV palsu?"
+**Jawaban:** "Tidak ada penyaring CV yang benar-benar bisa. Yang dilakukan sistem ini: menunjukkan
+kalimat yang mendukung setiap klaim, memisahkan keterampilan yang tertulis dari yang tersirat, dan
+memberi pertanyaan wawancara untuk menguji klaim itu."
 
-**Click:** back → row **#4**.
+**Pertanyaan HR:** "Bagaimana dengan kandidat bagus yang CV-nya kurang rapi?"
+**Jawaban:** "Ada tiga pengaman: keterampilan yang tersirat tetap dinilai sebagian, bagian CV yang
+tidak terbaca tidak dihitung nol, dan kandidat di zona tengah masuk 'Perlu ditinjau', bukan ditolak."
+Tunjuk kartu **Pembacaan dokumen**.
 
-**Say:**
-> "This candidate has solid drafting experience, but the education doesn't match the requirement.
-> The system doesn't reject them. It sends them to HR as 'Perlu ditinjau' and says exactly what to
-> decide: can we accept the education gap? That decision belongs to a person."
+### Layar 6 — Kandidat #2 (momen "aha" yang direncanakan)
 
-**Point to:** **Rekomendasi tindak lanjut** (the "Putuskan apakah ini dapat ditoleransi" steps).
+**Klik:** kembali → baris **#2**.
 
-### Screen 8 — Close (on the dashboard)
+**Ucapkan:**
+> "Mungkin Bapak/Ibu bertanya: kenapa yang berpengalaman 6,5 tahun ada di bawah yang 3,9 tahun?
+> Pengalaman dihitung sampai syaratnya jelas terpenuhi; setelah itu tambahan tahun hanya menambah
+> sedikit. Keduanya lolos syarat minimal dua tahun, jadi poin pengalamannya hampir sama. Peringkat
+> satu unggul di keterampilan yang tertulis jelas di CV dan di kesesuaian isi CV dengan lowongan.
+> Semua poinnya terlihat di sini."
 
-**Click:** **Dasbor**.
+**Tunjuk:** **Dari mana skor ini berasal**, bandingkan baris *Pengalaman* dan *Kesesuaian isi CV*
+dengan kandidat #1. Lalu **Potensi risiko**: sistem mencatat pengalamannya jauh di atas syarat,
+sehingga ekspektasi peran dan gaji perlu dipastikan.
 
-**Say:**
-> "To sum up: the first pass that took a recruiter hours now takes seconds. Every candidate is judged
-> by the same rules. Every score can be traced to a sentence in the CV. The AI writes the
-> explanation, and HR makes the decision. Next steps toward production are validating more job
-> families, hosting in Indonesia with a data-protection policy, user roles and an audit trail, and
-> connecting the sources you saw on the collection page."
+**Pertanyaan HR:** "Apakah pertanyaan wawancaranya generik?"
+**Jawaban:** "Tidak. Bandingkan dengan kandidat #1: pertanyaannya berbeda, karena disusun dari
+kekurangan masing-masing kandidat."
 
----
+### Layar 7 — Kandidat #4 (HR tetap memutuskan)
 
-## 4 and 5. Expected questions and best answers
+**Klik:** kembali → baris **#4**. Gulir ke **Mengapa keputusannya seperti ini**.
 
-Rule for every answer: **one or two sentences, then show it on screen, then stop.** If a weakness
-comes up, admit it in one sentence, name the next step, and go back to the screen.
+**Ucapkan:**
+> "Kandidat ini punya pengalaman drafting yang baik, tetapi skornya 66,5, di zona tinjau, dan
+> pendidikannya belum sesuai syarat, baik bidang maupun jenjangnya. Sistem tidak menolaknya. Kandidat
+> ini diserahkan ke HR sebagai 'Perlu ditinjau', dengan keputusan yang harus diambil tertulis jelas:
+> apakah kekurangan pendidikan ini bisa diterima? Keputusan itu milik manusia."
 
-### HR Director and Head of Talent Acquisition
+**Tunjuk:** tanda centang dan silang pada **Mengapa keputusannya seperti ini**, lalu langkah
+"Putuskan apakah ini dapat ditoleransi" di **Rekomendasi tindak lanjut**.
 
-**Q1. "Our ATS already filters keywords. What's different?"**
-Keyword filters miss people who describe the same skill differently. TalentLens matches meaning, it
-recognises skills implied by the work described, and every match shows the CV sentence it came from.
-*Show:* #1 → Kecocokan dengan syarat lowongan → a "Tersirat" skill.
+**Pertanyaan HR:** "Siapa yang membuat keputusan akhir?"
+**Jawaban:** "Selalu HR. Sistem merekomendasikan dan menjelaskan; sistem tidak menolak siapa pun
+dengan sendirinya."
 
-**Q2. "Why is #1 (3,9 years) above #2 (6,5 years)?"**
-See Screen 6. Experience counts until the requirement is clearly met; the difference is skills
-written explicitly and how well the CV fits the job.
-*Show:* Dari mana skor ini berasal on #1 and #2.
+**Pertanyaan HR:** "Kenapa #3 tetap direkomendasikan padahal Revit belum terlihat?"
+**Jawaban:** "Keterampilan wajib yang tidak terlihat mengurangi skor, tetapi bukan syarat gugur. Skor
+#3 tetap 83,4, di atas batas 70, dan kartu keputusannya mencatat Revit sebagai hal yang perlu
+dipastikan saat wawancara." Buka #3 bila perlu.
 
-**Q3. "Can it discriminate by gender, age, religion, or university?"**
-The score uses four things only: skills, relevant experience, education field, and how well the CV
-fits the job. Name, photo, age, gender, religion and address never enter the score, and names are
-hidden on screen by default.
-*Show:* the hidden names on the ranking.
+### Layar 8 — Penutup (di Dashboard)
 
-**Q4. "Who makes the final decision?"**
-HR, always. The system recommends and explains; it never rejects anyone on its own.
-*Show:* the footer line on every page.
+**Klik:** **Dashboard**.
 
-**Q5. "What about a good candidate with a badly written CV?"**
-Three safety nets: implied skills still get partial credit, sections the system cannot read are not
-counted as zero, and borderline candidates go to "Perlu ditinjau" instead of rejection.
-*Show:* #1 → Pembacaan dokumen.
+**Ucapkan:**
+> "Kesimpulannya: tahap pertama yang biasanya memakan waktu berjam-jam kini selesai dalam hitungan
+> detik. Semua kandidat dinilai dengan aturan yang sama. Setiap skor bisa ditelusuri sampai ke kalimat
+> di CV, dan setiap keputusan dijelaskan dengan aturannya. AI menuliskan penjelasannya, HR yang
+> memutuskan. Langkah menuju produksi: validasi untuk lebih banyak jenis posisi, hosting di Indonesia
+> dengan kebijakan perlindungan data, peran pengguna dan jejak audit, serta menghubungkan sumber CV
+> yang tadi Bapak/Ibu lihat."
 
-**Q6. "Can you show us uploading a CV?"**
-Yes, it accepts PDF, Word and scanned CVs and screens in seconds. Today I'm using the five CVs your
-team provided so the results stay comparable. Show the **Unggah CV** button; upload only if they
-insist (see section 7).
+**Pertanyaan:** "Apa yang dibutuhkan untuk masuk produksi?"
+**Jawaban:** "Empat langkah: validasi lebih banyak jenis posisi, termasuk dibandingkan dengan
+keputusan rekrutmen Anda sebelumnya; hosting di Indonesia dengan kebijakan perlindungan data; peran
+pengguna dan jejak audit; dan integrasi sumber CV serta ATS Anda." Jangan menjanjikan tanggal.
 
-**Q7. "Which formats? What about scanned CVs?"**
-PDF, DOCX and TXT. Scanned PDFs are read with text recognition, and the screen tells HR what kind of
-document it was and how much of each section was read.
-*Show:* Pembacaan dokumen.
-
-**Q8. "How accurate is it?"**
-Don't give a percentage. "We test it against a fixed benchmark: 20 architecture CVs across 5
-vacancies, with the expected results written before the system ran. Every change must reproduce that
-benchmark before it ships, and 178 automated tests run on every change. On your five CVs, the order
-matches what an experienced recruiter would expect."
-*Honest limit:* the benchmark covers architecture roles only so far.
-
-**Q9. "Can the AI summary make things up?"**
-The AI only puts into words facts the system already calculated. It cannot change a score, it is
-told to mark implied skills as needing confirmation, and if the AI service fails a standard summary
-is shown instead.
-*Show:* the caption under Ringkasan AI.
-
-**Q10. "What does 'Tersirat' mean?"**
-The CV doesn't name the skill, but the work described shows it. It gets partial credit and is
-flagged for HR to confirm in the interview.
-
-**Q11. "Why is AI confidence 'Sedang' for everyone?"**
-Confidence reflects how completely the CV was read and how far the score is from a decision line.
-Each of these five has at least one skill that is only implied, so the system says "medium" instead
-of overclaiming. The ranking doesn't change.
-
-**Q12. "Can it detect a fake CV?"**
-No screener truly can. What it does is show which sentence supports each claim, separate written
-skills from implied ones, and give interview questions that test those claims.
-
-**Q13. "Does it work for finance, sales or IT roles?"**
-The engine reads any vacancy and any CV. We validate one job family at a time with a fixed benchmark;
-architecture is done and the others are planned. Never claim other roles are validated.
-
-**Q14. "Are the interview questions generic?"**
-No. Open #1 and #2: the questions differ because they come from each candidate's own gaps.
-
-**Q15. "Indonesian and English CVs?"**
-Yes. The matching model is multilingual; your five CVs are in English and the interface is in
-Indonesian.
-
-**Q16. "Why is #5 not rejected?"**
-Its score of 46,3 sits just above the rejection line, so the system hands it to a person rather than
-rejecting it. The thresholds are business rules HR can tighten later. Don't volunteer this one.
-
-### About CV collection (new page)
-
-**Q17. "Is it connected to LinkedIn or Jobstreet now?"**
-No. Those are marked as the next production phase. Today CVs come in by upload. The page shows how
-they will connect and what each connection needs.
-
-**Q18. "Why not just scrape LinkedIn or Jobstreet?"**
-Scraping breaks those platforms' terms of use and creates a personal-data risk under UU PDP. We
-connect only through the official partner or API access each platform provides.
-
-**Q19. "How long would integrations take?"**
-Don't promise dates. "Email inbox and shared folders are the fastest, because they only need access
-from your IT team. Job portals depend on each platform approving partner access."
-
-### CIO
-
-**Q20. "Where is candidate data stored? Are we UU PDP compliant?"**
-For this proof of concept the app runs on managed cloud services behind login, with files on a
-private storage volume. For production we would host in an Indonesian region or on your own servers,
-with a retention and deletion policy and candidate consent. The application is containerised, so it
-can move. If asked directly: the demo backend runs in a US region.
-
-**Q21. "Is our data sent to Google?"**
-Scoring runs entirely on our own server with our own language model; no CV leaves it for scoring.
-Only the summary step calls Gemini, and it receives facts without name, email or phone number.
-
-**Q22. "Is it secure?"**
-Every page is behind authentication. The backend requires a secret key that stays on the server and
-never reaches the browser, API documentation pages are disabled in production, and requests from
-unknown sites are rejected. User roles and audit logging are production items.
-
-**Q23. "What if the AI service goes down?"**
-Scoring doesn't depend on it. Only the written summary switches to a standard version, and the system
-tries a second AI model before that.
-
-**Q24. "Can it integrate with our ATS or HRIS?"**
-Everything you see runs through an API (vacancy, upload, screening, ranking), so integration is a
-connector, not a rebuild. It is outside the proof of concept.
-
-**Q25. "What's the stack? Who maintains it?"**
-Next.js frontend; Python and FastAPI backend in Docker; a multilingual language model running locally
-for matching; plain rules for scoring; Gemini for summaries. Maintained in Git with documented
-decisions, 178 automated tests and a benchmark every change must pass.
-
-**Q26. "Can results be reproduced for an audit?"**
-Yes. The same CV and vacancy always give the same score, and each score breaks down into parts that
-add up exactly. Say this with confidence.
-
-**Q27. "What does it cost to run?"**
-Scoring runs on a small server with no per-CV AI fee. The only usage-based cost is the AI summary,
-created once per candidate and then saved. Exact cost depends on volume; don't quote numbers.
-
-### CEO
-
-**Q28. "What's the business value?"**
-First-pass reading goes from minutes per CV to seconds per batch, every candidate is judged by the
-same rules, and hiring managers get a reasoned summary and interview questions instead of a pile of
-PDFs. Ask them: "How many CVs does one opening receive?" Don't invent ROI percentages.
-
-**Q29. "Will this replace recruiters?"**
-No. It removes the reading, not the judgement. Recruiters spend their time on the shortlist and the
-interview.
-
-**Q30. "What if it rejects a great candidate?"**
-It never rejects anyone automatically. Every decision is a recommendation with a written reason,
-borderline cases go to review, and HR can open any candidate.
-
-**Q31. "What does it take to go to production?"**
-Four steps: validate more job families, including against your past hiring decisions; host in
-Indonesia with a data-protection policy; add user roles and an audit trail; connect the CV sources and
-your ATS. Don't commit to dates on stage.
-
-**Q32. "Why build this instead of buying an ATS with AI?"**
-Every score is explained down to the sentence, scoring runs on infrastructure you control, and it
-works in Indonesian on your vacancies. Most packaged tools give a match score without the reasoning.
+**Pertanyaan:** "Apakah ini akan menggantikan recruiter?"
+**Jawaban:** "Tidak. Yang dihilangkan adalah pekerjaan membaca, bukan penilaian. Recruiter
+menghabiskan waktunya untuk shortlist dan wawancara."
 
 ---
 
-## 6. Features to emphasise
+## "Di mana kandidat yang ditolak?"
 
-In this order of importance:
+Pertanyaan ini hampir pasti muncul, karena angka **Tidak lolos** di halaman lowongan adalah 0.
 
-1. **Explainable scoring.** Five components that add up exactly to the score, and the CV sentence
-   behind each match. This is the differentiator.
-2. **Deterministic and auditable.** Same input, same score. The AI never scores.
-3. **AI with guardrails.** Gemini writes the hiring manager summary and interview questions from
-   computed facts; personal data is masked; a standard summary appears if the AI is unavailable.
-4. **Ready for HR's next step.** Candidate-specific interview questions, next steps, risks.
-5. **Human in the loop.** Borderline cases go to "Perlu ditinjau" with a decision to make.
-6. **Blind by default.** Names hidden.
-7. **A credible roadmap.** The Pengumpulan CV page: one engine, many future sources, official
-   access only.
-8. **Engineering discipline** (CIO only). Golden benchmark, 178 tests, documented decisions.
+**Jawaban terbaik:**
+> "Di lowongan ini memang tidak ada. Kelima CV yang diberikan semuanya relevan untuk posisi arsitek,
+> dan skor terendahnya 46,3, sedikit di atas batas tolak 45. Kami sengaja tidak menambahkan CV palsu
+> hanya untuk memperlihatkan penolakan. Aturannya terlihat di sini."
+
+**Lalu tunjukkan, dalam urutan ini:**
+
+1. **Halaman lowongan → Cara keputusan dibuat.** Zona merah "Tidak lolos, di bawah 45" kosong, dan
+   kalimat di bawahnya menyatakan tidak ada kandidat yang skornya di bawah 45.
+2. Bila ditanya lebih lanjut, klik angka **Tidak lolos** di ringkasan atas. Daftar kosong itu
+   menjelaskan sendiri: tidak ada kandidat di bawah 45, dan kandidat yang belum memenuhi syarat ada di
+   kelompok Perlu ditinjau.
+3. Buka **kandidat #5**:
+   > "Ini yang paling dekat dengan penolakan: pengalaman relevan 0,3 tahun dari syarat dua tahun,
+   > pendidikan belum sesuai, skor 46,3. Sistem menandai semua kekurangan itu, tetapi karena skornya
+   > masih di atas 45, keputusan akhir diserahkan ke HR."
+
+**Kalimat penutup bila mereka masih ragu:**
+> "Sistem ini memang dirancang untuk tidak menolak kandidat di zona abu-abu. Lebih baik HR melihat satu
+> kandidat tambahan daripada kehilangan kandidat bagus karena keputusan otomatis. 'Tidak lolos' hanya
+> untuk skor di bawah 45 dari CV yang terbaca dengan baik, dan itu pun tetap berupa rekomendasi dengan
+> alasan tertulis."
+
+**Jangan:** mengunggah CV yang tidak relevan saat demo hanya untuk memunculkan penolakan, atau
+mengatakan sistem "belum bisa menolak". Aturan penolakan ada dan teruji; datanya saja yang tidak
+memicunya.
 
 ---
 
-## 7. Do NOT demonstrate
+## Pertanyaan teknis dari CIO
 
-| Do not | Why | If they ask |
+**"Data kandidat disimpan di mana? Sesuai UU PDP?"**
+"Untuk proof of concept ini, aplikasi berjalan di layanan cloud terkelola di balik login, dengan berkas
+di volume penyimpanan privat. Untuk produksi kami akan menempatkannya di region Indonesia atau di server
+Anda sendiri, dengan kebijakan retensi dan penghapusan serta persetujuan kandidat. Aplikasinya dikemas
+dalam container, jadi mudah dipindahkan." Bila ditanya langsung: backend demo berjalan di region AS.
+
+**"Apakah data kami dikirim ke Google?"**
+"Penilaian berjalan sepenuhnya di server kami dengan model bahasa kami sendiri; tidak ada CV yang
+dikirim keluar untuk dinilai. Hanya langkah ringkasan yang memanggil Gemini, dan yang dikirim hanya
+fakta tanpa nama, email, atau nomor telepon."
+
+**"Seberapa aman?"**
+"Semua halaman dilindungi login. Backend memerlukan kunci rahasia yang hanya ada di server dan tidak
+pernah sampai ke browser, halaman dokumentasi API dimatikan di produksi, dan permintaan dari situs tak
+dikenal ditolak. Peran pengguna dan log audit masuk tahap produksi."
+
+**"Bagaimana kalau layanan AI mati?"**
+"Penilaian tidak bergantung pada AI. Hanya ringkasan tertulis yang beralih ke versi standar, setelah
+sistem mencoba model AI kedua."
+
+**"Seberapa akurat?"**
+Jangan menyebut persentase. "Kami mengujinya dengan benchmark tetap: 20 CV arsitektur untuk 5 lowongan,
+dengan hasil yang diharapkan ditulis sebelum sistem dijalankan. Setiap perubahan harus menghasilkan
+ulang benchmark itu sebelum dirilis, dan 178 tes otomatis berjalan di setiap perubahan." Batasannya:
+benchmark baru mencakup posisi arsitektur.
+
+**"Bisakah hasilnya diulang untuk audit?"**
+"Bisa. CV dan lowongan yang sama selalu menghasilkan skor yang sama, setiap skor terurai menjadi
+komponen yang jumlahnya tepat, dan setiap keputusan dijelaskan dengan aturan yang sama." Ucapkan dengan
+yakin.
+
+**"Bisa diintegrasikan dengan ATS atau HRIS kami?"**
+"Semua yang Bapak/Ibu lihat berjalan lewat API: membuat lowongan, unggah, penyaringan, peringkat. Jadi
+integrasinya berupa konektor, bukan membangun ulang. Itu di luar cakupan proof of concept."
+
+**"Teknologinya apa? Siapa yang bisa memeliharanya?"**
+"Frontend Next.js; backend Python dan FastAPI dalam Docker; model bahasa multibahasa yang berjalan di
+server sendiri untuk pencocokan; aturan biasa untuk penilaian; Gemini untuk ringkasan. Dipelihara di
+Git dengan keputusan teknis yang terdokumentasi, 178 tes otomatis, dan benchmark yang wajib lolos."
+
+**"Berapa biaya operasionalnya?"**
+"Penilaian berjalan di server kecil tanpa biaya AI per CV. Satu-satunya biaya berbasis pemakaian
+adalah ringkasan AI, yang dibuat sekali per kandidat lalu disimpan." Jangan menyebut angka.
+
+**"Bisa dipakai untuk posisi keuangan, sales, atau IT?"**
+"Mesinnya membaca lowongan dan CV apa pun. Kami memvalidasinya satu rumpun posisi per tahap dengan
+benchmark tetap; arsitektur sudah, yang lain sudah direncanakan." Jangan mengklaim posisi lain sudah
+tervalidasi.
+
+---
+
+## Fitur yang perlu ditonjolkan
+
+Urut dari yang paling penting:
+
+1. **Keputusan yang bisa dijelaskan.** Kartu "Mengapa keputusannya seperti ini" dan "Cara keputusan
+   dibuat": aturan yang sama, diperiksa satu per satu untuk setiap kandidat.
+2. **Skor yang bisa ditelusuri.** Lima komponen yang jumlahnya tepat, plus kalimat CV di balik setiap
+   kecocokan.
+3. **Konsisten dan bisa diaudit.** Input sama, skor sama. AI tidak pernah menilai.
+4. **AI dengan pagar pengaman.** Ringkasan dan pertanyaan wawancara dari fakta yang sudah dihitung;
+   data pribadi disamarkan; ringkasan standar bila AI tidak tersedia.
+5. **Siap untuk langkah HR berikutnya.** Pertanyaan wawancara per kandidat, langkah tindak lanjut,
+   risiko.
+6. **HR tetap memutuskan.** Zona abu-abu masuk "Perlu ditinjau" dengan keputusan yang jelas.
+7. **Penilaian tanpa identitas.** Nama disembunyikan secara bawaan.
+8. **Peta jalan yang masuk akal.** Halaman Pengumpulan CV: satu mesin, banyak sumber, akses resmi.
+
+---
+
+## Yang TIDAK boleh didemokan
+
+| Jangan | Alasan | Bila diminta |
 |---|---|---|
-| Press **Susun ulang** on a summary | It calls the AI live, can take 15–60 s, and produces new wording you haven't read | "It rewrites the summary; the saved one is what HR reviews." |
-| Turn on **Tampilkan nama kandidat** | These are real applicants' names on a projector | "Names are available to HR, hidden by default for blind screening." |
-| Upload a new CV or click **Tambah lowongan** | Changes the numbers you rehearsed, and a first summary for a new CV takes 7–18 s | Show the button; upload only if they insist, using a CV they hand you |
-| Click **Saring ulang** | Not needed; it re-runs screening on the server and adds waiting time | "It reproduces identical scores; we checked after the last update." |
-| Claim any source on **Pengumpulan CV** is connected | None is | "That's the next production phase." |
-| Scroll to the bottom of **Bukti dari CV** | Some lower evidence pairings look odd | Stay on the first items |
-| Open Railway, Vercel, GitHub, logs or API URLs | Off-message, and exposes infrastructure | Offer a technical follow-up session |
-| Show candidate #5 unprompted | Weakest case to explain in a short demo | See Q16 |
-| Give accuracy percentages, ROI figures or dates | You can't back them up on stage | Use the Q8, Q28 and Q31 framing |
+| Menekan **Susun ulang** pada ringkasan | Memanggil AI secara langsung, bisa 15–60 detik, dan menghasilkan kalimat baru yang belum Anda baca | "Itu menulis ulang ringkasan; yang tersimpan adalah yang ditinjau HR." |
+| Mencentang **Tampilkan nama kandidat** | Nama pelamar sungguhan akan tampil di proyektor | "Nama tersedia untuk HR, disembunyikan secara bawaan agar penilaian tidak bias." |
+| Mengunggah CV baru atau **Tambah lowongan** | Mengubah angka yang sudah dilatih, dan ringkasan pertama untuk CV baru butuh 7–18 detik | Tunjukkan tombolnya saja; unggah hanya bila mereka memaksa, dengan CV yang mereka berikan |
+| Mengunggah CV tidak relevan untuk memunculkan "Tidak lolos" | Terkesan dibuat-buat | Gunakan jawaban "Di mana kandidat yang ditolak?" |
+| Menekan **Saring ulang** | Tidak perlu, dan menambah waktu tunggu | "Hasilnya identik; sudah kami cek setelah pembaruan terakhir." |
+| Mengatakan ada sumber di **Pengumpulan CV** yang sudah terhubung | Belum ada | "Itu tahap produksi berikutnya." |
+| Menggulir ke bagian bawah **Bukti dari CV** | Beberapa pasangan bukti di bawah terlihat janggal | Tetap di butir-butir teratas |
+| Membuka Railway, Vercel, GitHub, log, atau URL API | Keluar dari pesan utama dan membuka infrastruktur | Tawarkan sesi teknis terpisah |
+| Membahas kandidat #5 tanpa ditanya | Kasus yang paling sulit dijelaskan dalam waktu singkat | Lihat jawaban "Di mana kandidat yang ditolak?" |
+| Menyebut persentase akurasi, ROI, atau tanggal | Tidak bisa dibuktikan di panggung | Gunakan jawaban di bagian CIO dan Layar 8 |
 
 ---
 
-## 8. Backup plan: Gemini temporarily fails
+## Rencana cadangan: Gemini sedang gangguan
 
-**What you'll see:** nothing alarming. The five demo candidates' summaries are already saved and
-open instantly without calling Gemini. For a newly uploaded CV, the app tries two Gemini models with
-retries; if both fail, a standard summary in the same layout appears after up to about a minute.
-There is no error message on screen.
+**Yang akan terlihat:** tidak ada yang mengkhawatirkan. Ringkasan kelima kandidat demo sudah tersimpan
+dan terbuka tanpa memanggil Gemini. Untuk CV yang baru diunggah, aplikasi mencoba dua model Gemini
+dengan beberapa percobaan; bila keduanya gagal, ringkasan standar dengan tata letak yang sama muncul
+dalam waktu paling lama sekitar satu menit. Tidak ada pesan error di layar.
 
-**What to do:**
+**Yang dilakukan:**
 
-1. **Stay on the five saved candidates.** Their AI summaries cannot fail.
-2. **Never press Susun ulang.** That is the only way to trigger a live call on a saved candidate.
-3. If you uploaded a new CV and the summary is slow, keep talking over the skeleton for a few
-   seconds, then move on: open the score breakdown, which never depends on Gemini.
-4. **If someone notices the wording is plainer, say:**
-   > "The AI service is temporarily busy, so the system used its standard summary. Notice that the
-   > score, ranking and evidence are unchanged. Scoring never depends on the AI. That's by design."
-5. Turn it into a strength: it demonstrates Q23.
-
----
-
-## 9. Backup plan: slow internet
-
-**Prepare tonight:**
-
-- **Screenshots** in one desktop folder, named in demo order:
-  `01-dasbor`, `02-pengumpulan-cv`, `03-kriteria`, `04-peringkat`, `05-kandidat-1-skor-ringkasan`,
-  `06-kandidat-1-pertanyaan-panel`, `07-kandidat-1-rincian-skor`, `08-kandidat-1-kecocokan`,
-  `09-kandidat-2-rincian-skor`, `10-kandidat-4-rekomendasi`. Keep names hidden in every shot.
-- **A 5-minute screen recording** of section 10.
-- **Phone hotspot** charged and tested with the demo laptop.
-
-**On the day, escalate step by step:**
-
-1. **Pages loading slowly (3–10 s):** use the tabs you opened 30 minutes before; switch tabs instead
-   of clicking links. Fill the pause with the next talking point.
-2. **The venue Wi-Fi is unreliable:** switch to the phone hotspot. The pages are light; a 4G
-   connection is enough.
-3. **No connection at all:** open the screenshot folder full screen and present the same script.
-   Say once: "The connection is unstable, so I'll walk you through the same screens from captures."
-4. **Very little time left:** play the 5-minute recording and keep the time for questions.
-
-Never wait in silence for a page. Keep talking, or move to the next screenshot.
+1. **Tetap di kelima kandidat yang tersimpan.** Ringkasan mereka tidak bisa gagal.
+2. **Jangan menekan Susun ulang.** Hanya tombol itu yang memicu panggilan AI langsung pada kandidat
+   yang tersimpan.
+3. Bila Anda sempat mengunggah CV baru dan ringkasannya lambat, terus berbicara beberapa detik, lalu
+   pindah ke **Mengapa keputusannya seperti ini** atau **Dari mana skor ini berasal**. Keduanya tidak
+   bergantung pada AI.
+4. **Bila ada yang memperhatikan kalimatnya lebih sederhana:**
+   > "Layanan AI sedang sibuk, jadi sistem memakai ringkasan standarnya. Perhatikan bahwa skor,
+   > peringkat, keputusan, dan buktinya tidak berubah. Penilaian memang tidak bergantung pada AI;
+   > itu disengaja."
+5. Jadikan kekuatan: ini membuktikan jawaban "Bagaimana kalau layanan AI mati?".
 
 ---
 
-## 10. The 5-minute version
+## Rencana cadangan: internet lambat
 
-For an executive slot. One message: *explainable AI screening that keeps HR in control.*
+**Siapkan malam ini:**
 
-| Time | Screen | Do | Say (core line) |
+- **Screenshot** dalam satu folder di desktop, dinamai sesuai urutan demo:
+  `01-dashboard`, `02-pengumpulan-cv`, `03-kriteria`, `04-peringkat`, `05-cara-keputusan-dibuat`,
+  `06-kandidat-1-skor-ringkasan`, `07-kandidat-1-mengapa-keputusan`, `08-kandidat-1-rincian-skor`,
+  `09-kandidat-2-rincian-skor`, `10-kandidat-4-mengapa-keputusan`. Pastikan nama tersembunyi di semua
+  gambar.
+- **Rekaman layar 5 menit** dengan alur versi 5 menit.
+- **Hotspot ponsel** terisi penuh dan sudah dicoba dengan laptop demo.
+
+**Saat demo, naikkan langkah demi langkah:**
+
+1. **Halaman lambat (3–10 detik):** gunakan tab yang sudah dibuka 30 menit sebelumnya; pindah tab,
+   jangan klik tautan. Isi jeda dengan poin berikutnya.
+2. **Wi-Fi tempat acara tidak stabil:** pindah ke hotspot ponsel. Halamannya ringan; 4G cukup.
+3. **Tidak ada koneksi sama sekali:** buka folder screenshot layar penuh dan bawakan naskah yang sama.
+   Ucapkan sekali: "Koneksinya sedang tidak stabil, jadi saya tunjukkan layar yang sama dari tangkapan
+   layar."
+4. **Waktu tinggal sedikit:** putar rekaman 5 menit dan sisakan waktu untuk tanya jawab.
+
+Jangan pernah menunggu halaman sambil diam. Terus berbicara, atau pindah ke screenshot berikutnya.
+
+---
+
+## Alur 5 menit
+
+Untuk sesi eksekutif. Satu pesan: *penyaringan AI yang bisa dijelaskan, dengan HR tetap memegang
+keputusan.*
+
+| Waktu | Layar | Klik | Ucapkan (inti) |
 |---|---|---|---|
-| 0:00–0:40 | Dasbor | — | Problem and result: 5 real CVs, 3 recommended, 2 for review |
-| 0:40–1:30 | Vacancy → Peringkat kandidat | Scroll to the ranking | Scores out of 100, "Paling cocok", names hidden |
-| 1:30–3:30 | Candidate #1 | Score → Ringkasan AI → Pertanyaan wawancara → Dari mana skor ini berasal | "The AI explains, the rules score; the five parts add up to 91,3" |
-| 3:30–4:15 | Pengumpulan CV | Header link | "Upload today; career site, email and job portals next, through official access only" |
-| 4:15–5:00 | Dasbor | — | Close with the three lines, and production next steps |
+| 0:00–0:40 | Layar 1 · Dashboard | — | Masalah dan hasil: 5 CV sungguhan, 3 direkomendasikan, 2 perlu ditinjau |
+| 0:40–1:40 | Layar 4 · Peringkat dan Cara keputusan dibuat | Kartu lowongan, gulir | Skor dari 100, "Paling cocok", nama disembunyikan; aturan 70/45 dan zona merah yang kosong |
+| 1:40–3:50 | Layar 5 · Kandidat #1 | Baris #1: skor → Ringkasan AI → Pertanyaan wawancara → Mengapa keputusannya seperti ini → Dari mana skor ini berasal | "Aturan yang memberi skor, AI yang menjelaskan; lima komponen jumlahnya tepat 91,3" |
+| 3:50–4:25 | Layar 2 · Pengumpulan CV | Header | "Hari ini unggahan; berikutnya situs karier, email, dan portal lowongan, lewat akses resmi" |
+| 4:25–5:00 | Layar 8 · Dashboard | Header | Penutup dengan tiga kalimat hafalan dan langkah menuju produksi |
 
-Skip: criteria, candidates #2 and #4, panels detail. Questions go after.
+Lewati: kriteria, kandidat #2 dan #4, detail panel. Tanya jawab setelahnya.
 
 ---
 
-## 11. The 10-minute version
+## Alur 10 menit
 
-The recommended default.
+Alur bawaan yang disarankan.
 
-| Time | Screen | Do | Say |
+| Waktu | Layar | Klik |
+|---|---|---|
+| 0:00–1:00 | Layar 1 · Dashboard | — |
+| 1:00–1:45 | Layar 2 · Pengumpulan CV, singkat | Pengumpulan CV di header |
+| 1:45–2:30 | Layar 3 · Kriteria penilaian | Dashboard → Junior Architect → Kriteria penilaian |
+| 2:30–3:45 | Layar 4 · Peringkat dan Cara keputusan dibuat | Gulir |
+| 3:45–6:45 | Layar 5 · Kandidat #1, ketujuh bagian | Baris #1 |
+| 6:45–7:45 | Layar 6 · Kandidat #2, momen "aha" | Kembali → baris #2 |
+| 7:45–8:45 | Layar 7 · Kandidat #4, HR memutuskan | Kembali → baris #4 |
+| 8:45–10:00 | Layar 8 · Penutup | Dashboard |
+
+---
+
+## Alur 15 menit
+
+Untuk audiens campuran HR dan IT yang ingin lebih dalam. Termasuk waktu tanya jawab.
+
+| Waktu | Layar | Klik | Tambahan dibanding versi 10 menit |
 |---|---|---|---|
-| 0:00–1:00 | Dasbor | — | Screen 1 |
-| 1:00–1:45 | Pengumpulan CV | Header link | Screen 2, short |
-| 1:45–2:45 | Vacancy | Expand Kriteria penilaian | Screen 3 |
-| 2:45–3:30 | Vacancy | Peringkat kandidat | Screen 4 |
-| 3:30–6:30 | Candidate #1 | Walk all seven blocks | Screen 5 |
-| 6:30–7:45 | Candidate #2 | Dari mana skor ini berasal, Potensi risiko | Screen 6, the "aha" |
-| 7:45–8:45 | Candidate #4 | Rekomendasi tindak lanjut | Screen 7 |
-| 8:45–10:00 | Dasbor | — | Screen 8, close |
+| 0:00–1:15 | Layar 1 · Dashboard | — | Tanyakan: "Berapa CV yang masuk untuk satu lowongan?" |
+| 1:15–3:00 | Layar 2 · Pengumpulan CV, lengkap | Pengumpulan CV | Diagram, dua kelompok sumber, empat prinsip integrasi |
+| 3:00–3:45 | Layar 3 · Kriteria penilaian | Junior Architect → Kriteria penilaian | — |
+| 3:45–5:00 | Layar 4 · Peringkat dan Cara keputusan dibuat | Gulir; klik angka Tidak lolos | Tunjukkan pesan daftar kosong yang menjelaskan sendiri |
+| 5:00–8:15 | Layar 5 · Kandidat #1 | Baris #1 | Tambah kartu **Pembacaan dokumen** (jenis dokumen dan seberapa lengkap terbaca) |
+| 8:15–9:15 | Layar 6 · Kandidat #2 | Baris #2 | — |
+| 9:15–10:30 | Layar 7 · Kandidat #4, lalu #3 sebentar | Baris #4, lalu #3 | #3: Revit belum terlihat mengurangi skor, bukan syarat gugur |
+| 10:30–11:30 | Dashboard, tanpa layar baru | — | Cara sistem divalidasi: benchmark 20 CV dengan hasil yang ditulis lebih dulu, 178 tes otomatis, kode penilaian tidak berubah sejak benchmark, AI tidak pernah menilai |
+| 11:30–12:00 | Layar 8 · Penutup | — | Langkah menuju produksi |
+| 12:00–15:00 | Tanya jawab | — | Jawab singkat, tunjukkan di layar, berhenti |
 
 ---
 
-## 12. The 15-minute version
+## Kartu ringkas
 
-For a mixed HR and IT audience that wants depth. Includes planned question time.
-
-| Time | Screen | Do | Say |
-|---|---|---|---|
-| 0:00–1:15 | Dasbor | — | Screen 1, plus the problem in their terms: "How many CVs does one opening get?" |
-| 1:15–3:00 | Pengumpulan CV | Walk the diagram, the source groups and the principles | Screen 2 in full: one engine, many sources, official access, PII protected, source recorded |
-| 3:00–4:00 | Vacancy | Expand Kriteria penilaian | Screen 3 |
-| 4:00–4:45 | Vacancy | Peringkat kandidat | Screen 4 |
-| 4:45–8:00 | Candidate #1 | All seven blocks, plus **Pembacaan dokumen** (document type and how much was read) | Screen 5, and Q5 on badly written CVs |
-| 8:00–9:15 | Candidate #2 | Breakdown and risks | Screen 6 |
-| 9:15–10:15 | Candidate #4 | Next steps | Screen 7 |
-| 10:15–11:30 | Dasbor (no new screen) | — | How it is validated: fixed benchmark of 20 CVs with expected results written first; 178 automated tests; scoring code unchanged since the benchmark; AI never scores (Q8, Q26) |
-| 11:30–12:00 | Dasbor | — | Close and production next steps (Q31) |
-| 12:00–15:00 | — | Questions | Use section 4. Answer short, show on screen, stop |
-
----
-
-## Quick reference card
-
-- First page: **Dasbor**. Main screen: **Candidate #1**. "Aha": **#2 vs #1**. Human in the loop: **#4**.
-- Never: Susun ulang, show names, upload, Saring ulang, claim integrations are live.
-- Gemini trouble: stay on the five saved candidates; scoring never depends on AI.
-- Network trouble: tabs → hotspot → screenshots → recording.
-- Close: "The rules score. The AI explains. HR decides."
+- Halaman pertama: **Dashboard**. Layar utama: **Kandidat #1**. Momen "aha": **#2 dibanding #1**.
+  HR memutuskan: **#4**. Pertanyaan penolakan: **Cara keputusan dibuat** dan **#5**.
+- Jangan: Susun ulang, menampilkan nama, unggah, Saring ulang, mengklaim integrasi sudah aktif.
+- Gemini gangguan: tetap di lima kandidat yang tersimpan; penilaian tidak bergantung pada AI.
+- Internet lambat: tab → hotspot → screenshot → rekaman.
+- Penutup: "Aturan yang memberi skor. AI yang menjelaskan. HR yang memutuskan."
