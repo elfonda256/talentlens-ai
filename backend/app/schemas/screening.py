@@ -54,6 +54,8 @@ class ScreeningResult(BaseModel):
     missing_must_skills: list[str]
     missing_nice_skills: list[str]
     knockout_flags: list[str]
+    # Components left out of the score because the CV section behind them was not read
+    unassessed: list[str] = Field(default_factory=list)
     evidence: list[Evidence]
     recommendation: Recommendation
     reasons: list[str]
@@ -91,10 +93,11 @@ class ExperienceMatch(BaseModel):
     total_years: float
     required_years: float
     met: bool
+    assessed: bool = True  # False: the experience section was not read, so nothing was judged
 
 
 class EducationMatch(BaseModel):
-    status: Literal["match", "related", "mismatch", "not_required"]
+    status: Literal["match", "related", "mismatch", "not_required", "unknown"]
     found_fields: list[str]
     required_fields: list[str]
     level_below_requirement: bool
@@ -110,6 +113,7 @@ class ComponentScore(BaseModel):
     points: float  # contribution to the 0-100 score
     max_points: float
     explanation: str
+    assessed: bool = True
 
 
 class ExperienceRelevance(BaseModel):
@@ -185,6 +189,7 @@ class RankingRow(ScreeningResult):
     file_name: str
     extraction_method: str
     highlights: MatchHighlights
+    warnings: list[str] = Field(default_factory=list)  # what the parser could not read
     name: str = ""  # only filled when identities are revealed
 
 
@@ -200,9 +205,11 @@ class CandidateDetail(BaseModel):
     summary: str
     experiences: list[dict]
     education: list[dict]
+    education_in_progress: list[dict] = Field(default_factory=list)
     skills: list[str]
     total_experience_months: int
     extraction_method: str
     extraction_confidence: float
+    section_confidence: dict[str, float] = Field(default_factory=dict)
     warnings: list[str]
     identity: dict[str, str] = Field(default_factory=dict)  # empty unless revealed

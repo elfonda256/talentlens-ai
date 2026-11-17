@@ -80,10 +80,31 @@ def relevant_months(job: JobProfile, cand: CandidateProfile) -> float:
     return min(total, cand.total_experience_months)
 
 
+def unassessed_components(job: JobProfile, cand: CandidateProfile) -> list[str]:
+    """Components the job asks for but the CV gave nothing to judge them by.
+
+    An unread section is unknown, not a failed requirement, so it is left out of the score
+    instead of counting as zero.
+    """
+    unknown = []
+    if job.min_years_experience > 0 and not cand.experiences:
+        unknown.append("experience")
+    if job.degree_fields and not cand.education and not cand.education_in_progress:
+        unknown.append("education")
+    return unknown
+
+
+def _must_be_written(skill_ids: list[str]) -> bool:
+    """A software tool is either named in the CV or not; it is never inferred from similar text."""
+    tax = taxonomy.load()
+    return all(tax[skill_id]["category"] == "software" for skill_id in skill_ids)
+
+
 def score_candidate(
     job: JobProfile, cand: CandidateProfile, embedder: Embedder, index: FaissIndex
 ) -> dict:
     flags: list[str] = []
+    unassessed = unassessed_components(job, cand)
 
     # --- Semantic: every JD line looks for its best evidence in the CV ---
     sentences = job.requirement_sentences + job.responsibility_sentences
@@ -116,7 +137,7 @@ def score_candidate(
             matched += [taxonomy.label(sid) for sid in hit_ids]
             continue
         soft = 0.0
-        if cand.chunks:
+        if cand.chunks and not _must_be_written(unit["ids"]):
             for sid in unit["ids"]:
                 vector = embedder.encode([taxonomy.describe(sid)], kind="query")[0]
                 hit = index.best_match(vector, cand.candidate_id)
@@ -130,7 +151,9 @@ def score_candidate(
 
     # --- Relevant experience ---
     rel_years = relevant_months(job, cand) / 12
-    if job.min_years_experience > 0:
+    if "experience" in unassessed:
+        experience = 0.0
+    elif job.min_years_experience > 0:
         ratio = rel_years / job.min_years_experience
         experience = 0.85 * min(1.0, ratio) + 0.15 * min(
             1.0, max(0.0, rel_years - job.min_years_experience) / 3
@@ -145,7 +168,9 @@ def score_candidate(
     # --- Education ---
     fields = {e.field for e in cand.education if e.field}
     level = max((e.level for e in cand.education), default=0)
-    if not job.degree_fields:
+    if "education" in unassessed:
+        education = 0.0
+    elif not job.degree_fields:
         education = 1.0
     elif fields & set(job.degree_fields):
         education = 1.0
@@ -165,8 +190,12 @@ def score_candidate(
         education=round(education, 3),
     )
     weights = {**DEFAULT_WEIGHTS, **job.weights}
-    norm = sum(weights.values()) or 1.0
-    contributions = {k: round(100 * weights[k] / norm * getattr(breakdown, k), 1) for k in weights}
+    # The weight of an unassessed component is shared out over the ones that could be judged.
+    norm = sum(w for k, w in weights.items() if k not in unassessed) or 1.0
+    contributions = {
+        k: 0.0 if k in unassessed else round(100 * weights[k] / norm * getattr(breakdown, k), 1)
+        for k in weights
+    }
     return {
         "score": round(sum(contributions.values()), 1),
         "breakdown": breakdown,
@@ -177,4 +206,5 @@ def score_candidate(
         "knockout_flags": flags,
         "evidence": sorted(evidence, key=lambda e: -e.similarity),
         "relevant_years": round(rel_years, 1),
+        "unassessed": unassessed,
     }

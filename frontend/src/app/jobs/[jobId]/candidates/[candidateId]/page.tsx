@@ -74,6 +74,16 @@ function CandidateView() {
       back={back}
       actions={<RecommendationBadge value={result.recommendation} />}
     >
+      {result.unassessed.length > 0 && (
+        <Notice tone="warning" className="mb-6">
+          <strong className="font-semibold">
+            CV ini tidak terbaca lengkap.
+          </strong>{" "}
+          Bagian {sectionNames(result.unassessed)} tidak dikenali, sehingga
+          belum dinilai dan tidak dianggap sebagai kekurangan kandidat. Skor
+          bersifat sementara; periksa CV aslinya sebelum memutuskan.
+        </Notice>
+      )}
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_20rem]">
         <div className="flex min-w-0 flex-col gap-6">
           <AiSummary jobId={jobId} candidateId={candidateId} />
@@ -96,6 +106,17 @@ function CandidateView() {
   );
 }
 
+const SECTION_NAME: Record<string, string> = {
+  experience: "pengalaman kerja",
+  education: "pendidikan",
+  skills: "keterampilan",
+  summary: "ringkasan",
+};
+
+function sectionNames(keys: string[]): string {
+  return keys.map((key) => SECTION_NAME[key] ?? key).join(" dan ");
+}
+
 /** The four match percentages. They are the scoring values themselves, shown as percentages. */
 function InsightCard({ detail }: { detail: CandidateDetail }) {
   const { result, breakdown } = detail;
@@ -113,7 +134,7 @@ function InsightCard({ detail }: { detail: CandidateDetail }) {
           label="Keseluruhan"
           percent={result.score}
           emphasis
-          hint={`Skor ${formatNumber(result.score)} dari 100, peringkat ${result.rank}`}
+          hint={`Skor ${formatNumber(result.score)} dari 100${result.unassessed.length > 0 ? " (sementara)" : ""}, peringkat ${result.rank}`}
         />
         <div className="flex flex-col gap-4 border-t border-border pt-4">
           <Meter
@@ -124,19 +145,61 @@ function InsightCard({ detail }: { detail: CandidateDetail }) {
           <Meter
             label="Pengalaman"
             percent={result.breakdown.experience * 100}
-            hint={`${formatNumber(experience.relevant_years)} tahun relevan, syarat ${experience.required_years} tahun`}
+            assessed={experience.assessed}
+            hint={
+              experience.assessed
+                ? `${formatNumber(experience.relevant_years)} tahun relevan, syarat ${experience.required_years} tahun`
+                : "Bagian pengalaman kerja tidak terbaca"
+            }
           />
           <Meter
             label="Pendidikan"
             percent={result.breakdown.education * 100}
+            assessed={breakdown.education.status !== "unknown"}
             hint={
               formatFields(breakdown.education.found_fields) ||
-              "Bidang tidak terbaca"
+              (breakdown.education.status === "unknown"
+                ? "Bagian pendidikan tidak terbaca"
+                : "Bidang studi tidak disebutkan")
             }
           />
         </div>
       </CardContent>
     </Card>
+  );
+}
+
+const SECTIONS_SHOWN = ["experience", "education", "skills"] as const;
+
+/** One CV section and how well it was read: found and structured, partly, or not found. */
+function SectionReading({
+  name,
+  confidence,
+}: {
+  name: string;
+  confidence: number | undefined;
+}) {
+  const label =
+    confidence === undefined
+      ? "Tidak diukur"
+      : confidence === 0
+        ? "Tidak ditemukan"
+        : confidence < 0.6
+          ? "Ditemukan, isinya tidak terbaca"
+          : `Terbaca ${formatNumber(confidence * 100, 0)}%`;
+  return (
+    <>
+      <dt className="text-muted-foreground">Bagian {name}</dt>
+      <dd
+        className={
+          confidence !== undefined && confidence < 0.6
+            ? "text-right font-medium text-warning-ink"
+            : "text-right font-medium tabular-nums"
+        }
+      >
+        {label}
+      </dd>
+    </>
   );
 }
 
@@ -155,16 +218,34 @@ function ReadingCard({ detail }: { detail: CandidateDetail }) {
               ? "OCR (hasil scan)"
               : "Teks langsung"}
           </dd>
-          <dt className="text-muted-foreground">Keyakinan</dt>
-          <dd className="text-right font-medium tabular-nums">
-            {formatNumber(detail.extraction_confidence * 100, 0)}%
-          </dd>
-          <dt className="text-muted-foreground">Pendidikan</dt>
+          {SECTIONS_SHOWN.map((key) => (
+            <SectionReading
+              key={key}
+              name={SECTION_NAME[key]}
+              confidence={detail.section_confidence[key]}
+            />
+          ))}
+          <dt className="text-muted-foreground">Pendidikan selesai</dt>
           <dd className="text-right font-medium">
             {readable(detail.education.map((item) => item.degree).join("; ")) ||
-              "Tidak terbaca"}
+              "Tidak ada yang terbaca"}
           </dd>
+          {detail.education_in_progress.length > 0 && (
+            <>
+              <dt className="text-muted-foreground">Masih ditempuh</dt>
+              <dd className="text-right font-medium">
+                {readable(
+                  detail.education_in_progress
+                    .map((item) => item.degree)
+                    .join("; "),
+                )}
+              </dd>
+            </>
+          )}
         </dl>
+        <p className="text-xs text-muted-foreground">
+          Bagian yang tidak ditemukan tidak dinilai, bukan dianggap nol.
+        </p>
         {detail.warnings.map((warning) => (
           <Notice key={warning} tone="info">
             {warning}

@@ -14,6 +14,7 @@ type ScoreExplainerProps = { components: ComponentScore[]; score: number };
 
 /** Explainable AI: where every point of the final score comes from, and why. */
 export function ScoreExplainer({ components, score }: ScoreExplainerProps) {
+  const provisional = components.some((part) => !part.assessed);
   return (
     <Card aria-labelledby="judul-skor">
       <CardHeader>
@@ -22,6 +23,8 @@ export function ScoreExplainer({ components, score }: ScoreExplainerProps) {
           Skor akhir adalah jumlah lima komponen. Setiap komponen punya batas
           poin sendiri, dan dihitung dengan aturan yang sama untuk semua
           kandidat.
+          {provisional &&
+            " Komponen yang bagian CV-nya tidak terbaca tidak ikut dihitung; bobotnya dibagi ke komponen lain, sehingga skor ini bersifat sementara."}
         </CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col gap-5">
@@ -63,13 +66,19 @@ export function ScoreExplainer({ components, score }: ScoreExplainerProps) {
                   {part.explanation}
                 </td>
                 <td className="whitespace-nowrap py-3 text-right tabular-nums">
-                  <span className="font-semibold">
-                    {formatNumber(part.points)}
-                  </span>
-                  <span className="text-muted-foreground">
-                    {" "}
-                    dari {formatNumber(part.max_points, 0)}
-                  </span>
+                  {part.assessed ? (
+                    <>
+                      <span className="font-semibold">
+                        {formatNumber(part.points)}
+                      </span>
+                      <span className="text-muted-foreground">
+                        {" "}
+                        dari {formatNumber(part.max_points)}
+                      </span>
+                    </>
+                  ) : (
+                    <span className="text-muted-foreground">Belum dinilai</span>
+                  )}
                 </td>
               </tr>
             ))}
@@ -77,14 +86,17 @@ export function ScoreExplainer({ components, score }: ScoreExplainerProps) {
           <tfoot>
             <tr>
               <th scope="row" className="pt-3 text-left font-semibold">
-                Skor akhir
+                {provisional ? "Skor sementara" : "Skor akhir"}
               </th>
               <td className="hidden sm:table-cell" />
               <td className="whitespace-nowrap pt-3 text-right tabular-nums">
                 <span className="text-lg font-semibold">
                   {formatNumber(score)}
                 </span>
-                <span className="text-muted-foreground"> dari 100</span>
+                <span className="text-muted-foreground">
+                  {" "}
+                  dari 100{provisional && " (sementara)"}
+                </span>
               </td>
             </tr>
           </tfoot>

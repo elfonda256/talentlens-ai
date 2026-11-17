@@ -6,10 +6,30 @@ type MeterProps = {
   percent: number;
   hint?: string;
   emphasis?: boolean;
+  /** False when there was nothing to measure: shown as "not assessed", never as 0%. */
+  assessed?: boolean;
 };
 
 /** A labelled percentage with a bar. Tone follows the value so weak areas stand out. */
-export function Meter({ label, percent, hint, emphasis = false }: MeterProps) {
+export function Meter({
+  label,
+  percent,
+  hint,
+  emphasis = false,
+  assessed = true,
+}: MeterProps) {
+  if (!assessed) {
+    return (
+      <div className="flex flex-col gap-1.5">
+        <div className="flex items-baseline justify-between gap-3">
+          <span className="text-sm text-muted-foreground">{label}</span>
+          <span className="text-sm font-medium">Belum dinilai</span>
+        </div>
+        <div className="h-1.5 w-full rounded-full border border-dashed border-border" />
+        {hint && <span className="text-xs text-muted-foreground">{hint}</span>}
+      </div>
+    );
+  }
   const value = Math.min(Math.max(percent, 0), 100);
   const tone =
     value >= 70 ? "bg-success" : value >= 45 ? "bg-warning" : "bg-destructive";

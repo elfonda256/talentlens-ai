@@ -28,7 +28,10 @@ def test_upload_returns_the_same_profile_as_the_service(client, file_name):
     response = upload(client, file_name)
 
     assert response.status_code == 200
-    assert response.json() == GOLDEN[file_name]
+    body = response.json()
+    assert body.pop("section_confidence")["experience"] == 1.0  # added in QA Phase 2
+    assert body.pop("education_in_progress") == []
+    assert body == GOLDEN[file_name]
 
 
 def test_unsupported_format_returns_415(client):

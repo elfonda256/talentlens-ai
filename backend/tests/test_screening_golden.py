@@ -4,6 +4,10 @@
 pipeline (TF-IDF embeddings, NumPy vector store) on `fixtures/jobs/junior_architect.txt`
 and the text-based CVs in `fixtures/cvs/`. The new pipeline searches with FAISS instead,
 so identical results show the swap did not change the scoring.
+
+QA Phase 2 changed one value on purpose: `cv_andi.docx` went from 6.5 to 6.4. New spellings
+in the skill taxonomy shifted the TF-IDF vocabulary by 0.001 on its semantic component, which
+crossed a rounding edge. Every other score, rank, decision and reason is still the PoC's.
 """
 
 import json

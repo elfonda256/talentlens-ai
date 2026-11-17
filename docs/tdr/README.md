@@ -27,6 +27,9 @@ Satu berkas per keputusan penting, dengan empat bagian yang ditetapkan governanc
 | [0020](0020-one-note-shape-for-gemini-and-template.md) | Catatan recruiter punya satu susunan, siapa pun penulisnya | 4 |
 | [0021](0021-reject-cv-uploaded-as-job.md) | Dokumen yang tampak seperti CV ditolak saat diunggah sebagai lowongan | 4 |
 | [0022](0022-ui-system-for-explanation.md) | Satu bahasa visual untuk penjelasan skor | 4 |
+| [0023](0023-unread-section-is-unknown.md) | Bagian CV yang tidak terbaca berarti "tidak diketahui", bukan nol | QA 2 |
+| [0024](0024-software-skills-are-never-implied.md) | Keterampilan perangkat lunak tidak pernah dianggap "tersirat" | QA 2 |
+| [0025](0025-parser-hardening-from-real-layouts.md) | Parser diperkuat dari tata letak CV nyata, diuji dengan fixture sintetis | QA 2 |
 
 TDR baru memakai nomor berikutnya dan nama berkas `NNNN-ringkasan-singkat.md`. TDR yang sudah diterima tidak diubah isinya;
 bila keputusan berganti, buat TDR baru yang menyatakan menggantikan yang lama.

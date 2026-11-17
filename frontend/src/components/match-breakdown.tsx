@@ -1,6 +1,7 @@
 import {
   CircleCheck,
   CircleDashed,
+  CircleHelp,
   CircleX,
   type LucideIcon,
 } from "lucide-react";
@@ -14,10 +15,17 @@ import type {
 import { formatFields, formatYears } from "@/lib/labels";
 import { cn } from "@/lib/utils";
 
+type LineStatus = MatchStatus | "unknown";
+
 const STATUS: Record<
-  MatchStatus,
+  LineStatus,
   { icon: LucideIcon; tone: string; text: string }
 > = {
+  unknown: {
+    icon: CircleHelp,
+    tone: "text-muted-foreground",
+    text: "Belum dapat dinilai",
+  },
   matched: { icon: CircleCheck, tone: "text-success", text: "Ditemukan" },
   implied: { icon: CircleDashed, tone: "text-warning", text: "Tersirat" },
   missing: { icon: CircleX, tone: "text-destructive", text: "Tidak ditemukan" },
@@ -28,17 +36,20 @@ const EDUCATION_TEXT = {
   related: "Serumpun dengan bidang yang diminta",
   mismatch: "Berbeda dari bidang yang diminta",
   not_required: "Lowongan tidak mensyaratkan bidang tertentu",
+  unknown: "Bagian pendidikan tidak terbaca, periksa CV aslinya",
 } as const;
 
 /** Requirement by requirement: what the job asked for and what the CV shows. */
 export function MatchBreakdown({ breakdown }: { breakdown: Breakdown }) {
   const { experience, education } = breakdown;
-  const educationStatus: MatchStatus =
-    education.status === "mismatch"
-      ? "missing"
-      : education.status === "related"
-        ? "implied"
-        : "matched";
+  const educationStatus: LineStatus =
+    education.status === "unknown"
+      ? "unknown"
+      : education.status === "mismatch"
+        ? "missing"
+        : education.status === "related"
+          ? "implied"
+          : "matched";
 
   return (
     <Card aria-labelledby="judul-kecocokan">
@@ -58,22 +69,35 @@ export function MatchBreakdown({ breakdown }: { breakdown: Breakdown }) {
             skills={breakdown.bonus_skills}
           />
           <Group title="Pengalaman">
-            <Line
-              status={experience.met ? "matched" : "missing"}
-              label={`${formatYears(experience.relevant_years)} pengalaman relevan`}
-              detail={
-                experience.required_years > 0
-                  ? `Syarat minimal ${experience.required_years} tahun. Total masa kerja ${formatYears(experience.total_years)}.`
-                  : `Tanpa syarat minimal. Total masa kerja ${formatYears(experience.total_years)}.`
-              }
-            />
+            {experience.assessed ? (
+              <Line
+                status={experience.met ? "matched" : "missing"}
+                statusText={
+                  experience.met ? "Memenuhi syarat" : "Di bawah syarat"
+                }
+                label={`${formatYears(experience.relevant_years)} pengalaman relevan`}
+                detail={
+                  experience.required_years > 0
+                    ? `Syarat minimal ${experience.required_years} tahun. Total masa kerja ${formatYears(experience.total_years)}.`
+                    : `Tanpa syarat minimal. Total masa kerja ${formatYears(experience.total_years)}.`
+                }
+              />
+            ) : (
+              <Line
+                status="unknown"
+                label="Belum dapat dinilai"
+                detail="Bagian pengalaman kerja tidak terbaca, periksa CV aslinya."
+              />
+            )}
           </Group>
           <Group title="Pendidikan">
             <Line
               status={educationStatus}
               label={
                 formatFields(education.found_fields) ||
-                "Bidang tidak terbaca dari CV"
+                (education.status === "unknown"
+                  ? "Belum dapat dinilai"
+                  : "Bidang studi tidak disebutkan")
               }
               detail={
                 EDUCATION_TEXT[education.status] +
@@ -148,10 +172,12 @@ function Line({
   status,
   label,
   detail,
+  statusText,
 }: {
-  status: MatchStatus;
+  status: LineStatus;
   label: string;
   detail?: string;
+  statusText?: string;
 }) {
   const { icon: Icon, tone, text } = STATUS[status];
   return (
@@ -160,7 +186,7 @@ function Line({
       <span className="flex min-w-0 flex-col">
         <span className={cn(status === "missing" && "text-muted-foreground")}>
           {label}
-          <span className="sr-only">: {text}</span>
+          <span className="sr-only">: {statusText ?? text}</span>
         </span>
         {detail && (
           <span className="text-xs text-muted-foreground">{detail}</span>

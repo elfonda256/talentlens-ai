@@ -14,6 +14,8 @@ from tests.conftest import FIXTURES, REFERENCE_DATE, SAMPLE_CVS
 
 GOLDEN = json.loads((FIXTURES / "golden_profiles.json").read_text(encoding="utf-8"))
 SCANNED = "cv_laras_scan.pdf"
+# Fields the parser gained after the PoC. Everything the PoC produced must still be identical.
+ADDED_IN_QA_PHASE_2 = {"section_confidence", "education_in_progress"}
 TEXT_BASED = sorted(name for name in GOLDEN if name != SCANNED)
 
 
@@ -21,7 +23,7 @@ TEXT_BASED = sorted(name for name in GOLDEN if name != SCANNED)
 def test_output_matches_original_parser(file_name):
     profile = parse_cv(SAMPLE_CVS / file_name, today=REFERENCE_DATE)
 
-    assert profile.model_dump() == GOLDEN[file_name]
+    assert profile.model_dump(exclude=ADDED_IN_QA_PHASE_2) == GOLDEN[file_name]
 
 
 @pytest.mark.skipif(shutil.which("tesseract") is None, reason="Tesseract is not installed")

@@ -3,9 +3,9 @@
 AI Recruitment Copilot: Proof of Concept yang menyaring dan memeringkat CV terhadap sebuah
 lowongan, lengkap dengan skor, alasan, bukti dari CV, dan ringkasan untuk HR.
 
-**Status: Sprint 4 (siap demo).** Alur dari unggah lowongan sampai catatan recruiter berjalan
-dan teruji, dengan penjelasan skor, rincian kecocokan, dan penanda kata kunci pada CV. Model
-embedding E5 dan Gemini sudah terbukti berjalan di mesin Product Owner. Yang masih terbuka ada di
+**Status: QA Phase 2 selesai.** Parser sudah diperkuat dari temuan pada lima CV perusahaan, dan
+peringkatnya kini sejalan dengan penilaian manual. Embedding E5 dan catatan Gemini masih perlu
+diuji ulang di mesin Product Owner; lihat
 [Yang sudah diverifikasi dan yang belum](#yang-sudah-diverifikasi-dan-yang-belum).
 
 ![Peringkat kandidat](docs/screenshots/sprint-4/sesudah-peringkat.jpg)
@@ -106,7 +106,7 @@ talentlens-ai/
 │   │       └── screening.py    orkestrasi pipeline
 │   ├── data/taxonomy/          keterampilan dan glosarium Indonesia-Inggris
 │   ├── scripts/                check_ai_backends.py
-│   └── tests/                  89 tes + fixtures sintetis
+│   └── tests/                  149 tes + fixtures sintetis
 ├── frontend/src/
 │   ├── app/                    /, /jobs/[jobId], /jobs/[jobId]/candidates/[candidateId]
 │   ├── components/             komponen fitur; ui/ berisi komponen dasar
@@ -145,12 +145,12 @@ cd frontend && npm run lint && npm run build
 
 | Pemeriksaan | Hasil |
 | --- | --- |
-| `pytest` (89 tes), `ruff`, `npm run lint`, `npm run build` | Lolos (Python 3.13 di lingkungan pembuatan; 72 dari 73 tes Sprint 3 lolos di Python 3.12 pada macOS, 1 tes OCR dilewati) |
+| `pytest` (149 tes), `ruff`, `npm run lint`, `npm run build` | Lolos (Python 3.13 di lingkungan pembuatan; 72 dari 73 tes Sprint 3 lolos di Python 3.12 pada macOS, 1 tes OCR dilewati) |
 | Keluaran parser CV, kriteria lowongan, skor, peringkat, dan alasan sama dengan PoC lama | Lolos; tes snapshot tidak berubah sejak Sprint 3 |
 | Alur lengkap di peramban, layar lebar dan ponsel (390 px) | Lolos, dengan CV sintetis, TF-IDF, dan catatan templat |
-| Embedding `multilingual-e5-small` dengan model asli | Lolos di mesin Product Owner (17 Nov 2026): skrip pengecekan dan screening di aplikasi |
+| Embedding `multilingual-e5-small` dengan model asli | Lolos di mesin Product Owner pada 17 Nov 2026, **sebelum** QA Phase 2. Peringkat lima CV perusahaan dengan E5 belum diuji ulang |
 | Panggilan Gemini dengan API asli | Lolos untuk panggilan uji (`gemini-3.6-flash`). **Prompt catatan recruiter yang baru (keluaran JSON) belum diuji terhadap API asli**; bila jawabannya tidak terbaca, templat dipakai |
-| 5 CV dari perusahaan | **Gagal** pada QA Phase 1 (17 Nov 2026): bagian pengalaman tidak terbaca pada 4 dari 5 CV dan peringkatnya tidak sah. Lihat [QA Report 01](docs/QA_REPORT_01.md) |
+| 5 CV dari perusahaan | Lolos pada QA Phase 2 (17 Nov 2026, TF-IDF): seluruh pengalaman dan pendidikan terbaca, peringkat sesuai penilaian manual. Lihat [QA Report 02](docs/QA_REPORT_02.md) |
 | Tablet (768 px), mode gelap, navigasi keyboard penuh, pembaca layar | **Belum diuji** |
 | `docker compose up --build` | **Belum**: lingkungan pembuatan tidak punya Docker daemon |
 
@@ -163,4 +163,4 @@ cd frontend && npm run lint && npm run build
 - [Governance](docs/GOVERNANCE.md)
 - [Technical Decision Records](docs/tdr/README.md)
 - Laporan sprint: [01](docs/SPRINT_REPORT_01.md), [02](docs/SPRINT_REPORT_02.md), [03](docs/SPRINT_REPORT_03.md), [04](docs/SPRINT_REPORT_04.md)
-- Laporan QA: [01, validasi data nyata](docs/QA_REPORT_01.md)
+- Laporan QA: [01, validasi data nyata](docs/QA_REPORT_01.md), [02, penguatan parser](docs/QA_REPORT_02.md)

@@ -205,6 +205,7 @@ def get_ranking(job_id: str, service: Service, reveal: Reveal = False) -> Rankin
                 file_name=profile.file_name if reveal else "",
                 extraction_method=profile.extraction_method,
                 highlights=match_breakdown.build_highlights(job, profile, result),
+                warnings=profile.warnings,
                 name=_name(profile, reveal),
             )
         )
@@ -235,10 +236,12 @@ def get_candidate_detail(
         summary=profile.summary,
         experiences=[e.model_dump() for e in profile.experiences],
         education=[e.model_dump() for e in profile.education],
+        education_in_progress=[e.model_dump() for e in profile.education_in_progress],
         skills=profile.skills,
         total_experience_months=profile.total_experience_months,
         extraction_method=profile.extraction_method,
         extraction_confidence=profile.extraction_confidence,
+        section_confidence=profile.section_confidence,
         warnings=profile.warnings,
         identity=identity if reveal else {},
     )

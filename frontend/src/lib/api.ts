@@ -81,6 +81,8 @@ export type ScreeningResult = {
   missing_must_skills: string[];
   missing_nice_skills: string[];
   knockout_flags: string[];
+  /** Components left out of the score because the CV section behind them was not read. */
+  unassessed: ScoreComponent[];
   evidence: { requirement: string; best_match: string; similarity: number }[];
   recommendation: Recommendation;
   reasons: string[];
@@ -97,6 +99,7 @@ export type ComponentScore = {
   points: number;
   max_points: number;
   explanation: string;
+  assessed: boolean;
 };
 
 export type MatchStatus = "matched" | "implied" | "missing";
@@ -127,10 +130,11 @@ export type MatchBreakdown = {
     total_years: number;
     required_years: number;
     met: boolean;
+    assessed: boolean;
   };
   experiences: ExperienceRelevance[];
   education: {
-    status: "match" | "related" | "mismatch" | "not_required";
+    status: "match" | "related" | "mismatch" | "not_required" | "unknown";
     found_fields: string[];
     required_fields: string[];
     level_below_requirement: boolean;
@@ -153,6 +157,7 @@ export type RankingRow = ScreeningResult & {
   extraction_method: string;
   name: string;
   highlights: MatchHighlights;
+  warnings: string[];
 };
 
 export type Ranking = {
@@ -166,10 +171,13 @@ export type CandidateDetail = {
   breakdown: MatchBreakdown;
   summary: string;
   education: { degree: string; level: number; field: string }[];
+  education_in_progress: { degree: string; level: number; field: string }[];
   skills: string[];
   total_experience_months: number;
   extraction_method: string;
   extraction_confidence: number;
+  /** Per section, 0 (not found) to 1 (fully read). */
+  section_confidence: Record<string, number>;
   warnings: string[];
   identity: Record<string, string>;
 };

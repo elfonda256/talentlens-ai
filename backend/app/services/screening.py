@@ -19,6 +19,7 @@ from app.schemas.screening import HRSummary, JobProfile, ScreeningResult
 from app.services import explanation, jd_parsing, match_breakdown, matching, taxonomy
 from app.services.cv_parsing import UnreadableDocumentError, parse_cv
 from app.services.cv_parsing.document_loader import load_document
+from app.services.cv_parsing.extractor import DATE_RANGE
 from app.services.cv_parsing.pii import EMAIL, PHONE
 from app.services.embedding import Embedder, create_embedder
 from app.services.hr_summary import generate_hr_summary
@@ -150,6 +151,7 @@ class ScreeningService:
                 cand,
                 self._settings.shortlist_threshold,
                 self._settings.reject_threshold,
+                scored["unassessed"],
             )
             reasons, narrative = explanation.build_reasons(job, cand, scored, recommendation, notes)
             results.append(
@@ -163,6 +165,7 @@ class ScreeningService:
                     missing_must_skills=scored["missing_must_skills"],
                     missing_nice_skills=scored["missing_nice_skills"],
                     knockout_flags=scored["knockout_flags"],
+                    unassessed=scored["unassessed"],
                     evidence=scored["evidence"][:6],
                     recommendation=recommendation,
                     reasons=reasons,
@@ -218,10 +221,13 @@ class ScreeningService:
         return self._embedder
 
 
+MIN_PERIODS_OF_A_CV = 3  # a work history lists several date ranges; a vacancy does not
+
 # A short line that names a vacancy section, in English or Indonesian ("Job Requirements:").
 JOB_SECTION_HEADING = re.compile(
-    r"^[^\n]{0,25}\b(requirements?|qualifications?|responsibilit(?:y|ies)|job description|"
-    r"kualifikasi|persyaratan|syarat|kriteria|tanggung jawab|deskripsi pekerjaan)\b[^\n]{0,15}$",
+    r"^[ \t]*(?:(?:job|minimum|key|main|general|basic|our)[ \t]+)?"
+    r"(requirements?|qualifications?|responsibilit(?:y|ies)|job description|"
+    r"kualifikasi|persyaratan|syarat|kriteria|tanggung jawab|deskripsi pekerjaan)\b[^\n]{0,25}$",
     re.IGNORECASE | re.MULTILINE,
 )
 
@@ -230,7 +236,8 @@ def _looks_like_cv(text: str) -> bool:
     """A vacancy has requirement headings; a CV has personal contact details instead."""
     has_job_heading = JOB_SECTION_HEADING.search(text) is not None
     has_contact = EMAIL.search(text) is not None or PHONE.search(text) is not None
-    return has_contact and not has_job_heading
+    employment_periods = len(DATE_RANGE.findall(text))
+    return has_contact and (not has_job_heading or employment_periods >= MIN_PERIODS_OF_A_CV)
 
 
 @lru_cache

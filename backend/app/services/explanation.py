@@ -19,10 +19,25 @@ LABELS = {
 }
 
 
+UNASSESSED_LABELS = {"experience": "pengalaman kerja", "education": "pendidikan"}
+
+
 def decide(
-    score: float, flags: list[str], cand: CandidateProfile, shortlist_at: float, reject_below: float
+    score: float,
+    flags: list[str],
+    cand: CandidateProfile,
+    shortlist_at: float,
+    reject_below: float,
+    unassessed: list[str] | None = None,
 ) -> tuple[str, list[str]]:
     notes: list[str] = []
+    if unassessed:
+        sections = " dan ".join(UNASSESSED_LABELS[key] for key in unassessed)
+        notes.append(
+            f"Bagian {sections} tidak terbaca dari CV, sehingga belum dinilai dan skor ini "
+            "bersifat sementara. Periksa CV aslinya sebelum memutuskan"
+        )
+        return "REVIEW", notes
     if score >= shortlist_at:
         if flags:
             notes.append(
@@ -53,9 +68,15 @@ def build_reasons(
         reasons.append(
             "Keterampilan wajib yang tidak ditemukan: " + ", ".join(scored["missing_must_skills"])
         )
-    reasons.append(
-        f"Pengalaman relevan terhitung {scored['relevant_years']:.1f} tahun (syarat minimal {job.min_years_experience:g} tahun)"
-    )
+    unassessed = scored.get("unassessed", [])
+    if "experience" in unassessed:
+        reasons.append(
+            "Pengalaman: belum dapat dinilai karena bagian pengalaman kerja tidak terbaca"
+        )
+    else:
+        reasons.append(
+            f"Pengalaman relevan terhitung {scored['relevant_years']:.1f} tahun (syarat minimal {job.min_years_experience:g} tahun)"
+        )
     fields = sorted({e.field for e in cand.education if e.field})
     reasons.append("Pendidikan: " + (", ".join(fields) if fields else "tidak terbaca"))
     reasons += scored["knockout_flags"] + notes + cand.warnings

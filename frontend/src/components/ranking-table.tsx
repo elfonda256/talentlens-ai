@@ -17,6 +17,7 @@ export function RankingTable({ jobId, rows, reveal }: RankingTableProps) {
         const { highlights } = row;
         const experienceMet =
           highlights.relevant_years >= highlights.required_years;
+        const experienceRead = !row.unassessed.includes("experience");
         return (
           <li key={row.candidate_id}>
             <Link
@@ -54,8 +55,12 @@ export function RankingTable({ jobId, rows, reveal }: RankingTableProps) {
               />
               <Fact
                 label="Pengalaman relevan"
-                value={formatYears(highlights.relevant_years)}
-                weak={!experienceMet}
+                value={
+                  experienceRead
+                    ? formatYears(highlights.relevant_years)
+                    : "Belum dinilai"
+                }
+                weak={experienceRead && !experienceMet}
               />
               <span className="hidden lg:block">
                 <RecommendationBadge value={row.recommendation} />
@@ -76,6 +81,9 @@ export function RankingTable({ jobId, rows, reveal }: RankingTableProps) {
 function headline(row: RankingRow): string {
   const { highlights } = row;
   const missing = highlights.must_total - highlights.must_matched;
+  if (row.unassessed.length > 0) {
+    return "CV tidak terbaca lengkap, periksa manual";
+  }
   if (highlights.relevant_years < highlights.required_years) {
     return "Pengalaman di bawah syarat minimal";
   }

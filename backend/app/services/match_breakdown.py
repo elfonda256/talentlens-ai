@@ -32,14 +32,16 @@ EDUCATION_TEXT = {
     "related": "Bidang pendidikan serumpun dengan yang disyaratkan",
     "mismatch": "Bidang pendidikan tidak sesuai dengan yang disyaratkan",
     "not_required": "Lowongan tidak mensyaratkan bidang pendidikan tertentu",
+    "unknown": "Belum dapat dinilai: bagian pendidikan tidak terbaca dari CV",
 }
+EXPERIENCE_UNKNOWN_TEXT = "Belum dapat dinilai: bagian pengalaman kerja tidak terbaca dari CV"
 
 
 def build_breakdown(
     job: JobProfile, profile: CandidateProfile, result: ScreeningResult
 ) -> MatchBreakdown:
     must, bonus = _skill_matches(job, profile, result)
-    experience = _experience_match(job, profile)
+    experience = _experience_match(job, profile, result)
     education = _education_match(job, profile, result)
     return MatchBreakdown(
         components=_components(job, result, must, bonus, experience, education),
@@ -60,7 +62,7 @@ def build_highlights(
     job: JobProfile, profile: CandidateProfile, result: ScreeningResult
 ) -> MatchHighlights:
     must, bonus = _skill_matches(job, profile, result, with_terms=False)
-    experience = _experience_match(job, profile)
+    experience = _experience_match(job, profile, result)
     education = _education_match(job, profile, result)
     return MatchHighlights(
         components=_components(job, result, must, bonus, experience, education),
@@ -100,9 +102,12 @@ def _skill_matches(
     return must, bonus
 
 
-def _experience_match(job: JobProfile, profile: CandidateProfile) -> ExperienceMatch:
+def _experience_match(
+    job: JobProfile, profile: CandidateProfile, result: ScreeningResult
+) -> ExperienceMatch:
     relevant_years = matching.relevant_months(job, profile) / 12
     return ExperienceMatch(
+        assessed="experience" not in result.unassessed,
         relevant_years=round(relevant_years, 1),
         total_years=round(profile.total_experience_months / 12, 1),
         required_years=job.min_years_experience,
@@ -113,7 +118,9 @@ def _experience_match(job: JobProfile, profile: CandidateProfile) -> ExperienceM
 def _education_match(
     job: JobProfile, profile: CandidateProfile, result: ScreeningResult
 ) -> EducationMatch:
-    if not job.degree_fields:
+    if "education" in result.unassessed:
+        status = "unknown"
+    elif not job.degree_fields:
         status = "not_required"
     elif EDUCATION_MISMATCH_FLAG in result.knockout_flags:
         status = "mismatch"
@@ -166,8 +173,10 @@ def _components(
     education: EducationMatch,
 ) -> list[ComponentScore]:
     weights = {**DEFAULT_WEIGHTS, **job.weights}
-    total_weight = sum(weights.values()) or 1.0
-    share = {key: 100 * weights[key] / total_weight for key in weights}
+    # Same rule as the matcher: an unassessed component gives its weight to the others.
+    assessed = {key: key not in result.unassessed for key in weights}
+    total_weight = sum(w for key, w in weights.items() if assessed[key]) or 1.0
+    share = {key: 100 * weights[key] / total_weight if assessed[key] else 0.0 for key in weights}
 
     # The skills component is one number in the score. It is shown as two rows (must-have and
     # bonus) by splitting it the same way the matcher weighs them: 1 per must-have, 0.5 per bonus.
@@ -175,7 +184,11 @@ def _components(
     must_share = share["skills"] * len(must) / possible if possible else 0.0
     bonus_share = share["skills"] - must_share if possible else 0.0
     must_points = share["skills"] * _skill_points(must, 1.0) / possible if possible else 0.0
-    bonus_points = share["skills"] * _skill_points(bonus, 0.5) / possible if possible else 0.0
+    # The bonus row takes what is left of the rounded skills contribution, so the rows add up
+    # to the score exactly as displayed.
+    bonus_points = min(
+        bonus_share, max(0.0, result.contributions["skills"] - round(must_points, 1))
+    )
 
     criteria = len(job.requirement_sentences) + len(job.responsibility_sentences)
     rows = [
@@ -197,7 +210,9 @@ def _components(
             result.contributions["experience"],
             f"{experience.relevant_years:.1f}".replace(".", ",")
             + " tahun pengalaman yang relevan dengan posisi; "
-            f"syarat minimal {experience.required_years:g} tahun",
+            f"syarat minimal {experience.required_years:g} tahun"
+            if experience.assessed
+            else EXPERIENCE_UNKNOWN_TEXT,
         ),
         (
             "education",
@@ -222,6 +237,7 @@ def _components(
             points=round(max(points, 0.0), 1),
             max_points=round(max_points, 1),
             explanation=explanation,
+            assessed=assessed.get(key, True),
         )
         for key, max_points, points, explanation in rows
     ]

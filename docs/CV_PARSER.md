@@ -81,6 +81,26 @@ mengidentifikasi orang. Berkas yang gagal dibaca dicatat sebagai `WARNING` denga
 pada berkas di `tests/fixtures/cvs/`. Bila logika parser sengaja diubah, snapshot ini harus dibuat
 ulang dan perubahannya ditinjau baris demi baris.
 
+## Penguatan dari CV nyata (QA Phase 2)
+
+| Hal | Perilaku |
+| --- | --- |
+| Judul bagian | Dicocokkan tanpa memandang kapitalisasi, tanda baca, bentuk jamak, dan spasi antarhuruf. Daftar frasanya ada di `HEADINGS` pada `extractor.py` |
+| Judul sebaris dengan isi | Dikenali untuk frasa ekspor portal kerja ("Riwayat karier …", "Pendidikan …"), sekali per bagian |
+| Jabatan dan perusahaan | Dibaca dari baris tanggal, baris di atasnya, atau baris di bawahnya; durasi dalam kurung diabaikan |
+| "PROJECT :" di dalam pengalaman | Tidak memutus bagian pengalaman |
+| Pendidikan yang masih ditempuh | Masuk `education_in_progress`, tidak dihitung sebagai gelar |
+| `section_confidence` | Per bagian: 0 tidak ditemukan, 0,3 judul ada tetapi isinya tidak terbaca, 0,6 sampai 1,0 terbaca |
+| Data pribadi | Telepon berbagai format, email, nomor identitas, tanggal lahir dalam kalimat, baris kontak, dan nama kampus disamarkan. `pii.mask` dijalankan lagi pada setiap kutipan sebelum dikirim ke Gemini |
+
+Bagian yang tidak terbaca tidak dinilai sebagai nol; lihat [TDR-0023](tdr/0023-unread-section-is-unknown.md).
+Tes regresinya ada di `tests/test_real_cv_layouts.py`, dengan fixture berisi karangan di
+`tests/fixtures/real_layouts/`.
+
+**Belum ditangani:** tata letak dua kolom yang terbaca berselang-seling; CV tanpa judul bagian sama
+sekali; nama sekolah menengah dan alamat di tengah paragraf tidak disamarkan; jabatan "sampai
+sekarang" dihitung sampai hari ini kecuali `REFERENCE_DATE` diisi.
+
 ## Batasan yang diwarisi dari parser lama
 
 Tidak diperbaiki pada sprint ini karena memperbaikinya berarti mengubah logika:

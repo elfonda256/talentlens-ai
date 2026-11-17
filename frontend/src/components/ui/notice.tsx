@@ -1,4 +1,4 @@
-import { CircleAlert, CircleCheck, Info } from "lucide-react";
+import { CircleAlert, CircleCheck, Info, TriangleAlert } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
@@ -11,6 +11,10 @@ const STYLE = {
   success: {
     box: "border-success/30 bg-success-soft text-success-ink",
     icon: CircleCheck,
+  },
+  warning: {
+    box: "border-warning/40 bg-warning-soft text-warning-ink",
+    icon: TriangleAlert,
   },
   info: { box: "border-border bg-secondary text-foreground", icon: Info },
 } as const;

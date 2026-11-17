@@ -59,8 +59,8 @@ def test_template_follows_the_recommendation_and_names_the_gaps(screened):
     job, profile, result, breakdown = case(screened, "cv_sinta.pdf")  # a graduate, under review
     review = template_note(job, profile, result, breakdown)
 
-    assert "belum sesuai dengan kebutuhan posisi ini" in rejected.headline
-    assert any("Bidang pendidikan berbeda" in item for item in rejected.concerns)
+    assert rejected.headline == "Kandidat ini belum sesuai untuk posisi Junior Architect."
+    assert any("berbeda dari yang diminta (akuntansi)" in item for item in rejected.concerns)
     assert rejected.interview_focus == []  # nothing to prepare for a rejected candidate
     assert "perlu ditinjau" in review.headline
     assert any("di bawah syarat 2 tahun" in item for item in review.concerns)
