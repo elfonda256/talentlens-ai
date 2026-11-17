@@ -1,0 +1,689 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-03",
+  "target_vacancy": "ARC-VAC-01",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-03_Nadia_Paramitha_Kusuma.pdf",
+    "vacancy": "Vacancy/ARC-VAC-01_Senior_Architect_High-Rise_PT_Arsitama_Griya_Konsultan.pdf",
+    "benchmark": "Expected_Result/ARC-CV-03.expected.json"
+  },
+  "candidate_profile": "Very good — employment gap",
+  "test_tags": [
+    "canva_style",
+    "two_column",
+    "mixed_language",
+    "employment_gap",
+    "image_placeholder",
+    "skill_bars"
+  ],
+  "parser_output": {
+    "extraction_method": "text",
+    "has_text_layer": true,
+    "language": "mixed",
+    "layout_class": "two_column",
+    "contact": {
+      "name": "Nadia Paramitha Kusuma",
+      "email": "nadia.pkusuma@outlook.com",
+      "phone_e164": "+6285719346620",
+      "location": "Bintaro Sektor 9, Tangerang Selatan",
+      "links": []
+    },
+    "sections_detected": [
+      {
+        "raw_heading": "Kontak",
+        "canonical": "contact"
+      },
+      {
+        "raw_heading": "Pendidikan",
+        "canonical": "education"
+      },
+      {
+        "raw_heading": "Sertifikasi",
+        "canonical": "certifications"
+      },
+      {
+        "raw_heading": "Software",
+        "canonical": "skills"
+      },
+      {
+        "raw_heading": "Bahasa",
+        "canonical": "languages"
+      },
+      {
+        "raw_heading": "Profil",
+        "canonical": "summary"
+      },
+      {
+        "raw_heading": "Pengalaman Kerja",
+        "canonical": "experience"
+      },
+      {
+        "raw_heading": "Proyek Pilihan",
+        "canonical": "projects"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Senior Architect",
+        "company": "PT Rangka Visi Arsitektur",
+        "location": "Jakarta",
+        "start": "2024-02",
+        "end": "present",
+        "months": 33,
+        "employment_type": "full_time",
+        "relevant": true
+      },
+      {
+        "title": "Career break",
+        "company": null,
+        "location": null,
+        "start": "2021-07",
+        "end": "2024-01",
+        "months": 31,
+        "employment_type": "gap",
+        "relevant": false
+      },
+      {
+        "title": "Architect",
+        "company": "PT Cakra Megah Konsultan",
+        "location": "Jakarta",
+        "start": "2014-09",
+        "end": "2021-06",
+        "months": 82,
+        "employment_type": "full_time",
+        "relevant": true
+      }
+    ],
+    "education": [
+      {
+        "level": "S1",
+        "field": "Arsitektur",
+        "institution": "Universitas Katolik Parahyangan",
+        "start": "2010",
+        "end": "2014",
+        "gpa": 3.38,
+        "gpa_scale": 4.0,
+        "status": "completed"
+      }
+    ],
+    "certifications": [
+      "SKK Arsitek Ahli Muda Jenjang 7 (LPJK, 2020)",
+      "GREENSHIP Professional (GBC Indonesia, 2020)",
+      "Dynamo for Revit, online course (2023)"
+    ],
+    "languages": [
+      "Indonesian (native)",
+      "English (fluent)",
+      "Sundanese (passive)"
+    ],
+    "volunteer": [],
+    "side_business": [],
+    "expected_warnings": [
+      "two_column_layout",
+      "employment_gap:2021-07..2024-01"
+    ],
+    "pii_fields_to_mask": [
+      "name",
+      "email",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "Revit",
+        "category": "software",
+        "evidence": "Revit ●●●●○"
+      },
+      {
+        "skill": "ArchiCAD",
+        "category": "software",
+        "evidence": "ArchiCAD ●●●○○"
+      },
+      {
+        "skill": "AutoCAD",
+        "category": "software",
+        "evidence": "AutoCAD ●●●●●"
+      },
+      {
+        "skill": "Lumion",
+        "category": "software",
+        "evidence": "Lumion ●●●●○"
+      },
+      {
+        "skill": "Rhino",
+        "category": "software",
+        "evidence": "Rhino ●●○○○"
+      },
+      {
+        "skill": "Dynamo",
+        "category": "software",
+        "evidence": "Dynamo for Revit, online course"
+      },
+      {
+        "skill": "High-rise design",
+        "category": "domain",
+        "evidence": "apartemen TOD 35 lantai di Jakarta Timur"
+      },
+      {
+        "skill": "Façade coordination",
+        "category": "domain",
+        "evidence": "review fasad curtain wall dan precast"
+      },
+      {
+        "skill": "Core planning",
+        "category": "domain",
+        "evidence": "Strong in core planning and façade coordination"
+      },
+      {
+        "skill": "Mentoring",
+        "category": "soft",
+        "evidence": "Membimbing 3 arsitek junior"
+      },
+      {
+        "skill": "GREENSHIP",
+        "category": "certification",
+        "evidence": "GREENSHIP Professional, GBC"
+      },
+      {
+        "skill": "SKK Arsitek Ahli Muda",
+        "category": "certification",
+        "evidence": "SKK Arsitek Ahli Muda (Jenjang 7),"
+      },
+      {
+        "skill": "English",
+        "category": "language",
+        "evidence": "English — fluent"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "Navisworks",
+        "reason": "never mentioned"
+      },
+      {
+        "term": "STRA",
+        "reason": "not held"
+      },
+      {
+        "term": "SKK Arsitek Ahli Madya",
+        "reason": "holds Ahli Muda only"
+      },
+      {
+        "term": "FOTO 3x4",
+        "reason": "photo placeholder label"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 2,
+    "total_years": 9.6,
+    "relevant_years": 9.6,
+    "tolerance_years": 0.5,
+    "basis": "Sep 2014 - Jun 2021 (6.8 y) + Feb 2024 - Nov 2026 (2.8 y); career break Jul 2021 - Jan 2024 excluded",
+    "domain_years": {
+      "high_rise": 9.6
+    }
+  },
+  "education": {
+    "highest_level": "S1",
+    "highest_field": "Arsitektur",
+    "status": "completed",
+    "gpa": 3.38,
+    "match": "Match",
+    "detail": "S1 Arsitektur Universitas Katolik Parahyangan 2014, IPK 3.38"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "education": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "skills": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "summary": {
+        "min": 0.7,
+        "max": 1.0
+      }
+    },
+    "parse_quality": "medium",
+    "screening_confidence": {
+      "level": "Sedang",
+      "reason": "Two-column layout (open issue M-7) and one mandatory licence below requirement."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "S1 Arsitektur",
+        "status": "met",
+        "evidence": "S1 Arsitektur",
+        "note": null
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "Minimum 8 years of professional practice",
+        "status": "met",
+        "evidence": "hampir 10 tahun pengalaman efektif",
+        "note": "9.6 years excluding the career break"
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "At least 2 high-rise projects above 20 floors taken from DD to construction documents",
+        "status": "met",
+        "evidence": "apartemen TOD 35 lantai di Jakarta Timur",
+        "note": "35, 30 and 24 floors"
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "licence",
+        "requirement": "STRA or SKK Arsitek Ahli Madya (Jenjang 8) or higher",
+        "status": "not_met",
+        "evidence": "SKK Arsitek Ahli Muda (Jenjang 7),",
+        "note": "one level below the required Ahli Madya; no STRA"
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Advanced Autodesk Revit (worksharing, LOD 300-350)",
+        "status": "met",
+        "evidence": "Revit ●●●●○",
+        "note": "4 of 5 self-rating"
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD",
+        "status": "met",
+        "evidence": "AutoCAD ●●●●●",
+        "note": null
+      },
+      {
+        "id": "R7",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Knowledge of SNI 03-1746, SNI 03-1736 and Bangunan Gedung Hijau",
+        "status": "unknown",
+        "evidence": null,
+        "note": "fire/egress codes not mentioned; not the same as lacking them"
+      },
+      {
+        "id": "R8",
+        "mandatory": true,
+        "category": "soft",
+        "requirement": "Client presentation in Bahasa Indonesia and English",
+        "status": "met",
+        "evidence": "English — fluent",
+        "note": null
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "certification",
+        "requirement": "GREENSHIP Associate/Professional or EDGE Expert",
+        "status": "met",
+        "evidence": "GREENSHIP Professional, GBC",
+        "note": null
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "Navisworks clash detection",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "Dynamo",
+        "status": "partial",
+        "evidence": "Dynamo for Revit, online course",
+        "note": "course only"
+      },
+      {
+        "id": "P4",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "Enscape or Twinmotion",
+        "status": "not_met",
+        "evidence": null,
+        "note": "Lumion is listed, not Enscape/Twinmotion"
+      },
+      {
+        "id": "P5",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Collaboration with a foreign design architect or façade consultant",
+        "status": "unknown",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P6",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "TOD or podium-over-transit experience",
+        "status": "met",
+        "evidence": "apartemen TOD 35 lantai di Jakarta Timur",
+        "note": null
+      }
+    ],
+    "mandatory_summary": {
+      "total": 8,
+      "met": 6,
+      "partial": 0,
+      "not_met": 1,
+      "unknown": 1
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 8,
+        "min_degree_level": "S1",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 75,
+          "max": 88
+        },
+        "experience": {
+          "min": 90.5,
+          "max": 95.5
+        },
+        "education": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "semantic": {
+          "min": 72,
+          "max": 86
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 20,
+        "max": 40
+      },
+      "excluded_components": [],
+      "implied_weighted_range": {
+        "min": 81.9,
+        "max": 91.2
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 68.9,
+        "max": 79.7
+      },
+      "scoring_model_gap": null
+    },
+    "top_positive_factors": [
+      "S1 Arsitektur",
+      "Minimum 8 years of professional practice",
+      "At least 2 high-rise projects above 20 floors taken from DD to construction documents",
+      "Advanced Autodesk Revit (worksharing, LOD 300-350)"
+    ],
+    "top_negative_factors": [
+      "STRA or SKK Arsitek Ahli Madya (Jenjang 8) or higher"
+    ],
+    "unknown_is_not_failure": [
+      "R7",
+      "P5"
+    ],
+    "risks": [
+      "Licence level is one step below the stated requirement (Muda vs Madya) — hard requirement partially unmet",
+      "2.5-year employment gap (explained as family care) — verify currency of code knowledge",
+      "Only ~2.8 years in a lead role"
+    ],
+    "reference_explanation": "Strong domain fit with 9.6 years of relevant experience across three high-rise projects of 24-35 floors and GREENSHIP Professional. The career break is explained and does not reduce the experience below 8 years. Main gap is the licence: SKK Ahli Muda instead of the required Ahli Madya/STRA. Recommended with a licence-upgrade condition; ranks below CV-01 who meets every hard requirement."
+  },
+  "recommendation": {
+    "decision": "Recommended",
+    "decision_label_id": "Direkomendasikan",
+    "score_range": {
+      "min": 80,
+      "max": 88
+    },
+    "rank": 2,
+    "pool_order": [
+      "ARC-CV-01",
+      "ARC-CV-03",
+      "ARC-CV-02",
+      "ARC-CV-04"
+    ],
+    "decision_override": null,
+    "provisional_score": false,
+    "never_decision": [],
+    "action": "Lanjut ke tahap berikutnya sesuai proses lowongan.",
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [],
+      "projected_decision": "Recommended",
+      "agrees_with_benchmark": true
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-03-Q1",
+      "category": "verification",
+      "question": "Your SKK is Ahli Muda. When are you eligible to upgrade to Ahli Madya, and have you started?",
+      "purpose": "Mandatory licence gap",
+      "linked_to": "R4",
+      "good_answer_signals": [
+        "Has a date and has started the process"
+      ],
+      "red_flags": [
+        "Unaware of the requirement"
+      ]
+    },
+    {
+      "id": "ARC-CV-03-Q2",
+      "category": "technical",
+      "question": "On the 35-floor TOD apartment, which core-planning decision had the biggest effect on efficiency?",
+      "purpose": "Depth of high-rise design ownership",
+      "linked_to": "R3",
+      "good_answer_signals": [
+        "Specific numbers or layout changes"
+      ],
+      "red_flags": [
+        "Generic answer"
+      ]
+    },
+    {
+      "id": "ARC-CV-03-Q3",
+      "category": "technical",
+      "question": "Which regulations or code changes have you applied since returning in 2024, for example PBG or Bangunan Gedung Hijau?",
+      "purpose": "Code currency after the career break",
+      "linked_to": "R7",
+      "good_answer_signals": [
+        "Names specific changes"
+      ],
+      "red_flags": [
+        "Nothing since 2021"
+      ]
+    },
+    {
+      "id": "ARC-CV-03-Q4",
+      "category": "behavioral",
+      "question": "The role leads 4-6 people. Tell us about leading the three juniors you mentor now.",
+      "purpose": "Leadership scale",
+      "linked_to": "risk:lead_experience",
+      "good_answer_signals": [
+        "Concrete delegation and review practice"
+      ],
+      "red_flags": [
+        "No leadership examples"
+      ]
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Arsitek high-rise yang kuat, lisensi satu tingkat di bawah syarat",
+    "reference_text": "Kandidat memiliki sekitar 9,6 tahun pengalaman efektif pada apartemen, hotel, dan office tower 24 sampai 35 lantai, serta GREENSHIP Professional. Sempat jeda karier Juli 2021 sampai Januari 2024 untuk keluarga, dan kembali bekerja penuh sejak Februari 2024. Syarat lisensi belum terpenuhi: memiliki SKK Ahli Muda, sedangkan lowongan meminta Ahli Madya atau STRA. Navisworks dan standar kebakaran tidak disebut. Direkomendasikan dengan catatan rencana peningkatan lisensi.",
+    "must_mention": [
+      {
+        "concept": "licence gap",
+        "any_of": [
+          "Ahli Muda",
+          "Ahli Madya",
+          "lisensi"
+        ]
+      },
+      {
+        "concept": "career break explained",
+        "any_of": [
+          "jeda karier",
+          "career break"
+        ]
+      },
+      {
+        "concept": "high-rise experience",
+        "any_of": [
+          "lantai",
+          "high-rise"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate holds STRA",
+      "Candidate holds SKK Ahli Madya",
+      "Candidate uses Navisworks",
+      "The employment gap is unexplained"
+    ],
+    "forbidden_strings": [
+      "+6285719346620",
+      "Kusuma",
+      "Nadia",
+      "Nadia Paramitha Kusuma",
+      "Paramitha",
+      "nadia.pkusuma@outlook.com"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 63.9,
+      "rank": 3,
+      "decision": "Review",
+      "decision_label_id": "Perlu ditinjau",
+      "components": {
+        "skills": 85.7,
+        "experience": 0.0,
+        "semantic": 29.6,
+        "education": 70.0
+      },
+      "unassessed": [
+        "experience"
+      ],
+      "knockout_flags": [
+        "Jenjang pendidikan di bawah yang disyaratkan"
+      ],
+      "relevant_years": null,
+      "experience_entries": 0,
+      "total_experience_months": 0,
+      "education": [
+        [
+          4,
+          "architecture"
+        ]
+      ],
+      "extraction_method": "text",
+      "extraction_confidence": 0.7,
+      "section_confidence": {
+        "summary": 1.0,
+        "experience": 0.0,
+        "education": 1.0,
+        "skills": 0.7
+      },
+      "contact": {
+        "name": "Nadia Paramitha Kusuma",
+        "email": "nadia.pkusuma@outlook.com",
+        "phone": "6285719346620"
+      },
+      "skill_ids": [
+        "architecture_design",
+        "autocad",
+        "conceptual_design",
+        "rendering",
+        "revit",
+        "technical_drawing"
+      ],
+      "job_reading": {
+        "upload_guard": null,
+        "min_years_experience": 8.0,
+        "degree_fields": [
+          "architecture"
+        ],
+        "min_degree_level": 5
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": false,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": false,
+      "score_in_benchmark_range": false,
+      "name_extracted": true,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": false,
+      "relevant_years_within_tolerance": false,
+      "education_found": true,
+      "no_programming_false_positive": true
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": true,
+      "min_years_read_correctly": true,
+      "degree_field_read": true,
+      "min_degree_level_read_correctly": false,
+      "no_programming_requirement": true
+    },
+    "known_failures": [
+      "decision_matches_benchmark",
+      "rank_matches_benchmark",
+      "score_in_benchmark_range",
+      "experience_entries_found",
+      "relevant_years_within_tolerance",
+      "min_degree_level_read_correctly"
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "cv_id": "ARC-CV-07",
+  "candidate_name": "Rizky Ramadhan Pratama",
+  "cv_file": "CV/ARC-CV-07_Rizky_Ramadhan_Pratama.pdf",
+  "target_vacancy": "ARC-VAC-02",
+  "vacancy_file": "Vacancy/ARC-VAC-02_Junior_Architect_Drafter_PT_Baja_Konstruksi_Nusantara.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "Good — scanned CV",
+  "test_tags": [
+    "scanned",
+    "image_only_pdf",
+    "ocr_required",
+    "ocr_noise",
+    "indonesian",
+    "biodata_table"
+  ],
+  "document": {
+    "language": "id",
+    "layout": "Printed Word CV, photocopied and scanned: skew ~1°, speckle noise, dark left edge, no text layer",
+    "has_text_layer": false,
+    "parser_traps": [
+      "pdftotext returns 0 words — OCR is mandatory",
+      "Skewed page and speckle noise: Tesseract (ind, 200 dpi) reads it but turns '·' separators into '\"' or '-', '²' into '?', and bullets into '«'",
+      "Expected fallback when OCR is unavailable: flag 'unreadable document' for manual review, never auto-reject"
+    ]
+  },
+  "expected_ranking": {
+    "rank": 1,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-07",
+      "ARC-CV-05",
+      "ARC-CV-08",
+      "ARC-CV-06"
+    ]
+  },
+  "expected_score_range": {
+    "min": 78,
+    "max": 87
+  },
+  "expected_decision": "Recommended",
+  "decision_override": null,
+  "skills_found": [
+    "AutoCAD 2D",
+    "SketchUp",
+    "Revit (dasar)",
+    "Tekla Structures (viewer)",
+    "Excel",
+    "shop drawing arsitektur",
+    "atap klip-lok & skylight",
+    "cold storage panel detailing",
+    "drawing register & revisi",
+    "as-built",
+    "SKK Juru Gambar Arsitektur (Jenjang 4)",
+    "SIM A"
+  ],
+  "missing_skills": [
+    "Revit beyond basic level (nice-to-have only)"
+  ],
+  "years_of_relevant_experience": {
+    "value": 3.1,
+    "basis": "Oct 2023 - Nov 2026 as drafter at a steel fabricator; plus 3-month internship 2023"
+  },
+  "education_match": {
+    "status": "Match",
+    "detail": "D3 Arsitektur Politeknik Negeri Bandung 2023, IPK 3.18"
+  },
+  "semantic_match": {
+    "level": "High",
+    "detail": "Already does this exact job — architectural shop drawings for steel factories and warehouses in Karawang/Cibitung, lives in Cikarang."
+  },
+  "potential_risks": [
+    "Experience (3.1 y) slightly above the 0-2 year range — salary expectation may sit at the top of the band",
+    "Document has no text layer; a pipeline without OCR will see an empty CV and must not score it as 'no experience'"
+  ],
+  "interview_focus": [
+    "Current salary versus Rp 6.0-7.5 million band",
+    "Reason for leaving PT Mitra Baja Fabrikasi",
+    "Revit learning plan"
+  ],
+  "expected_explanation": "Best fit in the pool: D3 Arsitektur (accepted), three years producing architectural shop drawings for steel industrial buildings in the same area, AutoCAD and SketchUp at advanced level, LPJK drafter certificate, domiciled in Cikarang. Slightly above the experience range, which is a salary question rather than a reason to hold back. This CV is image-only; expected result assumes OCR succeeded.",
+  "alternative_vacancy": null
+}

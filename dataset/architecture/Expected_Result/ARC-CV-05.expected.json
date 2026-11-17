@@ -1,0 +1,82 @@
+{
+  "cv_id": "ARC-CV-05",
+  "candidate_name": "Salsabila Putri Anggraini",
+  "cv_file": "CV/ARC-CV-05_Salsabila_Putri_Anggraini.pdf",
+  "target_vacancy": "ARC-VAC-02",
+  "vacancy_file": "Vacancy/ARC-VAC-02_Junior_Architect_Drafter_PT_Baja_Konstruksi_Nusantara.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "Fresh graduate — internship only",
+  "test_tags": [
+    "word_style",
+    "indonesian",
+    "fresh_graduate",
+    "internship_only",
+    "biodata_table",
+    "signature_block"
+  ],
+  "document": {
+    "language": "id",
+    "layout": "Indonesian 'Daftar Riwayat Hidup' with biodata table and education table",
+    "has_text_layer": true,
+    "parser_traps": [
+      "Key-value biodata table (Nama Lengkap | ...) — name must come from the table",
+      "Indonesian decimal comma in IPK (3,47)",
+      "Closing signature block repeats the name and a date (12 November 2026) that is not an employment date"
+    ]
+  },
+  "expected_ranking": {
+    "rank": 2,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-07",
+      "ARC-CV-05",
+      "ARC-CV-08",
+      "ARC-CV-06"
+    ]
+  },
+  "expected_score_range": {
+    "min": 75,
+    "max": 83
+  },
+  "expected_decision": "Recommended",
+  "decision_override": null,
+  "skills_found": [
+    "AutoCAD 2D (layer, xref, layout)",
+    "SketchUp",
+    "Enscape",
+    "Revit (dasar)",
+    "Excel",
+    "detail atap spandek & talang",
+    "sandwich panel detailing",
+    "as-built recording",
+    "Autodesk Certified User: AutoCAD",
+    "K3 dasar konstruksi"
+  ],
+  "missing_skills": [
+    "Professional drafting experience (internship only)",
+    "tender drawings / drawing register in a real project"
+  ],
+  "years_of_relevant_experience": {
+    "value": 0.0,
+    "basis": "No employment; 3-month internship Jul-Sep 2025 on a 3,200 m² steel warehouse"
+  },
+  "education_match": {
+    "status": "Match",
+    "detail": "S1 Teknik Arsitektur Universitas Gunadarma 2026, IPK 3.47 (above 2.90 minimum)"
+  },
+  "semantic_match": {
+    "level": "High",
+    "detail": "Internship and final project are both steel-frame industrial buildings in Karawang/Cikarang — directly on target."
+  },
+  "potential_risks": [
+    "No full-time work experience; speed under tender deadlines unproven",
+    "Revit only at course level"
+  ],
+  "interview_focus": [
+    "AutoCAD test result (2-hour drawing test in the process)",
+    "Walk through her sandwich panel to WF column detail",
+    "Willingness to travel to Karawang/Cilegon sites and work overtime before tenders"
+  ],
+  "expected_explanation": "Vacancy explicitly welcomes fresh graduates. She meets every requirement: S1 Arsitektur with IPK 3.47, strong AutoCAD and SketchUp, an internship and final project on steel-frame warehouses, and lives in Bekasi. Ranked second only because CV-07 has three years of the exact job.",
+  "alternative_vacancy": null
+}

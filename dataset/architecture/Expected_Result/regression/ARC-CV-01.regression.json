@@ -1,0 +1,721 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-01",
+  "target_vacancy": "ARC-VAC-01",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-01_Raditya_Mahendra_Wibisono.pdf",
+    "vacancy": "Vacancy/ARC-VAC-01_Senior_Architect_High-Rise_PT_Arsitama_Griya_Konsultan.pdf",
+    "benchmark": "Expected_Result/ARC-CV-01.expected.json"
+  },
+  "candidate_profile": "Perfect candidate",
+  "test_tags": [
+    "ats_style",
+    "english",
+    "single_column",
+    "high_rise",
+    "licensed"
+  ],
+  "parser_output": {
+    "extraction_method": "text",
+    "has_text_layer": true,
+    "language": "en",
+    "layout_class": "single_column",
+    "contact": {
+      "name": "Raditya Mahendra Wibisono",
+      "email": "raditya.wibisono.arch@gmail.com",
+      "phone_e164": "+6281288412097",
+      "location": "Jakarta Selatan",
+      "links": [
+        "linkedin.com/in/radityawibisono-arch"
+      ]
+    },
+    "sections_detected": [
+      {
+        "raw_heading": "Summary",
+        "canonical": "summary"
+      },
+      {
+        "raw_heading": "Experience",
+        "canonical": "experience"
+      },
+      {
+        "raw_heading": "Education",
+        "canonical": "education"
+      },
+      {
+        "raw_heading": "Licences & Certifications",
+        "canonical": "certifications"
+      },
+      {
+        "raw_heading": "Software",
+        "canonical": "skills"
+      },
+      {
+        "raw_heading": "Languages",
+        "canonical": "languages"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Associate Architect",
+        "company": "PT Cakrawala Desain Utama",
+        "location": "Jakarta",
+        "start": "2021-03",
+        "end": "present",
+        "months": 68,
+        "employment_type": "full_time",
+        "relevant": true
+      },
+      {
+        "title": "Architect",
+        "company": "PT Matra Rancang Bangun",
+        "location": "Surabaya",
+        "start": "2018-01",
+        "end": "2021-02",
+        "months": 38,
+        "employment_type": "full_time",
+        "relevant": true
+      },
+      {
+        "title": "Junior Architect",
+        "company": "Studio Laras Arsitek",
+        "location": "Semarang",
+        "start": "2015-08",
+        "end": "2017-12",
+        "months": 29,
+        "employment_type": "full_time",
+        "relevant": true
+      }
+    ],
+    "education": [
+      {
+        "level": "S1",
+        "field": "Arsitektur",
+        "institution": "Universitas Diponegoro",
+        "start": "2011",
+        "end": "2015",
+        "gpa": 3.54,
+        "gpa_scale": 4.0,
+        "status": "completed"
+      }
+    ],
+    "certifications": [
+      "STRA (Dewan Arsitek Indonesia, 2022)",
+      "SKK Arsitek Ahli Madya Jenjang 8 (LPJK, 2023)",
+      "GREENSHIP Associate (GBC Indonesia, 2019)",
+      "Autodesk Certified Professional: Revit for Architectural Design (2020)"
+    ],
+    "languages": [
+      "Indonesian (native)",
+      "English (professional, TOEFL ITP 583)",
+      "Javanese"
+    ],
+    "volunteer": [],
+    "side_business": [],
+    "expected_warnings": [],
+    "pii_fields_to_mask": [
+      "name",
+      "email",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "Revit",
+        "category": "software",
+        "evidence": "Revit, AutoCAD, Navisworks Manage"
+      },
+      {
+        "skill": "AutoCAD",
+        "category": "software",
+        "evidence": "Revit, AutoCAD, Navisworks Manage"
+      },
+      {
+        "skill": "Navisworks",
+        "category": "software",
+        "evidence": "Ran fortnightly clash reviews in Navisworks"
+      },
+      {
+        "skill": "Dynamo",
+        "category": "software",
+        "evidence": "Dynamo (basic scripts for room data and sheet setup)"
+      },
+      {
+        "skill": "Enscape",
+        "category": "software",
+        "evidence": "Enscape, SketchUp, MS Project"
+      },
+      {
+        "skill": "SketchUp",
+        "category": "software",
+        "evidence": "Enscape, SketchUp, MS Project"
+      },
+      {
+        "skill": "MS Project",
+        "category": "software",
+        "evidence": "Enscape, SketchUp, MS Project"
+      },
+      {
+        "skill": "Bluebeam Revu",
+        "category": "software",
+        "evidence": "Bluebeam Revu"
+      },
+      {
+        "skill": "High-rise design",
+        "category": "domain",
+        "evidence": "Kuningan Sentral Tower: 42 floors"
+      },
+      {
+        "skill": "Fire egress strategy (SNI 03-1746)",
+        "category": "domain",
+        "evidence": "egress and refuge-floor strategy with the fire engineer to SNI 03-1746"
+      },
+      {
+        "skill": "PBG permit process",
+        "category": "domain",
+        "evidence": "PBG approved in first round of TABG comments"
+      },
+      {
+        "skill": "Clash coordination",
+        "category": "domain",
+        "evidence": "cut open clashes from 1,140 to under 60 before IFC issue"
+      },
+      {
+        "skill": "Team leadership",
+        "category": "soft",
+        "evidence": "Led 6 people (3 architects, 3 BIM modellers)"
+      },
+      {
+        "skill": "GREENSHIP",
+        "category": "certification",
+        "evidence": "GREENSHIP Associate — GBC Indonesia, 2019"
+      },
+      {
+        "skill": "STRA",
+        "category": "certification",
+        "evidence": "STRA — Dewan Arsitek Indonesia, registered 2022"
+      },
+      {
+        "skill": "SKK Arsitek Ahli Madya",
+        "category": "certification",
+        "evidence": "SKK Arsitek Ahli Madya (Jenjang 8) — LPJK, 2023"
+      },
+      {
+        "skill": "English",
+        "category": "language",
+        "evidence": "English (professional working — TOEFL ITP 583, 2019)"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "ArchiCAD",
+        "reason": "never mentioned"
+      },
+      {
+        "term": "Twinmotion",
+        "reason": "never mentioned"
+      },
+      {
+        "term": "SNI 03-1736",
+        "reason": "only SNI 03-1746 is named"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 3,
+    "total_years": 11.2,
+    "relevant_years": 11.2,
+    "tolerance_years": 0.5,
+    "basis": "Aug 2015 - Nov 2026 in architecture practice; towers from Jan 2018",
+    "domain_years": {
+      "high_rise": 8.9
+    }
+  },
+  "education": {
+    "highest_level": "S1",
+    "highest_field": "Arsitektur",
+    "status": "completed",
+    "gpa": 3.54,
+    "match": "Match",
+    "detail": "S1 Arsitektur Universitas Diponegoro 2015, GPA 3.54"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.8,
+        "max": 1.0
+      },
+      "education": {
+        "min": 0.8,
+        "max": 1.0
+      },
+      "skills": {
+        "min": 0.8,
+        "max": 1.0
+      },
+      "summary": {
+        "min": 0.8,
+        "max": 1.0
+      }
+    },
+    "parse_quality": "high",
+    "screening_confidence": {
+      "level": "Tinggi",
+      "reason": "All sections read cleanly and every mandatory requirement has explicit evidence."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "S1 Arsitektur",
+        "status": "met",
+        "evidence": "S1 Arsitektur — Universitas Diponegoro, Semarang",
+        "note": null
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "Minimum 8 years of professional practice",
+        "status": "met",
+        "evidence": "Architect with 11 years of practice",
+        "note": "11.3 years computed from dates"
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "At least 2 high-rise projects above 20 floors taken from DD to construction documents",
+        "status": "met",
+        "evidence": "Took the scheme from DD to tender drawings",
+        "note": "42-floor and 31-floor towers, plus 27 and 18 floors earlier"
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "licence",
+        "requirement": "STRA or SKK Arsitek Ahli Madya (Jenjang 8) or higher",
+        "status": "met",
+        "evidence": "SKK Arsitek Ahli Madya (Jenjang 8) — LPJK, 2023",
+        "note": "also holds STRA"
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Advanced Autodesk Revit (worksharing, LOD 300-350)",
+        "status": "met",
+        "evidence": "set up the Revit worksharing template and LOD 350 drawing standard",
+        "note": null
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD",
+        "status": "met",
+        "evidence": "Revit, AutoCAD, Navisworks Manage",
+        "note": null
+      },
+      {
+        "id": "R7",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Knowledge of SNI 03-1746, SNI 03-1736 and Bangunan Gedung Hijau",
+        "status": "partial",
+        "evidence": "egress and refuge-floor strategy with the fire engineer to SNI 03-1746",
+        "note": "SNI 03-1736 and BGH not named; GREENSHIP NB coordination is adjacent to BGH"
+      },
+      {
+        "id": "R8",
+        "mandatory": true,
+        "category": "soft",
+        "requirement": "Client presentation in Bahasa Indonesia and English",
+        "status": "met",
+        "evidence": "with a Singapore-based design architect",
+        "note": "English TOEFL ITP 583; presentation implied by role"
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "certification",
+        "requirement": "GREENSHIP Associate/Professional or EDGE Expert",
+        "status": "met",
+        "evidence": "GREENSHIP Associate — GBC Indonesia, 2019",
+        "note": null
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "Navisworks clash detection",
+        "status": "met",
+        "evidence": "Ran fortnightly clash reviews in Navisworks",
+        "note": null
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "Dynamo",
+        "status": "met",
+        "evidence": "Dynamo (basic scripts for room data and sheet setup)",
+        "note": null
+      },
+      {
+        "id": "P4",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "Enscape or Twinmotion",
+        "status": "met",
+        "evidence": "Enscape, SketchUp, MS Project",
+        "note": null
+      },
+      {
+        "id": "P5",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Collaboration with a foreign design architect or façade consultant",
+        "status": "met",
+        "evidence": "with a Singapore-based design architect",
+        "note": null
+      },
+      {
+        "id": "P6",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "TOD or podium-over-transit experience",
+        "status": "not_met",
+        "evidence": null,
+        "note": "no TOD project mentioned"
+      }
+    ],
+    "mandatory_summary": {
+      "total": 8,
+      "met": 7,
+      "partial": 1,
+      "not_met": 0,
+      "unknown": 0
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 8,
+        "min_degree_level": "S1",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 90,
+          "max": 100
+        },
+        "experience": {
+          "min": 98.5,
+          "max": 100.0
+        },
+        "education": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "semantic": {
+          "min": 78,
+          "max": 92
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 34,
+        "max": 54
+      },
+      "excluded_components": [],
+      "implied_weighted_range": {
+        "min": 90.6,
+        "max": 98.0
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 79.6,
+        "max": 88.5
+      },
+      "scoring_model_gap": null
+    },
+    "top_positive_factors": [
+      "S1 Arsitektur",
+      "Minimum 8 years of professional practice",
+      "At least 2 high-rise projects above 20 floors taken from DD to construction documents",
+      "STRA or SKK Arsitek Ahli Madya (Jenjang 8) or higher"
+    ],
+    "top_negative_factors": [
+      "Knowledge of SNI 03-1746, SNI 03-1736 and Bangunan Gedung Hijau"
+    ],
+    "unknown_is_not_failure": [],
+    "risks": [
+      "Currently Associate at a competitor mid-construction; notice period and hand-over of Kuningan Sentral Tower may delay start",
+      "Salary expectation likely near the top of the IDR 28-38 million band"
+    ],
+    "reference_explanation": "Meets every hard requirement: S1 Arsitektur, 11.3 years of practice (8.9 on towers), two high-rise projects above 20 floors from DD to construction documents (42 and 31 floors, plus 27 and 18 earlier), STRA and SKK Madya, advanced Revit/AutoCAD and named experience with SNI 03-1746 and PBG. Also covers most preferred items (GREENSHIP Associate, Navisworks, Dynamo, Enscape, foreign design architect). Only minor gaps (no explicit passive fire standard, no TOD). Top of the pool."
+  },
+  "recommendation": {
+    "decision": "Recommended",
+    "decision_label_id": "Direkomendasikan",
+    "score_range": {
+      "min": 90,
+      "max": 96
+    },
+    "rank": 1,
+    "pool_order": [
+      "ARC-CV-01",
+      "ARC-CV-03",
+      "ARC-CV-02",
+      "ARC-CV-04"
+    ],
+    "decision_override": null,
+    "provisional_score": false,
+    "never_decision": [],
+    "action": "Lanjut ke tahap berikutnya sesuai proses lowongan.",
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [],
+      "projected_decision": "Recommended",
+      "agrees_with_benchmark": true
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-01-Q1",
+      "category": "technical",
+      "question": "Walk us through the egress and refuge-floor strategy on Kuningan Sentral Tower. Which TABG comments did you have to resolve, and how?",
+      "purpose": "Verify depth of fire-code knowledge behind the PBG approval",
+      "linked_to": "R7",
+      "good_answer_signals": [
+        "Names specific SNI clauses, travel distances or refuge-floor intervals",
+        "Explains trade-offs with the core layout"
+      ],
+      "red_flags": [
+        "Credits the fire engineer for everything",
+        "Cannot name a single TABG comment"
+      ]
+    },
+    {
+      "id": "ARC-CV-01-Q2",
+      "category": "technical",
+      "question": "You reduced open clashes from 1,140 to under 60. What changed in the process, not just the tool?",
+      "purpose": "Test BIM coordination leadership",
+      "linked_to": "P2",
+      "good_answer_signals": [
+        "Describes clash ownership, tolerance rules, issue cadence",
+        "Mentions consultant accountability"
+      ],
+      "red_flags": [
+        "Only describes running Navisworks"
+      ]
+    },
+    {
+      "id": "ARC-CV-01-Q3",
+      "category": "behavioral",
+      "question": "Tell us about a time you had to tell a developer client that a requested change broke code.",
+      "purpose": "Soft-skill requirement in the vacancy ('comfortable saying no')",
+      "linked_to": "R8",
+      "good_answer_signals": [
+        "Concrete case, explained with evidence, kept the relationship"
+      ],
+      "red_flags": [
+        "Avoids conflict by escalating everything"
+      ]
+    },
+    {
+      "id": "ARC-CV-01-Q4",
+      "category": "behavioral",
+      "question": "How do you mentor the junior architects on your team, and how do you keep the Revit standard enforced?",
+      "purpose": "Mentoring responsibility of the role",
+      "linked_to": "R5",
+      "good_answer_signals": [
+        "Regular reviews, templates, pairing"
+      ],
+      "red_flags": [
+        "No structured approach"
+      ]
+    },
+    {
+      "id": "ARC-CV-01-Q5",
+      "category": "verification",
+      "question": "Kuningan Sentral Tower is in construction. What is your notice period and how would the hand-over work?",
+      "purpose": "Availability risk",
+      "linked_to": "risk:notice_period",
+      "good_answer_signals": [
+        "Realistic notice, hand-over plan"
+      ],
+      "red_flags": [
+        "Willing to walk out mid-construction without notice"
+      ]
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Arsitek senior high-rise, semua syarat wajib terpenuhi",
+    "reference_text": "Kandidat memiliki 11 tahun pengalaman praktik, 8 tahun terakhir pada gedung tinggi 18 sampai 42 lantai, dan saat ini memimpin tim 6 orang pada menara mixed-use 42 lantai bersama design architect dari Singapura. Lisensi STRA dan SKK Ahli Madya tersedia, Revit dan Navisworks dikuasai, serta memegang GREENSHIP Associate. Celah kecil: standar proteksi kebakaran pasif dan pengalaman TOD tidak disebut. Risiko utama adalah masa pemberitahuan karena proyeknya sedang konstruksi. Direkomendasikan; lanjut ke portfolio review.",
+    "must_mention": [
+      {
+        "concept": "years of experience",
+        "any_of": [
+          "11 tahun",
+          "11,3 tahun",
+          "11 years"
+        ]
+      },
+      {
+        "concept": "high-rise experience",
+        "any_of": [
+          "gedung tinggi",
+          "high-rise",
+          "42 lantai"
+        ]
+      },
+      {
+        "concept": "licence",
+        "any_of": [
+          "STRA",
+          "Ahli Madya"
+        ]
+      },
+      {
+        "concept": "notice period risk",
+        "any_of": [
+          "pemberitahuan",
+          "notice",
+          "konstruksi"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate has TOD experience",
+      "Candidate holds a Master's degree",
+      "Candidate holds GREENSHIP Professional"
+    ],
+    "forbidden_strings": [
+      "+6281288412097",
+      "Mahendra",
+      "Raditya",
+      "Raditya Mahendra Wibisono",
+      "Wibisono",
+      "raditya.wibisono.arch@gmail.com"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 73.2,
+      "rank": 1,
+      "decision": "Review",
+      "decision_label_id": "Perlu ditinjau",
+      "components": {
+        "skills": 78.6,
+        "experience": 97.3,
+        "semantic": 43.8,
+        "education": 70.0
+      },
+      "unassessed": [],
+      "knockout_flags": [
+        "Jenjang pendidikan di bawah yang disyaratkan"
+      ],
+      "relevant_years": 10.5,
+      "experience_entries": 5,
+      "total_experience_months": 133,
+      "education": [
+        [
+          4,
+          "architecture"
+        ],
+        [
+          3,
+          ""
+        ],
+        [
+          0,
+          "architecture"
+        ]
+      ],
+      "extraction_method": "text",
+      "extraction_confidence": 1.0,
+      "section_confidence": {
+        "summary": 1.0,
+        "experience": 1.0,
+        "education": 1.0,
+        "skills": 1.0
+      },
+      "contact": {
+        "name": "Raditya Mahendra Wibisono",
+        "email": "raditya.wibisono.arch@gmail.com",
+        "phone": "6281288412097"
+      },
+      "skill_ids": [
+        "architecture_design",
+        "autocad",
+        "building_codes",
+        "project_management",
+        "rendering",
+        "revit",
+        "sketchup"
+      ],
+      "job_reading": {
+        "upload_guard": null,
+        "min_years_experience": 8.0,
+        "degree_fields": [
+          "architecture"
+        ],
+        "min_degree_level": 5
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": false,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": true,
+      "score_in_benchmark_range": false,
+      "name_extracted": true,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": true,
+      "relevant_years_within_tolerance": false,
+      "education_found": true,
+      "no_programming_false_positive": true
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": true,
+      "min_years_read_correctly": true,
+      "degree_field_read": true,
+      "min_degree_level_read_correctly": false,
+      "no_programming_requirement": true
+    },
+    "known_failures": [
+      "decision_matches_benchmark",
+      "score_in_benchmark_range",
+      "relevant_years_within_tolerance",
+      "min_degree_level_read_correctly"
+    ]
+  }
+}

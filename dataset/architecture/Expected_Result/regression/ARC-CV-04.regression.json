@@ -1,0 +1,596 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-04",
+  "target_vacancy": "ARC-VAC-01",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-04_Kevin_Halim.pdf",
+    "vacancy": "Vacancy/ARC-VAC-01_Senior_Architect_High-Rise_PT_Arsitama_Griya_Konsultan.pdf",
+    "benchmark": "Expected_Result/ARC-CV-04.expected.json"
+  },
+  "candidate_profile": "Wrong major / wrong industry",
+  "test_tags": [
+    "minimalist",
+    "english",
+    "wrong_major",
+    "interior_design"
+  ],
+  "parser_output": {
+    "extraction_method": "text",
+    "has_text_layer": true,
+    "language": "en",
+    "layout_class": "single_column",
+    "contact": {
+      "name": "Kevin Halim",
+      "email": "kevinhalim.design@gmail.com",
+      "phone_e164": "+6281315570928",
+      "location": "Pluit, Jakarta Utara",
+      "links": []
+    },
+    "sections_detected": [
+      {
+        "raw_heading": "About",
+        "canonical": "summary"
+      },
+      {
+        "raw_heading": "Work",
+        "canonical": "experience"
+      },
+      {
+        "raw_heading": "Education",
+        "canonical": "education"
+      },
+      {
+        "raw_heading": "Tools",
+        "canonical": "skills"
+      },
+      {
+        "raw_heading": "Membership",
+        "canonical": "certifications"
+      },
+      {
+        "raw_heading": "Language",
+        "canonical": "languages"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Senior Interior Designer",
+        "company": "PT Lumina Interior Kontraktor",
+        "location": null,
+        "start": "2019",
+        "end": "present",
+        "months": 94,
+        "employment_type": "full_time",
+        "relevant": false
+      },
+      {
+        "title": "Interior Designer",
+        "company": "Kanaka Interior Studio",
+        "location": null,
+        "start": "2016",
+        "end": "2019",
+        "months": 36,
+        "employment_type": "full_time",
+        "relevant": false
+      }
+    ],
+    "education": [
+      {
+        "level": "S1",
+        "field": "Desain Interior",
+        "institution": "Universitas Tarumanagara",
+        "start": "2012",
+        "end": "2016",
+        "gpa": 3.21,
+        "gpa_scale": 4.0,
+        "status": "completed"
+      }
+    ],
+    "certifications": [
+      "HDII member since 2018"
+    ],
+    "languages": [
+      "Indonesian",
+      "English (good)",
+      "Hokkien (spoken)"
+    ],
+    "volunteer": [],
+    "side_business": [],
+    "expected_warnings": [],
+    "pii_fields_to_mask": [
+      "name",
+      "email",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "AutoCAD",
+        "category": "software",
+        "evidence": "AutoCAD · SketchUp · 3ds Max + V-Ray"
+      },
+      {
+        "skill": "SketchUp",
+        "category": "software",
+        "evidence": "AutoCAD · SketchUp · 3ds Max + V-Ray"
+      },
+      {
+        "skill": "3ds Max",
+        "category": "software",
+        "evidence": "3ds Max + V-Ray"
+      },
+      {
+        "skill": "V-Ray",
+        "category": "software",
+        "evidence": "3ds Max + V-Ray"
+      },
+      {
+        "skill": "Revit",
+        "category": "software",
+        "evidence": "Revit (basic, learning since 2024)"
+      },
+      {
+        "skill": "Photoshop",
+        "category": "software",
+        "evidence": "Photoshop"
+      },
+      {
+        "skill": "Commercial fit-out",
+        "category": "domain",
+        "evidence": "40+ office and F&B fit-outs"
+      },
+      {
+        "skill": "Joinery shop drawings",
+        "category": "domain",
+        "evidence": "joinery shop drawings and finishes schedules"
+      },
+      {
+        "skill": "BoQ checking",
+        "category": "domain",
+        "evidence": "check BoQ against drawings"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "High-rise design",
+        "reason": "fit-out inside existing buildings is not high-rise design"
+      },
+      {
+        "term": "STRA",
+        "reason": "not held"
+      },
+      {
+        "term": "S1 Arsitektur",
+        "reason": "degree is Desain Interior"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 2,
+    "total_years": 10.8,
+    "relevant_years": 0.0,
+    "tolerance_years": 0.5,
+    "basis": "10.3 years in interior design (Aug 2016 - Nov 2026), none in building architecture",
+    "domain_years": {
+      "high_rise": 0.0
+    }
+  },
+  "education": {
+    "highest_level": "S1",
+    "highest_field": "Desain Interior",
+    "status": "completed",
+    "gpa": 3.21,
+    "match": "Mismatch",
+    "detail": "S1 Desain Interior, Universitas Tarumanagara 2016"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.7,
+        "max": 1.0
+      },
+      "education": {
+        "min": 0.7,
+        "max": 1.0
+      },
+      "skills": {
+        "min": 0.7,
+        "max": 1.0
+      },
+      "summary": {
+        "min": 0.7,
+        "max": 1.0
+      }
+    },
+    "parse_quality": "high",
+    "screening_confidence": {
+      "level": "Tinggi",
+      "reason": "Clean parse; the reject rests on explicit evidence (major, licence, domain)."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "S1 Arsitektur",
+        "status": "not_met",
+        "evidence": "S1 Desain Interior, Universitas Tarumanagara",
+        "note": "wrong major"
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "Minimum 8 years of professional practice",
+        "status": "not_met",
+        "evidence": null,
+        "note": "0 years in building architecture; 10 years interior design"
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "At least 2 high-rise projects above 20 floors taken from DD to construction documents",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "licence",
+        "requirement": "STRA or SKK Arsitek Ahli Madya (Jenjang 8) or higher",
+        "status": "not_met",
+        "evidence": null,
+        "note": "degree does not qualify for STRA/SKK Arsitek"
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Advanced Autodesk Revit (worksharing, LOD 300-350)",
+        "status": "not_met",
+        "evidence": "Revit (basic, learning since 2024)",
+        "note": "basic only"
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD",
+        "status": "met",
+        "evidence": "AutoCAD · SketchUp · 3ds Max + V-Ray",
+        "note": null
+      },
+      {
+        "id": "R7",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Knowledge of SNI 03-1746, SNI 03-1736 and Bangunan Gedung Hijau",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "R8",
+        "mandatory": true,
+        "category": "soft",
+        "requirement": "Client presentation in Bahasa Indonesia and English",
+        "status": "partial",
+        "evidence": "English (good)",
+        "note": null
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "certification",
+        "requirement": "GREENSHIP Associate/Professional or EDGE Expert",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "Navisworks clash detection",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "Dynamo",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P4",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "Enscape or Twinmotion",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P5",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Collaboration with a foreign design architect or façade consultant",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P6",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "TOD or podium-over-transit experience",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      }
+    ],
+    "mandatory_summary": {
+      "total": 8,
+      "met": 1,
+      "partial": 1,
+      "not_met": 6,
+      "unknown": 0
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 8,
+        "min_degree_level": "S1",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 25,
+          "max": 40
+        },
+        "experience": {
+          "min": 0.0,
+          "max": 5.3
+        },
+        "education": {
+          "min": 60.0,
+          "max": 60.0
+        },
+        "semantic": {
+          "min": 40,
+          "max": 58
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 5,
+        "max": 25
+      },
+      "excluded_components": [],
+      "implied_weighted_range": {
+        "min": 27.8,
+        "max": 38.8
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 19.0,
+        "max": 30.6
+      },
+      "scoring_model_gap": null
+    },
+    "top_positive_factors": [
+      "AutoCAD"
+    ],
+    "top_negative_factors": [
+      "S1 Arsitektur",
+      "Minimum 8 years of professional practice",
+      "At least 2 high-rise projects above 20 floors taken from DD to construction documents",
+      "STRA or SKK Arsitek Ahli Madya (Jenjang 8) or higher"
+    ],
+    "unknown_is_not_failure": [],
+    "risks": [
+      "Degree does not qualify for STRA/SKK Arsitek, so the licence requirement cannot be met",
+      "Keyword overlap (AutoCAD, Revit, design, Jakarta) may inflate naive keyword scores"
+    ],
+    "reference_explanation": "Experienced interior designer, but the vacancy needs a licensed architect with high-rise documentation experience. Wrong major, no architecture licence, no tower experience and only basic Revit. Keyword matching could wrongly push this CV up; the expected behaviour is a clear Reject with education and licence as the main reasons."
+  },
+  "recommendation": {
+    "decision": "Reject",
+    "decision_label_id": "Tidak lolos",
+    "score_range": {
+      "min": 28,
+      "max": 40
+    },
+    "rank": 4,
+    "pool_order": [
+      "ARC-CV-01",
+      "ARC-CV-03",
+      "ARC-CV-02",
+      "ARC-CV-04"
+    ],
+    "decision_override": null,
+    "provisional_score": false,
+    "never_decision": [],
+    "action": "Tidak dilanjutkan untuk lowongan ini.",
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [
+        "experience_below_minimum"
+      ],
+      "projected_decision": "Reject",
+      "agrees_with_benchmark": true
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-04-Q1",
+      "category": "verification",
+      "question": "Not recommended for interview for this vacancy. If HR proceeds: what building-architecture work have you done outside interiors?",
+      "purpose": "Confirm the mismatch before closing",
+      "linked_to": "R1",
+      "good_answer_signals": [
+        "Concrete architecture projects"
+      ],
+      "red_flags": [
+        "None"
+      ]
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Desainer interior berpengalaman, tidak sesuai untuk Senior Architect",
+    "reference_text": "Kandidat adalah desainer interior dengan sekitar 10 tahun pengalaman fit-out kantor, F&B, dan ritel. Latar pendidikan S1 Desain Interior, sehingga syarat S1 Arsitektur dan lisensi STRA/SKK Arsitek tidak dapat dipenuhi. Tidak ada pengalaman gedung tinggi dan Revit masih dasar. Tidak lolos untuk posisi ini.",
+    "must_mention": [
+      {
+        "concept": "wrong major",
+        "any_of": [
+          "Desain Interior",
+          "jurusan"
+        ]
+      },
+      {
+        "concept": "no licence",
+        "any_of": [
+          "STRA",
+          "lisensi"
+        ]
+      },
+      {
+        "concept": "no high-rise",
+        "any_of": [
+          "gedung tinggi",
+          "high-rise"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate is an architect",
+      "Candidate has high-rise experience",
+      "Candidate holds an architecture licence"
+    ],
+    "forbidden_strings": [
+      "+6281315570928",
+      "Halim",
+      "Kevin",
+      "Kevin Halim",
+      "kevinhalim.design@gmail.com"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 39.9,
+      "rank": 4,
+      "decision": "Review",
+      "decision_label_id": "Perlu ditinjau",
+      "components": {
+        "skills": 57.1,
+        "experience": 0.0,
+        "semantic": 14.7,
+        "education": 42.0
+      },
+      "unassessed": [
+        "experience"
+      ],
+      "knockout_flags": [
+        "Jenjang pendidikan di bawah yang disyaratkan"
+      ],
+      "relevant_years": null,
+      "experience_entries": 0,
+      "total_experience_months": 0,
+      "education": [
+        [
+          4,
+          "interior design"
+        ]
+      ],
+      "extraction_method": "text",
+      "extraction_confidence": 0.85,
+      "section_confidence": {
+        "summary": 1.0,
+        "experience": 0.0,
+        "education": 1.0,
+        "skills": 1.0
+      },
+      "contact": {
+        "name": "Kevin Halim",
+        "email": "kevinhalim.design@gmail.com",
+        "phone": "081315570928"
+      },
+      "skill_ids": [
+        "autocad",
+        "interior_design",
+        "procurement",
+        "rendering",
+        "revit",
+        "sketchup",
+        "technical_drawing",
+        "visualization"
+      ],
+      "job_reading": {
+        "upload_guard": null,
+        "min_years_experience": 8.0,
+        "degree_fields": [
+          "architecture"
+        ],
+        "min_degree_level": 5
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": false,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": true,
+      "score_in_benchmark_range": true,
+      "name_extracted": true,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": false,
+      "relevant_years_within_tolerance": false,
+      "education_found": true,
+      "no_programming_false_positive": true
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": true,
+      "min_years_read_correctly": true,
+      "degree_field_read": true,
+      "min_degree_level_read_correctly": false,
+      "no_programming_requirement": true
+    },
+    "known_failures": [
+      "decision_matches_benchmark",
+      "experience_entries_found",
+      "relevant_years_within_tolerance",
+      "min_degree_level_read_correctly"
+    ]
+  }
+}

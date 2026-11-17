@@ -1,0 +1,87 @@
+{
+  "cv_id": "ARC-CV-02",
+  "candidate_name": "Hendrawan Sutanto",
+  "cv_file": "CV/ARC-CV-02_Hendrawan_Sutanto.pdf",
+  "target_vacancy": "ARC-VAC-01",
+  "vacancy_file": "Vacancy/ARC-VAC-01_Senior_Architect_High-Rise_PT_Arsitama_Griya_Konsultan.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "Overqualified",
+  "test_tags": [
+    "word_style",
+    "serif",
+    "english",
+    "overqualified",
+    "side_business_own_firm",
+    "teaching"
+  ],
+  "document": {
+    "language": "en",
+    "layout": "Word-style serif document, underlined headings",
+    "has_text_layer": true,
+    "parser_traps": [
+      "Title prefixes and suffixes in name line (Ir., M.Arch., IAI) must not end up in the parsed name",
+      "Education lines have no GPA"
+    ]
+  },
+  "expected_ranking": {
+    "rank": 3,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-01",
+      "ARC-CV-03",
+      "ARC-CV-02",
+      "ARC-CV-04"
+    ]
+  },
+  "expected_score_range": {
+    "min": 70,
+    "max": 80
+  },
+  "expected_decision": "Review",
+  "decision_override": "overqualified",
+  "skills_found": [
+    "High-rise design leadership (11 towers > 30 floors)",
+    "master planning",
+    "STRA",
+    "SKK Arsitek Ahli Utama (Jenjang 9)",
+    "IAI Utama",
+    "GREENSHIP Professional",
+    "foreign project experience (Vietnam)",
+    "TABG DKI membership",
+    "AutoCAD",
+    "SketchUp",
+    "Rhino"
+  ],
+  "missing_skills": [
+    "Hands-on Revit production (review level only, by own statement)",
+    "Navisworks / Dynamo not listed"
+  ],
+  "years_of_relevant_experience": {
+    "value": 28.8,
+    "high_rise": 28.8,
+    "basis": "Feb 1998 - Nov 2026 continuous practice; towers throughout"
+  },
+  "education_match": {
+    "status": "Exceeds",
+    "detail": "Ir. (S1) ITB 1995 and M.Arch UNSW 1997"
+  },
+  "semantic_match": {
+    "level": "High",
+    "detail": "Domain is an exact match, but seniority is two levels above the role (founder/principal vs. senior architect)."
+  },
+  "potential_risks": [
+    "Overqualified: runs a 34-person firm; the role reports to a Design Director who may be junior to him",
+    "Salary expectation very likely far above IDR 38 million",
+    "Possible conflict of interest — still owner of a competing practice; needs clarity on winding down or dual role",
+    "Self-declared low hands-on Revit use while the role owns a Revit model",
+    "Retention risk if a leadership position opens elsewhere"
+  ],
+  "interview_focus": [
+    "Why move from principal to an employed senior role now — and what happens to Sutanto + Rekan",
+    "Comfort working inside someone else's Revit standards and producing documents personally",
+    "Salary expectation versus band",
+    "Whether a Design Director / Associate Director track would fit better"
+  ],
+  "expected_explanation": "Technically exceeds every requirement (28 years, 11 towers above 30 floors, highest licence levels, GREENSHIP Professional). The score is capped and the decision set to Review because the role is a hands-on senior position and the candidate is a firm founder who states he no longer models himself. A screening system should surface him with an 'overqualified' flag rather than auto-recommend; HR may want to redirect him to a more senior opening.",
+  "alternative_vacancy": null
+}

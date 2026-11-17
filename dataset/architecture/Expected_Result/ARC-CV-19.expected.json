@@ -1,0 +1,76 @@
+{
+  "cv_id": "ARC-CV-19",
+  "candidate_name": "Clarissa Tanoto",
+  "cv_file": "CV/ARC-CV-19_Clarissa_Tanoto.pdf",
+  "target_vacancy": "ARC-VAC-05",
+  "vacancy_file": "Vacancy/ARC-VAC-05_Architectural_Designer_Residential_Griyakarya.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "No experience — wrong major",
+  "test_tags": [
+    "no_experience",
+    "wrong_major",
+    "fresh_graduate",
+    "volunteer",
+    "freelance",
+    "minimalist",
+    "english"
+  ],
+  "document": {
+    "language": "en",
+    "layout": "Minimalist condensed font, 'Professional Profile' heading",
+    "has_text_layer": true,
+    "parser_traps": []
+  },
+  "expected_ranking": {
+    "rank": 4,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-17",
+      "ARC-CV-20",
+      "ARC-CV-18",
+      "ARC-CV-19"
+    ]
+  },
+  "expected_score_range": {
+    "min": 15,
+    "max": 28
+  },
+  "expected_decision": "Reject",
+  "decision_override": null,
+  "skills_found": [
+    "SketchUp (self-taught)",
+    "Figma",
+    "Adobe Illustrator",
+    "Photoshop",
+    "Procreate",
+    "content design"
+  ],
+  "missing_skills": [
+    "S1 Arsitektur",
+    "2-4 years residential design",
+    "Enscape/D5/Lumion",
+    "AutoCAD/Revit",
+    "RAB",
+    "built-project portfolio"
+  ],
+  "years_of_relevant_experience": {
+    "value": 0.0,
+    "basis": "No architectural work; freelance graphic design since 2024"
+  },
+  "education_match": {
+    "status": "Mismatch",
+    "detail": "S1 Desain Komunikasi Visual, Universitas Kristen Maranatha 2025"
+  },
+  "semantic_match": {
+    "level": "Low",
+    "detail": "Design-adjacent vocabulary only."
+  },
+  "potential_risks": [
+    "Word 'design' and 'SketchUp' may produce false semantic similarity"
+  ],
+  "interview_focus": [
+    "Not recommended; could fit Griyakarya's marketing/content team instead"
+  ],
+  "expected_explanation": "Graphic designer with self-taught SketchUp and no architecture degree or work. Clear Reject for this role; the content-creation skill is the only overlap and belongs to the 'extra points' list.",
+  "alternative_vacancy": null
+}

@@ -1,0 +1,91 @@
+{
+  "cv_id": "ARC-CV-03",
+  "candidate_name": "Nadia Paramitha Kusuma",
+  "cv_file": "CV/ARC-CV-03_Nadia_Paramitha_Kusuma.pdf",
+  "target_vacancy": "ARC-VAC-01",
+  "vacancy_file": "Vacancy/ARC-VAC-01_Senior_Architect_High-Rise_PT_Arsitama_Griya_Konsultan.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "Very good — employment gap",
+  "test_tags": [
+    "canva_style",
+    "two_column",
+    "mixed_language",
+    "employment_gap",
+    "image_placeholder",
+    "skill_bars"
+  ],
+  "document": {
+    "language": "mixed (id/en)",
+    "layout": "Canva-style two columns, coloured header band, photo placeholder, dot-rating skill bars",
+    "has_text_layer": true,
+    "parser_traps": [
+      "Two-column reading order: sidebar (contact, education, certifications) must not be merged into the experience column",
+      "Photo placeholder label 'FOTO 3x4' is in the text layer between the name and the job title",
+      "Skill levels are drawn as ●○ characters, not numbers",
+      "'Career break' appears as a dated entry and must not be counted as a job",
+      "Mixed Indonesian/English headings (Profil, Pengalaman Kerja, Proyek Pilihan)"
+    ]
+  },
+  "expected_ranking": {
+    "rank": 2,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-01",
+      "ARC-CV-03",
+      "ARC-CV-02",
+      "ARC-CV-04"
+    ]
+  },
+  "expected_score_range": {
+    "min": 80,
+    "max": 88
+  },
+  "expected_decision": "Recommended",
+  "decision_override": null,
+  "skills_found": [
+    "Revit",
+    "ArchiCAD",
+    "AutoCAD",
+    "Lumion",
+    "Rhino",
+    "Dynamo (course)",
+    "GREENSHIP Professional",
+    "core planning",
+    "façade coordination (curtain wall, precast)",
+    "high-rise residential and office (24-35 floors)",
+    "mentoring juniors",
+    "English (fluent)"
+  ],
+  "missing_skills": [
+    "SKK Ahli Madya or STRA (holds SKK Ahli Muda, Jenjang 7 — below requirement)",
+    "Navisworks clash detection",
+    "explicit SNI fire/egress experience",
+    "foreign design architect collaboration not mentioned"
+  ],
+  "years_of_relevant_experience": {
+    "value": 9.6,
+    "high_rise": 9.6,
+    "basis": "Sep 2014 - Jun 2021 (6.8 y) + Feb 2024 - Nov 2026 (2.8 y); career break Jul 2021 - Jan 2024 excluded"
+  },
+  "education_match": {
+    "status": "Match",
+    "detail": "S1 Arsitektur Universitas Katolik Parahyangan 2014, IPK 3.38"
+  },
+  "semantic_match": {
+    "level": "High",
+    "detail": "Same building types and stages (DD to tender) on 24-35 storey towers."
+  },
+  "potential_risks": [
+    "Licence level is one step below the stated requirement (Muda vs Madya) — hard requirement partially unmet",
+    "2.5-year employment gap (explained as family care) — verify currency of code knowledge",
+    "Only ~2.8 years in a lead role"
+  ],
+  "interview_focus": [
+    "Timeline for upgrading SKK to Ahli Madya; eligibility based on years of experience",
+    "Recent code changes she has applied since returning in 2024 (PBG, BGH)",
+    "Concrete examples of core planning decisions on the 35-floor TOD apartment",
+    "Leading a 4-6 person team versus the 3 juniors she mentors today"
+  ],
+  "expected_explanation": "Strong domain fit with 9.6 years of relevant experience across three high-rise projects of 24-35 floors and GREENSHIP Professional. The career break is explained and does not reduce the experience below 8 years. Main gap is the licence: SKK Ahli Muda instead of the required Ahli Madya/STRA. Recommended with a licence-upgrade condition; ranks below CV-01 who meets every hard requirement.",
+  "alternative_vacancy": null
+}

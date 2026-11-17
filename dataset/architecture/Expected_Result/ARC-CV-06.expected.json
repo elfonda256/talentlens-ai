@@ -1,0 +1,84 @@
+{
+  "cv_id": "ARC-CV-06",
+  "candidate_name": "Agus Setiawan",
+  "cv_file": "CV/ARC-CV-06_Agus_Setiawan.pdf",
+  "target_vacancy": "ARC-VAC-02",
+  "vacancy_file": "Vacancy/ARC-VAC-02_Junior_Architect_Drafter_PT_Baja_Konstruksi_Nusantara.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "Average — wrong major, bad formatting",
+  "test_tags": [
+    "bad_formatting",
+    "typos",
+    "no_dates",
+    "messy_spacing",
+    "indonesian",
+    "freelance"
+  ],
+  "document": {
+    "language": "id",
+    "layout": "Plain text-like CV, irregular spaces, inconsistent capitalisation",
+    "has_text_layer": true,
+    "parser_traps": [
+      "Typos in section headings ('PENGALMAN KERJA', 'CURICULUM VITAE') — heading detection must be fuzzy",
+      "'Auto Cad' and 'Sketcup' must normalise to AutoCAD and SketchUp",
+      "No dates: years of experience must come from the free-text '- 3 tahun' and 'kurang lebih 4 tahun'",
+      "Multiple consecutive spaces and spaces before commas"
+    ]
+  },
+  "expected_ranking": {
+    "rank": 4,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-07",
+      "ARC-CV-05",
+      "ARC-CV-08",
+      "ARC-CV-06"
+    ]
+  },
+  "expected_score_range": {
+    "min": 50,
+    "max": 60
+  },
+  "expected_decision": "Review",
+  "decision_override": null,
+  "skills_found": [
+    "AutoCAD 2D",
+    "shop drawing struktur baja",
+    "gambar as-built",
+    "RAB sederhana",
+    "SketchUp (sedikit)",
+    "Tekla (pernah belajar)",
+    "membaca gambar struktur & arsitektur"
+  ],
+  "missing_skills": [
+    "D3/S1 Arsitektur (has D3 Teknik Sipil)",
+    "SketchUp at working level",
+    "architectural detailing (roof, wall, skylight) — experience is structural",
+    "IPK not stated"
+  ],
+  "years_of_relevant_experience": {
+    "value": 4.0,
+    "basis": "Self-declared '± 4 tahun' (3 years at CV Karya Mandiri Teknik + freelance); no dates given, unverifiable"
+  },
+  "education_match": {
+    "status": "Partial",
+    "detail": "D3 Teknik Sipil Politeknik Negeri Jakarta + SMK Teknik Gambar Bangunan; no graduation year or IPK"
+  },
+  "semantic_match": {
+    "level": "Medium",
+    "detail": "Warehouse steel drawings and shop drawings are relevant to the company, but from the structural side rather than architectural."
+  },
+  "potential_risks": [
+    "No dates anywhere — experience length and recency cannot be verified",
+    "Civil engineering diploma instead of architecture",
+    "Typos (CURICULUM, PENGALMAN, sturktur, Sketcup, Auto Cad) suggest low attention to detail for a drafting role",
+    "No IPK stated, so the 2.90 minimum cannot be checked"
+  ],
+  "interview_focus": [
+    "Ask for dates of each job and a copy of the diploma with IPK",
+    "Drawing test focused on architectural details rather than structure",
+    "Whether he would accept a junior architectural drafter scope"
+  ],
+  "expected_explanation": "Has the core tool (AutoCAD) and real warehouse shop-drawing experience, which matters to a steel EPC contractor, so he should not be auto-rejected. But the major is civil, dates are missing, SketchUp is weak and the CV is full of typos. Review, last in the pool.",
+  "alternative_vacancy": null
+}

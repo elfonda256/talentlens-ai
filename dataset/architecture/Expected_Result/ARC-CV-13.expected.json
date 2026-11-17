@@ -1,0 +1,88 @@
+{
+  "cv_id": "ARC-CV-13",
+  "candidate_name": "Andi Muhammad Rais",
+  "cv_file": "CV/ARC-CV-13_Andi_Muhammad_Rais.pdf",
+  "target_vacancy": "ARC-VAC-04",
+  "vacancy_file": "Vacancy/ARC-VAC-04_Site_Architect_Township_PT_Tanjung_Kerta_Mining.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "Perfect candidate",
+  "test_tags": [
+    "ats_style",
+    "serif",
+    "english",
+    "remote_site",
+    "modular",
+    "k3_certified"
+  ],
+  "document": {
+    "language": "en",
+    "layout": "ATS-friendly serif single column with 'Professional Background' / 'Employment' headings",
+    "has_text_layer": true,
+    "parser_traps": [
+      "Heading 'Professional Background' is the summary, and 'Employment' is the experience section — map by meaning, not keyword"
+    ]
+  },
+  "expected_ranking": {
+    "rank": 1,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-13",
+      "ARC-CV-15",
+      "ARC-CV-14",
+      "ARC-CV-16"
+    ]
+  },
+  "expected_score_range": {
+    "min": 85,
+    "max": 93
+  },
+  "expected_decision": "Recommended",
+  "decision_override": null,
+  "skills_found": [
+    "Camp / dormitory design (600 pax)",
+    "modular container-based buildings",
+    "vendor fabrication drawing review",
+    "factory acceptance checks",
+    "architectural BoQ and owner's estimate",
+    "fire separation and muster point layout",
+    "site supervision of local contractors",
+    "AutoCAD",
+    "Revit",
+    "SketchUp",
+    "MS Project",
+    "Ahli K3 Umum",
+    "SKK Arsitek Ahli Muda",
+    "H2S awareness",
+    "SIM A",
+    "roster work (6/2)"
+  ],
+  "missing_skills": [
+    "POP certificate (preferred only)",
+    "mining-specific (vs oil & gas / plantation) site experience"
+  ],
+  "years_of_relevant_experience": {
+    "value": 13.2,
+    "remote_site": 10.7,
+    "basis": "Sep 2013 - Nov 2026 total; remote sites Mar 2016 - Nov 2026 (plantation 2016-2019, oil & gas field sites 2019-present)"
+  },
+  "education_match": {
+    "status": "Match",
+    "detail": "S1 Arsitektur Universitas Hasanuddin 2013, GPA 3.29"
+  },
+  "semantic_match": {
+    "level": "High",
+    "detail": "Same building types (camp, dining hall, clinic, mosque, workshop), same delivery method (modular), same region and roster lifestyle."
+  },
+  "potential_risks": [
+    "Oil & gas camp standards may be heavier/costlier than the mining owner expects",
+    "Lives in Balikpapan — fits POH, low relocation risk"
+  ],
+  "interview_focus": [
+    "Lessons from the 350→600 pax camp expansion: phasing while occupied",
+    "How he checks vendor modular drawings before shipment",
+    "Willingness to move from 6/2 to an 8/2 roster",
+    "Interest in getting POP certified"
+  ],
+  "expected_explanation": "Meets every mandatory requirement with margin: S1 Arsitektur, 13 years including 10.7 on remote sites, camp and modular experience at a larger scale than the vacancy, BoQ/estimating, AutoCAD/Revit, Ahli K3 Umum and SIM A. Only the preferred POP certificate is missing. Top of the pool.",
+  "alternative_vacancy": null
+}

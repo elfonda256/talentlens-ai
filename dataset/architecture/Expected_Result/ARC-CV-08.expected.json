@@ -1,0 +1,85 @@
+{
+  "cv_id": "ARC-CV-08",
+  "candidate_name": "Bambang Wicaksono",
+  "cv_file": "CV/ARC-CV-08_Bambang_Wicaksono.pdf",
+  "target_vacancy": "ARC-VAC-02",
+  "vacancy_file": "Vacancy/ARC-VAC-02_Junior_Architect_Drafter_PT_Baja_Konstruksi_Nusantara.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "Career switch — military experience",
+  "test_tags": [
+    "military_experience",
+    "career_switch",
+    "multiple_careers",
+    "table_layout",
+    "mixed_language",
+    "freelance"
+  ],
+  "document": {
+    "language": "mixed (id/en)",
+    "layout": "Tables for work history, education and skills; bilingual headings",
+    "has_text_layer": true,
+    "parser_traps": [
+      "Work history is a 4-column table — rows must map to job entries, not be flattened into one paragraph",
+      "Military rank 'Sersan Kepala' and unit should be captured as job title/organisation",
+      "Bilingual headings ('Riwayat Kerja / Work History')"
+    ]
+  },
+  "expected_ranking": {
+    "rank": 3,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-07",
+      "ARC-CV-05",
+      "ARC-CV-08",
+      "ARC-CV-06"
+    ]
+  },
+  "expected_score_range": {
+    "min": 58,
+    "max": 68
+  },
+  "expected_decision": "Review",
+  "decision_override": null,
+  "skills_found": [
+    "AutoCAD 2D",
+    "SketchUp",
+    "Revit (dasar)",
+    "Excel / MS Project",
+    "gambar kerja gudang",
+    "detail loading dock",
+    "as-built",
+    "Ahli K3 Umum",
+    "field construction leadership (TNI Zeni)"
+  ],
+  "missing_skills": [
+    "Shop drawing for steel fabrication",
+    "industrial roof/wall system detailing at depth"
+  ],
+  "years_of_relevant_experience": {
+    "value": 1.5,
+    "basis": "Jan 2026 - Nov 2026 full-time drafter (0.9 y) + Mar 2023 - Dec 2025 part-time freelance (2.8 y, weighted ~0.25); 12 years military construction counted as transferable, not relevant drafting"
+  },
+  "education_match": {
+    "status": "Match",
+    "detail": "S1 Arsitektur (kelas karyawan) Universitas Krisnadwipayana 2025, IPK 3.09"
+  },
+  "semantic_match": {
+    "level": "Medium",
+    "detail": "Current job is warehouse drafting; military background brings site discipline and K3 but not drafting depth."
+  },
+  "potential_risks": [
+    "Seniority (mid-30s judging by SMA 2005-2008; ex-Serka) versus a junior drafter role and salary",
+    "Drafting experience is short and mostly part-time",
+    "Study overlapped with active service (2021-2022) — verify"
+  ],
+  "interview_focus": [
+    "Comfort taking direction from a younger senior drafter",
+    "AutoCAD test speed",
+    "Whether his K3 certificate and site experience could fit a site-drafter variant of the role"
+  ],
+  "expected_explanation": "Meets the degree and software requirements and is already drafting warehouses. Military construction experience is a genuine plus for site visits and safety, but it is not drafting experience, so relevant years stay low. Review rather than Recommended because of limited full-time drafting and seniority/salary fit.",
+  "alternative_vacancy": {
+    "vacancy": "ARC-VAC-04",
+    "note": "Remote-site and K3 profile is interesting for the mining township role, but he lacks 5 years of architecture practice."
+  }
+}

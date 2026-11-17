@@ -1,0 +1,76 @@
+{
+  "vacancy_id": "ARC-VAC-05",
+  "vacancy_file": "Vacancy/ARC-VAC-05_Architectural_Designer_Residential_Griyakarya.pdf",
+  "company": "Griyakarya",
+  "title": "Architectural Designer (Residential)",
+  "industry": "PropTech / design-build startup",
+  "location": "Bandung (hybrid)",
+  "employment": "Permanent",
+  "salary_idr_month": [
+    9000000,
+    13000000
+  ],
+  "min_years": 2,
+  "education": "S1 Arsitektur",
+  "required": [
+    "S1 Arsitektur",
+    "2-4 years landed-house design with built projects",
+    "SketchUp",
+    "Enscape / D5 / Lumion",
+    "AutoCAD or Revit",
+    "basic RAB/BoQ",
+    "portfolio",
+    "homeowner communication"
+  ],
+  "preferred": [
+    "interior design sense",
+    "tropical modern on narrow plots",
+    "design content creation"
+  ],
+  "expected_ranking": [
+    {
+      "rank": 1,
+      "cv_id": "ARC-CV-17",
+      "candidate_name": "Alya Rahmania Hakim",
+      "expected_score_range": [
+        88,
+        95
+      ],
+      "expected_decision": "Recommended",
+      "decision_override": null
+    },
+    {
+      "rank": 2,
+      "cv_id": "ARC-CV-20",
+      "candidate_name": "Dimas Aryo Baskoro",
+      "expected_score_range": [
+        60,
+        70
+      ],
+      "expected_decision": "Review",
+      "decision_override": null
+    },
+    {
+      "rank": 3,
+      "cv_id": "ARC-CV-18",
+      "candidate_name": "Teguh Prasetyo",
+      "expected_score_range": [
+        58,
+        68
+      ],
+      "expected_decision": "Review",
+      "decision_override": null
+    },
+    {
+      "rank": 4,
+      "cv_id": "ARC-CV-19",
+      "candidate_name": "Clarissa Tanoto",
+      "expected_score_range": [
+        15,
+        28
+      ],
+      "expected_decision": "Reject",
+      "decision_override": null
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "cv_id": "ARC-CV-18",
+  "candidate_name": "Teguh Prasetyo",
+  "cv_file": "CV/ARC-CV-18_Teguh_Prasetyo.pdf",
+  "target_vacancy": "ARC-VAC-05",
+  "vacancy_file": "Vacancy/ARC-VAC-05_Architectural_Designer_Residential_Griyakarya.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "Career switch — volunteer work",
+  "test_tags": [
+    "career_switch",
+    "wrong_major",
+    "side_business_own_company",
+    "volunteer",
+    "word_style",
+    "indonesian"
+  ],
+  "document": {
+    "language": "id",
+    "layout": "Word-style single column, Calibri-like font, blue headings",
+    "has_text_layer": true,
+    "parser_traps": [
+      "Volunteer section must not be counted as paid employment",
+      "'usaha sendiri' marks self-employment"
+    ]
+  },
+  "expected_ranking": {
+    "rank": 3,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-17",
+      "ARC-CV-20",
+      "ARC-CV-18",
+      "ARC-CV-19"
+    ]
+  },
+  "expected_score_range": {
+    "min": 58,
+    "max": 68
+  },
+  "expected_decision": "Review",
+  "decision_override": null,
+  "skills_found": [
+    "House design (19 houses + 4 renovations)",
+    "RAB and AHSP unit-price analysis",
+    "BoQ",
+    "SketchUp",
+    "Lumion",
+    "AutoCAD",
+    "MS Project",
+    "site supervision",
+    "earthquake-resistant typical house design (volunteer)"
+  ],
+  "missing_skills": [
+    "S1 Arsitektur (has S1 Teknik Sipil)",
+    "Enscape or D5 (has Lumion — acceptable)",
+    "Revit",
+    "online portfolio link (PDF on request only)"
+  ],
+  "years_of_relevant_experience": {
+    "value": 5.4,
+    "basis": "Jul 2021 - Nov 2026 designing houses through own design-build business; 5.9 y prior QS not counted as design"
+  },
+  "education_match": {
+    "status": "Partial",
+    "detail": "S1 Teknik Sipil Universitas Jenderal Achmad Yani 2015, IPK 3.24 + 48-hour online residential design course"
+  },
+  "semantic_match": {
+    "level": "Medium",
+    "detail": "Cost-driven residential design and RAB match the role's budget focus; design training is informal."
+  },
+  "potential_risks": [
+    "Degree requirement not met (civil engineering)",
+    "Runs his own business — conflict of interest and retention",
+    "No portfolio link: design quality unverified"
+  ],
+  "interview_focus": [
+    "Ask for the portfolio before scheduling",
+    "Plan for CV Griya Prasetya Bangun if hired",
+    "Design exercise to test spatial quality, not only cost"
+  ],
+  "expected_explanation": "Brings what many young designers lack — real cost knowledge and built houses — but does not meet the S1 Arsitektur requirement and has no portfolio link. Review, behind CV-20 who has the right degree.",
+  "alternative_vacancy": null
+}

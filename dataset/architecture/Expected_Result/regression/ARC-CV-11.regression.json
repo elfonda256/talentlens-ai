@@ -1,0 +1,632 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-11",
+  "target_vacancy": "ARC-VAC-03",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-11_Grace_Natalia_Wenas.pdf",
+    "vacancy": "Vacancy/ARC-VAC-03_Healthcare_Facility_Architect_Husada_Prima_Hospital_Group.pdf",
+    "benchmark": "Expected_Result/ARC-CV-11.expected.json"
+  },
+  "candidate_profile": "Average — duplicated sections, messy spacing",
+  "test_tags": [
+    "duplicated_sections",
+    "messy_spacing",
+    "bad_formatting",
+    "mixed_language",
+    "healthcare_in_house"
+  ],
+  "parser_output": {
+    "extraction_method": "text",
+    "has_text_layer": true,
+    "language": "mixed",
+    "layout_class": "plain_text",
+    "contact": {
+      "name": "Grace Natalia Wenas",
+      "email": "grace.wenas.ars@gmail.com",
+      "phone_e164": "+6285733201186",
+      "location": "Sidoarjo",
+      "links": []
+    },
+    "sections_detected": [
+      {
+        "raw_heading": "PENGALAMAN KERJA",
+        "canonical": "experience"
+      },
+      {
+        "raw_heading": "SKILLS",
+        "canonical": "skills"
+      },
+      {
+        "raw_heading": "PENDIDIKAN",
+        "canonical": "education"
+      },
+      {
+        "raw_heading": "PENGALAMAN KERJA",
+        "canonical": "experience"
+      },
+      {
+        "raw_heading": "SKILLS",
+        "canonical": "skills"
+      },
+      {
+        "raw_heading": "SERTIFIKAT",
+        "canonical": "certifications"
+      }
+    ],
+    "experience": [
+      {
+        "title": "In-house Architect",
+        "company": "RS Mitra Sehat Sidoarjo",
+        "location": "Sidoarjo",
+        "start": "2023-01",
+        "end": "present",
+        "months": 46,
+        "employment_type": "full_time",
+        "relevant": true
+      },
+      {
+        "title": "Drafter Arsitektur",
+        "company": "PT Delta Graha Konstruksi",
+        "location": null,
+        "start": "2019-08",
+        "end": "2022-12",
+        "months": 41,
+        "employment_type": "full_time",
+        "relevant": true
+      }
+    ],
+    "education": [
+      {
+        "level": "S1",
+        "field": "Arsitektur",
+        "institution": "Universitas Kristen Petra",
+        "start": "2015",
+        "end": "2019",
+        "gpa": 3.12,
+        "gpa_scale": 4.0,
+        "status": "completed"
+      }
+    ],
+    "certifications": [
+      "SKK Arsitek Ahli Muda Jenjang 7 (2024)",
+      "Workshop Desain Ruang Isolasi & ICRA, PERSI Jatim (2023)"
+    ],
+    "languages": [
+      "Indonesian",
+      "English (intermediate)"
+    ],
+    "volunteer": [],
+    "side_business": [],
+    "expected_warnings": [
+      "duplicate_section:experience",
+      "duplicate_section:skills",
+      "section_missing:summary",
+      "irregular_spacing"
+    ],
+    "pii_fields_to_mask": [
+      "name",
+      "email",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "AutoCAD",
+        "category": "software",
+        "evidence": "AutoCAD , SketchUp , Revit , Lumion , MS Office"
+      },
+      {
+        "skill": "SketchUp",
+        "category": "software",
+        "evidence": "AutoCAD , SketchUp , Revit , Lumion , MS Office"
+      },
+      {
+        "skill": "Revit",
+        "category": "software",
+        "evidence": "Revit (menengah)"
+      },
+      {
+        "skill": "Lumion",
+        "category": "software",
+        "evidence": "AutoCAD , SketchUp , Revit , Lumion , MS Office"
+      },
+      {
+        "skill": "MS Office",
+        "category": "software",
+        "evidence": "AutoCAD , SketchUp , Revit , Lumion , MS Office"
+      },
+      {
+        "skill": "Hospital ward renovation",
+        "category": "domain",
+        "evidence": "Renovasi ruang rawat inap kelas 3 menjadi KRIS"
+      },
+      {
+        "skill": "Outpatient clinic expansion",
+        "category": "domain",
+        "evidence": "Perluasan poliklinik rawat jalan + ruang tunggu"
+      },
+      {
+        "skill": "Hemodialysis room design",
+        "category": "domain",
+        "evidence": "desain ruang hemodialisa 10 bed ( 2025 )"
+      },
+      {
+        "skill": "KARS accreditation support",
+        "category": "domain",
+        "evidence": "survei akreditasi KARS 2024"
+      },
+      {
+        "skill": "ICRA",
+        "category": "domain",
+        "evidence": "Workshop Desain Ruang Isolasi & ICRA"
+      },
+      {
+        "skill": "SKK Arsitek Ahli Muda",
+        "category": "certification",
+        "evidence": "SKK Arsitek Ahli Muda ( Jenjang 7 ) 2024"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "Duplicate jobs",
+        "reason": "the second 'PENGALAMAN KERJA' block repeats the same two employers"
+      },
+      {
+        "term": "Navisworks",
+        "reason": "never mentioned"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 2,
+    "total_years": 7.2,
+    "relevant_years": 7.2,
+    "tolerance_years": 0.5,
+    "basis": "Aug 2019 - Nov 2026 total; in-house hospital architect Jan 2023 - Nov 2026",
+    "domain_years": {
+      "healthcare": 3.8
+    }
+  },
+  "education": {
+    "highest_level": "S1",
+    "highest_field": "Arsitektur",
+    "status": "completed",
+    "gpa": 3.12,
+    "match": "Match",
+    "detail": "S1 Arsitektur Universitas Kristen Petra 2019, IPK 3.12"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "education": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "skills": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "summary": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "parse_quality": "medium",
+    "screening_confidence": {
+      "level": "Sedang",
+      "reason": "Duplicated sections must be merged; two date formats for the same jobs."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "S1 Arsitektur",
+        "status": "met",
+        "evidence": "S1 Arsitektur - Universitas Kristen Petra",
+        "note": null
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "Minimum 5 years architectural experience",
+        "status": "met",
+        "evidence": "Agu 2019 - Des 2022",
+        "note": "7.3 years total"
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Design or renovation of at least two hospitals or large clinics",
+        "status": "partial",
+        "evidence": "RS Mitra Sehat Sidoarjo",
+        "note": "several projects inside one hospital, not two hospitals"
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Hospital zoning, critical-care rooms, medical gas and HVAC pressure regimes",
+        "status": "partial",
+        "evidence": "Workshop Desain Ruang Isolasi & ICRA",
+        "note": "workshop only; no OT/ICU design"
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Revit",
+        "status": "met",
+        "evidence": "Revit (menengah)",
+        "note": null
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD",
+        "status": "met",
+        "evidence": "AutoCAD , SketchUp , Revit , Lumion , MS Office",
+        "note": null
+      },
+      {
+        "id": "R7",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Review of IFC/Navisworks models",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "R8",
+        "mandatory": true,
+        "category": "licence",
+        "requirement": "SKK Arsitek Ahli Muda or higher, or STRA",
+        "status": "met",
+        "evidence": "SKK Arsitek Ahli Muda ( Jenjang 7 ) 2024",
+        "note": null
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "KARS / SNARS accreditation from the facility side",
+        "status": "met",
+        "evidence": "survei akreditasi KARS 2024",
+        "note": null
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Hospital master planning or phased expansion",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Lean / evidence-based design or healthcare postgraduate thesis",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P4",
+        "mandatory": false,
+        "category": "certification",
+        "requirement": "PPI certificate for non-clinical staff",
+        "status": "partial",
+        "evidence": "Koordinasi dengan kontraktor & tim PPI",
+        "note": "worked with PPI; no PPI certificate"
+      }
+    ],
+    "mandatory_summary": {
+      "total": 8,
+      "met": 5,
+      "partial": 2,
+      "not_met": 1,
+      "unknown": 0
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 5,
+        "min_degree_level": "S1",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 55,
+          "max": 72
+        },
+        "experience": {
+          "min": 93.5,
+          "max": 98.5
+        },
+        "education": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "semantic": {
+          "min": 55,
+          "max": 70
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 3,
+        "max": 23
+      },
+      "excluded_components": [],
+      "implied_weighted_range": {
+        "min": 71.4,
+        "max": 82.3
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 58.4,
+        "max": 70.6
+      },
+      "scoring_model_gap": {
+        "causes": [
+          "domain_experience_not_modelled:hospital_count_and_critical_care"
+        ],
+        "explanations": [
+          "The 'two hospitals' and critical-care requirements are not modelled."
+        ],
+        "affects_decision": true,
+        "meaning": "Formula-correct components do not reproduce the benchmark score range; the benchmark range stays the target."
+      }
+    },
+    "top_positive_factors": [
+      "S1 Arsitektur",
+      "Minimum 5 years architectural experience",
+      "Revit",
+      "AutoCAD"
+    ],
+    "top_negative_factors": [
+      "Design or renovation of at least two hospitals or large clinics",
+      "Hospital zoning, critical-care rooms, medical gas and HVAC pressure regimes",
+      "Review of IFC/Navisworks models"
+    ],
+    "unknown_is_not_failure": [],
+    "risks": [
+      "Only one hospital; requirement asks for at least two",
+      "Duplicated sections disagree slightly (hemodialysis project appears only in the second copy; dates written two ways) — confirm accuracy",
+      "Experience as in-house architect is smaller-scale renovation"
+    ],
+    "reference_explanation": "Has the owner-side perspective the job wants and some KARS exposure, which a keyword scorer may under-rate. But healthcare experience is 3.8 years in a single hospital and excludes critical-care rooms. Review, third in the pool."
+  },
+  "recommendation": {
+    "decision": "Review",
+    "decision_label_id": "Perlu ditinjau",
+    "score_range": {
+      "min": 56,
+      "max": 66
+    },
+    "rank": 3,
+    "pool_order": [
+      "ARC-CV-09",
+      "ARC-CV-10",
+      "ARC-CV-11",
+      "ARC-CV-12"
+    ],
+    "decision_override": null,
+    "provisional_score": false,
+    "never_decision": [],
+    "action": "Tinjau manual; klarifikasi risiko pada daftar pertanyaan interview.",
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [],
+      "projected_decision": "Recommended",
+      "agrees_with_benchmark": false
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-11-Q1",
+      "category": "technical",
+      "question": "Who designed the water treatment and infection-control measures for the 10-bed hemodialysis room, and what was your part?",
+      "purpose": "Clarify scope of the strongest healthcare project",
+      "linked_to": "R4",
+      "good_answer_signals": [
+        "Clear ownership of layout and coordination"
+      ],
+      "red_flags": [
+        "Vague"
+      ]
+    },
+    {
+      "id": "ARC-CV-11-Q2",
+      "category": "technical",
+      "question": "What did you prepare for the 2024 KARS survey, and what findings came up for facilities?",
+      "purpose": "Preferred strength",
+      "linked_to": "P1",
+      "good_answer_signals": [
+        "Specific documents or findings"
+      ],
+      "red_flags": [
+        "Generic"
+      ]
+    },
+    {
+      "id": "ARC-CV-11-Q3",
+      "category": "technical",
+      "question": "Have you been involved in any operating theatre, ICU or isolation room project?",
+      "purpose": "Critical-care gap",
+      "linked_to": "R4",
+      "good_answer_signals": [
+        "Some exposure"
+      ],
+      "red_flags": [
+        "None"
+      ]
+    },
+    {
+      "id": "ARC-CV-11-Q4",
+      "category": "verification",
+      "question": "Your CV lists the hospital role twice with slightly different details. Can you confirm the full project list?",
+      "purpose": "Duplicated sections disagree",
+      "linked_to": "risk:duplicate",
+      "good_answer_signals": [
+        "Consistent list"
+      ],
+      "red_flags": [
+        "New inconsistencies"
+      ]
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Arsitek in-house rumah sakit, satu rumah sakit, CV berantakan",
+    "reference_text": "Kandidat bekerja sebagai arsitek in-house di satu rumah sakit sejak Januari 2023: renovasi rawat inap ke standar KRIS, perluasan poliklinik, ruang hemodialisa, dan persiapan fasilitas untuk akreditasi KARS. Total pengalaman sekitar 7 tahun, memiliki SKK Ahli Muda. Belum memenuhi syarat dua rumah sakit dan belum pernah menangani ruang operasi, ICU, atau isolasi. Bagian pengalaman dan keterampilan tertulis dua kali; isi digabung. Perlu ditinjau.",
+    "must_mention": [
+      {
+        "concept": "single hospital",
+        "any_of": [
+          "satu rumah sakit"
+        ]
+      },
+      {
+        "concept": "KARS strength",
+        "any_of": [
+          "KARS"
+        ]
+      },
+      {
+        "concept": "duplicated sections",
+        "any_of": [
+          "dua kali",
+          "duplikat",
+          "ganda"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate has 14 years of experience",
+      "Candidate designed operating theatres",
+      "Candidate worked at two hospitals"
+    ],
+    "forbidden_strings": [
+      "+6285733201186",
+      "Grace",
+      "Grace Natalia Wenas",
+      "Natalia",
+      "Wenas",
+      "grace.wenas.ars@gmail.com"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 69.5,
+      "rank": 3,
+      "decision": "Review",
+      "decision_label_id": "Perlu ditinjau",
+      "components": {
+        "skills": 80.0,
+        "experience": 93.0,
+        "semantic": 13.1,
+        "education": 100.0
+      },
+      "unassessed": [],
+      "knockout_flags": [],
+      "relevant_years": 6.6,
+      "experience_entries": 4,
+      "total_experience_months": 93,
+      "education": [
+        [
+          4,
+          "architecture"
+        ]
+      ],
+      "extraction_method": "text",
+      "extraction_confidence": 1.0,
+      "section_confidence": {
+        "summary": 0.0,
+        "experience": 1.0,
+        "education": 1.0,
+        "skills": 1.0
+      },
+      "contact": {
+        "name": "Grace Natalia Wenas",
+        "email": "grace.wenas.ars@gmail.com",
+        "phone": "085733201186"
+      },
+      "skill_ids": [
+        "architecture_design",
+        "autocad",
+        "rendering",
+        "revit",
+        "sketchup",
+        "technical_drawing"
+      ],
+      "job_reading": {
+        "upload_guard": null,
+        "min_years_experience": 5.0,
+        "degree_fields": [
+          "architecture"
+        ],
+        "min_degree_level": 4
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": true,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": true,
+      "score_in_benchmark_range": false,
+      "name_extracted": true,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": true,
+      "relevant_years_within_tolerance": false,
+      "education_found": true,
+      "no_programming_false_positive": true
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": true,
+      "min_years_read_correctly": true,
+      "degree_field_read": true,
+      "min_degree_level_read_correctly": true,
+      "no_programming_requirement": false
+    },
+    "known_failures": [
+      "score_in_benchmark_range",
+      "relevant_years_within_tolerance",
+      "no_programming_requirement"
+    ]
+  }
+}

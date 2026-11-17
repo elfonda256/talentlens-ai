@@ -1,0 +1,82 @@
+{
+  "cv_id": "ARC-CV-01",
+  "candidate_name": "Raditya Mahendra Wibisono",
+  "cv_file": "CV/ARC-CV-01_Raditya_Mahendra_Wibisono.pdf",
+  "target_vacancy": "ARC-VAC-01",
+  "vacancy_file": "Vacancy/ARC-VAC-01_Senior_Architect_High-Rise_PT_Arsitama_Griya_Konsultan.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "Perfect candidate",
+  "test_tags": [
+    "ats_style",
+    "english",
+    "single_column",
+    "high_rise",
+    "licensed"
+  ],
+  "document": {
+    "language": "en",
+    "layout": "ATS single column, plain headings, right-aligned dates",
+    "has_text_layer": true,
+    "parser_traps": []
+  },
+  "expected_ranking": {
+    "rank": 1,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-01",
+      "ARC-CV-03",
+      "ARC-CV-02",
+      "ARC-CV-04"
+    ]
+  },
+  "expected_score_range": {
+    "min": 90,
+    "max": 96
+  },
+  "expected_decision": "Recommended",
+  "decision_override": null,
+  "skills_found": [
+    "Revit (LOD 350, worksharing)",
+    "AutoCAD",
+    "Navisworks clash detection",
+    "Dynamo",
+    "Enscape",
+    "SNI 03-1746 egress strategy",
+    "PBG submission",
+    "GREENSHIP Associate",
+    "STRA",
+    "SKK Arsitek Ahli Madya (Jenjang 8)",
+    "team leadership (6 people)",
+    "coordination with foreign design architect",
+    "English (TOEFL ITP 583)"
+  ],
+  "missing_skills": [
+    "SNI 03-1736 passive fire protection not named explicitly",
+    "TOD/podium-over-transit experience not shown"
+  ],
+  "years_of_relevant_experience": {
+    "value": 11.3,
+    "high_rise": 8.9,
+    "basis": "Aug 2015 - Nov 2026 in architecture practice; towers from Jan 2018"
+  },
+  "education_match": {
+    "status": "Match",
+    "detail": "S1 Arsitektur Universitas Diponegoro 2015, GPA 3.54"
+  },
+  "semantic_match": {
+    "level": "High",
+    "detail": "Runs a 42-storey mixed-use tower from DD to tender with a Singapore design architect — almost the exact role described."
+  },
+  "potential_risks": [
+    "Currently Associate at a competitor mid-construction; notice period and hand-over of Kuningan Sentral Tower may delay start",
+    "Salary expectation likely near the top of the IDR 28-38 million band"
+  ],
+  "interview_focus": [
+    "Walk through the Kuningan egress and refuge-floor strategy and TABG comments",
+    "How clash count was reduced from 1,140 to under 60 — process, not tool",
+    "Mentoring approach for junior architects and Revit standard governance",
+    "Notice period and availability"
+  ],
+  "expected_explanation": "Meets every hard requirement: S1 Arsitektur, 11.3 years of practice (8.9 on towers), two high-rise projects above 20 floors from DD to construction documents (42 and 31 floors, plus 27 and 18 earlier), STRA and SKK Madya, advanced Revit/AutoCAD and named experience with SNI 03-1746 and PBG. Also covers most preferred items (GREENSHIP Associate, Navisworks, Dynamo, Enscape, foreign design architect). Only minor gaps (no explicit passive fire standard, no TOD). Top of the pool.",
+  "alternative_vacancy": null
+}

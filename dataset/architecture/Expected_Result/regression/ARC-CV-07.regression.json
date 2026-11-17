@@ -1,0 +1,618 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-07",
+  "target_vacancy": "ARC-VAC-02",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-07_Rizky_Ramadhan_Pratama.pdf",
+    "vacancy": "Vacancy/ARC-VAC-02_Junior_Architect_Drafter_PT_Baja_Konstruksi_Nusantara.pdf",
+    "benchmark": "Expected_Result/ARC-CV-07.expected.json"
+  },
+  "candidate_profile": "Good — scanned CV",
+  "test_tags": [
+    "scanned",
+    "image_only_pdf",
+    "ocr_required",
+    "ocr_noise",
+    "indonesian",
+    "biodata_table"
+  ],
+  "parser_output": {
+    "extraction_method": "ocr",
+    "has_text_layer": false,
+    "language": "id",
+    "layout_class": "scanned_image",
+    "contact": {
+      "name": "Rizky Ramadhan Pratama",
+      "email": "rizkyrp.drafter@gmail.com",
+      "phone_e164": "+6281299305182",
+      "location": "Cikarang Utara, Kab. Bekasi",
+      "links": []
+    },
+    "sections_detected": [
+      {
+        "raw_heading": "Data Diri",
+        "canonical": "personal_info"
+      },
+      {
+        "raw_heading": "Pendidikan",
+        "canonical": "education"
+      },
+      {
+        "raw_heading": "Pengalaman Kerja",
+        "canonical": "experience"
+      },
+      {
+        "raw_heading": "Keahlian",
+        "canonical": "skills"
+      },
+      {
+        "raw_heading": "Sertifikat",
+        "canonical": "certifications"
+      },
+      {
+        "raw_heading": "Bahasa",
+        "canonical": "languages"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Drafter Arsitektur",
+        "company": "PT Mitra Baja Fabrikasi",
+        "location": "Cikarang",
+        "start": "2023-10",
+        "end": "present",
+        "months": 37,
+        "employment_type": "full_time",
+        "relevant": true
+      },
+      {
+        "title": "Magang",
+        "company": "CV Arsiteka Purwa",
+        "location": "Purwakarta",
+        "start": "2023-02",
+        "end": "2023-04",
+        "months": 3,
+        "employment_type": "internship",
+        "relevant": true
+      }
+    ],
+    "education": [
+      {
+        "level": "D3",
+        "field": "Arsitektur",
+        "institution": "Politeknik Negeri Bandung",
+        "start": "2020",
+        "end": "2023",
+        "gpa": 3.18,
+        "gpa_scale": 4.0,
+        "status": "completed"
+      },
+      {
+        "level": "SMK",
+        "field": "Desain Pemodelan & Informasi Bangunan",
+        "institution": "SMK Negeri 1 Purwakarta",
+        "start": "2017",
+        "end": "2020",
+        "gpa": null,
+        "gpa_scale": null,
+        "status": "completed"
+      }
+    ],
+    "certifications": [
+      "SKK Juru Gambar Arsitektur Jenjang 4 (LPJK, 2024)",
+      "Pelatihan Revit Architecture dasar 32 jam (2024)"
+    ],
+    "languages": [
+      "Indonesian",
+      "Sundanese",
+      "English (passive)"
+    ],
+    "volunteer": [],
+    "side_business": [],
+    "expected_warnings": [
+      "ocr_used",
+      "section_missing:summary"
+    ],
+    "pii_fields_to_mask": [
+      "name",
+      "email",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "AutoCAD",
+        "category": "software",
+        "evidence": "AutoCAD 2D (mahir)"
+      },
+      {
+        "skill": "SketchUp",
+        "category": "software",
+        "evidence": "SketchUp (mahir)"
+      },
+      {
+        "skill": "Revit",
+        "category": "software",
+        "evidence": "Revit (dasar)"
+      },
+      {
+        "skill": "Tekla Structures",
+        "category": "software",
+        "evidence": "Tekla Structures (viewer"
+      },
+      {
+        "skill": "Excel",
+        "category": "software",
+        "evidence": "Excel"
+      },
+      {
+        "skill": "Architectural shop drawings",
+        "category": "domain",
+        "evidence": "shop drawing arsitektur"
+      },
+      {
+        "skill": "Industrial building drawings",
+        "category": "domain",
+        "evidence": "pabrik komponen otomotif"
+      },
+      {
+        "skill": "Cold storage detailing",
+        "category": "domain",
+        "evidence": "cold storage"
+      },
+      {
+        "skill": "Drawing register",
+        "category": "domain",
+        "evidence": "drawing register"
+      },
+      {
+        "skill": "As-built drawings",
+        "category": "domain",
+        "evidence": "as-built"
+      },
+      {
+        "skill": "SKK Juru Gambar Arsitektur",
+        "category": "certification",
+        "evidence": "SKK Juru Gambar Arsitektur"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "Professional experience = 0",
+        "reason": "an empty text layer must not be read as no experience"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 2,
+    "total_years": 3.3,
+    "relevant_years": 3.3,
+    "tolerance_years": 0.5,
+    "basis": "Oct 2023 - Nov 2026 as drafter at a steel fabricator; plus 3-month internship 2023",
+    "domain_years": {}
+  },
+  "education": {
+    "highest_level": "D3",
+    "highest_field": "Arsitektur",
+    "status": "completed",
+    "gpa": 3.18,
+    "match": "Match",
+    "detail": "D3 Arsitektur Politeknik Negeri Bandung 2023, IPK 3.18"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "education": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "skills": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "summary": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "parse_quality": "medium",
+    "screening_confidence": {
+      "level": "Sedang",
+      "reason": "Text comes from OCR; contact details and figures may contain OCR errors."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "D3 or S1 Arsitektur",
+        "status": "met",
+        "evidence": "D3 Arsitektur",
+        "note": null
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "IPK minimum 2.90",
+        "status": "met",
+        "evidence": "IPK 3,18",
+        "note": null
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD 2D",
+        "status": "met",
+        "evidence": "AutoCAD 2D (mahir)",
+        "note": null
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "SketchUp",
+        "status": "met",
+        "evidence": "SketchUp (mahir)",
+        "note": null
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Industrial building working drawings (steel frame, metal roof, concrete floor)",
+        "status": "met",
+        "evidence": "pabrik komponen otomotif",
+        "note": "factory 8,000 m², cold storage 2,400 m²"
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "availability",
+        "requirement": "Willing to travel to project sites in West Java and Banten",
+        "status": "met",
+        "evidence": "SIM | A dan C",
+        "note": "has SIM A; already works on Karawang/Cibitung projects"
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "experience",
+        "requirement": "0-2 years as drafter",
+        "status": "partial",
+        "evidence": "Oktober 2023",
+        "note": "3.1 years, slightly above 0-2"
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "Revit basic",
+        "status": "met",
+        "evidence": "Revit (dasar)",
+        "note": null
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "location",
+        "requirement": "Domicile in Bekasi, Cikarang or Karawang",
+        "status": "met",
+        "evidence": "Cikarang Utara",
+        "note": null
+      }
+    ],
+    "mandatory_summary": {
+      "total": 6,
+      "met": 6,
+      "partial": 0,
+      "not_met": 0,
+      "unknown": 0
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 0,
+        "min_degree_level": "D3",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 88,
+          "max": 100
+        },
+        "experience": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "education": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "semantic": {
+          "min": 68,
+          "max": 84
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 31,
+        "max": 51
+      },
+      "excluded_components": [],
+      "implied_weighted_range": {
+        "min": 87.8,
+        "max": 96.0
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 78.5,
+        "max": 87.8
+      },
+      "scoring_model_gap": {
+        "causes": [
+          "experience_full_credit_when_min_years_zero"
+        ],
+        "explanations": [
+          "When the job's minimum is 0 years, the experience component is always 100, so depth of drafting experience does not separate candidates."
+        ],
+        "affects_decision": false,
+        "meaning": "Formula-correct components do not reproduce the benchmark score range; the benchmark range stays the target."
+      }
+    },
+    "top_positive_factors": [
+      "D3 or S1 Arsitektur",
+      "IPK minimum 2.90",
+      "AutoCAD 2D",
+      "SketchUp"
+    ],
+    "top_negative_factors": [],
+    "unknown_is_not_failure": [],
+    "risks": [
+      "Experience (3.1 y) slightly above the 0-2 year range — salary expectation may sit at the top of the band",
+      "Document has no text layer; a pipeline without OCR will see an empty CV and must not score it as 'no experience'"
+    ],
+    "reference_explanation": "Best fit in the pool: D3 Arsitektur (accepted), three years producing architectural shop drawings for steel industrial buildings in the same area, AutoCAD and SketchUp at advanced level, LPJK drafter certificate, domiciled in Cikarang. Slightly above the experience range, which is a salary question rather than a reason to hold back. This CV is image-only; expected result assumes OCR succeeded."
+  },
+  "recommendation": {
+    "decision": "Recommended",
+    "decision_label_id": "Direkomendasikan",
+    "score_range": {
+      "min": 78,
+      "max": 87
+    },
+    "rank": 1,
+    "pool_order": [
+      "ARC-CV-07",
+      "ARC-CV-05",
+      "ARC-CV-08",
+      "ARC-CV-06"
+    ],
+    "decision_override": null,
+    "provisional_score": false,
+    "never_decision": [
+      "Tidak lolos"
+    ],
+    "action": "Lanjut ke tahap berikutnya sesuai proses lowongan.",
+    "without_ocr": {
+      "http_status": 422,
+      "decision": "Perlu ditinjau",
+      "note": "Without Tesseract the pipeline rejects the upload (TDR-0010). It must never produce 'Tidak lolos' or a 0-year experience result."
+    },
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [],
+      "projected_decision": "Recommended",
+      "agrees_with_benchmark": true
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-07-Q1",
+      "category": "technical",
+      "question": "Ceritakan detail atap klip-lok dan skylight pada pabrik komponen otomotif di Karawang. Apa yang paling sering direvisi konsultan?",
+      "purpose": "Konfirmasi pengalaman inti",
+      "linked_to": "R5",
+      "good_answer_signals": [
+        "Contoh revisi spesifik dan cara mengelola drawing register"
+      ],
+      "red_flags": [
+        "Jawaban umum"
+      ]
+    },
+    {
+      "id": "ARC-CV-07-Q2",
+      "category": "technical",
+      "question": "Bagaimana Anda memakai model Tekla dari tim fabrikasi saat membuat gambar arsitektur?",
+      "purpose": "Koordinasi dengan fabrikasi",
+      "linked_to": "R5",
+      "good_answer_signals": [
+        "Membaca model, mengecek clash dengan detail arsitektur"
+      ],
+      "red_flags": [
+        "Tidak pernah membuka model"
+      ]
+    },
+    {
+      "id": "ARC-CV-07-Q3",
+      "category": "motivation",
+      "question": "Apa alasan Anda ingin pindah dari PT Mitra Baja Fabrikasi?",
+      "purpose": "Alasan pindah",
+      "linked_to": "risk:retention",
+      "good_answer_signals": [
+        "Pengembangan, ingin pegang proyek EPC lengkap"
+      ],
+      "red_flags": [
+        "Konflik"
+      ]
+    },
+    {
+      "id": "ARC-CV-07-Q4",
+      "category": "verification",
+      "question": "Gaji Anda saat ini dan ekspektasi? Rentang lowongan Rp 6,0-7,5 juta.",
+      "purpose": "Pengalaman di atas rentang",
+      "linked_to": "P1",
+      "good_answer_signals": [
+        "Dalam rentang"
+      ],
+      "red_flags": [
+        "Jauh di atas"
+      ]
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Drafter arsitektur gudang dan pabrik baja, 3 tahun, domisili Cikarang",
+    "reference_text": "Kandidat lulusan D3 Arsitektur dengan IPK 3,18, sejak Oktober 2023 bekerja sebagai drafter arsitektur di fabrikator baja: shop drawing pabrik komponen otomotif 8.000 m², cold storage, gambar tender, drawing register, dan as-built. AutoCAD dan SketchUp mahir, Revit dasar, memiliki SKK Juru Gambar Arsitektur. Pengalaman sedikit di atas rentang 0-2 tahun, sehingga ekspektasi gaji perlu dicek. Dokumen adalah hasil pindai; data kontak dibaca lewat OCR. Direkomendasikan.",
+    "must_mention": [
+      {
+        "concept": "exact job match",
+        "any_of": [
+          "shop drawing",
+          "pabrik",
+          "gudang"
+        ]
+      },
+      {
+        "concept": "scanned document",
+        "any_of": [
+          "pindai",
+          "OCR",
+          "scan"
+        ]
+      },
+      {
+        "concept": "salary check",
+        "any_of": [
+          "gaji"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate has no experience",
+      "The document could not be read",
+      "Candidate holds an S1 degree"
+    ],
+    "forbidden_strings": [
+      "+6281299305182",
+      "Pratama",
+      "Ramadhan",
+      "Rizky",
+      "Rizky Ramadhan Pratama",
+      "rizkyrp.drafter@gmail.com"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 76.9,
+      "rank": 1,
+      "decision": "Review",
+      "decision_label_id": "Perlu ditinjau",
+      "components": {
+        "skills": 88.9,
+        "experience": 100.0,
+        "semantic": 41.3,
+        "education": 70.0
+      },
+      "unassessed": [],
+      "knockout_flags": [
+        "Jenjang pendidikan di bawah yang disyaratkan"
+      ],
+      "relevant_years": 3.1,
+      "experience_entries": 1,
+      "total_experience_months": 37,
+      "education": [
+        [
+          3,
+          "architecture"
+        ],
+        [
+          2,
+          ""
+        ]
+      ],
+      "extraction_method": "ocr",
+      "extraction_confidence": 0.85,
+      "section_confidence": {
+        "summary": 0.0,
+        "experience": 1.0,
+        "education": 1.0,
+        "skills": 1.0
+      },
+      "contact": {
+        "name": "Riwayat Hidup",
+        "email": "rizkyrp.drafter@gmail.com",
+        "phone": "081299305182"
+      },
+      "skill_ids": [
+        "autocad",
+        "revit",
+        "sketchup",
+        "technical_drawing"
+      ],
+      "job_reading": {
+        "upload_guard": null,
+        "min_years_experience": 0.0,
+        "degree_fields": [
+          "architecture"
+        ],
+        "min_degree_level": 4
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": false,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": true,
+      "score_in_benchmark_range": false,
+      "name_extracted": false,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": true,
+      "relevant_years_within_tolerance": true,
+      "education_found": true,
+      "no_programming_false_positive": true
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": true,
+      "min_years_read_correctly": true,
+      "degree_field_read": true,
+      "min_degree_level_read_correctly": false,
+      "no_programming_requirement": true
+    },
+    "known_failures": [
+      "decision_matches_benchmark",
+      "score_in_benchmark_range",
+      "name_extracted",
+      "min_degree_level_read_correctly"
+    ]
+  }
+}

@@ -1,0 +1,635 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-20",
+  "target_vacancy": "ARC-VAC-05",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-20_Dimas_Aryo_Baskoro.pdf",
+    "vacancy": "Vacancy/ARC-VAC-05_Architectural_Designer_Residential_Griyakarya.pdf",
+    "benchmark": "Expected_Result/ARC-CV-20.expected.json"
+  },
+  "candidate_profile": "Average — unusual headings, side business",
+  "test_tags": [
+    "unusual_headings",
+    "side_business",
+    "portfolio_links",
+    "english",
+    "lowercase_name"
+  ],
+  "parser_output": {
+    "extraction_method": "text",
+    "has_text_layer": true,
+    "language": "en",
+    "layout_class": "single_column",
+    "contact": {
+      "name": "Dimas Aryo Baskoro",
+      "email": "dimas.baskoro.3d@gmail.com",
+      "phone_e164": "+6285702219384",
+      "location": "Coblong, Bandung",
+      "links": [
+        "artstation.com/dimasbaskoro"
+      ]
+    },
+    "sections_detected": [
+      {
+        "raw_heading": "Where I've Worked",
+        "canonical": "experience"
+      },
+      {
+        "raw_heading": "Things I Built on the Side",
+        "canonical": "side_business"
+      },
+      {
+        "raw_heading": "The Toolbox",
+        "canonical": "skills"
+      },
+      {
+        "raw_heading": "Schooling",
+        "canonical": "education"
+      },
+      {
+        "raw_heading": "Talk to me in",
+        "canonical": "languages"
+      }
+    ],
+    "experience": [
+      {
+        "title": "3D Visualizer",
+        "company": "Lintang Visual Studio",
+        "location": "Bandung",
+        "start": "2024-05",
+        "end": "present",
+        "months": 30,
+        "employment_type": "full_time",
+        "relevant": "partial"
+      },
+      {
+        "title": "Architectural Designer",
+        "company": "PT Graha Asri Pasundan",
+        "location": "Bandung",
+        "start": "2022-01",
+        "end": "2024-04",
+        "months": 28,
+        "employment_type": "full_time",
+        "relevant": true
+      }
+    ],
+    "education": [
+      {
+        "level": "S1",
+        "field": "Arsitektur",
+        "institution": "Universitas Islam Indonesia",
+        "start": "2016",
+        "end": "2021",
+        "gpa": 3.08,
+        "gpa_scale": 4.0,
+        "status": "completed"
+      }
+    ],
+    "certifications": [],
+    "languages": [
+      "Indonesian",
+      "Javanese",
+      "English (okay)"
+    ],
+    "volunteer": [],
+    "side_business": [
+      {
+        "name": "Baskoro Assets",
+        "description": "online store for SketchUp & D5 models",
+        "start": "2023",
+        "end": "present"
+      }
+    ],
+    "expected_warnings": [
+      "unusual_headings",
+      "side_business_section",
+      "section_missing:summary",
+      "lowercase_name"
+    ],
+    "pii_fields_to_mask": [
+      "name",
+      "email",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "SketchUp",
+        "category": "software",
+        "evidence": "SketchUp · D5 Render · Lumion"
+      },
+      {
+        "skill": "D5 Render",
+        "category": "software",
+        "evidence": "SketchUp · D5 Render · Lumion"
+      },
+      {
+        "skill": "Lumion",
+        "category": "software",
+        "evidence": "SketchUp · D5 Render · Lumion"
+      },
+      {
+        "skill": "3ds Max",
+        "category": "software",
+        "evidence": "3ds Max + Corona"
+      },
+      {
+        "skill": "Corona",
+        "category": "software",
+        "evidence": "3ds Max + Corona"
+      },
+      {
+        "skill": "AutoCAD",
+        "category": "software",
+        "evidence": "AutoCAD · Revit (basic) · Photoshop"
+      },
+      {
+        "skill": "Revit",
+        "category": "software",
+        "evidence": "Revit (basic)"
+      },
+      {
+        "skill": "Photoshop",
+        "category": "software",
+        "evidence": "AutoCAD · Revit (basic) · Photoshop"
+      },
+      {
+        "skill": "House type design",
+        "category": "domain",
+        "evidence": "Designed 4 house types for a 180-unit cluster"
+      },
+      {
+        "skill": "Working drawings",
+        "category": "domain",
+        "evidence": "Working drawings in AutoCAD"
+      },
+      {
+        "skill": "Marketing renders",
+        "category": "domain",
+        "evidence": "marketing renders"
+      },
+      {
+        "skill": "Quantity estimation",
+        "category": "domain",
+        "evidence": "estimate material quantities"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "Baskoro Assets as employer",
+        "reason": "side business, not employment"
+      },
+      {
+        "term": "Enscape",
+        "reason": "never mentioned"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 2,
+    "total_years": 4.8,
+    "relevant_years": 2.3,
+    "tolerance_years": 0.5,
+    "basis": "Jan 2022 - Apr 2024 residential design at developer; May 2024 - Nov 2026 visualisation (2.5 y) counted as adjacent, not design",
+    "domain_years": {}
+  },
+  "education": {
+    "highest_level": "S1",
+    "highest_field": "Arsitektur",
+    "status": "completed",
+    "gpa": 3.08,
+    "match": "Match",
+    "detail": "S1 Arsitektur Universitas Islam Indonesia 2021, IPK 3.08"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.7,
+        "max": 1.0
+      },
+      "education": {
+        "min": 0.7,
+        "max": 1.0
+      },
+      "skills": {
+        "min": 0.7,
+        "max": 1.0
+      },
+      "summary": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "parse_quality": "medium",
+    "screening_confidence": {
+      "level": "Sedang",
+      "reason": "Unusual headings; recent role is visualisation, not design."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "S1 Arsitektur",
+        "status": "met",
+        "evidence": "S1 Arsitektur — Universitas Islam Indonesia, Yogyakarta",
+        "note": null
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "2-4 years designing landed houses with built projects",
+        "status": "met",
+        "evidence": "Jan 2022 – Apr 2024",
+        "note": "2.3 years of house design"
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "SketchUp",
+        "status": "met",
+        "evidence": "SketchUp · D5 Render · Lumion",
+        "note": null
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Enscape, D5 Render or Lumion",
+        "status": "met",
+        "evidence": "SketchUp · D5 Render · Lumion",
+        "note": null
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD or Revit",
+        "status": "met",
+        "evidence": "Working drawings in AutoCAD",
+        "note": null
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Basic RAB / BoQ",
+        "status": "partial",
+        "evidence": "estimate material quantities",
+        "note": "with QS team"
+      },
+      {
+        "id": "R7",
+        "mandatory": true,
+        "category": "portfolio",
+        "requirement": "Portfolio showing own design work",
+        "status": "partial",
+        "evidence": "artstation.com/dimasbaskoro",
+        "note": "render-focused portfolio"
+      },
+      {
+        "id": "R8",
+        "mandatory": true,
+        "category": "soft",
+        "requirement": "Clear communication with homeowners",
+        "status": "partial",
+        "evidence": "revisions after buyer complaints",
+        "note": "developer buyers, not custom homeowners"
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Interior design sense",
+        "status": "partial",
+        "evidence": "Exterior & interior renders",
+        "note": "renders, not interior design"
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Tropical modern houses on narrow plots",
+        "status": "unknown",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Design content creation",
+        "status": "unknown",
+        "evidence": null,
+        "note": null
+      }
+    ],
+    "mandatory_summary": {
+      "total": 8,
+      "met": 5,
+      "partial": 3,
+      "not_met": 0,
+      "unknown": 0
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 2,
+        "min_degree_level": "S1",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 70,
+          "max": 85
+        },
+        "experience": {
+          "min": 76.5,
+          "max": 89.0
+        },
+        "education": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "semantic": {
+          "min": 50,
+          "max": 65
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 16,
+        "max": 36
+      },
+      "excluded_components": [],
+      "implied_weighted_range": {
+        "min": 71.1,
+        "max": 83.2
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 62.6,
+        "max": 76.0
+      },
+      "scoring_model_gap": {
+        "causes": [
+          "recent_role_relevance_not_modelled",
+          "homeowner_facing_design_not_modelled"
+        ],
+        "explanations": [
+          "Recent visualisation work counts like design work.",
+          "Client-facing custom design is not distinguished from developer standard types."
+        ],
+        "affects_decision": true,
+        "meaning": "Formula-correct components do not reproduce the benchmark score range; the benchmark range stays the target."
+      }
+    },
+    "top_positive_factors": [
+      "S1 Arsitektur",
+      "2-4 years designing landed houses with built projects",
+      "SketchUp",
+      "Enscape, D5 Render or Lumion"
+    ],
+    "top_negative_factors": [
+      "Basic RAB / BoQ",
+      "Portfolio showing own design work",
+      "Clear communication with homeowners"
+    ],
+    "unknown_is_not_failure": [
+      "P2",
+      "P3"
+    ],
+    "risks": [
+      "Most recent 2.5 years are visualisation, not design",
+      "Side business selling 3D assets — time commitment",
+      "Portfolio is render-focused (ArtStation) rather than design process"
+    ],
+    "reference_explanation": "Meets the degree and tool requirements and has 2.3 years of landed-house design, inside the 2-4 year band. Weaker on client-facing custom design and his recent role is rendering. Review, second in the pool."
+  },
+  "recommendation": {
+    "decision": "Review",
+    "decision_label_id": "Perlu ditinjau",
+    "score_range": {
+      "min": 60,
+      "max": 70
+    },
+    "rank": 2,
+    "pool_order": [
+      "ARC-CV-17",
+      "ARC-CV-20",
+      "ARC-CV-18",
+      "ARC-CV-19"
+    ],
+    "decision_override": null,
+    "provisional_score": false,
+    "never_decision": [],
+    "action": "Tinjau manual; klarifikasi risiko pada daftar pertanyaan interview.",
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [],
+      "projected_decision": "Recommended",
+      "agrees_with_benchmark": false
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-20-Q1",
+      "category": "technical",
+      "question": "For the Soreang house types, what did you decide and what did the developer dictate?",
+      "purpose": "Design ownership",
+      "linked_to": "R2",
+      "good_answer_signals": [
+        "Specific decisions and reasons"
+      ],
+      "red_flags": [
+        "Only followed standards"
+      ]
+    },
+    {
+      "id": "ARC-CV-20-Q2",
+      "category": "behavioral",
+      "question": "Explain a floor plan to me as if I were a homeowner who has never read one.",
+      "purpose": "Homeowner communication",
+      "linked_to": "R8",
+      "good_answer_signals": [
+        "Clear, simple"
+      ],
+      "red_flags": [
+        "Jargon"
+      ]
+    },
+    {
+      "id": "ARC-CV-20-Q3",
+      "category": "motivation",
+      "question": "How many hours a week go into Baskoro Assets?",
+      "purpose": "Side business time",
+      "linked_to": "risk:side_business",
+      "good_answer_signals": [
+        "Small, evenings"
+      ],
+      "red_flags": [
+        "Main income"
+      ]
+    },
+    {
+      "id": "ARC-CV-20-Q4",
+      "category": "technical",
+      "question": "Can you show design process, not only renders, for two projects?",
+      "purpose": "Portfolio depth",
+      "linked_to": "R7",
+      "good_answer_signals": [
+        "Sketches, plans, iterations"
+      ],
+      "red_flags": [
+        "Renders only"
+      ]
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Lulusan arsitektur dengan 2,3 tahun desain rumah, kini visualizer",
+    "reference_text": "Kandidat lulusan S1 Arsitektur dengan sekitar 2,3 tahun merancang tipe rumah untuk developer, kemudian sejak Mei 2024 bekerja sebagai 3D visualizer. Perangkat lunak sesuai (SketchUp, D5, Lumion, AutoCAD) dan memiliki usaha sampingan menjual aset 3D. Pengalaman konsultasi langsung dengan pemilik rumah belum terlihat dan portofolio lebih menonjolkan render. Perlu ditinjau.",
+    "must_mention": [
+      {
+        "concept": "visualizer recent role",
+        "any_of": [
+          "visualizer",
+          "render"
+        ]
+      },
+      {
+        "concept": "side business",
+        "any_of": [
+          "usaha sampingan",
+          "aset 3D"
+        ]
+      },
+      {
+        "concept": "house design years",
+        "any_of": [
+          "2,3 tahun",
+          "2.3"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate has 5 years of design experience",
+      "Baskoro Assets is an employer"
+    ],
+    "forbidden_strings": [
+      "+6285702219384",
+      "Aryo",
+      "Baskoro",
+      "Dimas",
+      "Dimas Aryo Baskoro",
+      "dimas.baskoro.3d@gmail.com"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 61.2,
+      "rank": 3,
+      "decision": "Review",
+      "decision_label_id": "Perlu ditinjau",
+      "components": {
+        "skills": 58.8,
+        "experience": 100.0,
+        "semantic": 26.0,
+        "education": 0.0
+      },
+      "unassessed": [
+        "education"
+      ],
+      "knockout_flags": [],
+      "relevant_years": 0.0,
+      "experience_entries": 0,
+      "total_experience_months": 0,
+      "education": [],
+      "extraction_method": "text",
+      "extraction_confidence": 0.55,
+      "section_confidence": {
+        "summary": 0.0,
+        "experience": 0.0,
+        "education": 0.0,
+        "skills": 0.7
+      },
+      "contact": {
+        "name": "Dimas Aryo Baskoro",
+        "email": "dimas.baskoro.3d@gmail.com",
+        "phone": "085702219384"
+      },
+      "skill_ids": [
+        "autocad",
+        "rendering",
+        "revit",
+        "sketchup",
+        "technical_drawing",
+        "visualization"
+      ],
+      "job_reading": {
+        "upload_guard": "NotAJobDescriptionError: Dokumen ini tampaknya sebuah CV, bukan deskripsi lowongan. Unggah berkas lowongan di sini, lalu unggah CV pada halaman lowongan.",
+        "min_years_experience": 0.0,
+        "degree_fields": [
+          "architecture"
+        ],
+        "min_degree_level": 4
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": true,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": false,
+      "score_in_benchmark_range": true,
+      "name_extracted": true,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": false,
+      "relevant_years_within_tolerance": false,
+      "education_found": false,
+      "no_programming_false_positive": true
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": false,
+      "min_years_read_correctly": false,
+      "degree_field_read": true,
+      "min_degree_level_read_correctly": true,
+      "no_programming_requirement": false
+    },
+    "known_failures": [
+      "rank_matches_benchmark",
+      "experience_entries_found",
+      "relevant_years_within_tolerance",
+      "education_found",
+      "vacancy_upload_accepted",
+      "min_years_read_correctly",
+      "no_programming_requirement"
+    ]
+  }
+}

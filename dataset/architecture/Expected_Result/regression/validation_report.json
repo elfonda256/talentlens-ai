@@ -1,0 +1,426 @@
+{
+  "commit": "ea2345f",
+  "embedding_backend": "tfidf",
+  "fixtures": {
+    "ARC-CV-01": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": true,
+      "gap_documented": true,
+      "pipeline_rules_agree": true,
+      "baseline_known_failures": [
+        "decision_matches_benchmark",
+        "score_in_benchmark_range",
+        "relevant_years_within_tolerance",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    "ARC-CV-02": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": false,
+      "gap_documented": true,
+      "pipeline_rules_agree": false,
+      "baseline_known_failures": [
+        "decision_matches_benchmark",
+        "rank_matches_benchmark",
+        "name_extracted",
+        "relevant_years_within_tolerance",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    "ARC-CV-03": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": true,
+      "gap_documented": true,
+      "pipeline_rules_agree": true,
+      "baseline_known_failures": [
+        "decision_matches_benchmark",
+        "rank_matches_benchmark",
+        "score_in_benchmark_range",
+        "experience_entries_found",
+        "relevant_years_within_tolerance",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    "ARC-CV-04": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": true,
+      "gap_documented": true,
+      "pipeline_rules_agree": true,
+      "baseline_known_failures": [
+        "decision_matches_benchmark",
+        "experience_entries_found",
+        "relevant_years_within_tolerance",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    "ARC-CV-05": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": false,
+      "gap_documented": true,
+      "pipeline_rules_agree": true,
+      "baseline_known_failures": [
+        "name_extracted",
+        "experience_entries_found",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    "ARC-CV-06": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": false,
+      "gap_documented": true,
+      "pipeline_rules_agree": false,
+      "baseline_known_failures": [
+        "name_extracted",
+        "experience_entries_found",
+        "relevant_years_within_tolerance",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    "ARC-CV-07": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": false,
+      "gap_documented": true,
+      "pipeline_rules_agree": true,
+      "baseline_known_failures": [
+        "decision_matches_benchmark",
+        "score_in_benchmark_range",
+        "name_extracted",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    "ARC-CV-08": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": false,
+      "gap_documented": true,
+      "pipeline_rules_agree": false,
+      "baseline_known_failures": [
+        "name_extracted",
+        "experience_entries_found",
+        "relevant_years_within_tolerance",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    "ARC-CV-09": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": true,
+      "gap_documented": true,
+      "pipeline_rules_agree": true,
+      "baseline_known_failures": [
+        "rank_matches_benchmark",
+        "score_in_benchmark_range",
+        "name_extracted",
+        "no_programming_requirement"
+      ]
+    },
+    "ARC-CV-10": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": false,
+      "gap_documented": true,
+      "pipeline_rules_agree": false,
+      "baseline_known_failures": [
+        "rank_matches_benchmark",
+        "score_in_benchmark_range",
+        "relevant_years_within_tolerance",
+        "education_found",
+        "no_programming_false_positive",
+        "no_programming_requirement"
+      ]
+    },
+    "ARC-CV-11": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": false,
+      "gap_documented": true,
+      "pipeline_rules_agree": false,
+      "baseline_known_failures": [
+        "score_in_benchmark_range",
+        "relevant_years_within_tolerance",
+        "no_programming_requirement"
+      ]
+    },
+    "ARC-CV-12": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": true,
+      "gap_documented": true,
+      "pipeline_rules_agree": true,
+      "baseline_known_failures": [
+        "score_in_benchmark_range",
+        "relevant_years_within_tolerance",
+        "no_programming_requirement"
+      ]
+    },
+    "ARC-CV-13": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": true,
+      "gap_documented": true,
+      "pipeline_rules_agree": true,
+      "baseline_known_failures": [
+        "rank_matches_benchmark",
+        "score_in_benchmark_range",
+        "relevant_years_within_tolerance",
+        "min_years_read_correctly",
+        "degree_field_read",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    "ARC-CV-14": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": false,
+      "gap_documented": true,
+      "pipeline_rules_agree": false,
+      "baseline_known_failures": [
+        "decision_matches_benchmark",
+        "score_in_benchmark_range",
+        "min_years_read_correctly",
+        "degree_field_read",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    "ARC-CV-15": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": false,
+      "gap_documented": true,
+      "pipeline_rules_agree": true,
+      "baseline_known_failures": [
+        "rank_matches_benchmark",
+        "name_extracted",
+        "experience_entries_found",
+        "relevant_years_within_tolerance",
+        "education_found",
+        "min_years_read_correctly",
+        "degree_field_read",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    "ARC-CV-16": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": true,
+      "gap_documented": true,
+      "pipeline_rules_agree": true,
+      "baseline_known_failures": [
+        "relevant_years_within_tolerance",
+        "min_years_read_correctly",
+        "degree_field_read",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    "ARC-CV-17": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": true,
+      "gap_documented": true,
+      "pipeline_rules_agree": true,
+      "baseline_known_failures": [
+        "score_in_benchmark_range",
+        "experience_entries_found",
+        "relevant_years_within_tolerance",
+        "vacancy_upload_accepted",
+        "min_years_read_correctly",
+        "no_programming_requirement"
+      ]
+    },
+    "ARC-CV-18": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": false,
+      "gap_documented": true,
+      "pipeline_rules_agree": false,
+      "baseline_known_failures": [
+        "rank_matches_benchmark",
+        "score_in_benchmark_range",
+        "name_extracted",
+        "relevant_years_within_tolerance",
+        "vacancy_upload_accepted",
+        "min_years_read_correctly",
+        "no_programming_requirement"
+      ]
+    },
+    "ARC-CV-19": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": true,
+      "gap_documented": true,
+      "pipeline_rules_agree": true,
+      "baseline_known_failures": [
+        "score_in_benchmark_range",
+        "experience_entries_found",
+        "vacancy_upload_accepted",
+        "min_years_read_correctly",
+        "no_programming_requirement"
+      ]
+    },
+    "ARC-CV-20": {
+      "schema_errors": [],
+      "consistency_issues": [],
+      "explanation_issues": [],
+      "target_components_overlap_score_range": false,
+      "gap_documented": true,
+      "pipeline_rules_agree": false,
+      "baseline_known_failures": [
+        "rank_matches_benchmark",
+        "experience_entries_found",
+        "relevant_years_within_tolerance",
+        "education_found",
+        "vacancy_upload_accepted",
+        "min_years_read_correctly",
+        "no_programming_requirement"
+      ]
+    }
+  },
+  "ranking": {
+    "ARC-VAC-01": {
+      "target": [
+        "ARC-CV-01",
+        "ARC-CV-03",
+        "ARC-CV-02",
+        "ARC-CV-04"
+      ],
+      "observed_tfidf": [
+        "ARC-CV-01",
+        "ARC-CV-02",
+        "ARC-CV-03",
+        "ARC-CV-04"
+      ],
+      "exact_match": false,
+      "top1_match": true,
+      "target_monotonic_by_score": true
+    },
+    "ARC-VAC-02": {
+      "target": [
+        "ARC-CV-07",
+        "ARC-CV-05",
+        "ARC-CV-08",
+        "ARC-CV-06"
+      ],
+      "observed_tfidf": [
+        "ARC-CV-07",
+        "ARC-CV-05",
+        "ARC-CV-08",
+        "ARC-CV-06"
+      ],
+      "exact_match": true,
+      "top1_match": true,
+      "target_monotonic_by_score": true
+    },
+    "ARC-VAC-03": {
+      "target": [
+        "ARC-CV-09",
+        "ARC-CV-10",
+        "ARC-CV-11",
+        "ARC-CV-12"
+      ],
+      "observed_tfidf": [
+        "ARC-CV-10",
+        "ARC-CV-09",
+        "ARC-CV-11",
+        "ARC-CV-12"
+      ],
+      "exact_match": false,
+      "top1_match": false,
+      "target_monotonic_by_score": true
+    },
+    "ARC-VAC-04": {
+      "target": [
+        "ARC-CV-13",
+        "ARC-CV-15",
+        "ARC-CV-14",
+        "ARC-CV-16"
+      ],
+      "observed_tfidf": [
+        "ARC-CV-15",
+        "ARC-CV-13",
+        "ARC-CV-14",
+        "ARC-CV-16"
+      ],
+      "exact_match": false,
+      "top1_match": false,
+      "target_monotonic_by_score": true
+    },
+    "ARC-VAC-05": {
+      "target": [
+        "ARC-CV-17",
+        "ARC-CV-20",
+        "ARC-CV-18",
+        "ARC-CV-19"
+      ],
+      "observed_tfidf": [
+        "ARC-CV-17",
+        "ARC-CV-18",
+        "ARC-CV-20",
+        "ARC-CV-19"
+      ],
+      "exact_match": false,
+      "top1_match": true,
+      "target_monotonic_by_score": true
+    }
+  },
+  "summary": {
+    "fixtures": 20,
+    "schema_errors": 0,
+    "consistency_issues": 0,
+    "explanation_issues": 0,
+    "component_score_mismatches": [
+      "ARC-CV-02",
+      "ARC-CV-05",
+      "ARC-CV-06",
+      "ARC-CV-07",
+      "ARC-CV-08",
+      "ARC-CV-10",
+      "ARC-CV-11",
+      "ARC-CV-14",
+      "ARC-CV-15",
+      "ARC-CV-18",
+      "ARC-CV-20"
+    ],
+    "undocumented_mismatches": [],
+    "pipeline_rule_disagreements": [
+      "ARC-CV-02",
+      "ARC-CV-06",
+      "ARC-CV-08",
+      "ARC-CV-10",
+      "ARC-CV-11",
+      "ARC-CV-14",
+      "ARC-CV-18",
+      "ARC-CV-20"
+    ],
+    "baseline_decision_matches": 14,
+    "baseline_rank_matches": 12,
+    "baseline_score_in_range": 8,
+    "ranking_exact_matches": 1,
+    "ranking_top1_matches": 3
+  }
+}

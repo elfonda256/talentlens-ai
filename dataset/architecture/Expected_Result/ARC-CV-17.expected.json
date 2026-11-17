@@ -1,0 +1,86 @@
+{
+  "cv_id": "ARC-CV-17",
+  "candidate_name": "Alya Rahmania Hakim",
+  "cv_file": "CV/ARC-CV-17_Alya_Rahmania_Hakim.pdf",
+  "target_vacancy": "ARC-VAC-05",
+  "vacancy_file": "Vacancy/ARC-VAC-05_Architectural_Designer_Residential_Griyakarya.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "Excellent portfolio",
+  "test_tags": [
+    "canva_style",
+    "two_column",
+    "portfolio_links",
+    "qr_code_placeholder",
+    "image_placeholder",
+    "english",
+    "residential"
+  ],
+  "document": {
+    "language": "en",
+    "layout": "Canva-style two columns, light sidebar, orange header band, photo circle and QR code",
+    "has_text_layer": true,
+    "parser_traps": [
+      "QR code is an image, not text — the portfolio URL must come from the sidebar text",
+      "Photo placeholder circle contains the word 'PHOTO' — must not be parsed as a skill or section",
+      "Three URLs in the sidebar: all should be captured as portfolio links"
+    ]
+  },
+  "expected_ranking": {
+    "rank": 1,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-17",
+      "ARC-CV-20",
+      "ARC-CV-18",
+      "ARC-CV-19"
+    ]
+  },
+  "expected_score_range": {
+    "min": 88,
+    "max": 95
+  },
+  "expected_decision": "Recommended",
+  "decision_override": null,
+  "skills_found": [
+    "Landed-house design (36 projects, 11 built)",
+    "narrow-plot design (6-8 m frontage)",
+    "tropical modern",
+    "client consultations",
+    "SketchUp",
+    "D5 Render",
+    "Enscape",
+    "AutoCAD",
+    "Revit",
+    "RAB checking",
+    "PBG drawings",
+    "site visits",
+    "interior joinery",
+    "design content creation (12k followers)",
+    "portfolio: Behance, Issuu, Instagram"
+  ],
+  "missing_skills": [],
+  "years_of_relevant_experience": {
+    "value": 4.7,
+    "basis": "Mar 2022 - Nov 2026 in residential design (junior then designer)"
+  },
+  "education_match": {
+    "status": "Match",
+    "detail": "S1 Arsitektur ITB 2022, GPA 3.71"
+  },
+  "semantic_match": {
+    "level": "High",
+    "detail": "Does the same job at a studio — consultations, Enscape walkthroughs, DED, RAB checks, site visits — and covers all three bonus items."
+  },
+  "potential_risks": [
+    "4.7 years is slightly above the 2-4 year band; salary may sit at the top of IDR 9-13 million",
+    "Moving from a boutique studio to a productised design library may feel restrictive"
+  ],
+  "interview_focus": [
+    "Walk through Rumah Lorong (6 m frontage) from brief to built",
+    "How she would adapt a base design versus designing from scratch",
+    "The ±8% RAB savings — what changed",
+    "Paid design exercise"
+  ],
+  "expected_explanation": "Strongest candidate in the category for her vacancy: right degree with high GPA, 4.7 years of built residential work, all required tools, RAB awareness, and every preferred item (interiors, narrow-plot tropical modern, design content). Portfolio links and QR are present for reviewers.",
+  "alternative_vacancy": null
+}

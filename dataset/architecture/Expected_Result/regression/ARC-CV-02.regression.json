@@ -1,0 +1,698 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-02",
+  "target_vacancy": "ARC-VAC-01",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-02_Hendrawan_Sutanto.pdf",
+    "vacancy": "Vacancy/ARC-VAC-01_Senior_Architect_High-Rise_PT_Arsitama_Griya_Konsultan.pdf",
+    "benchmark": "Expected_Result/ARC-CV-02.expected.json"
+  },
+  "candidate_profile": "Overqualified",
+  "test_tags": [
+    "word_style",
+    "serif",
+    "english",
+    "overqualified",
+    "side_business_own_firm",
+    "teaching"
+  ],
+  "parser_output": {
+    "extraction_method": "text",
+    "has_text_layer": true,
+    "language": "en",
+    "layout_class": "single_column",
+    "contact": {
+      "name": "Hendrawan Sutanto",
+      "email": "hendrawan@sutantorekan.co.id",
+      "phone_e164": "+628111804416",
+      "location": "Jakarta Selatan",
+      "links": []
+    },
+    "sections_detected": [
+      {
+        "raw_heading": "Professional Profile",
+        "canonical": "summary"
+      },
+      {
+        "raw_heading": "Employment History",
+        "canonical": "experience"
+      },
+      {
+        "raw_heading": "Education",
+        "canonical": "education"
+      },
+      {
+        "raw_heading": "Registrations",
+        "canonical": "certifications"
+      },
+      {
+        "raw_heading": "Teaching & Service",
+        "canonical": "other"
+      },
+      {
+        "raw_heading": "Computer Skills",
+        "canonical": "skills"
+      },
+      {
+        "raw_heading": "Languages",
+        "canonical": "languages"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Principal Architect & Founder",
+        "company": "Sutanto + Rekan Arsitek",
+        "location": "Jakarta",
+        "start": "2010-03",
+        "end": "present",
+        "months": 200,
+        "employment_type": "owner",
+        "relevant": true
+      },
+      {
+        "title": "Design Director",
+        "company": "PT Graha Multi Rancang",
+        "location": "Jakarta",
+        "start": "2003-01",
+        "end": "2010-02",
+        "months": 86,
+        "employment_type": "full_time",
+        "relevant": true
+      },
+      {
+        "title": "Design Architect",
+        "company": "PT Graha Multi Rancang",
+        "location": "Jakarta",
+        "start": "1998-02",
+        "end": "2002-12",
+        "months": 59,
+        "employment_type": "full_time",
+        "relevant": true
+      }
+    ],
+    "education": [
+      {
+        "level": "S2",
+        "field": "Architecture (M.Arch)",
+        "institution": "University of New South Wales",
+        "start": "1996",
+        "end": "1997",
+        "gpa": null,
+        "gpa_scale": null,
+        "status": "completed"
+      },
+      {
+        "level": "S1",
+        "field": "Teknik Arsitektur",
+        "institution": "Institut Teknologi Bandung",
+        "start": "1990",
+        "end": "1995",
+        "gpa": null,
+        "gpa_scale": null,
+        "status": "completed"
+      }
+    ],
+    "certifications": [
+      "STRA (Dewan Arsitek Indonesia)",
+      "IAI Licence, Utama",
+      "SKK Arsitek Ahli Utama Jenjang 9 (LPJK)",
+      "GREENSHIP Professional (GBC Indonesia)"
+    ],
+    "languages": [
+      "Indonesian",
+      "English (fluent)",
+      "Mandarin (conversational)"
+    ],
+    "volunteer": [],
+    "side_business": [],
+    "expected_warnings": [
+      "override:overqualified"
+    ],
+    "pii_fields_to_mask": [
+      "name",
+      "email",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "Revit",
+        "category": "software",
+        "evidence": "Revit (review level), AutoCAD, SketchUp, Rhino"
+      },
+      {
+        "skill": "AutoCAD",
+        "category": "software",
+        "evidence": "Revit (review level), AutoCAD, SketchUp, Rhino"
+      },
+      {
+        "skill": "SketchUp",
+        "category": "software",
+        "evidence": "Revit (review level), AutoCAD, SketchUp, Rhino"
+      },
+      {
+        "skill": "Rhino",
+        "category": "software",
+        "evidence": "Revit (review level), AutoCAD, SketchUp, Rhino"
+      },
+      {
+        "skill": "High-rise design",
+        "category": "domain",
+        "evidence": "Design lead on 11 towers above 30 floors"
+      },
+      {
+        "skill": "Master planning",
+        "category": "domain",
+        "evidence": "Master plans for two university campuses"
+      },
+      {
+        "skill": "Practice management",
+        "category": "domain",
+        "evidence": "Responsible for studio finances, business development and quality management"
+      },
+      {
+        "skill": "Design leadership",
+        "category": "soft",
+        "evidence": "Headed a design group of 25"
+      },
+      {
+        "skill": "STRA",
+        "category": "certification",
+        "evidence": "STRA, Dewan Arsitek Indonesia"
+      },
+      {
+        "skill": "SKK Arsitek Ahli Utama",
+        "category": "certification",
+        "evidence": "SKK Arsitek Ahli Utama (Jenjang 9), LPJK"
+      },
+      {
+        "skill": "GREENSHIP",
+        "category": "certification",
+        "evidence": "GREENSHIP Professional, GBC Indonesia"
+      },
+      {
+        "skill": "English",
+        "category": "language",
+        "evidence": "English (fluent)"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "Navisworks",
+        "reason": "never mentioned"
+      },
+      {
+        "term": "Dynamo",
+        "reason": "never mentioned"
+      },
+      {
+        "term": "Ir.",
+        "reason": "academic title, must not become part of the name or a skill"
+      },
+      {
+        "term": "ISO 9001",
+        "reason": "studio certification, not a personal skill — optional, not required"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 3,
+    "total_years": 28.8,
+    "relevant_years": 28.8,
+    "tolerance_years": 0.5,
+    "basis": "Feb 1998 - Nov 2026 continuous practice; towers throughout",
+    "domain_years": {
+      "high_rise": 28.8
+    }
+  },
+  "education": {
+    "highest_level": "S2",
+    "highest_field": "Architecture (M.Arch)",
+    "status": "completed",
+    "gpa": null,
+    "match": "Exceeds",
+    "detail": "Ir. (S1) ITB 1995 and M.Arch UNSW 1997"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.8,
+        "max": 1.0
+      },
+      "education": {
+        "min": 0.7,
+        "max": 1.0
+      },
+      "skills": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "summary": {
+        "min": 0.8,
+        "max": 1.0
+      }
+    },
+    "parse_quality": "high",
+    "screening_confidence": {
+      "level": "Sedang",
+      "reason": "Parsing is clean, but the overqualification override means the score alone does not decide."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "S1 Arsitektur",
+        "status": "met",
+        "evidence": "Sarjana Teknik Arsitektur (Ir.) — Institut Teknologi Bandung",
+        "note": null
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "Minimum 8 years of professional practice",
+        "status": "met",
+        "evidence": "twenty-eight years in practice",
+        "note": null
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "At least 2 high-rise projects above 20 floors taken from DD to construction documents",
+        "status": "met",
+        "evidence": "Design lead on 11 towers above 30 floors",
+        "note": null
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "licence",
+        "requirement": "STRA or SKK Arsitek Ahli Madya (Jenjang 8) or higher",
+        "status": "met",
+        "evidence": "SKK Arsitek Ahli Utama (Jenjang 9), LPJK",
+        "note": "exceeds: Utama"
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Advanced Autodesk Revit (worksharing, LOD 300-350)",
+        "status": "partial",
+        "evidence": "Revit (review level)",
+        "note": "self-declared review level only; the role produces Revit documents"
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD",
+        "status": "met",
+        "evidence": "Revit (review level), AutoCAD, SketchUp, Rhino",
+        "note": null
+      },
+      {
+        "id": "R7",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Knowledge of SNI 03-1746, SNI 03-1736 and Bangunan Gedung Hijau",
+        "status": "partial",
+        "evidence": "Member, Tim Ahli Bangunan Gedung (TABG) DKI Jakarta",
+        "note": "code-review authority implies knowledge, standards not named"
+      },
+      {
+        "id": "R8",
+        "mandatory": true,
+        "category": "soft",
+        "requirement": "Client presentation in Bahasa Indonesia and English",
+        "status": "met",
+        "evidence": "led competition entries and client presentations",
+        "note": null
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "certification",
+        "requirement": "GREENSHIP Associate/Professional or EDGE Expert",
+        "status": "met",
+        "evidence": "GREENSHIP Professional, GBC Indonesia",
+        "note": null
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "Navisworks clash detection",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "Dynamo",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P4",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "Enscape or Twinmotion",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P5",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Collaboration with a foreign design architect or façade consultant",
+        "status": "partial",
+        "evidence": "with local architect of record",
+        "note": "he was the foreign design architect in Vietnam, the reverse situation"
+      },
+      {
+        "id": "P6",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "TOD or podium-over-transit experience",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      }
+    ],
+    "mandatory_summary": {
+      "total": 8,
+      "met": 6,
+      "partial": 2,
+      "not_met": 0,
+      "unknown": 0
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 8,
+        "min_degree_level": "S1",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 65,
+          "max": 80
+        },
+        "experience": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "education": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "semantic": {
+          "min": 70,
+          "max": 85
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 26,
+        "max": 46
+      },
+      "excluded_components": [],
+      "implied_weighted_range": {
+        "min": 80.2,
+        "max": 89.2
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 69.2,
+        "max": 79.5
+      },
+      "scoring_model_gap": {
+        "causes": [
+          "overqualification_not_modelled"
+        ],
+        "explanations": [
+          "The scorer has no ceiling or flag for candidates far above the level of the role."
+        ],
+        "affects_decision": true,
+        "meaning": "Formula-correct components do not reproduce the benchmark score range; the benchmark range stays the target."
+      }
+    },
+    "top_positive_factors": [
+      "S1 Arsitektur",
+      "Minimum 8 years of professional practice",
+      "At least 2 high-rise projects above 20 floors taken from DD to construction documents",
+      "STRA or SKK Arsitek Ahli Madya (Jenjang 8) or higher"
+    ],
+    "top_negative_factors": [
+      "Advanced Autodesk Revit (worksharing, LOD 300-350)",
+      "Knowledge of SNI 03-1746, SNI 03-1736 and Bangunan Gedung Hijau"
+    ],
+    "unknown_is_not_failure": [],
+    "risks": [
+      "Overqualified: runs a 34-person firm; the role reports to a Design Director who may be junior to him",
+      "Salary expectation very likely far above IDR 38 million",
+      "Possible conflict of interest — still owner of a competing practice; needs clarity on winding down or dual role",
+      "Self-declared low hands-on Revit use while the role owns a Revit model",
+      "Retention risk if a leadership position opens elsewhere"
+    ],
+    "reference_explanation": "Technically exceeds every requirement (28 years, 11 towers above 30 floors, highest licence levels, GREENSHIP Professional). The score is capped and the decision set to Review because the role is a hands-on senior position and the candidate is a firm founder who states he no longer models himself. A screening system should surface him with an 'overqualified' flag rather than auto-recommend; HR may want to redirect him to a more senior opening."
+  },
+  "recommendation": {
+    "decision": "Review",
+    "decision_label_id": "Perlu ditinjau",
+    "score_range": {
+      "min": 70,
+      "max": 80
+    },
+    "rank": 3,
+    "pool_order": [
+      "ARC-CV-01",
+      "ARC-CV-03",
+      "ARC-CV-02",
+      "ARC-CV-04"
+    ],
+    "decision_override": "overqualified",
+    "provisional_score": false,
+    "never_decision": [],
+    "action": "Tinjau HR: kandidat overqualified, pertimbangkan posisi yang lebih senior.",
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [],
+      "projected_decision": "Recommended",
+      "agrees_with_benchmark": false
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-02-Q1",
+      "category": "motivation",
+      "question": "You built a 34-person firm. Why move into an employed senior architect role now, and what happens to Sutanto + Rekan?",
+      "purpose": "Retention and conflict-of-interest risk",
+      "linked_to": "risk:overqualified",
+      "good_answer_signals": [
+        "Clear plan to close or hand over the firm",
+        "Specific reason tied to hands-on design"
+      ],
+      "red_flags": [
+        "Plans to keep running the firm in parallel"
+      ]
+    },
+    {
+      "id": "ARC-CV-02-Q2",
+      "category": "technical",
+      "question": "The role personally produces DD and CD packages in Revit. How much of that would you do yourself?",
+      "purpose": "Self-declared 'review level' Revit",
+      "linked_to": "R5",
+      "good_answer_signals": [
+        "Honest about skill level and a learning plan",
+        "Has produced documents recently"
+      ],
+      "red_flags": [
+        "Expects the team to do all modelling"
+      ]
+    },
+    {
+      "id": "ARC-CV-02-Q3",
+      "category": "behavioral",
+      "question": "You would report to a Design Director who may have less experience than you. How would you handle a design disagreement?",
+      "purpose": "Fit within the hierarchy",
+      "linked_to": "risk:overqualified",
+      "good_answer_signals": [
+        "Respects decision rights, argues with evidence"
+      ],
+      "red_flags": [
+        "Dismissive of the reporting line"
+      ]
+    },
+    {
+      "id": "ARC-CV-02-Q4",
+      "category": "verification",
+      "question": "What salary range are you expecting?",
+      "purpose": "Band is IDR 28-38 million",
+      "linked_to": "risk:salary",
+      "good_answer_signals": [
+        "Within or near band"
+      ],
+      "red_flags": [
+        "Far above band without flexibility"
+      ]
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Sangat berpengalaman, overqualified untuk posisi Senior Architect",
+    "reference_text": "Kandidat adalah pendiri biro arsitek dengan 28 tahun praktik dan 11 menara di atas 30 lantai, lisensi tertinggi (STRA, SKK Ahli Utama) dan GREENSHIP Professional. Secara teknis melampaui semua syarat, tetapi menyatakan Revit hanya pada tingkat review, sementara posisi ini menuntut produksi dokumen sendiri. Risiko: ekspektasi gaji di atas rentang, potensi konflik kepentingan karena masih memiliki biro, dan retensi. Perlu ditinjau HR; pertimbangkan untuk posisi yang lebih senior.",
+    "must_mention": [
+      {
+        "concept": "overqualified flag",
+        "any_of": [
+          "overqualified",
+          "terlalu senior",
+          "melampaui"
+        ]
+      },
+      {
+        "concept": "own firm / conflict",
+        "any_of": [
+          "biro",
+          "konflik kepentingan",
+          "own firm"
+        ]
+      },
+      {
+        "concept": "Revit review level",
+        "any_of": [
+          "review",
+          "Revit"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate is recommended without reservation",
+      "Candidate uses Navisworks or Dynamo",
+      "Candidate is under 50"
+    ],
+    "forbidden_strings": [
+      "+628111804416",
+      "Hendrawan",
+      "Hendrawan Sutanto",
+      "Sutanto",
+      "hendrawan@sutantorekan.co.id"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 71.5,
+      "rank": 2,
+      "decision": "Recommended",
+      "decision_label_id": "Direkomendasikan",
+      "components": {
+        "skills": 64.3,
+        "experience": 100.0,
+        "semantic": 36.2,
+        "education": 100.0
+      },
+      "unassessed": [],
+      "knockout_flags": [],
+      "relevant_years": 14.8,
+      "experience_entries": 3,
+      "total_experience_months": 343,
+      "education": [
+        [
+          5,
+          "architecture"
+        ],
+        [
+          4,
+          "architecture"
+        ]
+      ],
+      "extraction_method": "text",
+      "extraction_confidence": 1.0,
+      "section_confidence": {
+        "summary": 1.0,
+        "experience": 1.0,
+        "education": 1.0,
+        "skills": 1.0
+      },
+      "contact": {
+        "name": "Ir. Hendrawan Sutanto, M.Arch., Iai",
+        "email": "hendrawan@sutantorekan.co.id",
+        "phone": "628111804416"
+      },
+      "skill_ids": [
+        "architecture_design",
+        "autocad",
+        "conceptual_design",
+        "revit",
+        "sketchup"
+      ],
+      "job_reading": {
+        "upload_guard": null,
+        "min_years_experience": 8.0,
+        "degree_fields": [
+          "architecture"
+        ],
+        "min_degree_level": 5
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": false,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": false,
+      "score_in_benchmark_range": true,
+      "name_extracted": false,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": true,
+      "relevant_years_within_tolerance": false,
+      "education_found": true,
+      "no_programming_false_positive": true
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": true,
+      "min_years_read_correctly": true,
+      "degree_field_read": true,
+      "min_degree_level_read_correctly": false,
+      "no_programming_requirement": true
+    },
+    "known_failures": [
+      "decision_matches_benchmark",
+      "rank_matches_benchmark",
+      "name_extracted",
+      "relevant_years_within_tolerance",
+      "min_degree_level_read_correctly"
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "vacancy_id": "ARC-VAC-02",
+  "vacancy_file": "Vacancy/ARC-VAC-02_Junior_Architect_Drafter_PT_Baja_Konstruksi_Nusantara.pdf",
+  "company": "PT Baja Konstruksi Nusantara",
+  "title": "Junior Architect / Drafter Arsitektur",
+  "industry": "EPC & steel structure contractor",
+  "location": "Cikarang, Bekasi + project sites",
+  "employment": "PKWT 12 months",
+  "salary_idr_month": [
+    6000000,
+    7500000
+  ],
+  "min_years": 0,
+  "education": "D3/S1 Arsitektur, IPK ≥ 2.90",
+  "required": [
+    "D3/S1 Arsitektur",
+    "IPK ≥ 2.90",
+    "AutoCAD 2D",
+    "SketchUp",
+    "industrial building drawings (steel frame, metal roof, concrete floor)",
+    "willing to visit sites in West Java & Banten"
+  ],
+  "preferred": [
+    "0-2 years drafting",
+    "Revit basic",
+    "domicile Bekasi/Cikarang/Karawang"
+  ],
+  "expected_ranking": [
+    {
+      "rank": 1,
+      "cv_id": "ARC-CV-07",
+      "candidate_name": "Rizky Ramadhan Pratama",
+      "expected_score_range": [
+        78,
+        87
+      ],
+      "expected_decision": "Recommended",
+      "decision_override": null
+    },
+    {
+      "rank": 2,
+      "cv_id": "ARC-CV-05",
+      "candidate_name": "Salsabila Putri Anggraini",
+      "expected_score_range": [
+        75,
+        83
+      ],
+      "expected_decision": "Recommended",
+      "decision_override": null
+    },
+    {
+      "rank": 3,
+      "cv_id": "ARC-CV-08",
+      "candidate_name": "Bambang Wicaksono",
+      "expected_score_range": [
+        58,
+        68
+      ],
+      "expected_decision": "Review",
+      "decision_override": null
+    },
+    {
+      "rank": 4,
+      "cv_id": "ARC-CV-06",
+      "candidate_name": "Agus Setiawan",
+      "expected_score_range": [
+        50,
+        60
+      ],
+      "expected_decision": "Review",
+      "decision_override": null
+    }
+  ]
+}

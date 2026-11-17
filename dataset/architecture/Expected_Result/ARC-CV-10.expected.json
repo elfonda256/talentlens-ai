@@ -1,0 +1,85 @@
+{
+  "cv_id": "ARC-CV-10",
+  "candidate_name": "Fajar Nugroho",
+  "cv_file": "CV/ARC-CV-10_Fajar_Nugroho.pdf",
+  "target_vacancy": "ARC-VAC-03",
+  "vacancy_file": "Vacancy/ARC-VAC-03_Healthcare_Facility_Architect_Husada_Prima_Hospital_Group.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "Good — missing domain skill",
+  "test_tags": [
+    "two_column",
+    "icons",
+    "english",
+    "bim_specialist",
+    "missing_skills"
+  ],
+  "document": {
+    "language": "en",
+    "layout": "Two columns with dark sidebar, unicode icons for contact details",
+    "has_text_layer": true,
+    "parser_traps": [
+      "Contact lines start with ⌂ ☎ ✉ ⌘ glyphs — strip icons before extracting phone/email",
+      "Sidebar contains education and certifications; main column contains experience",
+      "'github.com' link should be captured as a portfolio/profile link"
+    ]
+  },
+  "expected_ranking": {
+    "rank": 2,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-09",
+      "ARC-CV-10",
+      "ARC-CV-11",
+      "ARC-CV-12"
+    ]
+  },
+  "expected_score_range": {
+    "min": 64,
+    "max": 74
+  },
+  "expected_decision": "Review",
+  "decision_override": null,
+  "skills_found": [
+    "Revit (expert)",
+    "Dynamo",
+    "Navisworks Manage",
+    "BIM 360 / ACC",
+    "AutoCAD",
+    "Enscape",
+    "BIM Execution Plan",
+    "ISO 19650",
+    "SKK Arsitek Ahli Muda",
+    "Autodesk Certified Professional: Revit"
+  ],
+  "missing_skills": [
+    "Any hospital or clinic project (requirement: at least two)",
+    "hospital zoning / critical-care rooms",
+    "medical gas and HVAC pressure regimes",
+    "ICRA / PPI",
+    "KARS"
+  ],
+  "years_of_relevant_experience": {
+    "value": 10.3,
+    "healthcare": 0.0,
+    "basis": "Aug 2016 - Nov 2026 total; no healthcare projects"
+  },
+  "education_match": {
+    "status": "Match",
+    "detail": "S1 Arsitektur Universitas Brawijaya 2016, GPA 3.62"
+  },
+  "semantic_match": {
+    "level": "Medium",
+    "detail": "Strong on the model-review side of the job (IFC/Navisworks), absent on the clinical side."
+  },
+  "potential_risks": [
+    "Hard requirement 'two hospitals or large clinics' not met",
+    "Recent role is contractor-side BIM, not design or owner review"
+  ],
+  "interview_focus": [
+    "Any exposure to hospital projects through the contractor (MEP-heavy buildings)",
+    "How he would learn hospital planning requirements quickly",
+    "Interest in owner-side role versus BIM career"
+  ],
+  "expected_explanation": "High-quality architect/BIM profile that would make reviewing consultant models easy, but the vacancy's core requirement is hospital design or renovation experience, and he has none. Review: worth keeping if no healthcare candidate accepts, or for a separate BIM role.",
+  "alternative_vacancy": null
+}

@@ -1,0 +1,93 @@
+{
+  "cv_id": "ARC-CV-15",
+  "candidate_name": "Stefanus Hartono",
+  "cv_file": "CV/ARC-CV-15_Stefanus_Hartono.pdf",
+  "target_vacancy": "ARC-VAC-04",
+  "vacancy_file": "Vacancy/ARC-VAC-04_Site_Architect_Township_PT_Tanjung_Kerta_Mining.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "Very good — broken PDF text, no headings",
+  "test_tags": [
+    "no_headings",
+    "broken_pdf_text",
+    "ligatures",
+    "hyphenation",
+    "char_spacing",
+    "mixed_language",
+    "mining"
+  ],
+  "document": {
+    "language": "id (with English terms)",
+    "layout": "Running prose without any section headings; text layer contains ﬁ/ﬃ ligatures, hard hyphenation and letter-spaced name",
+    "has_text_layer": true,
+    "parser_traps": [
+      "No section headings: education, certificates and software are inline sentences",
+      "Ligature characters: 'ﬁeld', 'Sertiﬁkat', 'ﬁt' (U+FB01) must normalise to fi; 'oﬃce' (U+FB03) has no glyph in the embedded font and extracts as 'o ce'",
+      "Hard hyphenation across lines: 'tam-/bang', 'quan-/tity'",
+      "Letter-spaced name extracts as 'S T E F A N U S  H A R T O N O' in some extractors",
+      "Lines re-wrap mid-sentence, leaving orphan words such as 'pax,'"
+    ]
+  },
+  "expected_ranking": {
+    "rank": 2,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-13",
+      "ARC-CV-15",
+      "ARC-CV-14",
+      "ARC-CV-16"
+    ]
+  },
+  "expected_score_range": {
+    "min": 76,
+    "max": 86
+  },
+  "expected_decision": "Recommended",
+  "decision_override": null,
+  "skills_found": [
+    "Mess karyawan 480 pax",
+    "workshop alat berat",
+    "modular site office",
+    "prefab vendor drawing review (sandwich panel, light steel frame)",
+    "BoQ and owner estimate",
+    "K3 inspection with HSE",
+    "site supervision",
+    "AutoCAD",
+    "Revit",
+    "SketchUp",
+    "Excel",
+    "POP (Pengawas Operasional Pertama)",
+    "SKK K3 Konstruksi Ahli Muda",
+    "SIM A",
+    "SIM B1",
+    "MCU fit 2026",
+    "roster 6/2"
+  ],
+  "missing_skills": [
+    "Camp scale smaller than planned 1,200 pax expansion",
+    "SKK Arsitek (preferred only)"
+  ],
+  "years_of_relevant_experience": {
+    "value": 9.7,
+    "remote_site": 5.3,
+    "basis": "Mar 2017 - Nov 2026 total; mining site Sangatta Jul 2021 - Nov 2026"
+  },
+  "education_match": {
+    "status": "Match",
+    "detail": "S1 Arsitektur Universitas Mulawarman 2016, IPK 3.02"
+  },
+  "semantic_match": {
+    "level": "High",
+    "detail": "Already the owner-contractor-side architect on a coal mine in the same regency, with POP certification."
+  },
+  "potential_risks": [
+    "Works for a mining contractor, not an owner — check experience setting standards rather than following them",
+    "Parser risk: no headings and broken words could cause a naive system to miss POP, K3 and degree"
+  ],
+  "interview_focus": [
+    "Largest mess project and how he handled phasing with occupants on site",
+    "Experience reviewing prefab vendor submittals — rejection examples",
+    "Notice period with current contractor and roster change from 6/2 to 8/2"
+  ],
+  "expected_explanation": "Strong fit: S1 Arsitektur, 9.7 years, 5.3 on a coal mine site with mess, workshop and modular office work, BoQ experience, SKK K3 Konstruksi, POP (a preferred item that CV-13 lacks) and SIM A. Ranked second only because CV-13 has longer remote-site tenure and larger camp scale. The CV is deliberately hard to parse.",
+  "alternative_vacancy": null
+}

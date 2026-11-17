@@ -1,0 +1,83 @@
+{
+  "cv_id": "ARC-CV-04",
+  "candidate_name": "Kevin Halim",
+  "cv_file": "CV/ARC-CV-04_Kevin_Halim.pdf",
+  "target_vacancy": "ARC-VAC-01",
+  "vacancy_file": "Vacancy/ARC-VAC-01_Senior_Architect_High-Rise_PT_Arsitama_Griya_Konsultan.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "Wrong major / wrong industry",
+  "test_tags": [
+    "minimalist",
+    "english",
+    "wrong_major",
+    "interior_design"
+  ],
+  "document": {
+    "language": "en",
+    "layout": "Minimalist single column, small grey headings, wide margins",
+    "has_text_layer": true,
+    "parser_traps": [
+      "Dates use 'now' and em dashes ('2019 — now')"
+    ]
+  },
+  "expected_ranking": {
+    "rank": 4,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-01",
+      "ARC-CV-03",
+      "ARC-CV-02",
+      "ARC-CV-04"
+    ]
+  },
+  "expected_score_range": {
+    "min": 28,
+    "max": 40
+  },
+  "expected_decision": "Reject",
+  "decision_override": null,
+  "skills_found": [
+    "AutoCAD",
+    "SketchUp",
+    "3ds Max + V-Ray",
+    "Revit (basic)",
+    "joinery shop drawings",
+    "finishes schedules",
+    "BoQ checking",
+    "commercial fit-out"
+  ],
+  "missing_skills": [
+    "S1 Arsitektur",
+    "STRA / SKK Arsitek",
+    "high-rise design (any)",
+    "advanced Revit documentation",
+    "SNI egress / fire codes",
+    "PBG process",
+    "GREENSHIP"
+  ],
+  "years_of_relevant_experience": {
+    "value": 0.0,
+    "high_rise": 0.0,
+    "basis": "10.3 years in interior design (Aug 2016 - Nov 2026), none in building architecture"
+  },
+  "education_match": {
+    "status": "Mismatch",
+    "detail": "S1 Desain Interior, Universitas Tarumanagara 2016"
+  },
+  "semantic_match": {
+    "level": "Low",
+    "detail": "Shares vocabulary (fit-out, BoQ, AutoCAD) but works inside finished shells; no building design, structure or code responsibility."
+  },
+  "potential_risks": [
+    "Degree does not qualify for STRA/SKK Arsitek, so the licence requirement cannot be met",
+    "Keyword overlap (AutoCAD, Revit, design, Jakarta) may inflate naive keyword scores"
+  ],
+  "interview_focus": [
+    "Not recommended for interview for this role"
+  ],
+  "expected_explanation": "Experienced interior designer, but the vacancy needs a licensed architect with high-rise documentation experience. Wrong major, no architecture licence, no tower experience and only basic Revit. Keyword matching could wrongly push this CV up; the expected behaviour is a clear Reject with education and licence as the main reasons.",
+  "alternative_vacancy": {
+    "vacancy": "ARC-VAC-05",
+    "note": "Closer to the residential startup role for interiors sense, but still lacks the S1 Arsitektur requirement — likely Reject there too."
+  }
+}

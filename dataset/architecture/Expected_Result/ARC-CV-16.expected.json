@@ -1,0 +1,81 @@
+{
+  "cv_id": "ARC-CV-16",
+  "candidate_name": "Yudi Firmansyah",
+  "cv_file": "CV/ARC-CV-16_Yudi_Firmansyah.pdf",
+  "target_vacancy": "ARC-VAC-04",
+  "vacancy_file": "Vacancy/ARC-VAC-04_Site_Architect_Township_PT_Tanjung_Kerta_Mining.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "Incomplete CV — missing education",
+  "test_tags": [
+    "incomplete",
+    "missing_education",
+    "no_email",
+    "very_short",
+    "indonesian"
+  ],
+  "document": {
+    "language": "id",
+    "layout": "Bare text, three short sections, no email, no education, no certificates",
+    "has_text_layer": true,
+    "parser_traps": [
+      "No email: contact extraction must not invent one",
+      "Years-only date ranges ('2020 - 2024')",
+      "Education field must be null, not filled from company names"
+    ]
+  },
+  "expected_ranking": {
+    "rank": 4,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-13",
+      "ARC-CV-15",
+      "ARC-CV-14",
+      "ARC-CV-16"
+    ]
+  },
+  "expected_score_range": {
+    "min": 50,
+    "max": 58
+  },
+  "expected_decision": "Review",
+  "decision_override": "incomplete_but_relevant",
+  "skills_found": [
+    "AutoCAD",
+    "site supervision",
+    "mess & site office projects at a mine (Kutai Barat)"
+  ],
+  "missing_skills": [
+    "S1 Arsitektur (no education listed)",
+    "K3 certificate",
+    "SIM A",
+    "Revit/ArchiCAD",
+    "BoQ/RAB",
+    "modular/prefab experience",
+    "email address"
+  ],
+  "years_of_relevant_experience": {
+    "value": 6.0,
+    "remote_site": 4.0,
+    "basis": "2018-2020 drafter + 2020-2024 project architect at mine site (years only, no months); nothing listed after 2024"
+  },
+  "education_match": {
+    "status": "Unknown",
+    "detail": "No education section"
+  },
+  "semantic_match": {
+    "level": "Medium",
+    "detail": "The one substantive line (mess & site office at a mine) is directly relevant."
+  },
+  "potential_risks": [
+    "Education unknown — cannot confirm S1 Arsitektur",
+    "Nothing listed since 2024 — possible gap of up to 2 years",
+    "No email; only phone",
+    "Job title 'Arsitek proyek' without a degree would be unusual — verify"
+  ],
+  "interview_focus": [
+    "Request a complete CV, diploma and certificates before any interview",
+    "What he has done since 2024"
+  ],
+  "expected_explanation": "Too little information to score high, but the stated experience is exactly the target domain. Expected behaviour is Review with a 'request complete CV' action rather than Reject; score sits at the bottom of the Review band because education and certificates cannot be verified.",
+  "alternative_vacancy": null
+}

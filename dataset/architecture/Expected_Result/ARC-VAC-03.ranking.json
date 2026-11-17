@@ -1,0 +1,78 @@
+{
+  "vacancy_id": "ARC-VAC-03",
+  "vacancy_file": "Vacancy/ARC-VAC-03_Healthcare_Facility_Architect_Husada_Prima_Hospital_Group.pdf",
+  "company": "PT Husada Prima Medika",
+  "title": "Healthcare Facility Architect",
+  "industry": "Hospital group (healthcare)",
+  "location": "Surabaya + East Java sites",
+  "employment": "Permanent",
+  "salary_idr_month": [
+    18000000,
+    24000000
+  ],
+  "min_years": 5,
+  "education": "S1 Arsitektur",
+  "required": [
+    "S1 Arsitektur",
+    "5+ years",
+    "design or renovation of at least 2 hospitals/large clinics",
+    "hospital zoning, critical care, medical gas & HVAC pressure regimes",
+    "Revit",
+    "AutoCAD",
+    "IFC/Navisworks model review",
+    "SKK Arsitek Ahli Muda+ or STRA"
+  ],
+  "preferred": [
+    "KARS/SNARS accreditation",
+    "hospital master planning",
+    "lean / evidence-based design",
+    "healthcare postgraduate thesis",
+    "PPI certificate"
+  ],
+  "expected_ranking": [
+    {
+      "rank": 1,
+      "cv_id": "ARC-CV-09",
+      "candidate_name": "Dewi Kartikasari Simanjuntak",
+      "expected_score_range": [
+        86,
+        94
+      ],
+      "expected_decision": "Recommended",
+      "decision_override": null
+    },
+    {
+      "rank": 2,
+      "cv_id": "ARC-CV-10",
+      "candidate_name": "Fajar Nugroho",
+      "expected_score_range": [
+        64,
+        74
+      ],
+      "expected_decision": "Review",
+      "decision_override": null
+    },
+    {
+      "rank": 3,
+      "cv_id": "ARC-CV-11",
+      "candidate_name": "Grace Natalia Wenas",
+      "expected_score_range": [
+        56,
+        66
+      ],
+      "expected_decision": "Review",
+      "decision_override": null
+    },
+    {
+      "rank": 4,
+      "cv_id": "ARC-CV-12",
+      "candidate_name": "Muhammad Ilham Saputra",
+      "expected_score_range": [
+        30,
+        42
+      ],
+      "expected_decision": "Reject",
+      "decision_override": null
+    }
+  ]
+}

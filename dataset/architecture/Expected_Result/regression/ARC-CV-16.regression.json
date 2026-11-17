@@ -1,0 +1,550 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-16",
+  "target_vacancy": "ARC-VAC-04",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-16_Yudi_Firmansyah.pdf",
+    "vacancy": "Vacancy/ARC-VAC-04_Site_Architect_Township_PT_Tanjung_Kerta_Mining.pdf",
+    "benchmark": "Expected_Result/ARC-CV-16.expected.json"
+  },
+  "candidate_profile": "Incomplete CV — missing education",
+  "test_tags": [
+    "incomplete",
+    "missing_education",
+    "no_email",
+    "very_short",
+    "indonesian"
+  ],
+  "parser_output": {
+    "extraction_method": "text",
+    "has_text_layer": true,
+    "language": "id",
+    "layout_class": "plain_text",
+    "contact": {
+      "name": "Yudi Firmansyah",
+      "email": null,
+      "phone_e164": "+6281346552098",
+      "location": "Tenggarong, Kutai Kartanegara",
+      "links": []
+    },
+    "sections_detected": [
+      {
+        "raw_heading": "Pengalaman",
+        "canonical": "experience"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Arsitek proyek mess & kantor site",
+        "company": "PT Borneo Prima Kontraktor",
+        "location": "Kutai Barat",
+        "start": "2020",
+        "end": "2024",
+        "months": 48,
+        "employment_type": "full_time",
+        "relevant": true
+      },
+      {
+        "title": "Drafter",
+        "company": "CV Tunas Mahakam",
+        "location": null,
+        "start": "2018",
+        "end": "2020",
+        "months": 24,
+        "employment_type": "full_time",
+        "relevant": true
+      }
+    ],
+    "education": [],
+    "certifications": [],
+    "languages": [],
+    "volunteer": [],
+    "side_business": [],
+    "expected_warnings": [
+      "section_missing:education",
+      "section_missing:summary",
+      "missing_email",
+      "years_only_dates",
+      "possible_gap:2024..present"
+    ],
+    "pii_fields_to_mask": [
+      "name",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "AutoCAD",
+        "category": "software",
+        "evidence": "gambar AutoCAD"
+      },
+      {
+        "skill": "Site supervision",
+        "category": "domain",
+        "evidence": "pengawasan lapangan"
+      },
+      {
+        "skill": "Mess / site office projects",
+        "category": "domain",
+        "evidence": "Arsitek proyek mess & kantor site"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "Education from company name",
+        "reason": "no education section; 'CV Tunas Mahakam' is a company"
+      },
+      {
+        "term": "Email",
+        "reason": "none present — must be null, not invented"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 2,
+    "total_years": 6.0,
+    "relevant_years": 6.0,
+    "tolerance_years": 0.5,
+    "basis": "2018-2020 drafter + 2020-2024 project architect at mine site (years only, no months); nothing listed after 2024",
+    "domain_years": {
+      "remote_site": 4.0
+    }
+  },
+  "education": {
+    "highest_level": null,
+    "highest_field": null,
+    "status": null,
+    "gpa": null,
+    "match": "Unknown",
+    "detail": "No education section"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.6,
+        "max": 0.8
+      },
+      "education": {
+        "min": 0,
+        "max": 0
+      },
+      "skills": {
+        "min": 0.3,
+        "max": 0.6
+      },
+      "summary": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "parse_quality": "low",
+    "screening_confidence": {
+      "level": "Rendah",
+      "reason": "Education missing; most requirements cannot be assessed."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "S1 Arsitektur",
+        "status": "unknown",
+        "evidence": null,
+        "note": "no education section — unknown, not failed"
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "Minimum 5 years experience",
+        "status": "met",
+        "evidence": "2018 - 2020",
+        "note": "6 years if 2018-2024 is continuous"
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "Minimum 2 years on remote sites",
+        "status": "met",
+        "evidence": "site tambang Kutai Barat",
+        "note": "2020-2024"
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Camp / mess / barracks / support facilities",
+        "status": "met",
+        "evidence": "Arsitek proyek mess & kantor site",
+        "note": null
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Modular or prefab buildings",
+        "status": "unknown",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD",
+        "status": "met",
+        "evidence": "gambar AutoCAD",
+        "note": null
+      },
+      {
+        "id": "R7",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Revit or ArchiCAD",
+        "status": "unknown",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "R8",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "RAB and BoQ for architectural works",
+        "status": "unknown",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "R9",
+        "mandatory": true,
+        "category": "certification",
+        "requirement": "Ahli K3 Umum or SKK K3 Konstruksi",
+        "status": "unknown",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "R10",
+        "mandatory": true,
+        "category": "licence",
+        "requirement": "SIM A",
+        "status": "unknown",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "certification",
+        "requirement": "POP (Pengawas Operasional Pertama)",
+        "status": "unknown",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "licence",
+        "requirement": "SKK Arsitek Ahli Muda or higher",
+        "status": "unknown",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "SketchUp",
+        "status": "unknown",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P4",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Multinational oil & gas or mining camp design standards",
+        "status": "unknown",
+        "evidence": null,
+        "note": null
+      }
+    ],
+    "mandatory_summary": {
+      "total": 10,
+      "met": 4,
+      "partial": 0,
+      "not_met": 0,
+      "unknown": 6
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 5,
+        "min_degree_level": "S1",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 25,
+          "max": 45
+        },
+        "experience": {
+          "min": 87.5,
+          "max": 92.5
+        },
+        "education": null,
+        "semantic": {
+          "min": 45,
+          "max": 62
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 7,
+        "max": 27
+      },
+      "excluded_components": [
+        "education"
+      ],
+      "implied_weighted_range": {
+        "min": 49.3,
+        "max": 64.0
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 38.1,
+        "max": 53.7
+      },
+      "scoring_model_gap": null
+    },
+    "top_positive_factors": [
+      "Minimum 5 years experience",
+      "Minimum 2 years on remote sites",
+      "Camp / mess / barracks / support facilities",
+      "AutoCAD"
+    ],
+    "top_negative_factors": [],
+    "unknown_is_not_failure": [
+      "R1",
+      "R5",
+      "R7",
+      "R8",
+      "R9",
+      "R10",
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ],
+    "risks": [
+      "Education unknown — cannot confirm S1 Arsitektur",
+      "Nothing listed since 2024 — possible gap of up to 2 years",
+      "No email; only phone",
+      "Job title 'Arsitek proyek' without a degree would be unusual — verify"
+    ],
+    "reference_explanation": "Too little information to score high, but the stated experience is exactly the target domain. Expected behaviour is Review with a 'request complete CV' action rather than Reject; score sits at the bottom of the Review band because education and certificates cannot be verified."
+  },
+  "recommendation": {
+    "decision": "Review",
+    "decision_label_id": "Perlu ditinjau",
+    "score_range": {
+      "min": 50,
+      "max": 58
+    },
+    "rank": 4,
+    "pool_order": [
+      "ARC-CV-13",
+      "ARC-CV-15",
+      "ARC-CV-14",
+      "ARC-CV-16"
+    ],
+    "decision_override": "incomplete_but_relevant",
+    "provisional_score": true,
+    "never_decision": [
+      "Tidak lolos"
+    ],
+    "action": "Minta CV lengkap (pendidikan, sertifikat, SIM) sebelum interview.",
+    "fallback_rule": "Education section not found: education component excluded, weight redistributed, score labelled provisional, decision 'Perlu ditinjau' (TDR-0023).",
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [],
+      "projected_decision": "Review",
+      "agrees_with_benchmark": true
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-16-Q1",
+      "category": "verification",
+      "question": "Mohon kirim CV lengkap beserta ijazah, sertifikat K3, dan SIM sebelum interview.",
+      "purpose": "Data tidak lengkap",
+      "linked_to": "R1",
+      "good_answer_signals": [
+        "Dokumen lengkap"
+      ],
+      "red_flags": [
+        "Tidak punya S1"
+      ]
+    },
+    {
+      "id": "ARC-CV-16-Q2",
+      "category": "verification",
+      "question": "Apa kegiatan Anda sejak 2024?",
+      "purpose": "Kemungkinan jeda",
+      "linked_to": "risk:gap",
+      "good_answer_signals": [
+        "Jelas"
+      ],
+      "red_flags": [
+        "Tidak jelas"
+      ]
+    },
+    {
+      "id": "ARC-CV-16-Q3",
+      "category": "technical",
+      "question": "Berapa kapasitas mess yang Anda tangani di Kutai Barat dan apakah bangunannya modular?",
+      "purpose": "Skala dan prefab",
+      "linked_to": "R5",
+      "good_answer_signals": [
+        "Angka dan sistem jelas"
+      ],
+      "red_flags": [
+        "Tidak tahu"
+      ]
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Pengalaman relevan di mess tambang, CV sangat tidak lengkap",
+    "reference_text": "Kandidat menyebut pengalaman sebagai arsitek proyek mess dan kantor site tambang di Kutai Barat (2020-2024) dan drafter (2018-2020), sangat relevan untuk lowongan ini. Namun CV tidak mencantumkan pendidikan, sertifikat, SIM, email, maupun kegiatan setelah 2024, sehingga sebagian besar syarat belum dapat dinilai. Skor bersifat sementara. Perlu ditinjau: minta CV lengkap sebelum interview.",
+    "must_mention": [
+      {
+        "concept": "incomplete",
+        "any_of": [
+          "tidak lengkap",
+          "tidak mencantumkan"
+        ]
+      },
+      {
+        "concept": "provisional score",
+        "any_of": [
+          "sementara"
+        ]
+      },
+      {
+        "concept": "relevant experience",
+        "any_of": [
+          "mess",
+          "tambang"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate does not have a degree",
+      "Candidate failed the education requirement",
+      "Candidate holds a K3 certificate"
+    ],
+    "forbidden_strings": [
+      "+6281346552098",
+      "Firmansyah",
+      "Yudi",
+      "Yudi Firmansyah"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 56.0,
+      "rank": 4,
+      "decision": "Review",
+      "decision_label_id": "Perlu ditinjau",
+      "components": {
+        "skills": 33.3,
+        "experience": 100.0,
+        "semantic": 17.3,
+        "education": 100.0
+      },
+      "unassessed": [],
+      "knockout_flags": [],
+      "relevant_years": 2.9,
+      "experience_entries": 2,
+      "total_experience_months": 72,
+      "education": [],
+      "extraction_method": "text",
+      "extraction_confidence": 0.7,
+      "section_confidence": {
+        "summary": 0.0,
+        "experience": 1.0,
+        "education": 0.0,
+        "skills": 0.7
+      },
+      "contact": {
+        "name": "Yudi Firmansyah",
+        "email": null,
+        "phone": "081346552098"
+      },
+      "skill_ids": [
+        "architecture_design",
+        "autocad",
+        "project_management"
+      ],
+      "job_reading": {
+        "upload_guard": null,
+        "min_years_experience": 0.0,
+        "degree_fields": [],
+        "min_degree_level": 0
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": true,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": true,
+      "score_in_benchmark_range": true,
+      "name_extracted": true,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": true,
+      "relevant_years_within_tolerance": false,
+      "education_found": true,
+      "no_programming_false_positive": true
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": true,
+      "min_years_read_correctly": false,
+      "degree_field_read": false,
+      "min_degree_level_read_correctly": false,
+      "no_programming_requirement": true
+    },
+    "known_failures": [
+      "relevant_years_within_tolerance",
+      "min_years_read_correctly",
+      "degree_field_read",
+      "min_degree_level_read_correctly"
+    ]
+  }
+}

@@ -1,0 +1,623 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-08",
+  "target_vacancy": "ARC-VAC-02",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-08_Bambang_Wicaksono.pdf",
+    "vacancy": "Vacancy/ARC-VAC-02_Junior_Architect_Drafter_PT_Baja_Konstruksi_Nusantara.pdf",
+    "benchmark": "Expected_Result/ARC-CV-08.expected.json"
+  },
+  "candidate_profile": "Career switch — military experience",
+  "test_tags": [
+    "military_experience",
+    "career_switch",
+    "multiple_careers",
+    "table_layout",
+    "mixed_language",
+    "freelance"
+  ],
+  "parser_output": {
+    "extraction_method": "text",
+    "has_text_layer": true,
+    "language": "mixed",
+    "layout_class": "single_column_tables",
+    "contact": {
+      "name": "Bambang Wicaksono",
+      "email": "bambang.wicaksono.ars@gmail.com",
+      "phone_e164": "+6283877012264",
+      "location": "Bekasi Timur, Kota Bekasi",
+      "links": []
+    },
+    "sections_detected": [
+      {
+        "raw_heading": "Ringkasan / Summary",
+        "canonical": "summary"
+      },
+      {
+        "raw_heading": "Riwayat Kerja / Work History",
+        "canonical": "experience"
+      },
+      {
+        "raw_heading": "Pendidikan / Education",
+        "canonical": "education"
+      },
+      {
+        "raw_heading": "Keahlian / Skills",
+        "canonical": "skills"
+      },
+      {
+        "raw_heading": "Sertifikasi & Pelatihan",
+        "canonical": "certifications"
+      },
+      {
+        "raw_heading": "Bahasa",
+        "canonical": "languages"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Drafter Arsitektur (kontrak)",
+        "company": "PT Prima Gudang Logistik",
+        "location": "Bekasi",
+        "start": "2026-01",
+        "end": "present",
+        "months": 10,
+        "employment_type": "contract",
+        "relevant": true
+      },
+      {
+        "title": "Drafter freelance (paruh waktu)",
+        "company": null,
+        "location": null,
+        "start": "2023-03",
+        "end": "2025-12",
+        "months": 34,
+        "employment_type": "freelance_part_time",
+        "relevant": "partial"
+      },
+      {
+        "title": "Bintara Zeni (Sersan Kepala)",
+        "company": "Batalyon Zeni Tempur, TNI AD",
+        "location": null,
+        "start": "2010-07",
+        "end": "2022-10",
+        "months": 148,
+        "employment_type": "military",
+        "relevant": false
+      }
+    ],
+    "education": [
+      {
+        "level": "S1",
+        "field": "Arsitektur",
+        "institution": "Universitas Krisnadwipayana",
+        "start": "2021",
+        "end": "2025",
+        "gpa": 3.09,
+        "gpa_scale": 4.0,
+        "status": "completed"
+      },
+      {
+        "level": "Non-degree",
+        "field": "Pendidikan Bintara (Secaba)",
+        "institution": "Rindam Jaya",
+        "start": "2010",
+        "end": "2010",
+        "gpa": null,
+        "gpa_scale": null,
+        "status": "completed"
+      },
+      {
+        "level": "SMA",
+        "field": null,
+        "institution": "SMA Negeri 1 Klaten",
+        "start": "2005",
+        "end": "2008",
+        "gpa": null,
+        "gpa_scale": null,
+        "status": "completed"
+      }
+    ],
+    "certifications": [
+      "Kursus Konstruksi Lapangan Zeni (Pusdikzi, 2012)",
+      "Ahli K3 Umum (Kemnaker RI, 2023)"
+    ],
+    "languages": [
+      "Indonesian",
+      "Javanese",
+      "English (basic)"
+    ],
+    "volunteer": [],
+    "side_business": [],
+    "expected_warnings": [
+      "table_work_history",
+      "study_overlaps_service:2021..2022"
+    ],
+    "pii_fields_to_mask": [
+      "name",
+      "email",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "AutoCAD",
+        "category": "software",
+        "evidence": "AutoCAD 2D"
+      },
+      {
+        "skill": "SketchUp",
+        "category": "software",
+        "evidence": "SketchUp"
+      },
+      {
+        "skill": "Revit",
+        "category": "software",
+        "evidence": "Revit"
+      },
+      {
+        "skill": "Excel",
+        "category": "software",
+        "evidence": "Microsoft Excel / Project"
+      },
+      {
+        "skill": "MS Project",
+        "category": "software",
+        "evidence": "Microsoft Excel / Project"
+      },
+      {
+        "skill": "Warehouse working drawings",
+        "category": "domain",
+        "evidence": "Gambar kerja gudang 6.500 m²"
+      },
+      {
+        "skill": "Loading dock detailing",
+        "category": "domain",
+        "evidence": "pintu loading dock"
+      },
+      {
+        "skill": "Field construction leadership",
+        "category": "soft",
+        "evidence": "Komandan regu konstruksi"
+      },
+      {
+        "skill": "Ahli K3 Umum",
+        "category": "certification",
+        "evidence": "Sertifikat Ahli K3 Umum, Kemnaker RI — 2023"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "Military rank as skill",
+        "reason": "'Sersan Kepala' is a job title"
+      },
+      {
+        "term": "Bailey bridge design",
+        "reason": "built, not designed — do not add as architectural skill"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 3,
+    "total_years": 16.0,
+    "relevant_years": 1.5,
+    "tolerance_years": 0.5,
+    "basis": "0.9 y full-time + 2.8 y part-time freelance weighted ~0.25; military 12 y counted as transferable only",
+    "domain_years": {}
+  },
+  "education": {
+    "highest_level": "S1",
+    "highest_field": "Arsitektur",
+    "status": "completed",
+    "gpa": 3.09,
+    "match": "Match",
+    "detail": "S1 Arsitektur (kelas karyawan) Universitas Krisnadwipayana 2025, IPK 3.09"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "education": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "skills": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "summary": {
+        "min": 0.7,
+        "max": 1.0
+      }
+    },
+    "parse_quality": "medium",
+    "screening_confidence": {
+      "level": "Sedang",
+      "reason": "Work history is in a table; relevant years depend on weighting part-time freelance."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "D3 or S1 Arsitektur",
+        "status": "met",
+        "evidence": "S1 Arsitektur (kelas karyawan)",
+        "note": null
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "IPK minimum 2.90",
+        "status": "met",
+        "evidence": "3,09",
+        "note": null
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD 2D",
+        "status": "met",
+        "evidence": "AutoCAD 2D",
+        "note": "Menengah – mahir"
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "SketchUp",
+        "status": "met",
+        "evidence": "SketchUp",
+        "note": "Menengah"
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Industrial building working drawings (steel frame, metal roof, concrete floor)",
+        "status": "met",
+        "evidence": "Gambar kerja gudang 6.500 m²",
+        "note": null
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "availability",
+        "requirement": "Willing to travel to project sites in West Java and Banten",
+        "status": "met",
+        "evidence": "terbiasa kerja di lapangan",
+        "note": null
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "experience",
+        "requirement": "0-2 years as drafter",
+        "status": "met",
+        "evidence": "Jan 2026 – sekarang",
+        "note": "0.9 y full-time + part-time freelance"
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "Revit basic",
+        "status": "met",
+        "evidence": "Revit",
+        "note": "Dasar"
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "location",
+        "requirement": "Domicile in Bekasi, Cikarang or Karawang",
+        "status": "met",
+        "evidence": "Bekasi Timur",
+        "note": null
+      }
+    ],
+    "mandatory_summary": {
+      "total": 6,
+      "met": 6,
+      "partial": 0,
+      "not_met": 0,
+      "unknown": 0
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 0,
+        "min_degree_level": "D3",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 75,
+          "max": 90
+        },
+        "experience": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "education": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "semantic": {
+          "min": 52,
+          "max": 68
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 23,
+        "max": 43
+      },
+      "excluded_components": [],
+      "implied_weighted_range": {
+        "min": 79.2,
+        "max": 88.5
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 72.0,
+        "max": 82.2
+      },
+      "scoring_model_gap": {
+        "causes": [
+          "experience_full_credit_when_min_years_zero",
+          "part_time_and_seniority_not_modelled"
+        ],
+        "explanations": [
+          "When the job's minimum is 0 years, the experience component is always 100, so depth of drafting experience does not separate candidates.",
+          "Part-time freelance and seniority/salary fit are not modelled."
+        ],
+        "affects_decision": true,
+        "meaning": "Formula-correct components do not reproduce the benchmark score range; the benchmark range stays the target."
+      }
+    },
+    "top_positive_factors": [
+      "D3 or S1 Arsitektur",
+      "IPK minimum 2.90",
+      "AutoCAD 2D",
+      "SketchUp"
+    ],
+    "top_negative_factors": [],
+    "unknown_is_not_failure": [],
+    "risks": [
+      "Seniority (mid-30s judging by SMA 2005-2008; ex-Serka) versus a junior drafter role and salary",
+      "Drafting experience is short and mostly part-time",
+      "Study overlapped with active service (2021-2022) — verify"
+    ],
+    "reference_explanation": "Meets the degree and software requirements and is already drafting warehouses. Military construction experience is a genuine plus for site visits and safety, but it is not drafting experience, so relevant years stay low. Review rather than Recommended because of limited full-time drafting and seniority/salary fit."
+  },
+  "recommendation": {
+    "decision": "Review",
+    "decision_label_id": "Perlu ditinjau",
+    "score_range": {
+      "min": 58,
+      "max": 68
+    },
+    "rank": 3,
+    "pool_order": [
+      "ARC-CV-07",
+      "ARC-CV-05",
+      "ARC-CV-08",
+      "ARC-CV-06"
+    ],
+    "decision_override": null,
+    "provisional_score": false,
+    "never_decision": [],
+    "action": "Tinjau manual; klarifikasi risiko pada daftar pertanyaan interview.",
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [],
+      "projected_decision": "Recommended",
+      "agrees_with_benchmark": false
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-08-Q1",
+      "category": "behavioral",
+      "question": "Anda pernah memimpin regu konstruksi. Bagaimana Anda akan bekerja di bawah arahan senior drafter yang mungkin lebih muda?",
+      "purpose": "Kesesuaian senioritas",
+      "linked_to": "risk:seniority",
+      "good_answer_signals": [
+        "Terbuka belajar, contoh konkret"
+      ],
+      "red_flags": [
+        "Sulit menerima arahan"
+      ]
+    },
+    {
+      "id": "ARC-CV-08-Q2",
+      "category": "verification",
+      "question": "Kuliah 2021-2025 beririsan dengan dinas sampai Oktober 2022. Bagaimana pengaturannya?",
+      "purpose": "Verifikasi irisan waktu",
+      "linked_to": "risk:overlap",
+      "good_answer_signals": [
+        "Izin belajar, kelas malam"
+      ],
+      "red_flags": [
+        "Jawaban tidak konsisten"
+      ]
+    },
+    {
+      "id": "ARC-CV-08-Q3",
+      "category": "technical",
+      "question": "Apa tantangan terbesar dalam detail pintu loading dock pada gudang 6.500 m²?",
+      "purpose": "Kedalaman pengalaman drafter",
+      "linked_to": "R5",
+      "good_answer_signals": [
+        "Menyebut dock leveler, seal, tinggi bebas"
+      ],
+      "red_flags": [
+        "Jawaban umum"
+      ]
+    },
+    {
+      "id": "ARC-CV-08-Q4",
+      "category": "motivation",
+      "question": "Rentang gaji Rp 6,0-7,5 juta. Apakah sesuai dengan harapan Anda?",
+      "purpose": "Gaji vs pengalaman",
+      "linked_to": "risk:salary",
+      "good_answer_signals": [
+        "Sesuai"
+      ],
+      "red_flags": [
+        "Jauh di atas"
+      ]
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Career switch dari TNI Zeni ke drafter arsitektur",
+    "reference_text": "Kandidat adalah mantan Bintara Zeni TNI AD selama 12 tahun yang menyelesaikan S1 Arsitektur kelas karyawan pada 2025 (IPK 3,09). Sejak Januari 2026 bekerja sebagai drafter kontrak untuk gudang 6.500 m², sebelumnya drafter lepas paruh waktu. Memiliki sertifikat Ahli K3 Umum dan terbiasa di lapangan. Pengalaman drafting penuh waktu masih di bawah satu tahun. Perlu ditinjau, terutama kesesuaian senioritas dan gaji.",
+    "must_mention": [
+      {
+        "concept": "military background",
+        "any_of": [
+          "TNI",
+          "Zeni"
+        ]
+      },
+      {
+        "concept": "short drafting experience",
+        "any_of": [
+          "di bawah satu tahun",
+          "paruh waktu",
+          "Januari 2026"
+        ]
+      },
+      {
+        "concept": "K3 certificate",
+        "any_of": [
+          "K3"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate has 12 years of drafting experience",
+      "Candidate is a structural engineer"
+    ],
+    "forbidden_strings": [
+      "+6283877012264",
+      "Bambang",
+      "Bambang Wicaksono",
+      "Wicaksono",
+      "bambang.wicaksono.ars@gmail.com"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 65.9,
+      "rank": 3,
+      "decision": "Review",
+      "decision_label_id": "Perlu ditinjau",
+      "components": {
+        "skills": 88.9,
+        "experience": 100.0,
+        "semantic": 32.9,
+        "education": 10.5
+      },
+      "unassessed": [],
+      "knockout_flags": [
+        "Bidang pendidikan tidak sesuai dengan yang disyaratkan",
+        "Jenjang pendidikan di bawah yang disyaratkan"
+      ],
+      "relevant_years": 0.0,
+      "experience_entries": 0,
+      "total_experience_months": 0,
+      "education": [
+        [
+          2,
+          ""
+        ]
+      ],
+      "extraction_method": "text",
+      "extraction_confidence": 0.7,
+      "section_confidence": {
+        "summary": 0.0,
+        "experience": 0.0,
+        "education": 0.8,
+        "skills": 0.7
+      },
+      "contact": {
+        "name": "Bambang Wicaksono, S.Ars.",
+        "email": "bambang.wicaksono.ars@gmail.com",
+        "phone": "083877012264"
+      },
+      "skill_ids": [
+        "autocad",
+        "building_codes",
+        "revit",
+        "sketchup",
+        "technical_drawing"
+      ],
+      "job_reading": {
+        "upload_guard": null,
+        "min_years_experience": 0.0,
+        "degree_fields": [
+          "architecture"
+        ],
+        "min_degree_level": 4
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": true,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": true,
+      "score_in_benchmark_range": true,
+      "name_extracted": false,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": false,
+      "relevant_years_within_tolerance": false,
+      "education_found": true,
+      "no_programming_false_positive": true
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": true,
+      "min_years_read_correctly": true,
+      "degree_field_read": true,
+      "min_degree_level_read_correctly": false,
+      "no_programming_requirement": true
+    },
+    "known_failures": [
+      "name_extracted",
+      "experience_entries_found",
+      "relevant_years_within_tolerance",
+      "min_degree_level_read_correctly"
+    ]
+  }
+}

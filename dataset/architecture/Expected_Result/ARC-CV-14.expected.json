@@ -1,0 +1,90 @@
+{
+  "cv_id": "ARC-CV-14",
+  "candidate_name": "I Putu Gede Wirawan",
+  "cv_file": "CV/ARC-CV-14_I_Putu_Gede_Wirawan.pdf",
+  "target_vacancy": "ARC-VAC-04",
+  "vacancy_file": "Vacancy/ARC-VAC-04_Site_Architect_Township_PT_Tanjung_Kerta_Mining.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "Good — overlapping jobs and freelance",
+  "test_tags": [
+    "overlapping_jobs",
+    "freelance",
+    "icons",
+    "mixed_language",
+    "wrong_industry_partial"
+  ],
+  "document": {
+    "language": "mixed (en/id)",
+    "layout": "Single column, band headings, icon contact line",
+    "has_text_layer": true,
+    "parser_traps": [
+      "Overlap detection: Jan 2018-Present and Mar 2022-Dec 2022 and 2019-Present should not be summed (total must be 8.8 y, not 17+)",
+      "Freelance entry has no employer name",
+      "Balinese name prefix 'I Putu Gede' is part of the legal name"
+    ]
+  },
+  "expected_ranking": {
+    "rank": 3,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-13",
+      "ARC-CV-15",
+      "ARC-CV-14",
+      "ARC-CV-16"
+    ]
+  },
+  "expected_score_range": {
+    "min": 55,
+    "max": 66
+  },
+  "expected_decision": "Review",
+  "decision_override": null,
+  "skills_found": [
+    "Villa and resort design",
+    "modular site office and worker mess (Morowali)",
+    "prefab panel layout",
+    "container stacking details",
+    "SketchUp",
+    "AutoCAD",
+    "ArchiCAD",
+    "Lumion",
+    "Enscape",
+    "RAB (basic)",
+    "SKK Arsitek Ahli Muda",
+    "English (fluent)"
+  ],
+  "missing_skills": [
+    "2 years on remote sites (has 10 months)",
+    "Ahli K3 Umum or SKK K3 Konstruksi",
+    "SIM A not stated",
+    "BoQ at owner-estimate level",
+    "Revit (has ArchiCAD — acceptable alternative)"
+  ],
+  "years_of_relevant_experience": {
+    "value": 8.8,
+    "remote_site": 0.8,
+    "basis": "Jan 2018 - Nov 2026 total; remote/prefab only Mar - Dec 2022"
+  },
+  "education_match": {
+    "status": "Match",
+    "detail": "S1 Arsitektur Universitas Udayana 2017, IPK 3.30"
+  },
+  "semantic_match": {
+    "level": "Medium",
+    "detail": "One genuinely relevant project (smelter worker mess) inside an otherwise luxury-villa career."
+  },
+  "potential_risks": [
+    "Overlapping employment: full-time at PT Bali Karya Arsitek (Denpasar) during a 10-month on-site contract in Morowali — clarify whether he took leave",
+    "Ongoing freelance work may conflict with an 8/2 roster",
+    "No K3 certificate — a mandatory requirement",
+    "Relocation from Bali to Kutai Timur"
+  ],
+  "interview_focus": [
+    "How the Morowali contract and the Bali job ran at the same time",
+    "Plan to obtain Ahli K3 Umum before start",
+    "Whether freelance work will stop",
+    "Real interest in remote-site life after years in Bali"
+  ],
+  "expected_explanation": "Experienced architect with one relevant modular camp project, but short of the 2-year remote-site requirement and missing the mandatory K3 certificate. The overlapping dates are a credibility question the interviewer must resolve. Review, third in the pool.",
+  "alternative_vacancy": null
+}

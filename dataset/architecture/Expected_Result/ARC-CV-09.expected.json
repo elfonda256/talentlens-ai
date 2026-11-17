@@ -1,0 +1,87 @@
+{
+  "cv_id": "ARC-CV-09",
+  "candidate_name": "Dewi Kartikasari Simanjuntak",
+  "cv_file": "CV/ARC-CV-09_Dewi_Kartikasari_Simanjuntak.pdf",
+  "target_vacancy": "ARC-VAC-03",
+  "vacancy_file": "Vacancy/ARC-VAC-03_Healthcare_Facility_Architect_Husada_Prima_Hospital_Group.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "Very good",
+  "test_tags": [
+    "table_layout",
+    "mixed_language",
+    "healthcare",
+    "postgraduate"
+  ],
+  "document": {
+    "language": "mixed (id/en)",
+    "layout": "Single column with project and education tables",
+    "has_text_layer": true,
+    "parser_traps": [
+      "Name line carries Ar., S.T., M.T., IAI — strip titles",
+      "Projects appear twice (narrative bullets and table) — do not double-count years",
+      "S2 dates overlap employment (part-time study) — not an overlap error"
+    ]
+  },
+  "expected_ranking": {
+    "rank": 1,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-09",
+      "ARC-CV-10",
+      "ARC-CV-11",
+      "ARC-CV-12"
+    ]
+  },
+  "expected_score_range": {
+    "min": 86,
+    "max": 94
+  },
+  "expected_decision": "Recommended",
+  "decision_override": null,
+  "skills_found": [
+    "Hospital zoning and patient flow",
+    "IGD/ICU renovation in a live hospital",
+    "ICRA (class IV)",
+    "negative-pressure isolation rooms",
+    "modular operating theatres",
+    "CSSD",
+    "hospital master planning",
+    "Revit",
+    "AutoCAD",
+    "Navisworks (review)",
+    "STRA",
+    "SKK Ahli Madya",
+    "Pelatihan PPI non-klinis",
+    "GREENSHIP Associate"
+  ],
+  "missing_skills": [
+    "KARS/SNARS accreditation preparation not mentioned",
+    "Permenkes 40/2022 not named explicitly (implied by hospital design work)",
+    "Medical equipment planning coordination not explicit"
+  ],
+  "years_of_relevant_experience": {
+    "value": 13.3,
+    "healthcare": 7.6,
+    "basis": "Jul 2013 - Nov 2026 total; healthcare focus Apr 2019 - Nov 2026, plus one clinic in 2017"
+  },
+  "education_match": {
+    "status": "Exceeds",
+    "detail": "S1 Arsitektur ITS 2013 (IPK 3.41) + S2 Magister Arsitektur ITS 2018 with healthcare thesis"
+  },
+  "semantic_match": {
+    "level": "High",
+    "detail": "Five hospital projects covering every area the vacancy lists, plus master planning and a healthcare thesis."
+  },
+  "potential_risks": [
+    "Moving from consultant side to owner side — check comfort with review/approval role rather than authorship",
+    "Salary expectation may exceed IDR 24 million given 13 years and Madya licence"
+  ],
+  "interview_focus": [
+    "Phasing and ICRA approach for the Malang IGD/ICU renovation",
+    "Pressure cascade and anteroom design for the isolation rooms",
+    "Experience with KARS surveys from the facility side",
+    "Salary expectation"
+  ],
+  "expected_explanation": "Covers all hard requirements with margin: S1 Arsitektur, 13 years experience including 7.6 in healthcare, five hospital projects, ICRA and isolation-room work, Revit/AutoCAD, STRA and SKK Madya. Also hits three preferred items (master planning, healthcare thesis, PPI training). Clear first in the pool.",
+  "alternative_vacancy": null
+}

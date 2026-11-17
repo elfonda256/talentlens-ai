@@ -1,0 +1,536 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-19",
+  "target_vacancy": "ARC-VAC-05",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-19_Clarissa_Tanoto.pdf",
+    "vacancy": "Vacancy/ARC-VAC-05_Architectural_Designer_Residential_Griyakarya.pdf",
+    "benchmark": "Expected_Result/ARC-CV-19.expected.json"
+  },
+  "candidate_profile": "No experience — wrong major",
+  "test_tags": [
+    "no_experience",
+    "wrong_major",
+    "fresh_graduate",
+    "volunteer",
+    "freelance",
+    "minimalist",
+    "english"
+  ],
+  "parser_output": {
+    "extraction_method": "text",
+    "has_text_layer": true,
+    "language": "en",
+    "layout_class": "single_column",
+    "contact": {
+      "name": "Clarissa Tanoto",
+      "email": "clarissa.tanoto.dsgn@gmail.com",
+      "phone_e164": "+6281224638810",
+      "location": "Bandung",
+      "links": [
+        "dribbble.com/clarissatanoto"
+      ]
+    },
+    "sections_detected": [
+      {
+        "raw_heading": "Professional Profile",
+        "canonical": "summary"
+      },
+      {
+        "raw_heading": "Education",
+        "canonical": "education"
+      },
+      {
+        "raw_heading": "Freelance",
+        "canonical": "experience"
+      },
+      {
+        "raw_heading": "Volunteer",
+        "canonical": "volunteer"
+      },
+      {
+        "raw_heading": "Skills",
+        "canonical": "skills"
+      },
+      {
+        "raw_heading": "Languages",
+        "canonical": "languages"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Graphic designer (freelance)",
+        "company": null,
+        "location": null,
+        "start": "2024",
+        "end": "present",
+        "months": 34,
+        "employment_type": "freelance",
+        "relevant": false
+      }
+    ],
+    "education": [
+      {
+        "level": "S1",
+        "field": "Desain Komunikasi Visual",
+        "institution": "Universitas Kristen Maranatha",
+        "start": "2021",
+        "end": "2025",
+        "gpa": 3.55,
+        "gpa_scale": 4.0,
+        "status": "completed"
+      }
+    ],
+    "certifications": [],
+    "languages": [
+      "Indonesian",
+      "English (fluent)"
+    ],
+    "volunteer": [
+      {
+        "role": "Design volunteer",
+        "organisation": "Komunitas Taman Baca Kampung Cibunut",
+        "location": null,
+        "start": "2023",
+        "end": "2025"
+      }
+    ],
+    "side_business": [],
+    "expected_warnings": [],
+    "pii_fields_to_mask": [
+      "name",
+      "email",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "Illustrator",
+        "category": "software",
+        "evidence": "Adobe Illustrator"
+      },
+      {
+        "skill": "Photoshop",
+        "category": "software",
+        "evidence": "Photoshop"
+      },
+      {
+        "skill": "Figma",
+        "category": "software",
+        "evidence": "Figma"
+      },
+      {
+        "skill": "SketchUp",
+        "category": "software",
+        "evidence": "SketchUp (self-taught)"
+      },
+      {
+        "skill": "Procreate",
+        "category": "software",
+        "evidence": "Procreate"
+      },
+      {
+        "skill": "Brand identity",
+        "category": "domain",
+        "evidence": "Brand identities and menus for 8 cafés"
+      },
+      {
+        "skill": "Signage / wayfinding",
+        "category": "domain",
+        "evidence": "wayfinding system for Pasar Baru Bandung"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "Architectural design experience",
+        "reason": "none"
+      },
+      {
+        "term": "AutoCAD",
+        "reason": "never mentioned"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 1,
+    "total_years": 2.8,
+    "relevant_years": 0.0,
+    "tolerance_years": 0.5,
+    "basis": "No architectural work; freelance graphic design since 2024",
+    "domain_years": {}
+  },
+  "education": {
+    "highest_level": "S1",
+    "highest_field": "Desain Komunikasi Visual",
+    "status": "completed",
+    "gpa": 3.55,
+    "match": "Mismatch",
+    "detail": "S1 Desain Komunikasi Visual, Universitas Kristen Maranatha 2025"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "education": {
+        "min": 0.8,
+        "max": 1.0
+      },
+      "skills": {
+        "min": 0.8,
+        "max": 1.0
+      },
+      "summary": {
+        "min": 0.8,
+        "max": 1.0
+      }
+    },
+    "parse_quality": "high",
+    "screening_confidence": {
+      "level": "Tinggi",
+      "reason": "Clean parse; mismatch is explicit."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "S1 Arsitektur",
+        "status": "not_met",
+        "evidence": "S1 Desain Komunikasi Visual — Universitas Kristen Maranatha",
+        "note": null
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "2-4 years designing landed houses with built projects",
+        "status": "not_met",
+        "evidence": null,
+        "note": "no architecture work"
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "SketchUp",
+        "status": "partial",
+        "evidence": "SketchUp (self-taught)",
+        "note": null
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Enscape, D5 Render or Lumion",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD or Revit",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Basic RAB / BoQ",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "R7",
+        "mandatory": true,
+        "category": "portfolio",
+        "requirement": "Portfolio showing own design work",
+        "status": "partial",
+        "evidence": "dribbble.com/clarissatanoto",
+        "note": "graphic portfolio, not architecture"
+      },
+      {
+        "id": "R8",
+        "mandatory": true,
+        "category": "soft",
+        "requirement": "Clear communication with homeowners",
+        "status": "unknown",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Interior design sense",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Tropical modern houses on narrow plots",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Design content creation",
+        "status": "partial",
+        "evidence": "Instagram content packages",
+        "note": "graphic content"
+      }
+    ],
+    "mandatory_summary": {
+      "total": 8,
+      "met": 0,
+      "partial": 2,
+      "not_met": 5,
+      "unknown": 1
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 2,
+        "min_degree_level": "S1",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 10,
+          "max": 25
+        },
+        "experience": {
+          "min": 0.0,
+          "max": 21.2
+        },
+        "education": {
+          "min": 15.0,
+          "max": 15.0
+        },
+        "semantic": {
+          "min": 25,
+          "max": 45
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 8,
+        "max": 28
+      },
+      "excluded_components": [],
+      "implied_weighted_range": {
+        "min": 12.0,
+        "max": 27.6
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 7.8,
+        "max": 23.3
+      },
+      "scoring_model_gap": null
+    },
+    "top_positive_factors": [],
+    "top_negative_factors": [
+      "S1 Arsitektur",
+      "2-4 years designing landed houses with built projects",
+      "SketchUp",
+      "Enscape, D5 Render or Lumion"
+    ],
+    "unknown_is_not_failure": [
+      "R8"
+    ],
+    "risks": [
+      "Word 'design' and 'SketchUp' may produce false semantic similarity"
+    ],
+    "reference_explanation": "Graphic designer with self-taught SketchUp and no architecture degree or work. Clear Reject for this role; the content-creation skill is the only overlap and belongs to the 'extra points' list."
+  },
+  "recommendation": {
+    "decision": "Reject",
+    "decision_label_id": "Tidak lolos",
+    "score_range": {
+      "min": 15,
+      "max": 28
+    },
+    "rank": 4,
+    "pool_order": [
+      "ARC-CV-17",
+      "ARC-CV-20",
+      "ARC-CV-18",
+      "ARC-CV-19"
+    ],
+    "decision_override": null,
+    "provisional_score": false,
+    "never_decision": [],
+    "action": "Tidak dilanjutkan untuk lowongan ini.",
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [
+        "field_mismatch",
+        "experience_below_minimum"
+      ],
+      "projected_decision": "Reject",
+      "agrees_with_benchmark": true
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-19-Q1",
+      "category": "verification",
+      "question": "Not recommended for this vacancy. Suggest forwarding to the marketing/content team.",
+      "purpose": "Redirect",
+      "linked_to": "R1",
+      "good_answer_signals": [],
+      "red_flags": []
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Lulusan DKV tanpa pengalaman arsitektur",
+    "reference_text": "Kandidat lulusan S1 Desain Komunikasi Visual 2025 yang bekerja lepas sebagai desainer grafis dan belajar SketchUp secara mandiri. Tidak memiliki gelar arsitektur, pengalaman merancang rumah, perangkat lunak render, maupun pengalaman RAB. Tidak lolos untuk posisi ini; mungkin cocok untuk tim konten atau marketing.",
+    "must_mention": [
+      {
+        "concept": "wrong major",
+        "any_of": [
+          "Desain Komunikasi Visual",
+          "DKV"
+        ]
+      },
+      {
+        "concept": "no architecture experience",
+        "any_of": [
+          "tidak memiliki",
+          "tanpa pengalaman"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate is an architect",
+      "Candidate has designed houses"
+    ],
+    "forbidden_strings": [
+      "+6281224638810",
+      "Clarissa",
+      "Clarissa Tanoto",
+      "Tanoto",
+      "clarissa.tanoto.dsgn@gmail.com"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 38.0,
+      "rank": 4,
+      "decision": "Reject",
+      "decision_label_id": "Tidak lolos",
+      "components": {
+        "skills": 17.6,
+        "experience": 100.0,
+        "semantic": 18.3,
+        "education": 15.0
+      },
+      "unassessed": [],
+      "knockout_flags": [
+        "Bidang pendidikan tidak sesuai dengan yang disyaratkan"
+      ],
+      "relevant_years": 0.0,
+      "experience_entries": 0,
+      "total_experience_months": 0,
+      "education": [
+        [
+          4,
+          "visual communication design"
+        ]
+      ],
+      "extraction_method": "text",
+      "extraction_confidence": 0.85,
+      "section_confidence": {
+        "summary": 1.0,
+        "experience": 0.0,
+        "education": 1.0,
+        "skills": 1.0
+      },
+      "contact": {
+        "name": "Clarissa Tanoto",
+        "email": "clarissa.tanoto.dsgn@gmail.com",
+        "phone": "6281224638810"
+      },
+      "skill_ids": [
+        "graphic_design",
+        "presentation",
+        "sketchup",
+        "visualization"
+      ],
+      "job_reading": {
+        "upload_guard": "NotAJobDescriptionError: Dokumen ini tampaknya sebuah CV, bukan deskripsi lowongan. Unggah berkas lowongan di sini, lalu unggah CV pada halaman lowongan.",
+        "min_years_experience": 0.0,
+        "degree_fields": [
+          "architecture"
+        ],
+        "min_degree_level": 4
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": true,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": true,
+      "score_in_benchmark_range": false,
+      "name_extracted": true,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": false,
+      "relevant_years_within_tolerance": true,
+      "education_found": true,
+      "no_programming_false_positive": true
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": false,
+      "min_years_read_correctly": false,
+      "degree_field_read": true,
+      "min_degree_level_read_correctly": true,
+      "no_programming_requirement": false
+    },
+    "known_failures": [
+      "score_in_benchmark_range",
+      "experience_entries_found",
+      "vacancy_upload_accepted",
+      "min_years_read_correctly",
+      "no_programming_requirement"
+    ]
+  }
+}

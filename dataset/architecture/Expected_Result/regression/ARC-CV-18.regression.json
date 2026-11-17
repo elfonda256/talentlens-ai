@@ -1,0 +1,644 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-18",
+  "target_vacancy": "ARC-VAC-05",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-18_Teguh_Prasetyo.pdf",
+    "vacancy": "Vacancy/ARC-VAC-05_Architectural_Designer_Residential_Griyakarya.pdf",
+    "benchmark": "Expected_Result/ARC-CV-18.expected.json"
+  },
+  "candidate_profile": "Career switch — volunteer work",
+  "test_tags": [
+    "career_switch",
+    "wrong_major",
+    "side_business_own_company",
+    "volunteer",
+    "word_style",
+    "indonesian"
+  ],
+  "parser_output": {
+    "extraction_method": "text",
+    "has_text_layer": true,
+    "language": "id",
+    "layout_class": "single_column",
+    "contact": {
+      "name": "Teguh Prasetyo",
+      "email": "teguh.prasetyo.st@gmail.com",
+      "phone_e164": "+6281220473315",
+      "location": "Cimahi Utara",
+      "links": []
+    },
+    "sections_detected": [
+      {
+        "raw_heading": "Ringkasan",
+        "canonical": "summary"
+      },
+      {
+        "raw_heading": "Pengalaman Kerja",
+        "canonical": "experience"
+      },
+      {
+        "raw_heading": "Pengalaman Relawan",
+        "canonical": "volunteer"
+      },
+      {
+        "raw_heading": "Pendidikan",
+        "canonical": "education"
+      },
+      {
+        "raw_heading": "Keahlian",
+        "canonical": "skills"
+      },
+      {
+        "raw_heading": "Bahasa",
+        "canonical": "languages"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Desainer & Estimator",
+        "company": "CV Griya Prasetya Bangun",
+        "location": "Cimahi",
+        "start": "2021-07",
+        "end": "present",
+        "months": 64,
+        "employment_type": "owner",
+        "relevant": true
+      },
+      {
+        "title": "Quantity Surveyor",
+        "company": "PT Cipta Karya Parahyangan",
+        "location": "Bandung",
+        "start": "2015-08",
+        "end": "2021-06",
+        "months": 71,
+        "employment_type": "full_time",
+        "relevant": false
+      }
+    ],
+    "education": [
+      {
+        "level": "S1",
+        "field": "Teknik Sipil",
+        "institution": "Universitas Jenderal Achmad Yani",
+        "start": "2011",
+        "end": "2015",
+        "gpa": 3.24,
+        "gpa_scale": 4.0,
+        "status": "completed"
+      },
+      {
+        "level": "Course",
+        "field": "Desain Arsitektur Rumah Tinggal (48 jam, online)",
+        "institution": null,
+        "start": "2021",
+        "end": "2021",
+        "gpa": null,
+        "gpa_scale": null,
+        "status": "completed"
+      }
+    ],
+    "certifications": [],
+    "languages": [
+      "Indonesian",
+      "Sundanese",
+      "English (passive)"
+    ],
+    "volunteer": [
+      {
+        "role": "Relawan teknik",
+        "organisation": "Yayasan Rumah Tangguh Indonesia",
+        "location": "Cianjur",
+        "start": "2022-12",
+        "end": "2023-05"
+      }
+    ],
+    "side_business": [],
+    "expected_warnings": [
+      "volunteer_section",
+      "self_employed"
+    ],
+    "pii_fields_to_mask": [
+      "name",
+      "email",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "SketchUp",
+        "category": "software",
+        "evidence": "SketchUp, Lumion, AutoCAD"
+      },
+      {
+        "skill": "Lumion",
+        "category": "software",
+        "evidence": "SketchUp, Lumion, AutoCAD"
+      },
+      {
+        "skill": "AutoCAD",
+        "category": "software",
+        "evidence": "SketchUp, Lumion, AutoCAD"
+      },
+      {
+        "skill": "Excel",
+        "category": "software",
+        "evidence": "Excel (RAB, analisa harga satuan SNI/AHSP)"
+      },
+      {
+        "skill": "MS Project",
+        "category": "software",
+        "evidence": "MS Project"
+      },
+      {
+        "skill": "RAB / AHSP",
+        "category": "domain",
+        "evidence": "analisa harga satuan SNI/AHSP"
+      },
+      {
+        "skill": "BoQ / quantity take-off",
+        "category": "domain",
+        "evidence": "Take-off volume, BoQ"
+      },
+      {
+        "skill": "House design",
+        "category": "domain",
+        "evidence": "Desain dan bangun 19 rumah tinggal"
+      },
+      {
+        "skill": "Earthquake-resistant housing",
+        "category": "domain",
+        "evidence": "rumah tahan gempa"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "Revit",
+        "reason": "never mentioned"
+      },
+      {
+        "term": "Enscape / D5",
+        "reason": "only Lumion"
+      },
+      {
+        "term": "Volunteer as employment",
+        "reason": "Yayasan role is volunteer"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 2,
+    "total_years": 11.2,
+    "relevant_years": 5.3,
+    "tolerance_years": 0.5,
+    "basis": "Jul 2021 - Nov 2026 designing houses through own design-build business; 5.9 y prior QS not counted as design",
+    "domain_years": {}
+  },
+  "education": {
+    "highest_level": "S1",
+    "highest_field": "Teknik Sipil",
+    "status": "completed",
+    "gpa": 3.24,
+    "match": "Partial",
+    "detail": "S1 Teknik Sipil Universitas Jenderal Achmad Yani 2015, IPK 3.24 + 48-hour online residential design course"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.8,
+        "max": 1.0
+      },
+      "education": {
+        "min": 0.8,
+        "max": 1.0
+      },
+      "skills": {
+        "min": 0.8,
+        "max": 1.0
+      },
+      "summary": {
+        "min": 0.8,
+        "max": 1.0
+      }
+    },
+    "parse_quality": "high",
+    "screening_confidence": {
+      "level": "Sedang",
+      "reason": "Design quality cannot be judged without a portfolio."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "S1 Arsitektur",
+        "status": "not_met",
+        "evidence": "S1 Teknik Sipil — Universitas Jenderal Achmad Yani, Cimahi",
+        "note": "civil engineering"
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "2-4 years designing landed houses with built projects",
+        "status": "partial",
+        "evidence": "Desain dan bangun 19 rumah tinggal",
+        "note": "5.4 years, own business, design training informal"
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "SketchUp",
+        "status": "met",
+        "evidence": "SketchUp, Lumion, AutoCAD",
+        "note": null
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Enscape, D5 Render or Lumion",
+        "status": "met",
+        "evidence": "SketchUp, Lumion, AutoCAD",
+        "note": "Lumion"
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD or Revit",
+        "status": "met",
+        "evidence": "SketchUp, Lumion, AutoCAD",
+        "note": "AutoCAD"
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Basic RAB / BoQ",
+        "status": "met",
+        "evidence": "analisa harga satuan SNI/AHSP",
+        "note": null
+      },
+      {
+        "id": "R7",
+        "mandatory": true,
+        "category": "portfolio",
+        "requirement": "Portfolio showing own design work",
+        "status": "not_met",
+        "evidence": "Portofolio desain rumah tersedia dalam bentuk PDF bila diminta",
+        "note": "no link"
+      },
+      {
+        "id": "R8",
+        "mandatory": true,
+        "category": "soft",
+        "requirement": "Clear communication with homeowners",
+        "status": "partial",
+        "evidence": "Menyusun RAB, jadwal, dan mengawasi 2 mandor",
+        "note": "client communication implied by own business"
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Interior design sense",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Tropical modern houses on narrow plots",
+        "status": "unknown",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Design content creation",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      }
+    ],
+    "mandatory_summary": {
+      "total": 8,
+      "met": 4,
+      "partial": 2,
+      "not_met": 2,
+      "unknown": 0
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 2,
+        "min_degree_level": "S1",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 70,
+          "max": 85
+        },
+        "experience": {
+          "min": 99.0,
+          "max": 100.0
+        },
+        "education": {
+          "min": 60.0,
+          "max": 60.0
+        },
+        "semantic": {
+          "min": 52,
+          "max": 68
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 9,
+        "max": 29
+      },
+      "excluded_components": [],
+      "implied_weighted_range": {
+        "min": 71.2,
+        "max": 80.8
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 60.5,
+        "max": 71.0
+      },
+      "scoring_model_gap": {
+        "causes": [
+          "related_field_partial_credit",
+          "missing_portfolio_not_modelled"
+        ],
+        "explanations": [
+          "A related field (civil engineering, interior design) earns 0.6 education credit and no knockout flag, while the benchmark treats S1/D3 Arsitektur as mandatory.",
+          "A mandatory portfolio requirement is not modelled."
+        ],
+        "affects_decision": true,
+        "meaning": "Formula-correct components do not reproduce the benchmark score range; the benchmark range stays the target."
+      }
+    },
+    "top_positive_factors": [
+      "SketchUp",
+      "Enscape, D5 Render or Lumion",
+      "AutoCAD or Revit",
+      "Basic RAB / BoQ"
+    ],
+    "top_negative_factors": [
+      "S1 Arsitektur",
+      "2-4 years designing landed houses with built projects",
+      "Portfolio showing own design work",
+      "Clear communication with homeowners"
+    ],
+    "unknown_is_not_failure": [
+      "P2"
+    ],
+    "risks": [
+      "Degree requirement not met (civil engineering)",
+      "Runs his own business — conflict of interest and retention",
+      "No portfolio link: design quality unverified"
+    ],
+    "reference_explanation": "Brings what many young designers lack — real cost knowledge and built houses — but does not meet the S1 Arsitektur requirement and has no portfolio link. Review, behind CV-20 who has the right degree."
+  },
+  "recommendation": {
+    "decision": "Review",
+    "decision_label_id": "Perlu ditinjau",
+    "score_range": {
+      "min": 58,
+      "max": 68
+    },
+    "rank": 3,
+    "pool_order": [
+      "ARC-CV-17",
+      "ARC-CV-20",
+      "ARC-CV-18",
+      "ARC-CV-19"
+    ],
+    "decision_override": null,
+    "provisional_score": false,
+    "never_decision": [],
+    "action": "Tinjau manual; klarifikasi risiko pada daftar pertanyaan interview.",
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [],
+      "projected_decision": "Recommended",
+      "agrees_with_benchmark": false
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-18-Q1",
+      "category": "verification",
+      "question": "Please send your house design portfolio before we schedule a design exercise.",
+      "purpose": "No portfolio link",
+      "linked_to": "R7",
+      "good_answer_signals": [
+        "Portfolio with built houses"
+      ],
+      "red_flags": [
+        "Cannot provide"
+      ]
+    },
+    {
+      "id": "ARC-CV-18-Q2",
+      "category": "motivation",
+      "question": "What happens to CV Griya Prasetya Bangun if you join?",
+      "purpose": "Own business conflict",
+      "linked_to": "risk:own_business",
+      "good_answer_signals": [
+        "Clear plan"
+      ],
+      "red_flags": [
+        "Keeps running it"
+      ]
+    },
+    {
+      "id": "ARC-CV-18-Q3",
+      "category": "technical",
+      "question": "Show one house where your design, not only your cost estimate, changed the client's mind.",
+      "purpose": "Design capability beyond cost",
+      "linked_to": "R2",
+      "good_answer_signals": [
+        "Spatial reasoning"
+      ],
+      "red_flags": [
+        "Only cost arguments"
+      ]
+    },
+    {
+      "id": "ARC-CV-18-Q4",
+      "category": "technical",
+      "question": "What did you design for the Cianjur earthquake-resistant houses?",
+      "purpose": "Transferable design work",
+      "linked_to": "R2",
+      "good_answer_signals": [
+        "Typical plans, structural logic"
+      ],
+      "red_flags": [
+        "Only RAB"
+      ]
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Career switch dari quantity surveyor ke desainer rumah, jurusan sipil",
+    "reference_text": "Kandidat lulusan S1 Teknik Sipil, 6 tahun sebagai quantity surveyor, lalu sejak Juli 2021 mendesain dan membangun 19 rumah melalui usaha sendiri. Kekuatannya adalah desain yang dihitung biayanya sejak awal, ditambah pengalaman relawan rumah tahan gempa di Cianjur. Syarat S1 Arsitektur tidak terpenuhi dan portofolio belum ada tautan. Perlu ditinjau setelah portofolio diterima.",
+    "must_mention": [
+      {
+        "concept": "wrong major",
+        "any_of": [
+          "Teknik Sipil",
+          "jurusan"
+        ]
+      },
+      {
+        "concept": "cost strength",
+        "any_of": [
+          "RAB",
+          "biaya"
+        ]
+      },
+      {
+        "concept": "portfolio missing",
+        "any_of": [
+          "portofolio"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate studied architecture",
+      "Candidate's volunteer work was paid employment"
+    ],
+    "forbidden_strings": [
+      "+6281220473315",
+      "Prasetyo",
+      "Teguh",
+      "Teguh Prasetyo",
+      "teguh.prasetyo.st@gmail.com"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 69.5,
+      "rank": 2,
+      "decision": "Review",
+      "decision_label_id": "Perlu ditinjau",
+      "components": {
+        "skills": 70.6,
+        "experience": 100.0,
+        "semantic": 19.3,
+        "education": 100.0
+      },
+      "unassessed": [],
+      "knockout_flags": [],
+      "relevant_years": 6.9,
+      "experience_entries": 3,
+      "total_experience_months": 134,
+      "education": [
+        [
+          4,
+          "civil engineering"
+        ],
+        [
+          0,
+          "architecture"
+        ]
+      ],
+      "extraction_method": "text",
+      "extraction_confidence": 1.0,
+      "section_confidence": {
+        "summary": 1.0,
+        "experience": 1.0,
+        "education": 1.0,
+        "skills": 1.0
+      },
+      "contact": {
+        "name": "Teguh Prasetyo, S.T.",
+        "email": "teguh.prasetyo.st@gmail.com",
+        "phone": "081220473315"
+      },
+      "skill_ids": [
+        "architecture_design",
+        "autocad",
+        "building_codes",
+        "design_build",
+        "procurement",
+        "project_management",
+        "rendering",
+        "sketchup",
+        "technical_drawing"
+      ],
+      "job_reading": {
+        "upload_guard": "NotAJobDescriptionError: Dokumen ini tampaknya sebuah CV, bukan deskripsi lowongan. Unggah berkas lowongan di sini, lalu unggah CV pada halaman lowongan.",
+        "min_years_experience": 0.0,
+        "degree_fields": [
+          "architecture"
+        ],
+        "min_degree_level": 4
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": true,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": false,
+      "score_in_benchmark_range": false,
+      "name_extracted": false,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": true,
+      "relevant_years_within_tolerance": false,
+      "education_found": true,
+      "no_programming_false_positive": true
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": false,
+      "min_years_read_correctly": false,
+      "degree_field_read": true,
+      "min_degree_level_read_correctly": true,
+      "no_programming_requirement": false
+    },
+    "known_failures": [
+      "rank_matches_benchmark",
+      "score_in_benchmark_range",
+      "name_extracted",
+      "relevant_years_within_tolerance",
+      "vacancy_upload_accepted",
+      "min_years_read_correctly",
+      "no_programming_requirement"
+    ]
+  }
+}

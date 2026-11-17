@@ -1,0 +1,79 @@
+{
+  "vacancy_id": "ARC-VAC-01",
+  "vacancy_file": "Vacancy/ARC-VAC-01_Senior_Architect_High-Rise_PT_Arsitama_Griya_Konsultan.pdf",
+  "company": "PT Arsitama Griya Konsultan",
+  "title": "Senior Architect — High-Rise & Mixed-Use",
+  "industry": "Architecture & engineering consulting",
+  "location": "Jakarta Selatan (hybrid)",
+  "employment": "Permanent",
+  "salary_idr_month": [
+    28000000,
+    38000000
+  ],
+  "min_years": 8,
+  "education": "S1 Arsitektur",
+  "required": [
+    "S1 Arsitektur",
+    "8+ years practice",
+    "2 high-rise projects >20 floors DD to CD",
+    "STRA or SKK Arsitek Ahli Madya (Jenjang 8)+",
+    "Revit advanced (LOD 300-350)",
+    "AutoCAD",
+    "SNI 03-1746 / SNI 03-1736 / BGH knowledge",
+    "client presentation in Indonesian & English"
+  ],
+  "preferred": [
+    "GREENSHIP Associate/Professional or EDGE",
+    "Navisworks",
+    "Dynamo",
+    "Enscape/Twinmotion",
+    "foreign design architect collaboration",
+    "TOD experience"
+  ],
+  "expected_ranking": [
+    {
+      "rank": 1,
+      "cv_id": "ARC-CV-01",
+      "candidate_name": "Raditya Mahendra Wibisono",
+      "expected_score_range": [
+        90,
+        96
+      ],
+      "expected_decision": "Recommended",
+      "decision_override": null
+    },
+    {
+      "rank": 2,
+      "cv_id": "ARC-CV-03",
+      "candidate_name": "Nadia Paramitha Kusuma",
+      "expected_score_range": [
+        80,
+        88
+      ],
+      "expected_decision": "Recommended",
+      "decision_override": null
+    },
+    {
+      "rank": 3,
+      "cv_id": "ARC-CV-02",
+      "candidate_name": "Hendrawan Sutanto",
+      "expected_score_range": [
+        70,
+        80
+      ],
+      "expected_decision": "Review",
+      "decision_override": "overqualified"
+    },
+    {
+      "rank": 4,
+      "cv_id": "ARC-CV-04",
+      "candidate_name": "Kevin Halim",
+      "expected_score_range": [
+        28,
+        40
+      ],
+      "expected_decision": "Reject",
+      "decision_override": null
+    }
+  ]
+}

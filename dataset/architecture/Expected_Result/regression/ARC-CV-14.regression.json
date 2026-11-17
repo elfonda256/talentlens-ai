@@ -1,0 +1,668 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-14",
+  "target_vacancy": "ARC-VAC-04",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-14_I_Putu_Gede_Wirawan.pdf",
+    "vacancy": "Vacancy/ARC-VAC-04_Site_Architect_Township_PT_Tanjung_Kerta_Mining.pdf",
+    "benchmark": "Expected_Result/ARC-CV-14.expected.json"
+  },
+  "candidate_profile": "Good — overlapping jobs and freelance",
+  "test_tags": [
+    "overlapping_jobs",
+    "freelance",
+    "icons",
+    "mixed_language",
+    "wrong_industry_partial"
+  ],
+  "parser_output": {
+    "extraction_method": "text",
+    "has_text_layer": true,
+    "language": "mixed",
+    "layout_class": "single_column",
+    "contact": {
+      "name": "I Putu Gede Wirawan",
+      "email": "putu.wirawan.arch@gmail.com",
+      "phone_e164": "+6281936052271",
+      "location": "Denpasar, Bali",
+      "links": []
+    },
+    "sections_detected": [
+      {
+        "raw_heading": "Profil",
+        "canonical": "summary"
+      },
+      {
+        "raw_heading": "Working Experience",
+        "canonical": "experience"
+      },
+      {
+        "raw_heading": "Education",
+        "canonical": "education"
+      },
+      {
+        "raw_heading": "Skills",
+        "canonical": "skills"
+      },
+      {
+        "raw_heading": "Certificates",
+        "canonical": "certifications"
+      },
+      {
+        "raw_heading": "Languages",
+        "canonical": "languages"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Architect",
+        "company": "PT Bali Karya Arsitek",
+        "location": "Denpasar",
+        "start": "2018-01",
+        "end": "present",
+        "months": 106,
+        "employment_type": "full_time",
+        "relevant": true
+      },
+      {
+        "title": "Project Architect (contract)",
+        "company": "PT Nusa Prefab Indonesia",
+        "location": "Morowali",
+        "start": "2022-03",
+        "end": "2022-12",
+        "months": 10,
+        "employment_type": "contract",
+        "relevant": true
+      },
+      {
+        "title": "Freelance Architect",
+        "company": null,
+        "location": null,
+        "start": "2019",
+        "end": "present",
+        "months": 94,
+        "employment_type": "freelance",
+        "relevant": true
+      }
+    ],
+    "education": [
+      {
+        "level": "S1",
+        "field": "Arsitektur",
+        "institution": "Universitas Udayana",
+        "start": "2012",
+        "end": "2017",
+        "gpa": 3.3,
+        "gpa_scale": 4.0,
+        "status": "completed"
+      }
+    ],
+    "certifications": [
+      "SKK Arsitek Ahli Muda Jenjang 7 (2022)"
+    ],
+    "languages": [
+      "Indonesian",
+      "English (fluent)",
+      "Balinese"
+    ],
+    "volunteer": [],
+    "side_business": [],
+    "expected_warnings": [
+      "overlapping_employment:2022-03..2022-12",
+      "freelance_without_employer"
+    ],
+    "pii_fields_to_mask": [
+      "name",
+      "email",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "SketchUp",
+        "category": "software",
+        "evidence": "SketchUp · AutoCAD · ArchiCAD"
+      },
+      {
+        "skill": "AutoCAD",
+        "category": "software",
+        "evidence": "SketchUp · AutoCAD · ArchiCAD"
+      },
+      {
+        "skill": "ArchiCAD",
+        "category": "software",
+        "evidence": "SketchUp · AutoCAD · ArchiCAD"
+      },
+      {
+        "skill": "Lumion",
+        "category": "software",
+        "evidence": "Lumion · Enscape"
+      },
+      {
+        "skill": "Enscape",
+        "category": "software",
+        "evidence": "Lumion · Enscape"
+      },
+      {
+        "skill": "RAB",
+        "category": "domain",
+        "evidence": "RAB (basic)"
+      },
+      {
+        "skill": "Villa and resort design",
+        "category": "domain",
+        "evidence": "25+ private villas and 3 boutique resorts"
+      },
+      {
+        "skill": "Modular worker mess",
+        "category": "domain",
+        "evidence": "Modular site office and 240-pax worker mess"
+      },
+      {
+        "skill": "Prefab panel layout",
+        "category": "domain",
+        "evidence": "Prefab panel layout, container stacking details"
+      },
+      {
+        "skill": "SKK Arsitek Ahli Muda",
+        "category": "certification",
+        "evidence": "SKK Arsitek Ahli Muda (Jenjang 7), 2022"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "Revit",
+        "reason": "never mentioned"
+      },
+      {
+        "term": "Ahli K3 Umum",
+        "reason": "not held"
+      },
+      {
+        "term": "SIM A",
+        "reason": "not stated"
+      },
+      {
+        "term": "17+ years",
+        "reason": "overlapping ranges must not be summed"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 3,
+    "total_years": 8.8,
+    "relevant_years": 8.8,
+    "tolerance_years": 0.5,
+    "basis": "Jan 2018 - Nov 2026 total; remote/prefab only Mar - Dec 2022",
+    "domain_years": {
+      "remote_site": 0.8
+    }
+  },
+  "education": {
+    "highest_level": "S1",
+    "highest_field": "Arsitektur",
+    "status": "completed",
+    "gpa": 3.3,
+    "match": "Match",
+    "detail": "S1 Arsitektur Universitas Udayana 2017, IPK 3.30"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.7,
+        "max": 1.0
+      },
+      "education": {
+        "min": 0.8,
+        "max": 1.0
+      },
+      "skills": {
+        "min": 0.8,
+        "max": 1.0
+      },
+      "summary": {
+        "min": 0.7,
+        "max": 1.0
+      }
+    },
+    "parse_quality": "high",
+    "screening_confidence": {
+      "level": "Sedang",
+      "reason": "Overlapping employment needs clarification; SIM A unknown."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "S1 Arsitektur",
+        "status": "met",
+        "evidence": "S1 Arsitektur — Universitas Udayana",
+        "note": null
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "Minimum 5 years experience",
+        "status": "met",
+        "evidence": "Jan 2018 – Present",
+        "note": "8.8 years total after merging overlaps"
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "Minimum 2 years on remote sites",
+        "status": "not_met",
+        "evidence": "Mar 2022 – Dec 2022",
+        "note": "10 months remote"
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Camp / mess / barracks / support facilities",
+        "status": "met",
+        "evidence": "240-pax worker mess",
+        "note": null
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Modular or prefab buildings",
+        "status": "met",
+        "evidence": "Prefab panel layout, container stacking details",
+        "note": null
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD",
+        "status": "met",
+        "evidence": "SketchUp · AutoCAD · ArchiCAD",
+        "note": null
+      },
+      {
+        "id": "R7",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Revit or ArchiCAD",
+        "status": "met",
+        "evidence": "SketchUp · AutoCAD · ArchiCAD",
+        "note": "ArchiCAD accepted"
+      },
+      {
+        "id": "R8",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "RAB and BoQ for architectural works",
+        "status": "partial",
+        "evidence": "RAB (basic)",
+        "note": null
+      },
+      {
+        "id": "R9",
+        "mandatory": true,
+        "category": "certification",
+        "requirement": "Ahli K3 Umum or SKK K3 Konstruksi",
+        "status": "not_met",
+        "evidence": null,
+        "note": "no K3 certificate"
+      },
+      {
+        "id": "R10",
+        "mandatory": true,
+        "category": "licence",
+        "requirement": "SIM A",
+        "status": "unknown",
+        "evidence": null,
+        "note": "SIM not stated"
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "certification",
+        "requirement": "POP (Pengawas Operasional Pertama)",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "licence",
+        "requirement": "SKK Arsitek Ahli Muda or higher",
+        "status": "met",
+        "evidence": "SKK Arsitek Ahli Muda (Jenjang 7), 2022",
+        "note": null
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "SketchUp",
+        "status": "met",
+        "evidence": "SketchUp · AutoCAD · ArchiCAD",
+        "note": null
+      },
+      {
+        "id": "P4",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Multinational oil & gas or mining camp design standards",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      }
+    ],
+    "mandatory_summary": {
+      "total": 10,
+      "met": 6,
+      "partial": 1,
+      "not_met": 2,
+      "unknown": 1
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 5,
+        "min_degree_level": "S1",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 55,
+          "max": 72
+        },
+        "experience": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "education": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "semantic": {
+          "min": 50,
+          "max": 65
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 12,
+        "max": 32
+      },
+      "excluded_components": [],
+      "implied_weighted_range": {
+        "min": 71.8,
+        "max": 81.5
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 62.2,
+        "max": 73.2
+      },
+      "scoring_model_gap": {
+        "causes": [
+          "domain_experience_not_modelled:remote_site",
+          "missing_mandatory_certificate_not_a_knockout"
+        ],
+        "explanations": [
+          "The '2 years on remote sites' requirement is not modelled.",
+          "A missing mandatory certificate (K3) does not create a knockout flag."
+        ],
+        "affects_decision": true,
+        "meaning": "Formula-correct components do not reproduce the benchmark score range; the benchmark range stays the target."
+      }
+    },
+    "top_positive_factors": [
+      "S1 Arsitektur",
+      "Minimum 5 years experience",
+      "Camp / mess / barracks / support facilities",
+      "Modular or prefab buildings"
+    ],
+    "top_negative_factors": [
+      "Minimum 2 years on remote sites",
+      "RAB and BoQ for architectural works",
+      "Ahli K3 Umum or SKK K3 Konstruksi"
+    ],
+    "unknown_is_not_failure": [
+      "R10"
+    ],
+    "risks": [
+      "Overlapping employment: full-time at PT Bali Karya Arsitek (Denpasar) during a 10-month on-site contract in Morowali — clarify whether he took leave",
+      "Ongoing freelance work may conflict with an 8/2 roster",
+      "No K3 certificate — a mandatory requirement",
+      "Relocation from Bali to Kutai Timur"
+    ],
+    "reference_explanation": "Experienced architect with one relevant modular camp project, but short of the 2-year remote-site requirement and missing the mandatory K3 certificate. The overlapping dates are a credibility question the interviewer must resolve. Review, third in the pool."
+  },
+  "recommendation": {
+    "decision": "Review",
+    "decision_label_id": "Perlu ditinjau",
+    "score_range": {
+      "min": 55,
+      "max": 66
+    },
+    "rank": 3,
+    "pool_order": [
+      "ARC-CV-13",
+      "ARC-CV-15",
+      "ARC-CV-14",
+      "ARC-CV-16"
+    ],
+    "decision_override": null,
+    "provisional_score": false,
+    "never_decision": [],
+    "action": "Tinjau manual; klarifikasi risiko pada daftar pertanyaan interview.",
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [],
+      "projected_decision": "Recommended",
+      "agrees_with_benchmark": false
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-14-Q1",
+      "category": "verification",
+      "question": "Kontrak di Morowali (Mar-Des 2022) bersamaan dengan pekerjaan tetap di Bali. Bagaimana pengaturannya?",
+      "purpose": "Irisan pekerjaan",
+      "linked_to": "risk:overlap",
+      "good_answer_signals": [
+        "Cuti di luar tanggungan atau izin tertulis"
+      ],
+      "red_flags": [
+        "Jawaban berubah-ubah"
+      ]
+    },
+    {
+      "id": "ARC-CV-14-Q2",
+      "category": "verification",
+      "question": "Apakah Anda memiliki SIM A dan bersedia mengambil sertifikat Ahli K3 Umum sebelum mulai?",
+      "purpose": "Syarat wajib yang belum ada",
+      "linked_to": "R9",
+      "good_answer_signals": [
+        "Ya, dengan jadwal"
+      ],
+      "red_flags": [
+        "Tidak"
+      ]
+    },
+    {
+      "id": "ARC-CV-14-Q3",
+      "category": "motivation",
+      "question": "Apakah pekerjaan freelance akan dihentikan bila mengikuti roster 8/2 di Kutai Timur?",
+      "purpose": "Konflik waktu",
+      "linked_to": "risk:freelance",
+      "good_answer_signals": [
+        "Ya"
+      ],
+      "red_flags": [
+        "Tetap jalan"
+      ]
+    },
+    {
+      "id": "ARC-CV-14-Q4",
+      "category": "technical",
+      "question": "Apa pelajaran terbesar dari pemasangan mess modular 240 pax di Morowali?",
+      "purpose": "Relevansi pengalaman prefab",
+      "linked_to": "R5",
+      "good_answer_signals": [
+        "Detail logistik, sambungan, kualitas pemasangan"
+      ],
+      "red_flags": [
+        "Umum"
+      ]
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Arsitek vila dan resort, satu proyek modular, ada irisan pekerjaan",
+    "reference_text": "Kandidat memiliki sekitar 8,8 tahun pengalaman, sebagian besar vila dan resort di Bali, dengan satu kontrak 10 bulan untuk kantor site dan mess pekerja modular 240 pax di Morowali. Syarat 2 tahun remote site dan sertifikat K3 belum terpenuhi, SIM A tidak disebut. Kontrak Morowali bersamaan dengan pekerjaan tetap di Bali dan ada pekerjaan freelance berjalan; perlu klarifikasi. Perlu ditinjau.",
+    "must_mention": [
+      {
+        "concept": "overlap",
+        "any_of": [
+          "bersamaan",
+          "irisan",
+          "overlap"
+        ]
+      },
+      {
+        "concept": "K3 missing",
+        "any_of": [
+          "K3"
+        ]
+      },
+      {
+        "concept": "remote short",
+        "any_of": [
+          "10 bulan",
+          "remote"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate has 17 years of experience",
+      "Candidate holds a K3 certificate",
+      "Candidate has 2+ years on remote sites"
+    ],
+    "forbidden_strings": [
+      "+6281936052271",
+      "Gede",
+      "I Putu Gede Wirawan",
+      "Putu",
+      "Wirawan",
+      "putu.wirawan.arch@gmail.com"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 72.7,
+      "rank": 3,
+      "decision": "Recommended",
+      "decision_label_id": "Direkomendasikan",
+      "components": {
+        "skills": 77.8,
+        "experience": 100.0,
+        "semantic": 21.9,
+        "education": 100.0
+      },
+      "unassessed": [],
+      "knockout_flags": [],
+      "relevant_years": 8.8,
+      "experience_entries": 3,
+      "total_experience_months": 106,
+      "education": [
+        [
+          4,
+          "architecture"
+        ]
+      ],
+      "extraction_method": "text",
+      "extraction_confidence": 1.0,
+      "section_confidence": {
+        "summary": 1.0,
+        "experience": 1.0,
+        "education": 1.0,
+        "skills": 1.0
+      },
+      "contact": {
+        "name": "I Putu Gede Wirawan",
+        "email": "putu.wirawan.arch@gmail.com",
+        "phone": "6281936052271"
+      },
+      "skill_ids": [
+        "architecture_design",
+        "autocad",
+        "procurement",
+        "rendering",
+        "revit",
+        "sketchup",
+        "technical_drawing"
+      ],
+      "job_reading": {
+        "upload_guard": null,
+        "min_years_experience": 0.0,
+        "degree_fields": [],
+        "min_degree_level": 0
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": false,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": true,
+      "score_in_benchmark_range": false,
+      "name_extracted": true,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": true,
+      "relevant_years_within_tolerance": true,
+      "education_found": true,
+      "no_programming_false_positive": true
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": true,
+      "min_years_read_correctly": false,
+      "degree_field_read": false,
+      "min_degree_level_read_correctly": false,
+      "no_programming_requirement": true
+    },
+    "known_failures": [
+      "decision_matches_benchmark",
+      "score_in_benchmark_range",
+      "min_years_read_correctly",
+      "degree_field_read",
+      "min_degree_level_read_correctly"
+    ]
+  }
+}

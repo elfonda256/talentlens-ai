@@ -1,0 +1,602 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-05",
+  "target_vacancy": "ARC-VAC-02",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-05_Salsabila_Putri_Anggraini.pdf",
+    "vacancy": "Vacancy/ARC-VAC-02_Junior_Architect_Drafter_PT_Baja_Konstruksi_Nusantara.pdf",
+    "benchmark": "Expected_Result/ARC-CV-05.expected.json"
+  },
+  "candidate_profile": "Fresh graduate — internship only",
+  "test_tags": [
+    "word_style",
+    "indonesian",
+    "fresh_graduate",
+    "internship_only",
+    "biodata_table",
+    "signature_block"
+  ],
+  "parser_output": {
+    "extraction_method": "text",
+    "has_text_layer": true,
+    "language": "id",
+    "layout_class": "single_column_tables",
+    "contact": {
+      "name": "Salsabila Putri Anggraini",
+      "email": "salsabila.anggraini04@gmail.com",
+      "phone_e164": "+6289634127750",
+      "location": "Medan Satria, Kota Bekasi",
+      "links": []
+    },
+    "sections_detected": [
+      {
+        "raw_heading": "Data Pribadi",
+        "canonical": "personal_info"
+      },
+      {
+        "raw_heading": "Pendidikan Formal",
+        "canonical": "education"
+      },
+      {
+        "raw_heading": "Pengalaman Kerja Praktik",
+        "canonical": "experience"
+      },
+      {
+        "raw_heading": "Organisasi",
+        "canonical": "organizations"
+      },
+      {
+        "raw_heading": "Kemampuan",
+        "canonical": "skills"
+      },
+      {
+        "raw_heading": "Sertifikat",
+        "canonical": "certifications"
+      },
+      {
+        "raw_heading": "Bahasa",
+        "canonical": "languages"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Kerja Praktik",
+        "company": "PT Sinar Gudang Konstruksi",
+        "location": "Karawang",
+        "start": "2025-07",
+        "end": "2025-09",
+        "months": 3,
+        "employment_type": "internship",
+        "relevant": true
+      }
+    ],
+    "education": [
+      {
+        "level": "S1",
+        "field": "Teknik Arsitektur",
+        "institution": "Universitas Gunadarma",
+        "start": "2022",
+        "end": "2026",
+        "gpa": 3.47,
+        "gpa_scale": 4.0,
+        "status": "completed"
+      },
+      {
+        "level": "SMA",
+        "field": "IPA",
+        "institution": "SMA Negeri 2 Kota Bekasi",
+        "start": "2019",
+        "end": "2022",
+        "gpa": null,
+        "gpa_scale": null,
+        "status": "completed"
+      }
+    ],
+    "certifications": [
+      "Autodesk Certified User: AutoCAD (2024)",
+      "Pelatihan K3 Dasar Konstruksi (2025)"
+    ],
+    "languages": [
+      "Indonesian (active)",
+      "English (passive)"
+    ],
+    "volunteer": [],
+    "side_business": [],
+    "expected_warnings": [
+      "section_missing:summary",
+      "experience_internship_only"
+    ],
+    "pii_fields_to_mask": [
+      "name",
+      "email",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "AutoCAD",
+        "category": "software",
+        "evidence": "AutoCAD 2D (layer, xref, layout) — mahir"
+      },
+      {
+        "skill": "SketchUp",
+        "category": "software",
+        "evidence": "SketchUp + Enscape — mahir"
+      },
+      {
+        "skill": "Enscape",
+        "category": "software",
+        "evidence": "SketchUp + Enscape — mahir"
+      },
+      {
+        "skill": "Revit",
+        "category": "software",
+        "evidence": "Revit — dasar"
+      },
+      {
+        "skill": "Excel",
+        "category": "software",
+        "evidence": "Microsoft Excel"
+      },
+      {
+        "skill": "Industrial building drawings",
+        "category": "domain",
+        "evidence": "gambar kerja gudang 3.200 m²"
+      },
+      {
+        "skill": "Metal roof detailing",
+        "category": "domain",
+        "evidence": "detail atap spandek dan talang"
+      },
+      {
+        "skill": "Sandwich panel detailing",
+        "category": "domain",
+        "evidence": "detail dinding sandwich panel"
+      },
+      {
+        "skill": "As-built recording",
+        "category": "domain",
+        "evidence": "untuk as-built"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "Professional experience",
+        "reason": "internship is not employment"
+      },
+      {
+        "term": "Tekla",
+        "reason": "never mentioned"
+      },
+      {
+        "term": "Status",
+        "reason": "marital status line must not become a skill or job"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 1,
+    "total_years": 0.2,
+    "relevant_years": 0.0,
+    "tolerance_years": 0.5,
+    "basis": "No employment; the 3-month internship (Jul-Sep 2025) is listed but not counted as professional experience",
+    "domain_years": {}
+  },
+  "education": {
+    "highest_level": "S1",
+    "highest_field": "Teknik Arsitektur",
+    "status": "completed",
+    "gpa": 3.47,
+    "match": "Match",
+    "detail": "S1 Teknik Arsitektur Universitas Gunadarma 2026, IPK 3.47 (above 2.90 minimum)"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "education": {
+        "min": 0.8,
+        "max": 1.0
+      },
+      "skills": {
+        "min": 0.8,
+        "max": 1.0
+      },
+      "summary": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "parse_quality": "high",
+    "screening_confidence": {
+      "level": "Sedang",
+      "reason": "Experience is an internship only, so the experience component rests on 3 months."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "D3 or S1 Arsitektur",
+        "status": "met",
+        "evidence": "Universitas Gunadarma, Depok",
+        "note": "S1 Teknik Arsitektur, graduated August 2026"
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "IPK minimum 2.90",
+        "status": "met",
+        "evidence": "3,47",
+        "note": "IPK 3.47 ≥ 2.90"
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD 2D",
+        "status": "met",
+        "evidence": "AutoCAD 2D (layer, xref, layout) — mahir",
+        "note": null
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "SketchUp",
+        "status": "met",
+        "evidence": "SketchUp + Enscape — mahir",
+        "note": null
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Industrial building working drawings (steel frame, metal roof, concrete floor)",
+        "status": "met",
+        "evidence": "gambar kerja gudang 3.200 m²",
+        "note": "internship + final project"
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "availability",
+        "requirement": "Willing to travel to project sites in West Java and Banten",
+        "status": "partial",
+        "evidence": "Ikut opname lapangan mingguan",
+        "note": "did site visits during internship; willingness not stated"
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "experience",
+        "requirement": "0-2 years as drafter",
+        "status": "partial",
+        "evidence": "Juli – September 2025",
+        "note": "internship only"
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "Revit basic",
+        "status": "met",
+        "evidence": "Revit — dasar",
+        "note": null
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "location",
+        "requirement": "Domicile in Bekasi, Cikarang or Karawang",
+        "status": "met",
+        "evidence": "Medan Satria, Kota Bekasi",
+        "note": null
+      }
+    ],
+    "mandatory_summary": {
+      "total": 6,
+      "met": 5,
+      "partial": 1,
+      "not_met": 0,
+      "unknown": 0
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 0,
+        "min_degree_level": "D3",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 85,
+          "max": 100
+        },
+        "experience": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "education": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "semantic": {
+          "min": 75,
+          "max": 90
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 29,
+        "max": 49
+      },
+      "excluded_components": [],
+      "implied_weighted_range": {
+        "min": 88.5,
+        "max": 97.5
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 77.0,
+        "max": 87.2
+      },
+      "scoring_model_gap": {
+        "causes": [
+          "experience_full_credit_when_min_years_zero"
+        ],
+        "explanations": [
+          "When the job's minimum is 0 years, the experience component is always 100, so depth of drafting experience does not separate candidates."
+        ],
+        "affects_decision": false,
+        "meaning": "Formula-correct components do not reproduce the benchmark score range; the benchmark range stays the target."
+      }
+    },
+    "top_positive_factors": [
+      "D3 or S1 Arsitektur",
+      "IPK minimum 2.90",
+      "AutoCAD 2D",
+      "SketchUp"
+    ],
+    "top_negative_factors": [
+      "Willing to travel to project sites in West Java and Banten"
+    ],
+    "unknown_is_not_failure": [],
+    "risks": [
+      "No full-time work experience; speed under tender deadlines unproven",
+      "Revit only at course level"
+    ],
+    "reference_explanation": "Vacancy explicitly welcomes fresh graduates. She meets every requirement: S1 Arsitektur with IPK 3.47, strong AutoCAD and SketchUp, an internship and final project on steel-frame warehouses, and lives in Bekasi. Ranked second only because CV-07 has three years of the exact job."
+  },
+  "recommendation": {
+    "decision": "Recommended",
+    "decision_label_id": "Direkomendasikan",
+    "score_range": {
+      "min": 75,
+      "max": 83
+    },
+    "rank": 2,
+    "pool_order": [
+      "ARC-CV-07",
+      "ARC-CV-05",
+      "ARC-CV-08",
+      "ARC-CV-06"
+    ],
+    "decision_override": null,
+    "provisional_score": false,
+    "never_decision": [],
+    "action": "Lanjut ke tahap berikutnya sesuai proses lowongan.",
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [],
+      "projected_decision": "Recommended",
+      "agrees_with_benchmark": true
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-05-Q1",
+      "category": "technical",
+      "question": "Jelaskan detail pertemuan dinding sandwich panel dengan kolom WF yang Anda gambar saat kerja praktik.",
+      "purpose": "Kedalaman pemahaman detail bangunan industri",
+      "linked_to": "R5",
+      "good_answer_signals": [
+        "Menyebut flashing, sealant, urutan pemasangan"
+      ],
+      "red_flags": [
+        "Hanya menyalin dari drafter senior"
+      ]
+    },
+    {
+      "id": "ARC-CV-05-Q2",
+      "category": "technical",
+      "question": "Bagaimana Anda mengatur layer dan xref pada gambar gudang yang direvisi berkali-kali?",
+      "purpose": "Kebiasaan kerja AutoCAD untuk tender",
+      "linked_to": "R3",
+      "good_answer_signals": [
+        "Standar layer, drawing register"
+      ],
+      "red_flags": [
+        "Tidak pernah memakai xref"
+      ]
+    },
+    {
+      "id": "ARC-CV-05-Q3",
+      "category": "motivation",
+      "question": "Posisi ini sering lembur menjelang tender dan ke site di Karawang atau Cilegon. Bagaimana kesiapan Anda?",
+      "purpose": "Ketersediaan",
+      "linked_to": "R6",
+      "good_answer_signals": [
+        "Siap dan realistis"
+      ],
+      "red_flags": [
+        "Menolak ke site"
+      ]
+    },
+    {
+      "id": "ARC-CV-05-Q4",
+      "category": "verification",
+      "question": "Apakah ijazah dan transkrip sudah terbit setelah wisuda Agustus 2026?",
+      "purpose": "Verifikasi kelulusan",
+      "linked_to": "R1",
+      "good_answer_signals": [
+        "Sudah terbit"
+      ],
+      "red_flags": [
+        "Belum lulus"
+      ]
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Fresh graduate arsitektur dengan kerja praktik di gudang baja",
+    "reference_text": "Kandidat lulusan S1 Teknik Arsitektur 2026 dengan IPK 3,47 dan berdomisili di Bekasi. Belum memiliki pengalaman kerja penuh waktu; pengalamannya adalah kerja praktik tiga bulan membuat gambar kerja gudang rangka baja, dan tugas akhirnya juga tentang pusat logistik. AutoCAD dan SketchUp mahir, Revit dasar. Direkomendasikan, karena lowongan menerima fresh graduate; lanjutkan ke tes gambar AutoCAD.",
+    "must_mention": [
+      {
+        "concept": "fresh graduate",
+        "any_of": [
+          "fresh graduate",
+          "lulusan",
+          "belum memiliki pengalaman kerja"
+        ]
+      },
+      {
+        "concept": "internship relevance",
+        "any_of": [
+          "kerja praktik",
+          "gudang"
+        ]
+      },
+      {
+        "concept": "IPK above minimum",
+        "any_of": [
+          "3,47",
+          "3.47"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate has full-time drafting experience",
+      "Candidate is proficient in Revit"
+    ],
+    "forbidden_strings": [
+      "+6289634127750",
+      "Anggraini",
+      "Putri",
+      "Salsabila",
+      "Salsabila Putri Anggraini",
+      "salsabila.anggraini04@gmail.com"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 76.9,
+      "rank": 2,
+      "decision": "Recommended",
+      "decision_label_id": "Direkomendasikan",
+      "components": {
+        "skills": 77.8,
+        "experience": 100.0,
+        "semantic": 38.6,
+        "education": 100.0
+      },
+      "unassessed": [],
+      "knockout_flags": [],
+      "relevant_years": 0.0,
+      "experience_entries": 0,
+      "total_experience_months": 0,
+      "education": [
+        [
+          4,
+          "architecture"
+        ],
+        [
+          2,
+          ""
+        ]
+      ],
+      "extraction_method": "text",
+      "extraction_confidence": 0.85,
+      "section_confidence": {
+        "summary": 0.0,
+        "experience": 0.0,
+        "education": 1.0,
+        "skills": 1.0
+      },
+      "contact": {
+        "name": "Data Pribadi",
+        "email": "salsabila.anggraini04@gmail.com",
+        "phone": "089634127750"
+      },
+      "skill_ids": [
+        "autocad",
+        "building_codes",
+        "rendering",
+        "revit",
+        "sketchup",
+        "technical_drawing"
+      ],
+      "job_reading": {
+        "upload_guard": null,
+        "min_years_experience": 0.0,
+        "degree_fields": [
+          "architecture"
+        ],
+        "min_degree_level": 4
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": true,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": true,
+      "score_in_benchmark_range": true,
+      "name_extracted": false,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": false,
+      "relevant_years_within_tolerance": true,
+      "education_found": true,
+      "no_programming_false_positive": true
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": true,
+      "min_years_read_correctly": true,
+      "degree_field_read": true,
+      "min_degree_level_read_correctly": false,
+      "no_programming_requirement": true
+    },
+    "known_failures": [
+      "name_extracted",
+      "experience_entries_found",
+      "min_degree_level_read_correctly"
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "cv_id": "ARC-CV-11",
+  "candidate_name": "Grace Natalia Wenas",
+  "cv_file": "CV/ARC-CV-11_Grace_Natalia_Wenas.pdf",
+  "target_vacancy": "ARC-VAC-03",
+  "vacancy_file": "Vacancy/ARC-VAC-03_Healthcare_Facility_Architect_Husada_Prima_Hospital_Group.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "Average — duplicated sections, messy spacing",
+  "test_tags": [
+    "duplicated_sections",
+    "messy_spacing",
+    "bad_formatting",
+    "mixed_language",
+    "healthcare_in_house"
+  ],
+  "document": {
+    "language": "mixed (id/en)",
+    "layout": "Text-heavy, irregular spacing, 'PENGALAMAN KERJA' and 'SKILLS' each appear twice with slightly different content",
+    "has_text_layer": true,
+    "parser_traps": [
+      "Duplicate sections must be merged, not double-counted (years should be 7.3, not 14+)",
+      "Same employer written two ways: 'RS Mitra Sehat Sidoarjo ( Bagian Sarana & Prasarana )' and 'RS Mitra Sehat Sidoarjo'",
+      "Dates in two formats: 'Jan 2023 - sekarang' and '2023 - now'",
+      "Spaces inside the name ('GRACE    NATALIA   WENAS')"
+    ]
+  },
+  "expected_ranking": {
+    "rank": 3,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-09",
+      "ARC-CV-10",
+      "ARC-CV-11",
+      "ARC-CV-12"
+    ]
+  },
+  "expected_score_range": {
+    "min": 56,
+    "max": 66
+  },
+  "expected_decision": "Review",
+  "decision_override": null,
+  "skills_found": [
+    "Hospital ward renovation (KRIS standard)",
+    "outpatient clinic expansion",
+    "hemodialysis room design",
+    "KARS accreditation facility documents",
+    "coordination with PPI team",
+    "ICRA workshop",
+    "AutoCAD",
+    "SketchUp",
+    "Revit (intermediate)",
+    "Lumion",
+    "SKK Arsitek Ahli Muda"
+  ],
+  "missing_skills": [
+    "Second hospital (all healthcare work is within one hospital)",
+    "operating theatre / ICU design",
+    "negative-pressure isolation design",
+    "Navisworks / model review"
+  ],
+  "years_of_relevant_experience": {
+    "value": 7.3,
+    "healthcare": 3.8,
+    "basis": "Aug 2019 - Nov 2026 total; in-house hospital architect Jan 2023 - Nov 2026"
+  },
+  "education_match": {
+    "status": "Match",
+    "detail": "S1 Arsitektur Universitas Kristen Petra 2019, IPK 3.12"
+  },
+  "semantic_match": {
+    "level": "Medium",
+    "detail": "Real owner-side hospital experience including KARS preparation, but narrower in scope than the vacancy (no OT/ICU)."
+  },
+  "potential_risks": [
+    "Only one hospital; requirement asks for at least two",
+    "Duplicated sections disagree slightly (hemodialysis project appears only in the second copy; dates written two ways) — confirm accuracy",
+    "Experience as in-house architect is smaller-scale renovation"
+  ],
+  "interview_focus": [
+    "Scope of the hemodialysis room project and who designed the water treatment and infection control",
+    "What she prepared for the 2024 KARS survey",
+    "Exposure to critical-care areas"
+  ],
+  "expected_explanation": "Has the owner-side perspective the job wants and some KARS exposure, which a keyword scorer may under-rate. But healthcare experience is 3.8 years in a single hospital and excludes critical-care rooms. Review, third in the pool.",
+  "alternative_vacancy": null
+}

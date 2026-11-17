@@ -1,0 +1,701 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "talentlens/regression_fixture.schema.json",
+  "title": "TalentLens regression fixture",
+  "type": "object",
+  "required": [
+    "fixture_version",
+    "cv_id",
+    "target_vacancy",
+    "reference_date",
+    "files",
+    "parser_output",
+    "extracted_skills",
+    "experience",
+    "education",
+    "confidence",
+    "explainability",
+    "recommendation",
+    "interview_questions",
+    "hr_summary",
+    "pipeline_baseline"
+  ],
+  "properties": {
+    "fixture_version": {
+      "const": "1.0"
+    },
+    "cv_id": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}-CV-[0-9]{2}$"
+    },
+    "target_vacancy": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}-VAC-[0-9]{2}$"
+    },
+    "reference_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "files": {
+      "type": "object",
+      "required": [
+        "cv",
+        "vacancy",
+        "benchmark"
+      ],
+      "properties": {
+        "cv": {
+          "type": "string"
+        },
+        "vacancy": {
+          "type": "string"
+        },
+        "benchmark": {
+          "type": "string"
+        }
+      }
+    },
+    "candidate_profile": {
+      "type": "string"
+    },
+    "test_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "parser_output": {
+      "type": "object",
+      "required": [
+        "extraction_method",
+        "has_text_layer",
+        "language",
+        "layout_class",
+        "contact",
+        "sections_detected",
+        "experience",
+        "education",
+        "expected_warnings"
+      ],
+      "properties": {
+        "extraction_method": {
+          "enum": [
+            "text",
+            "ocr"
+          ]
+        },
+        "has_text_layer": {
+          "type": "boolean"
+        },
+        "language": {
+          "enum": [
+            "en",
+            "id",
+            "mixed"
+          ]
+        },
+        "layout_class": {
+          "enum": [
+            "single_column",
+            "single_column_tables",
+            "two_column",
+            "plain_text",
+            "scanned_image",
+            "no_headings"
+          ]
+        },
+        "contact": {
+          "type": "object",
+          "required": [
+            "name",
+            "email",
+            "phone_e164",
+            "location",
+            "links"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "phone_e164": {
+              "type": "string",
+              "pattern": "^\\+62[0-9]{8,13}$"
+            },
+            "location": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "links": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "sections_detected": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "raw_heading",
+              "canonical"
+            ],
+            "properties": {
+              "raw_heading": {
+                "type": "string"
+              },
+              "canonical": {
+                "enum": [
+                  "summary",
+                  "experience",
+                  "education",
+                  "skills",
+                  "certifications",
+                  "languages",
+                  "projects",
+                  "personal_info",
+                  "organizations",
+                  "volunteer",
+                  "side_business",
+                  "portfolio",
+                  "contact",
+                  "title",
+                  "other"
+                ]
+              }
+            }
+          }
+        },
+        "experience": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/job"
+          }
+        },
+        "education": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/edu"
+          }
+        },
+        "certifications": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "volunteer": {
+          "type": "array"
+        },
+        "side_business": {
+          "type": "array"
+        },
+        "expected_warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pii_fields_to_mask": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "extracted_skills": {
+      "type": "object",
+      "required": [
+        "explicit",
+        "must_not_extract"
+      ],
+      "properties": {
+        "explicit": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "skill",
+              "category",
+              "evidence"
+            ],
+            "properties": {
+              "skill": {
+                "type": "string"
+              },
+              "category": {
+                "enum": [
+                  "software",
+                  "domain",
+                  "certification",
+                  "language",
+                  "soft",
+                  "licence"
+                ]
+              },
+              "evidence": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "must_not_extract": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "term",
+              "reason"
+            ]
+          }
+        }
+      }
+    },
+    "experience": {
+      "type": "object",
+      "required": [
+        "relevant_years",
+        "tolerance_years",
+        "basis"
+      ],
+      "properties": {
+        "total_years": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "relevant_years": {
+          "type": "number",
+          "minimum": 0
+        },
+        "tolerance_years": {
+          "type": "number"
+        },
+        "entries_expected": {
+          "type": "integer"
+        },
+        "basis": {
+          "type": "string"
+        },
+        "domain_years": {
+          "type": "object"
+        }
+      }
+    },
+    "education": {
+      "type": "object",
+      "required": [
+        "highest_level",
+        "match"
+      ],
+      "properties": {
+        "highest_level": {
+          "enum": [
+            "S3",
+            "S2",
+            "S1",
+            "D4",
+            "D3",
+            "SMK",
+            "SMA",
+            null
+          ]
+        },
+        "match": {
+          "enum": [
+            "Match",
+            "Exceeds",
+            "Partial",
+            "Mismatch",
+            "Unknown"
+          ]
+        }
+      }
+    },
+    "confidence": {
+      "type": "object",
+      "required": [
+        "section_confidence",
+        "parse_quality",
+        "screening_confidence"
+      ],
+      "properties": {
+        "section_confidence": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/range01"
+          }
+        },
+        "parse_quality": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "screening_confidence": {
+          "type": "object",
+          "required": [
+            "level",
+            "reason"
+          ],
+          "properties": {
+            "level": {
+              "enum": [
+                "Tinggi",
+                "Sedang",
+                "Rendah"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "explainability": {
+      "type": "object",
+      "required": [
+        "requirements",
+        "mandatory_summary",
+        "score_components"
+      ],
+      "properties": {
+        "requirements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "mandatory",
+              "category",
+              "requirement",
+              "status",
+              "evidence"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[RP][0-9]+$"
+              },
+              "status": {
+                "enum": [
+                  "met",
+                  "partial",
+                  "not_met",
+                  "unknown"
+                ]
+              },
+              "evidence": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "score_components": {
+          "type": "object",
+          "required": [
+            "weights",
+            "weights_source",
+            "expected_ranges",
+            "implied_weighted_range"
+          ],
+          "properties": {
+            "weights": {
+              "const": {
+                "skills": 0.35,
+                "experience": 0.25,
+                "semantic": 0.25,
+                "education": 0.15
+              }
+            },
+            "scoring_model_gap": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "required": [
+                "causes",
+                "affects_decision"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "recommendation": {
+      "type": "object",
+      "required": [
+        "decision",
+        "decision_label_id",
+        "score_range",
+        "rank",
+        "pool_order",
+        "action"
+      ],
+      "properties": {
+        "decision": {
+          "enum": [
+            "Recommended",
+            "Review",
+            "Reject"
+          ]
+        },
+        "decision_label_id": {
+          "enum": [
+            "Direkomendasikan",
+            "Perlu ditinjau",
+            "Tidak lolos"
+          ]
+        },
+        "score_range": {
+          "type": "object",
+          "required": [
+            "min",
+            "max"
+          ]
+        },
+        "rank": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "decision_override": {
+          "enum": [
+            "overqualified",
+            "incomplete_but_relevant",
+            null
+          ]
+        },
+        "provisional_score": {
+          "type": "boolean"
+        },
+        "never_decision": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pipeline_rules": {
+          "type": "object",
+          "required": [
+            "shortlist_at",
+            "reject_below",
+            "projected_decision",
+            "agrees_with_benchmark"
+          ],
+          "properties": {
+            "projected_decision": {
+              "enum": [
+                "Recommended",
+                "Review",
+                "Reject"
+              ]
+            },
+            "agrees_with_benchmark": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "interview_questions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "category",
+          "question",
+          "purpose",
+          "linked_to"
+        ],
+        "properties": {
+          "category": {
+            "enum": [
+              "technical",
+              "behavioral",
+              "motivation",
+              "verification"
+            ]
+          }
+        }
+      }
+    },
+    "hr_summary": {
+      "type": "object",
+      "required": [
+        "language",
+        "max_words",
+        "headline",
+        "reference_text",
+        "must_mention",
+        "must_not_claim",
+        "forbidden_strings"
+      ]
+    },
+    "pipeline_baseline": {
+      "type": "object",
+      "required": [
+        "commit",
+        "embedding_backend",
+        "observed",
+        "checks",
+        "job_checks",
+        "known_failures"
+      ],
+      "properties": {
+        "commit": {
+          "type": "string"
+        },
+        "embedding_backend": {
+          "enum": [
+            "tfidf",
+            "e5"
+          ]
+        },
+        "observed": {
+          "type": "object",
+          "required": [
+            "score",
+            "rank",
+            "decision",
+            "components"
+          ]
+        },
+        "checks": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "boolean"
+          }
+        },
+        "job_checks": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "boolean"
+          }
+        },
+        "known_failures": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^([0-9]{4}(-[0-9]{2})?|present)$"
+    },
+    "range01": {
+      "type": "object",
+      "required": [
+        "min",
+        "max"
+      ],
+      "properties": {
+        "min": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "max": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "job": {
+      "type": "object",
+      "required": [
+        "title",
+        "company",
+        "start",
+        "end",
+        "months",
+        "employment_type",
+        "relevant"
+      ],
+      "properties": {
+        "start": {
+          "$ref": "#/$defs/date"
+        },
+        "end": {
+          "$ref": "#/$defs/date"
+        },
+        "months": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "employment_type": {
+          "enum": [
+            "full_time",
+            "contract",
+            "freelance",
+            "freelance_part_time",
+            "internship",
+            "owner",
+            "military",
+            "gap"
+          ]
+        },
+        "relevant": {
+          "enum": [
+            true,
+            false,
+            "partial"
+          ]
+        }
+      }
+    },
+    "edu": {
+      "type": "object",
+      "required": [
+        "level",
+        "field",
+        "institution",
+        "status"
+      ],
+      "properties": {
+        "gpa": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "status": {
+          "enum": [
+            "completed",
+            "in_progress"
+          ]
+        }
+      }
+    }
+  }
+}

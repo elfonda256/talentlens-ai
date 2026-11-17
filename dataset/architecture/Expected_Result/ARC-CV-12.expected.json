@@ -1,0 +1,76 @@
+{
+  "cv_id": "ARC-CV-12",
+  "candidate_name": "Muhammad Ilham Saputra",
+  "cv_file": "CV/ARC-CV-12_Muhammad_Ilham_Saputra.pdf",
+  "target_vacancy": "ARC-VAC-03",
+  "vacancy_file": "Vacancy/ARC-VAC-03_Healthcare_Facility_Architect_Husada_Prima_Hospital_Group.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "Underqualified",
+  "test_tags": [
+    "minimalist",
+    "english",
+    "junior",
+    "underqualified",
+    "short_cv"
+  ],
+  "document": {
+    "language": "en",
+    "layout": "Minimalist single column, short",
+    "has_text_layer": true,
+    "parser_traps": []
+  },
+  "expected_ranking": {
+    "rank": 4,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-09",
+      "ARC-CV-10",
+      "ARC-CV-11",
+      "ARC-CV-12"
+    ]
+  },
+  "expected_score_range": {
+    "min": 30,
+    "max": 42
+  },
+  "expected_decision": "Reject",
+  "decision_override": null,
+  "skills_found": [
+    "AutoCAD",
+    "SketchUp",
+    "Lumion",
+    "Revit (beginner)",
+    "PBG permit drawings",
+    "puskesmas renovation drawings"
+  ],
+  "missing_skills": [
+    "5 years experience",
+    "two hospital projects",
+    "hospital zoning and critical care",
+    "ICRA",
+    "SKK Arsitek / STRA",
+    "Revit at working level"
+  ],
+  "years_of_relevant_experience": {
+    "value": 1.4,
+    "healthcare": 0.3,
+    "basis": "Jun 2025 - Nov 2026; one puskesmas renovation under supervision"
+  },
+  "education_match": {
+    "status": "Match",
+    "detail": "S1 Arsitektur Untag Surabaya 2024, GPA 3.05; final project on a puskesmas"
+  },
+  "semantic_match": {
+    "level": "Low",
+    "detail": "Interest in healthcare is genuine but experience is a primary health centre drawing set, not hospital planning."
+  },
+  "potential_risks": [
+    "Far below the experience requirement",
+    "No licence"
+  ],
+  "interview_focus": [
+    "Not recommended for this role; could be kept for a future junior facility drafter opening"
+  ],
+  "expected_explanation": "Right degree and an interest in healthcare, but 1.4 years of experience, no hospital projects, no licence and beginner Revit. Clear Reject for a 5-year owner-side role.",
+  "alternative_vacancy": null
+}

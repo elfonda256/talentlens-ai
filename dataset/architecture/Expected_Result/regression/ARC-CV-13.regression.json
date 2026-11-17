@@ -1,0 +1,668 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-13",
+  "target_vacancy": "ARC-VAC-04",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-13_Andi_Muhammad_Rais.pdf",
+    "vacancy": "Vacancy/ARC-VAC-04_Site_Architect_Township_PT_Tanjung_Kerta_Mining.pdf",
+    "benchmark": "Expected_Result/ARC-CV-13.expected.json"
+  },
+  "candidate_profile": "Perfect candidate",
+  "test_tags": [
+    "ats_style",
+    "serif",
+    "english",
+    "remote_site",
+    "modular",
+    "k3_certified"
+  ],
+  "parser_output": {
+    "extraction_method": "text",
+    "has_text_layer": true,
+    "language": "en",
+    "layout_class": "single_column",
+    "contact": {
+      "name": "Andi Muhammad Rais",
+      "email": "andi.mrais@gmail.com",
+      "phone_e164": "+6281154623390",
+      "location": "Balikpapan, Kalimantan Timur",
+      "links": []
+    },
+    "sections_detected": [
+      {
+        "raw_heading": "Professional Background",
+        "canonical": "summary"
+      },
+      {
+        "raw_heading": "Employment",
+        "canonical": "experience"
+      },
+      {
+        "raw_heading": "Education",
+        "canonical": "education"
+      },
+      {
+        "raw_heading": "Certifications",
+        "canonical": "certifications"
+      },
+      {
+        "raw_heading": "Software",
+        "canonical": "skills"
+      },
+      {
+        "raw_heading": "Languages",
+        "canonical": "languages"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Facility Architect",
+        "company": "PT Mahakam Energi Servis",
+        "location": "Balikpapan",
+        "start": "2019-02",
+        "end": "present",
+        "months": 93,
+        "employment_type": "full_time",
+        "relevant": true
+      },
+      {
+        "title": "Site Architect",
+        "company": "PT Kalbar Sawit Lestari",
+        "location": "Ketapang",
+        "start": "2016-03",
+        "end": "2019-01",
+        "months": 35,
+        "employment_type": "full_time",
+        "relevant": true
+      },
+      {
+        "title": "Architect / Drafter",
+        "company": "CV Daeng Karya Konsultan",
+        "location": "Makassar",
+        "start": "2013-09",
+        "end": "2016-02",
+        "months": 30,
+        "employment_type": "full_time",
+        "relevant": true
+      }
+    ],
+    "education": [
+      {
+        "level": "S1",
+        "field": "Arsitektur",
+        "institution": "Universitas Hasanuddin",
+        "start": "2008",
+        "end": "2013",
+        "gpa": 3.29,
+        "gpa_scale": 4.0,
+        "status": "completed"
+      }
+    ],
+    "certifications": [
+      "Ahli K3 Umum (Kemnaker RI, 2020)",
+      "SKK Arsitek Ahli Muda Jenjang 7 (LPJK, 2021)",
+      "H2S Awareness & Basic Fire Fighting (2022, renewed 2025)",
+      "Defensive Driving",
+      "SIM A"
+    ],
+    "languages": [
+      "Indonesian",
+      "English (good)",
+      "Bugis"
+    ],
+    "volunteer": [],
+    "side_business": [],
+    "expected_warnings": [],
+    "pii_fields_to_mask": [
+      "name",
+      "email",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "AutoCAD",
+        "category": "software",
+        "evidence": "AutoCAD, Revit, SketchUp"
+      },
+      {
+        "skill": "Revit",
+        "category": "software",
+        "evidence": "AutoCAD, Revit, SketchUp"
+      },
+      {
+        "skill": "SketchUp",
+        "category": "software",
+        "evidence": "AutoCAD, Revit, SketchUp"
+      },
+      {
+        "skill": "Excel",
+        "category": "software",
+        "evidence": "MS Excel (BoQ / estimating)"
+      },
+      {
+        "skill": "MS Project",
+        "category": "software",
+        "evidence": "MS Project"
+      },
+      {
+        "skill": "Camp design",
+        "category": "domain",
+        "evidence": "Camp expansion from 350 to 600 pax"
+      },
+      {
+        "skill": "Modular buildings",
+        "category": "domain",
+        "evidence": "6 modular dormitory blocks (container-based)"
+      },
+      {
+        "skill": "Vendor fabrication review",
+        "category": "domain",
+        "evidence": "Reviewed fabrication drawings from 3 modular vendors"
+      },
+      {
+        "skill": "BoQ / owner's estimate",
+        "category": "domain",
+        "evidence": "Prepared architectural BoQ and owner's estimate"
+      },
+      {
+        "skill": "Fire separation & muster layout",
+        "category": "domain",
+        "evidence": "Fire separation, travel distance and muster point layout"
+      },
+      {
+        "skill": "Site supervision",
+        "category": "domain",
+        "evidence": "Site supervision of local contractors"
+      },
+      {
+        "skill": "Ahli K3 Umum",
+        "category": "certification",
+        "evidence": "Ahli K3 Umum — Kemnaker RI, 2020"
+      },
+      {
+        "skill": "SKK Arsitek Ahli Muda",
+        "category": "certification",
+        "evidence": "SKK Arsitek Ahli Muda (Jenjang 7) — LPJK, 2021"
+      },
+      {
+        "skill": "SIM A",
+        "category": "licence",
+        "evidence": "Defensive Driving, SIM A"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "POP",
+        "reason": "not held"
+      },
+      {
+        "term": "ArchiCAD",
+        "reason": "never mentioned"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 3,
+    "total_years": 13.2,
+    "relevant_years": 13.2,
+    "tolerance_years": 0.5,
+    "basis": "Sep 2013 - Nov 2026 total; remote sites Mar 2016 - Nov 2026 (plantation 2016-2019, oil & gas field sites 2019-present)",
+    "domain_years": {
+      "remote_site": 10.7
+    }
+  },
+  "education": {
+    "highest_level": "S1",
+    "highest_field": "Arsitektur",
+    "status": "completed",
+    "gpa": 3.29,
+    "match": "Match",
+    "detail": "S1 Arsitektur Universitas Hasanuddin 2013, GPA 3.29"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.8,
+        "max": 1.0
+      },
+      "education": {
+        "min": 0.8,
+        "max": 1.0
+      },
+      "skills": {
+        "min": 0.8,
+        "max": 1.0
+      },
+      "summary": {
+        "min": 0.8,
+        "max": 1.0
+      }
+    },
+    "parse_quality": "high",
+    "screening_confidence": {
+      "level": "Tinggi",
+      "reason": "All mandatory requirements evidenced; clean layout."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "S1 Arsitektur",
+        "status": "met",
+        "evidence": "S1 Arsitektur — Universitas Hasanuddin, Makassar",
+        "note": null
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "Minimum 5 years experience",
+        "status": "met",
+        "evidence": "Architect with 13 years of experience",
+        "note": null
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "Minimum 2 years on remote sites",
+        "status": "met",
+        "evidence": "more than 10 of them on remote sites",
+        "note": null
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Camp / mess / barracks / support facilities",
+        "status": "met",
+        "evidence": "Camp expansion from 350 to 600 pax",
+        "note": null
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Modular or prefab buildings",
+        "status": "met",
+        "evidence": "6 modular dormitory blocks (container-based)",
+        "note": null
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD",
+        "status": "met",
+        "evidence": "AutoCAD, Revit, SketchUp",
+        "note": null
+      },
+      {
+        "id": "R7",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Revit or ArchiCAD",
+        "status": "met",
+        "evidence": "AutoCAD, Revit, SketchUp",
+        "note": null
+      },
+      {
+        "id": "R8",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "RAB and BoQ for architectural works",
+        "status": "met",
+        "evidence": "Prepared architectural BoQ and owner's estimate",
+        "note": null
+      },
+      {
+        "id": "R9",
+        "mandatory": true,
+        "category": "certification",
+        "requirement": "Ahli K3 Umum or SKK K3 Konstruksi",
+        "status": "met",
+        "evidence": "Ahli K3 Umum — Kemnaker RI, 2020",
+        "note": null
+      },
+      {
+        "id": "R10",
+        "mandatory": true,
+        "category": "licence",
+        "requirement": "SIM A",
+        "status": "met",
+        "evidence": "Defensive Driving, SIM A",
+        "note": null
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "certification",
+        "requirement": "POP (Pengawas Operasional Pertama)",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "licence",
+        "requirement": "SKK Arsitek Ahli Muda or higher",
+        "status": "met",
+        "evidence": "SKK Arsitek Ahli Muda (Jenjang 7) — LPJK, 2021",
+        "note": null
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "SketchUp",
+        "status": "met",
+        "evidence": "AutoCAD, Revit, SketchUp",
+        "note": null
+      },
+      {
+        "id": "P4",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Multinational oil & gas or mining camp design standards",
+        "status": "partial",
+        "evidence": "Owner's architect for onshore support facilities",
+        "note": "oil & gas services standards"
+      }
+    ],
+    "mandatory_summary": {
+      "total": 10,
+      "met": 10,
+      "partial": 0,
+      "not_met": 0,
+      "unknown": 0
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 5,
+        "min_degree_level": "S1",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 90,
+          "max": 100
+        },
+        "experience": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "education": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "semantic": {
+          "min": 72,
+          "max": 88
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 17,
+        "max": 37
+      },
+      "excluded_components": [],
+      "implied_weighted_range": {
+        "min": 89.5,
+        "max": 97.0
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 75.8,
+        "max": 84.2
+      },
+      "scoring_model_gap": null
+    },
+    "top_positive_factors": [
+      "S1 Arsitektur",
+      "Minimum 5 years experience",
+      "Minimum 2 years on remote sites",
+      "Camp / mess / barracks / support facilities"
+    ],
+    "top_negative_factors": [],
+    "unknown_is_not_failure": [],
+    "risks": [
+      "Oil & gas camp standards may be heavier/costlier than the mining owner expects",
+      "Lives in Balikpapan — fits POH, low relocation risk"
+    ],
+    "reference_explanation": "Meets every mandatory requirement with margin: S1 Arsitektur, 13 years including 10.7 on remote sites, camp and modular experience at a larger scale than the vacancy, BoQ/estimating, AutoCAD/Revit, Ahli K3 Umum and SIM A. Only the preferred POP certificate is missing. Top of the pool."
+  },
+  "recommendation": {
+    "decision": "Recommended",
+    "decision_label_id": "Direkomendasikan",
+    "score_range": {
+      "min": 85,
+      "max": 93
+    },
+    "rank": 1,
+    "pool_order": [
+      "ARC-CV-13",
+      "ARC-CV-15",
+      "ARC-CV-14",
+      "ARC-CV-16"
+    ],
+    "decision_override": null,
+    "provisional_score": false,
+    "never_decision": [],
+    "action": "Lanjut ke tahap berikutnya sesuai proses lowongan.",
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [],
+      "projected_decision": "Recommended",
+      "agrees_with_benchmark": true
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-13-Q1",
+      "category": "technical",
+      "question": "Bagaimana Anda menjalankan perluasan camp dari 350 ke 600 pax sementara camp tetap dihuni?",
+      "purpose": "Phasing pada fasilitas yang beroperasi",
+      "linked_to": "R4",
+      "good_answer_signals": [
+        "Phasing, rute sementara, koordinasi camp management"
+      ],
+      "red_flags": [
+        "Tidak ada phasing"
+      ]
+    },
+    {
+      "id": "ARC-CV-13-Q2",
+      "category": "technical",
+      "question": "Apa yang Anda periksa pada gambar fabrikasi vendor modular sebelum pengiriman, dan contoh yang Anda tolak?",
+      "purpose": "Kedalaman review prefab",
+      "linked_to": "R5",
+      "good_answer_signals": [
+        "Contoh spesifik: sambungan, waterproofing, MEP"
+      ],
+      "red_flags": [
+        "Hanya cek dimensi"
+      ]
+    },
+    {
+      "id": "ARC-CV-13-Q3",
+      "category": "motivation",
+      "question": "Roster lowongan 8/2, saat ini Anda 6/2. Apakah bisa?",
+      "purpose": "Roster",
+      "linked_to": "risk:roster",
+      "good_answer_signals": [
+        "Bisa"
+      ],
+      "red_flags": [
+        "Tidak bisa"
+      ]
+    },
+    {
+      "id": "ARC-CV-13-Q4",
+      "category": "verification",
+      "question": "Apakah Anda bersedia mengambil sertifikat POP?",
+      "purpose": "Preferred gap",
+      "linked_to": "P1",
+      "good_answer_signals": [
+        "Ya, ada rencana"
+      ],
+      "red_flags": [
+        "Tidak"
+      ]
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Arsitek fasilitas remote site, camp dan modular, semua syarat wajib terpenuhi",
+    "reference_text": "Kandidat memiliki 13 tahun pengalaman, lebih dari 10 tahun di remote site Kalimantan (perkebunan dan migas). Menangani perluasan camp 350 ke 600 pax dengan blok modular, review gambar vendor, BoQ dan owner estimate, serta layout keselamatan bersama HSE. Memiliki Ahli K3 Umum, SKK Ahli Muda, dan SIM A, berdomisili di Balikpapan. Belum memiliki POP. Direkomendasikan.",
+    "must_mention": [
+      {
+        "concept": "remote site years",
+        "any_of": [
+          "remote site",
+          "10 tahun"
+        ]
+      },
+      {
+        "concept": "camp/modular",
+        "any_of": [
+          "camp",
+          "modular"
+        ]
+      },
+      {
+        "concept": "K3",
+        "any_of": [
+          "K3"
+        ]
+      },
+      {
+        "concept": "POP gap",
+        "any_of": [
+          "POP"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate holds POP",
+      "Candidate has worked in coal mining"
+    ],
+    "forbidden_strings": [
+      "+6281154623390",
+      "Andi",
+      "Andi Muhammad Rais",
+      "Muhammad",
+      "Rais",
+      "andi.mrais@gmail.com"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 73.9,
+      "rank": 2,
+      "decision": "Recommended",
+      "decision_label_id": "Direkomendasikan",
+      "components": {
+        "skills": 77.8,
+        "experience": 100.0,
+        "semantic": 26.7,
+        "education": 100.0
+      },
+      "unassessed": [],
+      "knockout_flags": [],
+      "relevant_years": 8.8,
+      "experience_entries": 3,
+      "total_experience_months": 156,
+      "education": [
+        [
+          4,
+          "architecture"
+        ]
+      ],
+      "extraction_method": "text",
+      "extraction_confidence": 1.0,
+      "section_confidence": {
+        "summary": 0.0,
+        "experience": 1.0,
+        "education": 1.0,
+        "skills": 1.0
+      },
+      "contact": {
+        "name": "Andi Muhammad Rais",
+        "email": "andi.mrais@gmail.com",
+        "phone": "6281154623390"
+      },
+      "skill_ids": [
+        "architecture_design",
+        "autocad",
+        "building_codes",
+        "procurement",
+        "project_management",
+        "revit",
+        "sketchup"
+      ],
+      "job_reading": {
+        "upload_guard": null,
+        "min_years_experience": 0.0,
+        "degree_fields": [],
+        "min_degree_level": 0
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": true,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": false,
+      "score_in_benchmark_range": false,
+      "name_extracted": true,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": true,
+      "relevant_years_within_tolerance": false,
+      "education_found": true,
+      "no_programming_false_positive": true
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": true,
+      "min_years_read_correctly": false,
+      "degree_field_read": false,
+      "min_degree_level_read_correctly": false,
+      "no_programming_requirement": true
+    },
+    "known_failures": [
+      "rank_matches_benchmark",
+      "score_in_benchmark_range",
+      "relevant_years_within_tolerance",
+      "min_years_read_correctly",
+      "degree_field_read",
+      "min_degree_level_read_correctly"
+    ]
+  }
+}

@@ -1,0 +1,636 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-15",
+  "target_vacancy": "ARC-VAC-04",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-15_Stefanus_Hartono.pdf",
+    "vacancy": "Vacancy/ARC-VAC-04_Site_Architect_Township_PT_Tanjung_Kerta_Mining.pdf",
+    "benchmark": "Expected_Result/ARC-CV-15.expected.json"
+  },
+  "candidate_profile": "Very good — broken PDF text, no headings",
+  "test_tags": [
+    "no_headings",
+    "broken_pdf_text",
+    "ligatures",
+    "hyphenation",
+    "char_spacing",
+    "mixed_language",
+    "mining"
+  ],
+  "parser_output": {
+    "extraction_method": "text",
+    "has_text_layer": true,
+    "language": "id",
+    "layout_class": "no_headings",
+    "contact": {
+      "name": "Stefanus Hartono",
+      "email": "stefanus.hartono.ars@gmail.com",
+      "phone_e164": "+6285250117843",
+      "location": "Samarinda, Kalimantan Timur",
+      "links": []
+    },
+    "sections_detected": [],
+    "experience": [
+      {
+        "title": "Building & Infrastructure Engineer",
+        "company": "PT Sumber Alam Tambang Jasa",
+        "location": "Sangatta",
+        "start": "2021-07",
+        "end": "present",
+        "months": 64,
+        "employment_type": "full_time",
+        "relevant": true
+      },
+      {
+        "title": "Arsitek",
+        "company": "PT Kaltim Bangun Persada",
+        "location": "Samarinda",
+        "start": "2017-03",
+        "end": "2021-06",
+        "months": 52,
+        "employment_type": "full_time",
+        "relevant": true
+      }
+    ],
+    "education": [
+      {
+        "level": "S1",
+        "field": "Arsitektur",
+        "institution": "Universitas Mulawarman",
+        "start": "2012",
+        "end": "2016",
+        "gpa": 3.02,
+        "gpa_scale": 4.0,
+        "status": "completed"
+      }
+    ],
+    "certifications": [
+      "POP (Pengawas Operasional Pertama) 2022",
+      "SKK K3 Konstruksi Ahli Muda 2023",
+      "SIM A",
+      "SIM B1",
+      "MCU fit to work 2026"
+    ],
+    "languages": [
+      "Indonesian",
+      "English (intermediate)",
+      "Javanese"
+    ],
+    "volunteer": [],
+    "side_business": [],
+    "expected_warnings": [
+      "no_headings",
+      "ligatures_normalized",
+      "hyphenation_across_lines",
+      "dates_in_prose"
+    ],
+    "pii_fields_to_mask": [
+      "name",
+      "email",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "AutoCAD",
+        "category": "software",
+        "evidence": "Software: AutoCAD, Revit, SketchUp, Excel"
+      },
+      {
+        "skill": "Revit",
+        "category": "software",
+        "evidence": "Software: AutoCAD, Revit, SketchUp, Excel"
+      },
+      {
+        "skill": "SketchUp",
+        "category": "software",
+        "evidence": "Software: AutoCAD, Revit, SketchUp, Excel"
+      },
+      {
+        "skill": "Excel",
+        "category": "software",
+        "evidence": "Software: AutoCAD, Revit, SketchUp, Excel"
+      },
+      {
+        "skill": "Mess / camp design",
+        "category": "domain",
+        "evidence": "mess karyawan 480"
+      },
+      {
+        "skill": "Workshop design",
+        "category": "domain",
+        "evidence": "workshop alat berat"
+      },
+      {
+        "skill": "Modular site office",
+        "category": "domain",
+        "evidence": "kantor site modular"
+      },
+      {
+        "skill": "BoQ / owner estimate",
+        "category": "domain",
+        "evidence": "Menyusun BoQ dan owner estimate"
+      },
+      {
+        "skill": "Prefab vendor review",
+        "category": "domain",
+        "evidence": "review gambar vendor prefab"
+      },
+      {
+        "skill": "K3 inspection",
+        "category": "domain",
+        "evidence": "inspeksi K3"
+      },
+      {
+        "skill": "POP",
+        "category": "certification",
+        "evidence": "POP (Pengawas Operasional"
+      },
+      {
+        "skill": "SKK K3 Konstruksi",
+        "category": "certification",
+        "evidence": "SKK K3 Konstruksi Ahli Muda 2023"
+      },
+      {
+        "skill": "SIM A",
+        "category": "licence",
+        "evidence": "SIM A & SIM B1"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "'o ce' as a word",
+        "reason": "broken ligature from 'office'"
+      },
+      {
+        "term": "Name with letter spacing",
+        "reason": "must normalise 'S T E F A N U S' if an extractor splits it"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 2,
+    "total_years": 9.7,
+    "relevant_years": 9.7,
+    "tolerance_years": 0.5,
+    "basis": "Mar 2017 - Nov 2026 total; mining site Sangatta Jul 2021 - Nov 2026",
+    "domain_years": {
+      "remote_site": 5.3
+    }
+  },
+  "education": {
+    "highest_level": "S1",
+    "highest_field": "Arsitektur",
+    "status": "completed",
+    "gpa": 3.02,
+    "match": "Match",
+    "detail": "S1 Arsitektur Universitas Mulawarman 2016, IPK 3.02"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.3,
+        "max": 0.7
+      },
+      "education": {
+        "min": 0.3,
+        "max": 0.7
+      },
+      "skills": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "summary": {
+        "min": 0.3,
+        "max": 0.8
+      }
+    },
+    "parse_quality": "low",
+    "screening_confidence": {
+      "level": "Sedang",
+      "reason": "No headings and broken words; facts are present but must be found in running prose."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "S1 Arsitektur",
+        "status": "met",
+        "evidence": "S1 Arsitektur Universitas Mulawarman 2012–2016",
+        "note": null
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "Minimum 5 years experience",
+        "status": "met",
+        "evidence": "pengalaman 9 tahun",
+        "note": null
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "Minimum 2 years on remote sites",
+        "status": "met",
+        "evidence": "5 tahun terakhir di site tambang batubara",
+        "note": null
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Camp / mess / barracks / support facilities",
+        "status": "met",
+        "evidence": "mess karyawan 480",
+        "note": null
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Modular or prefab buildings",
+        "status": "met",
+        "evidence": "kantor site modular",
+        "note": null
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD",
+        "status": "met",
+        "evidence": "Software: AutoCAD, Revit, SketchUp, Excel",
+        "note": null
+      },
+      {
+        "id": "R7",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Revit or ArchiCAD",
+        "status": "met",
+        "evidence": "Software: AutoCAD, Revit, SketchUp, Excel",
+        "note": null
+      },
+      {
+        "id": "R8",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "RAB and BoQ for architectural works",
+        "status": "met",
+        "evidence": "Menyusun BoQ dan owner estimate",
+        "note": null
+      },
+      {
+        "id": "R9",
+        "mandatory": true,
+        "category": "certification",
+        "requirement": "Ahli K3 Umum or SKK K3 Konstruksi",
+        "status": "met",
+        "evidence": "SKK K3 Konstruksi Ahli Muda 2023",
+        "note": null
+      },
+      {
+        "id": "R10",
+        "mandatory": true,
+        "category": "licence",
+        "requirement": "SIM A",
+        "status": "met",
+        "evidence": "SIM A & SIM B1",
+        "note": null
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "certification",
+        "requirement": "POP (Pengawas Operasional Pertama)",
+        "status": "met",
+        "evidence": "POP (Pengawas Operasional",
+        "note": null
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "licence",
+        "requirement": "SKK Arsitek Ahli Muda or higher",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "SketchUp",
+        "status": "met",
+        "evidence": "Software: AutoCAD, Revit, SketchUp, Excel",
+        "note": null
+      },
+      {
+        "id": "P4",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Multinational oil & gas or mining camp design standards",
+        "status": "unknown",
+        "evidence": null,
+        "note": null
+      }
+    ],
+    "mandatory_summary": {
+      "total": 10,
+      "met": 10,
+      "partial": 0,
+      "not_met": 0,
+      "unknown": 0
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 5,
+        "min_degree_level": "S1",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 88,
+          "max": 100
+        },
+        "experience": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "education": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "semantic": {
+          "min": 62,
+          "max": 80
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 30,
+        "max": 50
+      },
+      "excluded_components": [],
+      "implied_weighted_range": {
+        "min": 86.3,
+        "max": 95.0
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 78.3,
+        "max": 87.5
+      },
+      "scoring_model_gap": {
+        "causes": [
+          "benchmark_ranks_below_stronger_remote_site_tenure"
+        ],
+        "explanations": [
+          "Calibration only: the formula scores higher than the benchmark range; the decision agrees."
+        ],
+        "affects_decision": false,
+        "meaning": "Formula-correct components do not reproduce the benchmark score range; the benchmark range stays the target."
+      }
+    },
+    "top_positive_factors": [
+      "S1 Arsitektur",
+      "Minimum 5 years experience",
+      "Minimum 2 years on remote sites",
+      "Camp / mess / barracks / support facilities"
+    ],
+    "top_negative_factors": [],
+    "unknown_is_not_failure": [
+      "P4"
+    ],
+    "risks": [
+      "Works for a mining contractor, not an owner — check experience setting standards rather than following them",
+      "Parser risk: no headings and broken words could cause a naive system to miss POP, K3 and degree"
+    ],
+    "reference_explanation": "Strong fit: S1 Arsitektur, 9.7 years, 5.3 on a coal mine site with mess, workshop and modular office work, BoQ experience, SKK K3 Konstruksi, POP (a preferred item that CV-13 lacks) and SIM A. Ranked second only because CV-13 has longer remote-site tenure and larger camp scale. The CV is deliberately hard to parse."
+  },
+  "recommendation": {
+    "decision": "Recommended",
+    "decision_label_id": "Direkomendasikan",
+    "score_range": {
+      "min": 76,
+      "max": 86
+    },
+    "rank": 2,
+    "pool_order": [
+      "ARC-CV-13",
+      "ARC-CV-15",
+      "ARC-CV-14",
+      "ARC-CV-16"
+    ],
+    "decision_override": null,
+    "provisional_score": false,
+    "never_decision": [
+      "Tidak lolos"
+    ],
+    "action": "Lanjut ke tahap berikutnya sesuai proses lowongan.",
+    "fallback_rule": "If the parser cannot locate experience or education in prose, the result must be 'Perlu ditinjau' with a provisional score (TDR-0023), never 'Tidak lolos'. The fixture's expected decision assumes the facts were found.",
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [],
+      "projected_decision": "Recommended",
+      "agrees_with_benchmark": true
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-15-Q1",
+      "category": "technical",
+      "question": "Ceritakan proyek mess 480 pax: bagaimana phasing dilakukan saat site beroperasi?",
+      "purpose": "Skala dan pengalaman phasing",
+      "linked_to": "R4",
+      "good_answer_signals": [
+        "Phasing jelas"
+      ],
+      "red_flags": [
+        "Umum"
+      ]
+    },
+    {
+      "id": "ARC-CV-15-Q2",
+      "category": "technical",
+      "question": "Contoh submittal vendor prefab yang Anda tolak dan alasannya?",
+      "purpose": "Kedalaman review prefab",
+      "linked_to": "R5",
+      "good_answer_signals": [
+        "Contoh konkret"
+      ],
+      "red_flags": [
+        "Belum pernah menolak"
+      ]
+    },
+    {
+      "id": "ARC-CV-15-Q3",
+      "category": "motivation",
+      "question": "Saat ini Anda di pihak kontraktor tambang. Apa yang berubah bila menjadi owner's architect?",
+      "purpose": "Pergeseran peran",
+      "linked_to": "risk:role_shift",
+      "good_answer_signals": [
+        "Paham peran penetap standar"
+      ],
+      "red_flags": [
+        "Tidak melihat perbedaan"
+      ]
+    },
+    {
+      "id": "ARC-CV-15-Q4",
+      "category": "verification",
+      "question": "Berapa masa pemberitahuan di perusahaan sekarang, dan bisakah pindah dari roster 6/2 ke 8/2?",
+      "purpose": "Ketersediaan",
+      "linked_to": "risk:roster",
+      "good_answer_signals": [
+        "Jelas"
+      ],
+      "red_flags": [
+        "Tidak bisa"
+      ]
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Arsitek site tambang batubara dengan POP dan K3",
+    "reference_text": "Kandidat memiliki sekitar 9,7 tahun pengalaman di Kalimantan Timur, 5 tahun terakhir di site tambang batubara Sangatta: mess karyawan 480 pax, workshop alat berat, kantor site modular, BoQ dan owner estimate, serta review gambar vendor prefab. Memiliki POP, SKK K3 Konstruksi, dan SIM A. Skala camp lebih kecil dari rencana perluasan 1.200 pax. CV tidak memiliki judul bagian sehingga pembacaan otomatis kurang pasti. Direkomendasikan.",
+    "must_mention": [
+      {
+        "concept": "mining site",
+        "any_of": [
+          "tambang"
+        ]
+      },
+      {
+        "concept": "POP",
+        "any_of": [
+          "POP"
+        ]
+      },
+      {
+        "concept": "parse caveat",
+        "any_of": [
+          "judul bagian",
+          "pembacaan"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate has no certifications",
+      "Candidate works for a mining owner company"
+    ],
+    "forbidden_strings": [
+      "+6285250117843",
+      "Hartono",
+      "Stefanus",
+      "Stefanus Hartono",
+      "stefanus.hartono.ars@gmail.com"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 77.2,
+      "rank": 1,
+      "decision": "Recommended",
+      "decision_label_id": "Direkomendasikan",
+      "components": {
+        "skills": 77.8,
+        "experience": 100.0,
+        "semantic": 39.9,
+        "education": 100.0
+      },
+      "unassessed": [],
+      "knockout_flags": [],
+      "relevant_years": 0.0,
+      "experience_entries": 0,
+      "total_experience_months": 0,
+      "education": [],
+      "extraction_method": "text",
+      "extraction_confidence": 0.55,
+      "section_confidence": {
+        "summary": 0.0,
+        "experience": 0.0,
+        "education": 0.0,
+        "skills": 0.7
+      },
+      "contact": {
+        "name": null,
+        "email": "stefanus.hartono.ars@gmail.com",
+        "phone": "085250117843"
+      },
+      "skill_ids": [
+        "architecture_design",
+        "autocad",
+        "building_codes",
+        "procurement",
+        "revit",
+        "sketchup"
+      ],
+      "job_reading": {
+        "upload_guard": null,
+        "min_years_experience": 0.0,
+        "degree_fields": [],
+        "min_degree_level": 0
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": true,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": false,
+      "score_in_benchmark_range": true,
+      "name_extracted": false,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": false,
+      "relevant_years_within_tolerance": false,
+      "education_found": false,
+      "no_programming_false_positive": true
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": true,
+      "min_years_read_correctly": false,
+      "degree_field_read": false,
+      "min_degree_level_read_correctly": false,
+      "no_programming_requirement": true
+    },
+    "known_failures": [
+      "rank_matches_benchmark",
+      "name_extracted",
+      "experience_entries_found",
+      "relevant_years_within_tolerance",
+      "education_found",
+      "min_years_read_correctly",
+      "degree_field_read",
+      "min_degree_level_read_correctly"
+    ]
+  }
+}

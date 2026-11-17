@@ -1,0 +1,82 @@
+{
+  "cv_id": "ARC-CV-20",
+  "candidate_name": "Dimas Aryo Baskoro",
+  "cv_file": "CV/ARC-CV-20_Dimas_Aryo_Baskoro.pdf",
+  "target_vacancy": "ARC-VAC-05",
+  "vacancy_file": "Vacancy/ARC-VAC-05_Architectural_Designer_Residential_Griyakarya.pdf",
+  "reference_date": "2026-11-17",
+  "candidate_profile": "Average — unusual headings, side business",
+  "test_tags": [
+    "unusual_headings",
+    "side_business",
+    "portfolio_links",
+    "english",
+    "lowercase_name"
+  ],
+  "document": {
+    "language": "en",
+    "layout": "Single column; headings 'Where I've Worked', 'Things I Built on the Side', 'The Toolbox', 'Schooling', 'Talk to me in'; name in lowercase",
+    "has_text_layer": true,
+    "parser_traps": [
+      "Unusual headings must map: 'Where I've Worked'→experience, 'The Toolbox'→skills, 'Schooling'→education, 'Talk to me in'→languages, 'Things I Built on the Side'→side business (not employment)",
+      "Name is lowercase ('dimas aryo baskoro') — normalise case"
+    ]
+  },
+  "expected_ranking": {
+    "rank": 2,
+    "pool_size": 4,
+    "pool_order": [
+      "ARC-CV-17",
+      "ARC-CV-20",
+      "ARC-CV-18",
+      "ARC-CV-19"
+    ]
+  },
+  "expected_score_range": {
+    "min": 60,
+    "max": 70
+  },
+  "expected_decision": "Review",
+  "decision_override": null,
+  "skills_found": [
+    "House type design for a developer (4 types)",
+    "working drawings AutoCAD",
+    "SketchUp",
+    "D5 Render",
+    "Lumion",
+    "3ds Max + Corona",
+    "Revit (basic)",
+    "marketing renders",
+    "material quantity estimation with QS",
+    "portfolio link (ArtStation)"
+  ],
+  "missing_skills": [
+    "Custom design with individual homeowners (developer standard types only)",
+    "Enscape (has D5/Lumion — acceptable)",
+    "recent design role (visualizer since May 2024)"
+  ],
+  "years_of_relevant_experience": {
+    "value": 2.3,
+    "basis": "Jan 2022 - Apr 2024 residential design at developer; May 2024 - Nov 2026 visualisation (2.5 y) counted as adjacent, not design"
+  },
+  "education_match": {
+    "status": "Match",
+    "detail": "S1 Arsitektur Universitas Islam Indonesia 2021, IPK 3.08"
+  },
+  "semantic_match": {
+    "level": "Medium",
+    "detail": "Right degree and house design background, but recent work is rendering, and design was standardised developer types."
+  },
+  "potential_risks": [
+    "Most recent 2.5 years are visualisation, not design",
+    "Side business selling 3D assets — time commitment",
+    "Portfolio is render-focused (ArtStation) rather than design process"
+  ],
+  "interview_focus": [
+    "Show the Soreang house types: what he decided versus what the developer dictated",
+    "A client-facing scenario: explaining a floor plan to a homeowner",
+    "Hours spent on Baskoro Assets"
+  ],
+  "expected_explanation": "Meets the degree and tool requirements and has 2.3 years of landed-house design, inside the 2-4 year band. Weaker on client-facing custom design and his recent role is rendering. Review, second in the pool.",
+  "alternative_vacancy": null
+}

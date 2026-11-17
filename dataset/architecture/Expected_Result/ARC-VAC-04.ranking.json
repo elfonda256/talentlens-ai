@@ -1,0 +1,79 @@
+{
+  "vacancy_id": "ARC-VAC-04",
+  "vacancy_file": "Vacancy/ARC-VAC-04_Site_Architect_Township_PT_Tanjung_Kerta_Mining.pdf",
+  "company": "PT Tanjung Kerta Mining",
+  "title": "Site Architect — Township & Support Facilities",
+  "industry": "Coal mining",
+  "location": "Site Sangkima, Kutai Timur (POH Balikpapan), roster 8/2",
+  "employment": "Permanent",
+  "salary_idr_month": [
+    20000000,
+    27000000
+  ],
+  "min_years": 5,
+  "education": "S1 Arsitektur",
+  "required": [
+    "S1 Arsitektur",
+    "5+ years, 2+ on remote sites",
+    "camp/mess/support facilities",
+    "modular/prefab buildings",
+    "AutoCAD",
+    "Revit or ArchiCAD",
+    "RAB and BoQ",
+    "Ahli K3 Umum or SKK K3 Konstruksi",
+    "SIM A",
+    "MCU fit, roster on site"
+  ],
+  "preferred": [
+    "POP certificate",
+    "multinational camp design standards",
+    "SKK Arsitek Ahli Muda+",
+    "SketchUp"
+  ],
+  "expected_ranking": [
+    {
+      "rank": 1,
+      "cv_id": "ARC-CV-13",
+      "candidate_name": "Andi Muhammad Rais",
+      "expected_score_range": [
+        85,
+        93
+      ],
+      "expected_decision": "Recommended",
+      "decision_override": null
+    },
+    {
+      "rank": 2,
+      "cv_id": "ARC-CV-15",
+      "candidate_name": "Stefanus Hartono",
+      "expected_score_range": [
+        76,
+        86
+      ],
+      "expected_decision": "Recommended",
+      "decision_override": null
+    },
+    {
+      "rank": 3,
+      "cv_id": "ARC-CV-14",
+      "candidate_name": "I Putu Gede Wirawan",
+      "expected_score_range": [
+        55,
+        66
+      ],
+      "expected_decision": "Review",
+      "decision_override": null
+    },
+    {
+      "rank": 4,
+      "cv_id": "ARC-CV-16",
+      "candidate_name": "Yudi Firmansyah",
+      "expected_score_range": [
+        50,
+        58
+      ],
+      "expected_decision": "Review",
+      "decision_override": "incomplete_but_relevant"
+    }
+  ]
+}

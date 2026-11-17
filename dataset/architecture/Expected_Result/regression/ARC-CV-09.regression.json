@@ -1,0 +1,656 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-09",
+  "target_vacancy": "ARC-VAC-03",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-09_Dewi_Kartikasari_Simanjuntak.pdf",
+    "vacancy": "Vacancy/ARC-VAC-03_Healthcare_Facility_Architect_Husada_Prima_Hospital_Group.pdf",
+    "benchmark": "Expected_Result/ARC-CV-09.expected.json"
+  },
+  "candidate_profile": "Very good",
+  "test_tags": [
+    "table_layout",
+    "mixed_language",
+    "healthcare",
+    "postgraduate"
+  ],
+  "parser_output": {
+    "extraction_method": "text",
+    "has_text_layer": true,
+    "language": "mixed",
+    "layout_class": "single_column_tables",
+    "contact": {
+      "name": "Dewi Kartikasari Simanjuntak",
+      "email": "dewi.k.simanjuntak@gmail.com",
+      "phone_e164": "+6281330587714",
+      "location": "Surabaya",
+      "links": []
+    },
+    "sections_detected": [
+      {
+        "raw_heading": "Profil Singkat",
+        "canonical": "summary"
+      },
+      {
+        "raw_heading": "Riwayat Pekerjaan",
+        "canonical": "experience"
+      },
+      {
+        "raw_heading": "Proyek Kesehatan",
+        "canonical": "projects"
+      },
+      {
+        "raw_heading": "Pendidikan",
+        "canonical": "education"
+      },
+      {
+        "raw_heading": "Sertifikasi",
+        "canonical": "certifications"
+      },
+      {
+        "raw_heading": "Software & Bahasa",
+        "canonical": "skills"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Healthcare Architect",
+        "company": "PT Sanatana Desain Medika",
+        "location": "Surabaya",
+        "start": "2019-04",
+        "end": "present",
+        "months": 91,
+        "employment_type": "full_time",
+        "relevant": true
+      },
+      {
+        "title": "Architect",
+        "company": "PT Graha Cipta Persada",
+        "location": "Surabaya",
+        "start": "2013-07",
+        "end": "2019-03",
+        "months": 69,
+        "employment_type": "full_time",
+        "relevant": true
+      }
+    ],
+    "education": [
+      {
+        "level": "S2",
+        "field": "Magister Arsitektur",
+        "institution": "Institut Teknologi Sepuluh Nopember",
+        "start": "2016",
+        "end": "2018",
+        "gpa": null,
+        "gpa_scale": null,
+        "status": "completed"
+      },
+      {
+        "level": "S1",
+        "field": "Arsitektur",
+        "institution": "Institut Teknologi Sepuluh Nopember",
+        "start": "2009",
+        "end": "2013",
+        "gpa": 3.41,
+        "gpa_scale": 4.0,
+        "status": "completed"
+      }
+    ],
+    "certifications": [
+      "STRA (Dewan Arsitek Indonesia, 2021)",
+      "SKK Arsitek Ahli Madya Jenjang 8 (LPJK, 2022)",
+      "Pelatihan PPI dasar non-klinis (2020)",
+      "GREENSHIP Associate (2018)"
+    ],
+    "languages": [
+      "Indonesian",
+      "English (fluent)",
+      "Batak Toba"
+    ],
+    "volunteer": [],
+    "side_business": [],
+    "expected_warnings": [
+      "study_overlaps_employment:2016..2018"
+    ],
+    "pii_fields_to_mask": [
+      "name",
+      "email",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "Revit",
+        "category": "software",
+        "evidence": "Revit, AutoCAD, Navisworks (review), SketchUp"
+      },
+      {
+        "skill": "AutoCAD",
+        "category": "software",
+        "evidence": "Revit, AutoCAD, Navisworks (review), SketchUp"
+      },
+      {
+        "skill": "Navisworks",
+        "category": "software",
+        "evidence": "Navisworks (review)"
+      },
+      {
+        "skill": "SketchUp",
+        "category": "software",
+        "evidence": "Revit, AutoCAD, Navisworks (review), SketchUp"
+      },
+      {
+        "skill": "Hospital design",
+        "category": "domain",
+        "evidence": "RS Tipe B 220 TT di Sidoarjo"
+      },
+      {
+        "skill": "ICU / IGD renovation",
+        "category": "domain",
+        "evidence": "Renovasi IGD & ICU 16 bed"
+      },
+      {
+        "skill": "ICRA",
+        "category": "domain",
+        "evidence": "ICRA kelas IV"
+      },
+      {
+        "skill": "Negative-pressure isolation rooms",
+        "category": "domain",
+        "evidence": "ruang isolasi tekanan negatif"
+      },
+      {
+        "skill": "Modular operating theatres",
+        "category": "domain",
+        "evidence": "6 kamar operasi modular dan CSSD"
+      },
+      {
+        "skill": "Hospital master planning",
+        "category": "domain",
+        "evidence": "Master plan pengembangan 3 tahap"
+      },
+      {
+        "skill": "STRA",
+        "category": "certification",
+        "evidence": "STRA, Dewan Arsitek Indonesia — 2021"
+      },
+      {
+        "skill": "SKK Arsitek Ahli Madya",
+        "category": "certification",
+        "evidence": "SKK Arsitek Ahli Madya (Jenjang 8), LPJK — 2022"
+      },
+      {
+        "skill": "PPI training",
+        "category": "certification",
+        "evidence": "Pelatihan PPI dasar untuk tenaga non-klinis — 2020"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "Batak Toba as skill",
+        "reason": "it is a language"
+      },
+      {
+        "term": "Ar.",
+        "reason": "title prefix, not part of the name"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 2,
+    "total_years": 13.3,
+    "relevant_years": 13.3,
+    "tolerance_years": 0.5,
+    "basis": "Jul 2013 - Nov 2026 total; healthcare focus Apr 2019 - Nov 2026, plus one clinic in 2017",
+    "domain_years": {
+      "healthcare": 7.6
+    }
+  },
+  "education": {
+    "highest_level": "S2",
+    "highest_field": "Magister Arsitektur",
+    "status": "completed",
+    "gpa": null,
+    "match": "Exceeds",
+    "detail": "S1 Arsitektur ITS 2013 (IPK 3.41) + S2 Magister Arsitektur ITS 2018 with healthcare thesis"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.8,
+        "max": 1.0
+      },
+      "education": {
+        "min": 0.8,
+        "max": 1.0
+      },
+      "skills": {
+        "min": 0.7,
+        "max": 1.0
+      },
+      "summary": {
+        "min": 0.8,
+        "max": 1.0
+      }
+    },
+    "parse_quality": "high",
+    "screening_confidence": {
+      "level": "Tinggi",
+      "reason": "Clean parse, every mandatory requirement evidenced."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "S1 Arsitektur",
+        "status": "met",
+        "evidence": "S1 Arsitektur",
+        "note": null
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "Minimum 5 years architectural experience",
+        "status": "met",
+        "evidence": "Arsitek dengan 13 tahun pengalaman",
+        "note": null
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Design or renovation of at least two hospitals or large clinics",
+        "status": "met",
+        "evidence": "RS Tipe B 220 TT di Sidoarjo",
+        "note": "five hospital projects"
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Hospital zoning, critical-care rooms, medical gas and HVAC pressure regimes",
+        "status": "met",
+        "evidence": "koordinasi HVAC dan anteroom",
+        "note": "isolation rooms, OT, ICU"
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Revit",
+        "status": "met",
+        "evidence": "Revit, AutoCAD, Navisworks (review), SketchUp",
+        "note": null
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD",
+        "status": "met",
+        "evidence": "Revit, AutoCAD, Navisworks (review), SketchUp",
+        "note": null
+      },
+      {
+        "id": "R7",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Review of IFC/Navisworks models",
+        "status": "met",
+        "evidence": "Navisworks (review)",
+        "note": null
+      },
+      {
+        "id": "R8",
+        "mandatory": true,
+        "category": "licence",
+        "requirement": "SKK Arsitek Ahli Muda or higher, or STRA",
+        "status": "met",
+        "evidence": "SKK Arsitek Ahli Madya (Jenjang 8), LPJK — 2022",
+        "note": "also STRA"
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "KARS / SNARS accreditation from the facility side",
+        "status": "not_met",
+        "evidence": null,
+        "note": "KARS not mentioned"
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Hospital master planning or phased expansion",
+        "status": "met",
+        "evidence": "Master plan pengembangan 3 tahap",
+        "note": null
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Lean / evidence-based design or healthcare postgraduate thesis",
+        "status": "met",
+        "evidence": "healing environment di bangsal anak",
+        "note": "healthcare thesis"
+      },
+      {
+        "id": "P4",
+        "mandatory": false,
+        "category": "certification",
+        "requirement": "PPI certificate for non-clinical staff",
+        "status": "met",
+        "evidence": "Pelatihan PPI dasar untuk tenaga non-klinis — 2020",
+        "note": null
+      }
+    ],
+    "mandatory_summary": {
+      "total": 8,
+      "met": 8,
+      "partial": 0,
+      "not_met": 0,
+      "unknown": 0
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 5,
+        "min_degree_level": "S1",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 90,
+          "max": 100
+        },
+        "experience": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "education": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "semantic": {
+          "min": 75,
+          "max": 90
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 20,
+        "max": 40
+      },
+      "excluded_components": [],
+      "implied_weighted_range": {
+        "min": 90.2,
+        "max": 97.5
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 76.5,
+        "max": 85.0
+      },
+      "scoring_model_gap": null
+    },
+    "top_positive_factors": [
+      "S1 Arsitektur",
+      "Minimum 5 years architectural experience",
+      "Design or renovation of at least two hospitals or large clinics",
+      "Hospital zoning, critical-care rooms, medical gas and HVAC pressure regimes"
+    ],
+    "top_negative_factors": [],
+    "unknown_is_not_failure": [],
+    "risks": [
+      "Moving from consultant side to owner side — check comfort with review/approval role rather than authorship",
+      "Salary expectation may exceed IDR 24 million given 13 years and Madya licence"
+    ],
+    "reference_explanation": "Covers all hard requirements with margin: S1 Arsitektur, 13 years experience including 7.6 in healthcare, five hospital projects, ICRA and isolation-room work, Revit/AutoCAD, STRA and SKK Madya. Also hits three preferred items (master planning, healthcare thesis, PPI training). Clear first in the pool."
+  },
+  "recommendation": {
+    "decision": "Recommended",
+    "decision_label_id": "Direkomendasikan",
+    "score_range": {
+      "min": 86,
+      "max": 94
+    },
+    "rank": 1,
+    "pool_order": [
+      "ARC-CV-09",
+      "ARC-CV-10",
+      "ARC-CV-11",
+      "ARC-CV-12"
+    ],
+    "decision_override": null,
+    "provisional_score": false,
+    "never_decision": [],
+    "action": "Lanjut ke tahap berikutnya sesuai proses lowongan.",
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [],
+      "projected_decision": "Recommended",
+      "agrees_with_benchmark": true
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-09-Q1",
+      "category": "technical",
+      "question": "Walk us through the four-phase ICRA plan for the Malang IGD/ICU renovation while the hospital stayed open.",
+      "purpose": "Live-hospital renovation competence",
+      "linked_to": "R4",
+      "good_answer_signals": [
+        "Barriers, negative air, routes, PPI sign-off"
+      ],
+      "red_flags": [
+        "No phasing detail"
+      ]
+    },
+    {
+      "id": "ARC-CV-09-Q2",
+      "category": "technical",
+      "question": "Describe the pressure cascade and anteroom layout you used for the isolation rooms.",
+      "purpose": "Critical-care technical depth",
+      "linked_to": "R4",
+      "good_answer_signals": [
+        "Correct pressure relationships, door and pass-box logic"
+      ],
+      "red_flags": [
+        "Confuses positive and negative pressure"
+      ]
+    },
+    {
+      "id": "ARC-CV-09-Q3",
+      "category": "technical",
+      "question": "Have you supported a KARS/SNARS survey from the facility side? What did surveyors check?",
+      "purpose": "Preferred gap",
+      "linked_to": "P1",
+      "good_answer_signals": [
+        "Specific standards or findings"
+      ],
+      "red_flags": [
+        "No exposure"
+      ]
+    },
+    {
+      "id": "ARC-CV-09-Q4",
+      "category": "motivation",
+      "question": "This is an owner-side role: you review and approve rather than author. Why does that appeal to you?",
+      "purpose": "Consultant-to-owner shift",
+      "linked_to": "risk:role_shift",
+      "good_answer_signals": [
+        "Clear reasoning"
+      ],
+      "red_flags": [
+        "Wants to keep designing everything"
+      ]
+    },
+    {
+      "id": "ARC-CV-09-Q5",
+      "category": "verification",
+      "question": "What salary range are you expecting? The band is IDR 18-24 million.",
+      "purpose": "Salary vs seniority",
+      "linked_to": "risk:salary",
+      "good_answer_signals": [
+        "Within band"
+      ],
+      "red_flags": [
+        "Well above band"
+      ]
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Arsitek rumah sakit berpengalaman, semua syarat wajib terpenuhi",
+    "reference_text": "Kandidat memiliki 13 tahun pengalaman, 7 tahun terakhir khusus rumah sakit: RS tipe B 220 TT, renovasi IGD dan ICU di rumah sakit yang tetap beroperasi dengan ICRA, ruang isolasi tekanan negatif, kamar operasi modular, dan master plan. Bergelar S2 dengan tesis lingkungan penyembuhan, memiliki STRA, SKK Ahli Madya, dan pelatihan PPI. Pengalaman akreditasi KARS tidak disebut. Perlu dicek kesiapan beralih ke peran owner dan ekspektasi gaji. Direkomendasikan.",
+    "must_mention": [
+      {
+        "concept": "hospital count/scale",
+        "any_of": [
+          "rumah sakit",
+          "RS"
+        ]
+      },
+      {
+        "concept": "ICRA",
+        "any_of": [
+          "ICRA"
+        ]
+      },
+      {
+        "concept": "KARS gap",
+        "any_of": [
+          "KARS"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate has KARS accreditation experience",
+      "Candidate is a medical doctor"
+    ],
+    "forbidden_strings": [
+      "+6281330587714",
+      "Dewi",
+      "Dewi Kartikasari Simanjuntak",
+      "Kartikasari",
+      "Simanjuntak",
+      "dewi.k.simanjuntak@gmail.com"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 75.4,
+      "rank": 2,
+      "decision": "Recommended",
+      "decision_label_id": "Direkomendasikan",
+      "components": {
+        "skills": 80.0,
+        "experience": 100.0,
+        "semantic": 29.5,
+        "education": 100.0
+      },
+      "unassessed": [],
+      "knockout_flags": [],
+      "relevant_years": 13.3,
+      "experience_entries": 8,
+      "total_experience_months": 160,
+      "education": [
+        [
+          5,
+          ""
+        ],
+        [
+          0,
+          "architecture"
+        ],
+        [
+          4,
+          "architecture"
+        ]
+      ],
+      "extraction_method": "text",
+      "extraction_confidence": 0.85,
+      "section_confidence": {
+        "summary": 1.0,
+        "experience": 1.0,
+        "education": 1.0,
+        "skills": 0.7
+      },
+      "contact": {
+        "name": null,
+        "email": "dewi.k.simanjuntak@gmail.com",
+        "phone": "6281330587714"
+      },
+      "skill_ids": [
+        "architecture_design",
+        "autocad",
+        "revit",
+        "sketchup",
+        "technical_drawing"
+      ],
+      "job_reading": {
+        "upload_guard": null,
+        "min_years_experience": 5.0,
+        "degree_fields": [
+          "architecture"
+        ],
+        "min_degree_level": 4
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": true,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": false,
+      "score_in_benchmark_range": false,
+      "name_extracted": false,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": true,
+      "relevant_years_within_tolerance": true,
+      "education_found": true,
+      "no_programming_false_positive": true
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": true,
+      "min_years_read_correctly": true,
+      "degree_field_read": true,
+      "min_degree_level_read_correctly": true,
+      "no_programming_requirement": false
+    },
+    "known_failures": [
+      "rank_matches_benchmark",
+      "score_in_benchmark_range",
+      "name_extracted",
+      "no_programming_requirement"
+    ]
+  }
+}

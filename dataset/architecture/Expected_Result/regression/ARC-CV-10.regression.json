@@ -1,0 +1,634 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-10",
+  "target_vacancy": "ARC-VAC-03",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-10_Fajar_Nugroho.pdf",
+    "vacancy": "Vacancy/ARC-VAC-03_Healthcare_Facility_Architect_Husada_Prima_Hospital_Group.pdf",
+    "benchmark": "Expected_Result/ARC-CV-10.expected.json"
+  },
+  "candidate_profile": "Good — missing domain skill",
+  "test_tags": [
+    "two_column",
+    "icons",
+    "english",
+    "bim_specialist",
+    "missing_skills"
+  ],
+  "parser_output": {
+    "extraction_method": "text",
+    "has_text_layer": true,
+    "language": "en",
+    "layout_class": "two_column",
+    "contact": {
+      "name": "Fajar Nugroho",
+      "email": "fajar.nugroho.bim@gmail.com",
+      "phone_e164": "+6282233179045",
+      "location": "Lowokwaru, Malang",
+      "links": [
+        "github.com/fajarnugroho-dynamo"
+      ]
+    },
+    "sections_detected": [
+      {
+        "raw_heading": "Contact",
+        "canonical": "contact"
+      },
+      {
+        "raw_heading": "Education",
+        "canonical": "education"
+      },
+      {
+        "raw_heading": "Certifications",
+        "canonical": "certifications"
+      },
+      {
+        "raw_heading": "Languages",
+        "canonical": "languages"
+      },
+      {
+        "raw_heading": "Profile",
+        "canonical": "summary"
+      },
+      {
+        "raw_heading": "Experience",
+        "canonical": "experience"
+      },
+      {
+        "raw_heading": "Skills",
+        "canonical": "skills"
+      }
+    ],
+    "experience": [
+      {
+        "title": "BIM Coordinator",
+        "company": "PT Wahana Konstruksi Timur",
+        "location": "Surabaya",
+        "start": "2020-06",
+        "end": "present",
+        "months": 77,
+        "employment_type": "full_time",
+        "relevant": true
+      },
+      {
+        "title": "Architect",
+        "company": "PT Arunika Rancang",
+        "location": "Malang",
+        "start": "2016-08",
+        "end": "2020-05",
+        "months": 46,
+        "employment_type": "full_time",
+        "relevant": true
+      }
+    ],
+    "education": [
+      {
+        "level": "S1",
+        "field": "Arsitektur",
+        "institution": "Universitas Brawijaya",
+        "start": "2012",
+        "end": "2016",
+        "gpa": 3.62,
+        "gpa_scale": 4.0,
+        "status": "completed"
+      }
+    ],
+    "certifications": [
+      "Autodesk Certified Professional: Revit for Architectural Design (2019)",
+      "SKK Arsitek Ahli Muda Jenjang 7 (LPJK, 2021)",
+      "ISO 19650 Foundation (2023)"
+    ],
+    "languages": [
+      "Indonesian",
+      "English (fluent)",
+      "Javanese"
+    ],
+    "volunteer": [],
+    "side_business": [],
+    "expected_warnings": [
+      "two_column_layout",
+      "icon_glyphs_in_contact"
+    ],
+    "pii_fields_to_mask": [
+      "name",
+      "email",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "Revit",
+        "category": "software",
+        "evidence": "Revit (expert)"
+      },
+      {
+        "skill": "Dynamo",
+        "category": "software",
+        "evidence": "Wrote Dynamo scripts"
+      },
+      {
+        "skill": "Navisworks",
+        "category": "software",
+        "evidence": "Navisworks Manage"
+      },
+      {
+        "skill": "BIM 360",
+        "category": "software",
+        "evidence": "BIM 360 / ACC"
+      },
+      {
+        "skill": "AutoCAD",
+        "category": "software",
+        "evidence": "AutoCAD · Enscape"
+      },
+      {
+        "skill": "Enscape",
+        "category": "software",
+        "evidence": "AutoCAD · Enscape"
+      },
+      {
+        "skill": "SketchUp",
+        "category": "software",
+        "evidence": "SketchUp · basic Python"
+      },
+      {
+        "skill": "Python",
+        "category": "software",
+        "evidence": "basic Python"
+      },
+      {
+        "skill": "BIM Execution Plan",
+        "category": "domain",
+        "evidence": "Built the BIM Execution Plan"
+      },
+      {
+        "skill": "Clash coordination",
+        "category": "domain",
+        "evidence": "weekly Navisworks clash meetings with 7 subcontractors"
+      },
+      {
+        "skill": "ISO 19650",
+        "category": "certification",
+        "evidence": "ISO 19650 Foundation"
+      },
+      {
+        "skill": "SKK Arsitek Ahli Muda",
+        "category": "certification",
+        "evidence": "SKK Arsitek Ahli Muda (Jenjang 7), LPJK"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "Hospital design",
+        "reason": "no healthcare project anywhere"
+      },
+      {
+        "term": "GitHub as employer",
+        "reason": "it is a profile link"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 2,
+    "total_years": 10.2,
+    "relevant_years": 10.2,
+    "tolerance_years": 0.5,
+    "basis": "Aug 2016 - Nov 2026 total; no healthcare projects",
+    "domain_years": {
+      "healthcare": 0.0
+    }
+  },
+  "education": {
+    "highest_level": "S1",
+    "highest_field": "Arsitektur",
+    "status": "completed",
+    "gpa": 3.62,
+    "match": "Match",
+    "detail": "S1 Arsitektur Universitas Brawijaya 2016, GPA 3.62"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "education": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "skills": {
+        "min": 0.7,
+        "max": 1.0
+      },
+      "summary": {
+        "min": 0.7,
+        "max": 1.0
+      }
+    },
+    "parse_quality": "medium",
+    "screening_confidence": {
+      "level": "Tinggi",
+      "reason": "Despite the two-column layout the gap (no healthcare) is explicit and unambiguous."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "S1 Arsitektur",
+        "status": "met",
+        "evidence": "S1 Arsitektur",
+        "note": null
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "Minimum 5 years architectural experience",
+        "status": "met",
+        "evidence": "Aug 2016 – May 2020",
+        "note": "10.3 years total"
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Design or renovation of at least two hospitals or large clinics",
+        "status": "not_met",
+        "evidence": null,
+        "note": "no hospital or clinic project"
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Hospital zoning, critical-care rooms, medical gas and HVAC pressure regimes",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Revit",
+        "status": "met",
+        "evidence": "Revit (expert)",
+        "note": null
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD",
+        "status": "met",
+        "evidence": "AutoCAD · Enscape",
+        "note": null
+      },
+      {
+        "id": "R7",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Review of IFC/Navisworks models",
+        "status": "met",
+        "evidence": "Navisworks Manage",
+        "note": null
+      },
+      {
+        "id": "R8",
+        "mandatory": true,
+        "category": "licence",
+        "requirement": "SKK Arsitek Ahli Muda or higher, or STRA",
+        "status": "met",
+        "evidence": "SKK Arsitek Ahli Muda (Jenjang 7), LPJK",
+        "note": null
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "KARS / SNARS accreditation from the facility side",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Hospital master planning or phased expansion",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Lean / evidence-based design or healthcare postgraduate thesis",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P4",
+        "mandatory": false,
+        "category": "certification",
+        "requirement": "PPI certificate for non-clinical staff",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      }
+    ],
+    "mandatory_summary": {
+      "total": 8,
+      "met": 6,
+      "partial": 0,
+      "not_met": 2,
+      "unknown": 0
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 5,
+        "min_degree_level": "S1",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 60,
+          "max": 75
+        },
+        "experience": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "education": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "semantic": {
+          "min": 55,
+          "max": 72
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 16,
+        "max": 36
+      },
+      "excluded_components": [],
+      "implied_weighted_range": {
+        "min": 74.8,
+        "max": 84.2
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 65.0,
+        "max": 75.2
+      },
+      "scoring_model_gap": {
+        "causes": [
+          "domain_experience_not_modelled:healthcare"
+        ],
+        "explanations": [
+          "Relevance comes from generic taxonomy overlap, so 10 years of non-hospital architecture counts fully for a hospital role."
+        ],
+        "affects_decision": true,
+        "meaning": "Formula-correct components do not reproduce the benchmark score range; the benchmark range stays the target."
+      }
+    },
+    "top_positive_factors": [
+      "S1 Arsitektur",
+      "Minimum 5 years architectural experience",
+      "Revit",
+      "AutoCAD"
+    ],
+    "top_negative_factors": [
+      "Design or renovation of at least two hospitals or large clinics",
+      "Hospital zoning, critical-care rooms, medical gas and HVAC pressure regimes"
+    ],
+    "unknown_is_not_failure": [],
+    "risks": [
+      "Hard requirement 'two hospitals or large clinics' not met",
+      "Recent role is contractor-side BIM, not design or owner review"
+    ],
+    "reference_explanation": "High-quality architect/BIM profile that would make reviewing consultant models easy, but the vacancy's core requirement is hospital design or renovation experience, and he has none. Review: worth keeping if no healthcare candidate accepts, or for a separate BIM role."
+  },
+  "recommendation": {
+    "decision": "Review",
+    "decision_label_id": "Perlu ditinjau",
+    "score_range": {
+      "min": 64,
+      "max": 74
+    },
+    "rank": 2,
+    "pool_order": [
+      "ARC-CV-09",
+      "ARC-CV-10",
+      "ARC-CV-11",
+      "ARC-CV-12"
+    ],
+    "decision_override": null,
+    "provisional_score": false,
+    "never_decision": [],
+    "action": "Tinjau manual; klarifikasi risiko pada daftar pertanyaan interview.",
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [],
+      "projected_decision": "Recommended",
+      "agrees_with_benchmark": false
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-10-Q1",
+      "category": "technical",
+      "question": "Have you worked on any MEP-heavy building where pressure regimes or medical gas were part of the model?",
+      "purpose": "Probe for transferable healthcare exposure",
+      "linked_to": "R4",
+      "good_answer_signals": [
+        "Specific MEP coordination examples"
+      ],
+      "red_flags": [
+        "None"
+      ]
+    },
+    {
+      "id": "ARC-CV-10-Q2",
+      "category": "technical",
+      "question": "How would you review a consultant's hospital Revit model for zoning and clean/dirty flow errors?",
+      "purpose": "Fit for the owner-review task",
+      "linked_to": "R7",
+      "good_answer_signals": [
+        "Uses views/filters/room data to check flows"
+      ],
+      "red_flags": [
+        "Only clash detection"
+      ]
+    },
+    {
+      "id": "ARC-CV-10-Q3",
+      "category": "motivation",
+      "question": "This role is owner-side and clinical-facing. Why move from contractor BIM coordination?",
+      "purpose": "Motivation and fit",
+      "linked_to": "risk:role_shift",
+      "good_answer_signals": [
+        "Interest in healthcare, plan to learn standards"
+      ],
+      "red_flags": [
+        "Wants a BIM manager role"
+      ]
+    },
+    {
+      "id": "ARC-CV-10-Q4",
+      "category": "behavioral",
+      "question": "Tell us how you trained 14 site engineers on reading models. How would you work with nurses and doctors?",
+      "purpose": "Stakeholder communication",
+      "linked_to": "R4",
+      "good_answer_signals": [
+        "Adapts language to audience"
+      ],
+      "red_flags": [
+        "Technical only"
+      ]
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Arsitek/BIM kuat, tanpa pengalaman rumah sakit",
+    "reference_text": "Kandidat memiliki sekitar 10 tahun pengalaman sebagai arsitek lalu BIM Coordinator di kontraktor, dengan Revit tingkat ahli, Dynamo, Navisworks, dan ISO 19650. Syarat inti lowongan, yaitu minimal dua proyek rumah sakit atau klinik besar, tidak terpenuhi, dan tidak ada pengalaman zonasi rumah sakit atau ICRA. Perlu ditinjau; cocok sebagai cadangan atau untuk peran BIM terpisah.",
+    "must_mention": [
+      {
+        "concept": "no hospital experience",
+        "any_of": [
+          "rumah sakit",
+          "hospital"
+        ]
+      },
+      {
+        "concept": "BIM strength",
+        "any_of": [
+          "BIM",
+          "Revit"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate has hospital experience",
+      "Candidate knows ICRA"
+    ],
+    "forbidden_strings": [
+      "+6282233179045",
+      "Fajar",
+      "Fajar Nugroho",
+      "Nugroho",
+      "fajar.nugroho.bim@gmail.com"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 78.4,
+      "rank": 1,
+      "decision": "Review",
+      "decision_label_id": "Perlu ditinjau",
+      "components": {
+        "skills": 100.0,
+        "experience": 100.0,
+        "semantic": 26.5,
+        "education": 0.0
+      },
+      "unassessed": [
+        "education"
+      ],
+      "knockout_flags": [],
+      "relevant_years": 11.6,
+      "experience_entries": 3,
+      "total_experience_months": 170,
+      "education": [],
+      "extraction_method": "text",
+      "extraction_confidence": 0.85,
+      "section_confidence": {
+        "summary": 1.0,
+        "experience": 1.0,
+        "education": 0.0,
+        "skills": 1.0
+      },
+      "contact": {
+        "name": "Fajar Nugroho",
+        "email": "fajar.nugroho.bim@gmail.com",
+        "phone": "6282233179045"
+      },
+      "skill_ids": [
+        "architecture_design",
+        "autocad",
+        "programming",
+        "rendering",
+        "revit",
+        "sketchup",
+        "technical_drawing"
+      ],
+      "job_reading": {
+        "upload_guard": null,
+        "min_years_experience": 5.0,
+        "degree_fields": [
+          "architecture"
+        ],
+        "min_degree_level": 4
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": true,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": false,
+      "score_in_benchmark_range": false,
+      "name_extracted": true,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": true,
+      "relevant_years_within_tolerance": false,
+      "education_found": false,
+      "no_programming_false_positive": false
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": true,
+      "min_years_read_correctly": true,
+      "degree_field_read": true,
+      "min_degree_level_read_correctly": true,
+      "no_programming_requirement": false
+    },
+    "known_failures": [
+      "rank_matches_benchmark",
+      "score_in_benchmark_range",
+      "relevant_years_within_tolerance",
+      "education_found",
+      "no_programming_false_positive",
+      "no_programming_requirement"
+    ]
+  }
+}

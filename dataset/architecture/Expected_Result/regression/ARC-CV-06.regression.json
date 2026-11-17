@@ -1,0 +1,597 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-06",
+  "target_vacancy": "ARC-VAC-02",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-06_Agus_Setiawan.pdf",
+    "vacancy": "Vacancy/ARC-VAC-02_Junior_Architect_Drafter_PT_Baja_Konstruksi_Nusantara.pdf",
+    "benchmark": "Expected_Result/ARC-CV-06.expected.json"
+  },
+  "candidate_profile": "Average — wrong major, bad formatting",
+  "test_tags": [
+    "bad_formatting",
+    "typos",
+    "no_dates",
+    "messy_spacing",
+    "indonesian",
+    "freelance"
+  ],
+  "parser_output": {
+    "extraction_method": "text",
+    "has_text_layer": true,
+    "language": "id",
+    "layout_class": "plain_text",
+    "contact": {
+      "name": "Agus Setiawan",
+      "email": "agus.setiawan.drafter@yahoo.com",
+      "phone_e164": "+6282122904417",
+      "location": "Telukjambe, Karawang",
+      "links": []
+    },
+    "sections_detected": [
+      {
+        "raw_heading": "CURICULUM VITAE",
+        "canonical": "title"
+      },
+      {
+        "raw_heading": "PENDIDIKAN",
+        "canonical": "education"
+      },
+      {
+        "raw_heading": "PENGALMAN KERJA",
+        "canonical": "experience"
+      },
+      {
+        "raw_heading": "KEAHLIAN",
+        "canonical": "skills"
+      },
+      {
+        "raw_heading": "LAIN LAIN",
+        "canonical": "other"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Drafter",
+        "company": "CV Karya Mandiri Teknik",
+        "location": null,
+        "start": null,
+        "end": null,
+        "months": null,
+        "employment_type": "full_time",
+        "relevant": true
+      },
+      {
+        "title": "Drafter freelance",
+        "company": null,
+        "location": null,
+        "start": null,
+        "end": "present",
+        "months": null,
+        "employment_type": "freelance",
+        "relevant": true
+      }
+    ],
+    "education": [
+      {
+        "level": "D3",
+        "field": "Teknik Sipil",
+        "institution": "Politeknik Negeri Jakarta",
+        "start": null,
+        "end": null,
+        "gpa": null,
+        "gpa_scale": null,
+        "status": "completed"
+      },
+      {
+        "level": "SMK",
+        "field": "Teknik Gambar Bangunan",
+        "institution": "SMK Negeri 1 Karawang",
+        "start": null,
+        "end": null,
+        "gpa": null,
+        "gpa_scale": null,
+        "status": "completed"
+      }
+    ],
+    "certifications": [],
+    "languages": [],
+    "volunteer": [],
+    "side_business": [],
+    "expected_warnings": [
+      "no_dates",
+      "heading_typo:PENGALMAN KERJA",
+      "section_missing:summary"
+    ],
+    "pii_fields_to_mask": [
+      "name",
+      "email",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "AutoCAD",
+        "category": "software",
+        "evidence": "Auto Cad 2D (mahir)"
+      },
+      {
+        "skill": "SketchUp",
+        "category": "software",
+        "evidence": "Sketcup (sedikit)"
+      },
+      {
+        "skill": "MS Office",
+        "category": "software",
+        "evidence": "Ms Office"
+      },
+      {
+        "skill": "Tekla Structures",
+        "category": "software",
+        "evidence": "Tekla (pernah belajar)"
+      },
+      {
+        "skill": "Steel shop drawings",
+        "category": "domain",
+        "evidence": "gambar shop drawing"
+      },
+      {
+        "skill": "Steel structure drawings",
+        "category": "domain",
+        "evidence": "membuat gambar sturktur baja gudang"
+      },
+      {
+        "skill": "As-built drawings",
+        "category": "domain",
+        "evidence": "gambar as built"
+      },
+      {
+        "skill": "RAB",
+        "category": "domain",
+        "evidence": "hitung RAB sederhana"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "Revit",
+        "reason": "never mentioned"
+      },
+      {
+        "term": "SIM A",
+        "reason": "only SIM C is mentioned"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 2,
+    "total_years": null,
+    "relevant_years": 4.0,
+    "tolerance_years": 0.5,
+    "basis": "Self-declared '± 4 tahun' (3 years at CV Karya Mandiri Teknik + freelance); no dates given, unverifiable",
+    "domain_years": {}
+  },
+  "education": {
+    "highest_level": "D3",
+    "highest_field": "Teknik Sipil",
+    "status": "completed",
+    "gpa": null,
+    "match": "Partial",
+    "detail": "D3 Teknik Sipil Politeknik Negeri Jakarta + SMK Teknik Gambar Bangunan; no graduation year or IPK"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.6,
+        "max": 0.8
+      },
+      "education": {
+        "min": 0.6,
+        "max": 0.8
+      },
+      "skills": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "summary": {
+        "min": 0,
+        "max": 0
+      }
+    },
+    "parse_quality": "medium",
+    "screening_confidence": {
+      "level": "Rendah",
+      "reason": "No dates anywhere and the major is civil; experience length is self-declared only."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "D3 or S1 Arsitektur",
+        "status": "not_met",
+        "evidence": "D3 Teknik Sipil , Politeknik Negeri Jakarta",
+        "note": "civil, not architecture"
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "IPK minimum 2.90",
+        "status": "unknown",
+        "evidence": null,
+        "note": "IPK not stated"
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD 2D",
+        "status": "met",
+        "evidence": "Auto Cad 2D (mahir)",
+        "note": "typo must normalise to AutoCAD"
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "SketchUp",
+        "status": "partial",
+        "evidence": "Sketcup (sedikit)",
+        "note": "self-rated 'a little'"
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Industrial building working drawings (steel frame, metal roof, concrete floor)",
+        "status": "partial",
+        "evidence": "membuat gambar sturktur baja gudang",
+        "note": "structural rather than architectural"
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "availability",
+        "requirement": "Willing to travel to project sites in West Java and Banten",
+        "status": "met",
+        "evidence": "siap ditempatkan dimana saja",
+        "note": null
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "experience",
+        "requirement": "0-2 years as drafter",
+        "status": "unknown",
+        "evidence": "pengalaman total kurang lebih 4 tahun",
+        "note": "self-declared, no dates"
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "software",
+        "requirement": "Revit basic",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "location",
+        "requirement": "Domicile in Bekasi, Cikarang or Karawang",
+        "status": "met",
+        "evidence": "Karawang",
+        "note": null
+      }
+    ],
+    "mandatory_summary": {
+      "total": 6,
+      "met": 2,
+      "partial": 2,
+      "not_met": 1,
+      "unknown": 1
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 0,
+        "min_degree_level": "D3",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 55,
+          "max": 72
+        },
+        "experience": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "education": {
+          "min": 60.0,
+          "max": 60.0
+        },
+        "semantic": {
+          "min": 48,
+          "max": 65
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 19,
+        "max": 39
+      },
+      "excluded_components": [],
+      "implied_weighted_range": {
+        "min": 65.2,
+        "max": 75.5
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 58.0,
+        "max": 69.0
+      },
+      "scoring_model_gap": {
+        "causes": [
+          "experience_full_credit_when_min_years_zero",
+          "related_field_partial_credit",
+          "undated_experience_not_discounted"
+        ],
+        "explanations": [
+          "When the job's minimum is 0 years, the experience component is always 100, so depth of drafting experience does not separate candidates.",
+          "A related field (civil engineering, interior design) earns 0.6 education credit and no knockout flag, while the benchmark treats S1/D3 Arsitektur as mandatory.",
+          "Self-declared years without dates are not discounted."
+        ],
+        "affects_decision": true,
+        "meaning": "Formula-correct components do not reproduce the benchmark score range; the benchmark range stays the target."
+      }
+    },
+    "top_positive_factors": [
+      "AutoCAD 2D",
+      "Willing to travel to project sites in West Java and Banten"
+    ],
+    "top_negative_factors": [
+      "D3 or S1 Arsitektur",
+      "SketchUp",
+      "Industrial building working drawings (steel frame, metal roof, concrete floor)"
+    ],
+    "unknown_is_not_failure": [
+      "R2",
+      "P1"
+    ],
+    "risks": [
+      "No dates anywhere — experience length and recency cannot be verified",
+      "Civil engineering diploma instead of architecture",
+      "Typos (CURICULUM, PENGALMAN, sturktur, Sketcup, Auto Cad) suggest low attention to detail for a drafting role",
+      "No IPK stated, so the 2.90 minimum cannot be checked"
+    ],
+    "reference_explanation": "Has the core tool (AutoCAD) and real warehouse shop-drawing experience, which matters to a steel EPC contractor, so he should not be auto-rejected. But the major is civil, dates are missing, SketchUp is weak and the CV is full of typos. Review, last in the pool."
+  },
+  "recommendation": {
+    "decision": "Review",
+    "decision_label_id": "Perlu ditinjau",
+    "score_range": {
+      "min": 50,
+      "max": 60
+    },
+    "rank": 4,
+    "pool_order": [
+      "ARC-CV-07",
+      "ARC-CV-05",
+      "ARC-CV-08",
+      "ARC-CV-06"
+    ],
+    "decision_override": null,
+    "provisional_score": false,
+    "never_decision": [],
+    "action": "Tinjau manual; klarifikasi risiko pada daftar pertanyaan interview.",
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [],
+      "projected_decision": "Recommended",
+      "agrees_with_benchmark": false
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-06-Q1",
+      "category": "verification",
+      "question": "Mohon sebutkan bulan dan tahun mulai dan selesai di CV Karya Mandiri Teknik, serta IPK D3 Anda.",
+      "purpose": "CV tidak memuat tanggal maupun IPK",
+      "linked_to": "R2",
+      "good_answer_signals": [
+        "Tanggal jelas dan konsisten dengan '3 tahun'"
+      ],
+      "red_flags": [
+        "Tidak bisa menyebut"
+      ]
+    },
+    {
+      "id": "ARC-CV-06-Q2",
+      "category": "technical",
+      "question": "Gambarkan detail atap metal dengan talang dan skylight pada gudang. Apa bedanya dengan gambar struktur yang biasa Anda buat?",
+      "purpose": "Pengalaman arsitektural vs struktural",
+      "linked_to": "R5",
+      "good_answer_signals": [
+        "Paham lapisan atap dan flashing"
+      ],
+      "red_flags": [
+        "Hanya paham sambungan baut"
+      ]
+    },
+    {
+      "id": "ARC-CV-06-Q3",
+      "category": "technical",
+      "question": "Seberapa jauh Anda bisa memakai SketchUp untuk massing tender?",
+      "purpose": "SketchUp lemah",
+      "linked_to": "R4",
+      "good_answer_signals": [
+        "Bisa membuat massing sederhana"
+      ],
+      "red_flags": [
+        "Belum pernah"
+      ]
+    },
+    {
+      "id": "ARC-CV-06-Q4",
+      "category": "motivation",
+      "question": "Posisi ini adalah drafter arsitektur junior. Apakah Anda nyaman dengan lingkup itu?",
+      "purpose": "Kesesuaian peran",
+      "linked_to": "R1",
+      "good_answer_signals": [
+        "Ya, dengan alasan"
+      ],
+      "red_flags": [
+        "Mengharapkan posisi struktur"
+      ]
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Drafter berpengalaman di struktur baja, jurusan sipil, CV tanpa tanggal",
+    "reference_text": "Kandidat lulusan D3 Teknik Sipil dan SMK Gambar Bangunan, mengaku sekitar 4 tahun sebagai drafter, termasuk shop drawing gudang baja dan gambar as-built. AutoCAD mahir, SketchUp terbatas. CV tidak mencantumkan tanggal kerja maupun IPK, dan banyak salah ketik. Jurusan tidak sesuai syarat D3/S1 Arsitektur. Perlu ditinjau: minta tanggal kerja dan transkrip sebelum tes gambar.",
+    "must_mention": [
+      {
+        "concept": "wrong major",
+        "any_of": [
+          "Teknik Sipil",
+          "jurusan"
+        ]
+      },
+      {
+        "concept": "missing dates",
+        "any_of": [
+          "tanggal",
+          "tidak mencantumkan"
+        ]
+      },
+      {
+        "concept": "AutoCAD strength",
+        "any_of": [
+          "AutoCAD"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate has exactly 4 verified years",
+      "Candidate studied architecture",
+      "Candidate's IPK is above 2.90"
+    ],
+    "forbidden_strings": [
+      "+6282122904417",
+      "Agus",
+      "Agus Setiawan",
+      "Setiawan",
+      "agus.setiawan.drafter@yahoo.com"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 54.1,
+      "rank": 4,
+      "decision": "Review",
+      "decision_label_id": "Perlu ditinjau",
+      "components": {
+        "skills": 44.4,
+        "experience": 100.0,
+        "semantic": 29.1,
+        "education": 42.0
+      },
+      "unassessed": [],
+      "knockout_flags": [
+        "Jenjang pendidikan di bawah yang disyaratkan"
+      ],
+      "relevant_years": 0.0,
+      "experience_entries": 0,
+      "total_experience_months": 0,
+      "education": [
+        [
+          3,
+          "civil engineering"
+        ],
+        [
+          2,
+          ""
+        ]
+      ],
+      "extraction_method": "text",
+      "extraction_confidence": 0.85,
+      "section_confidence": {
+        "summary": 0.0,
+        "experience": 0.0,
+        "education": 1.0,
+        "skills": 1.0
+      },
+      "contact": {
+        "name": "Curiculum Vitae",
+        "email": "agus.setiawan.drafter@yahoo.com",
+        "phone": "082122904417"
+      },
+      "skill_ids": [
+        "autocad",
+        "procurement",
+        "technical_drawing"
+      ],
+      "job_reading": {
+        "upload_guard": null,
+        "min_years_experience": 0.0,
+        "degree_fields": [
+          "architecture"
+        ],
+        "min_degree_level": 4
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": true,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": true,
+      "score_in_benchmark_range": true,
+      "name_extracted": false,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": false,
+      "relevant_years_within_tolerance": false,
+      "education_found": true,
+      "no_programming_false_positive": true
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": true,
+      "min_years_read_correctly": true,
+      "degree_field_read": true,
+      "min_degree_level_read_correctly": false,
+      "no_programming_requirement": true
+    },
+    "known_failures": [
+      "name_extracted",
+      "experience_entries_found",
+      "relevant_years_within_tolerance",
+      "min_degree_level_read_correctly"
+    ]
+  }
+}

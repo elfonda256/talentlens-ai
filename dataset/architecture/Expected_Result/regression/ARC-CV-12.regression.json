@@ -1,0 +1,534 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-12",
+  "target_vacancy": "ARC-VAC-03",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-12_Muhammad_Ilham_Saputra.pdf",
+    "vacancy": "Vacancy/ARC-VAC-03_Healthcare_Facility_Architect_Husada_Prima_Hospital_Group.pdf",
+    "benchmark": "Expected_Result/ARC-CV-12.expected.json"
+  },
+  "candidate_profile": "Underqualified",
+  "test_tags": [
+    "minimalist",
+    "english",
+    "junior",
+    "underqualified",
+    "short_cv"
+  ],
+  "parser_output": {
+    "extraction_method": "text",
+    "has_text_layer": true,
+    "language": "en",
+    "layout_class": "single_column",
+    "contact": {
+      "name": "Muhammad Ilham Saputra",
+      "email": "ilham.saputra.arch@gmail.com",
+      "phone_e164": "+6289536621048",
+      "location": "Gresik, East Java",
+      "links": []
+    },
+    "sections_detected": [
+      {
+        "raw_heading": "Profile",
+        "canonical": "summary"
+      },
+      {
+        "raw_heading": "Experience",
+        "canonical": "experience"
+      },
+      {
+        "raw_heading": "Education",
+        "canonical": "education"
+      },
+      {
+        "raw_heading": "Skills",
+        "canonical": "skills"
+      },
+      {
+        "raw_heading": "Languages",
+        "canonical": "languages"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Junior Architect",
+        "company": "CV Bina Rancang Gresik",
+        "location": null,
+        "start": "2025-06",
+        "end": "present",
+        "months": 17,
+        "employment_type": "full_time",
+        "relevant": true
+      }
+    ],
+    "education": [
+      {
+        "level": "S1",
+        "field": "Arsitektur",
+        "institution": "Universitas 17 Agustus 1945 Surabaya",
+        "start": "2019",
+        "end": "2024",
+        "gpa": 3.05,
+        "gpa_scale": 4.0,
+        "status": "completed"
+      }
+    ],
+    "certifications": [],
+    "languages": [
+      "Indonesian",
+      "English (basic)"
+    ],
+    "volunteer": [],
+    "side_business": [],
+    "expected_warnings": [],
+    "pii_fields_to_mask": [
+      "name",
+      "email",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "AutoCAD",
+        "category": "software",
+        "evidence": "AutoCAD · SketchUp · Lumion"
+      },
+      {
+        "skill": "SketchUp",
+        "category": "software",
+        "evidence": "AutoCAD · SketchUp · Lumion"
+      },
+      {
+        "skill": "Lumion",
+        "category": "software",
+        "evidence": "AutoCAD · SketchUp · Lumion"
+      },
+      {
+        "skill": "Revit",
+        "category": "software",
+        "evidence": "Revit (beginner)"
+      },
+      {
+        "skill": "PBG permit drawings",
+        "category": "domain",
+        "evidence": "permit drawings for PBG"
+      },
+      {
+        "skill": "Puskesmas renovation drawings",
+        "category": "domain",
+        "evidence": "Drawings for a puskesmas renovation"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "Java",
+        "reason": "from 'East Java' — open issue M-2; must not be extracted as a programming skill"
+      },
+      {
+        "term": "Hospital design",
+        "reason": "a puskesmas is a primary health centre, not a hospital"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 1,
+    "total_years": 1.4,
+    "relevant_years": 1.4,
+    "tolerance_years": 0.5,
+    "basis": "Jun 2025 - Nov 2026; one puskesmas renovation under supervision",
+    "domain_years": {
+      "healthcare": 0.3
+    }
+  },
+  "education": {
+    "highest_level": "S1",
+    "highest_field": "Arsitektur",
+    "status": "completed",
+    "gpa": 3.05,
+    "match": "Match",
+    "detail": "S1 Arsitektur Untag Surabaya 2024, GPA 3.05; final project on a puskesmas"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.7,
+        "max": 1.0
+      },
+      "education": {
+        "min": 0.7,
+        "max": 1.0
+      },
+      "skills": {
+        "min": 0.7,
+        "max": 1.0
+      },
+      "summary": {
+        "min": 0.7,
+        "max": 1.0
+      }
+    },
+    "parse_quality": "high",
+    "screening_confidence": {
+      "level": "Tinggi",
+      "reason": "Short but clean CV; the reject rests on explicit evidence."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "S1 Arsitektur",
+        "status": "met",
+        "evidence": "S1 Arsitektur, Universitas 17 Agustus 1945 Surabaya",
+        "note": null
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "Minimum 5 years architectural experience",
+        "status": "not_met",
+        "evidence": "Jun 2025 — present",
+        "note": "1.4 years"
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Design or renovation of at least two hospitals or large clinics",
+        "status": "not_met",
+        "evidence": null,
+        "note": "one puskesmas drawing set under supervision"
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Hospital zoning, critical-care rooms, medical gas and HVAC pressure regimes",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Revit",
+        "status": "partial",
+        "evidence": "Revit (beginner)",
+        "note": null
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD",
+        "status": "met",
+        "evidence": "AutoCAD · SketchUp · Lumion",
+        "note": null
+      },
+      {
+        "id": "R7",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Review of IFC/Navisworks models",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "R8",
+        "mandatory": true,
+        "category": "licence",
+        "requirement": "SKK Arsitek Ahli Muda or higher, or STRA",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "KARS / SNARS accreditation from the facility side",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Hospital master planning or phased expansion",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Lean / evidence-based design or healthcare postgraduate thesis",
+        "status": "partial",
+        "evidence": "Final project: Puskesmas rawat inap",
+        "note": "student project"
+      },
+      {
+        "id": "P4",
+        "mandatory": false,
+        "category": "certification",
+        "requirement": "PPI certificate for non-clinical staff",
+        "status": "not_met",
+        "evidence": null,
+        "note": null
+      }
+    ],
+    "mandatory_summary": {
+      "total": 8,
+      "met": 2,
+      "partial": 1,
+      "not_met": 5,
+      "unknown": 0
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 5,
+        "min_degree_level": "S1",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 30,
+          "max": 45
+        },
+        "experience": {
+          "min": 15.3,
+          "max": 32.3
+        },
+        "education": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "semantic": {
+          "min": 35,
+          "max": 52
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 6,
+        "max": 26
+      },
+      "excluded_components": [],
+      "implied_weighted_range": {
+        "min": 38.1,
+        "max": 51.8
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 30.8,
+        "max": 45.3
+      },
+      "scoring_model_gap": null
+    },
+    "top_positive_factors": [
+      "S1 Arsitektur",
+      "AutoCAD"
+    ],
+    "top_negative_factors": [
+      "Minimum 5 years architectural experience",
+      "Design or renovation of at least two hospitals or large clinics",
+      "Hospital zoning, critical-care rooms, medical gas and HVAC pressure regimes",
+      "Revit"
+    ],
+    "unknown_is_not_failure": [],
+    "risks": [
+      "Far below the experience requirement",
+      "No licence"
+    ],
+    "reference_explanation": "Right degree and an interest in healthcare, but 1.4 years of experience, no hospital projects, no licence and beginner Revit. Clear Reject for a 5-year owner-side role."
+  },
+  "recommendation": {
+    "decision": "Reject",
+    "decision_label_id": "Tidak lolos",
+    "score_range": {
+      "min": 30,
+      "max": 42
+    },
+    "rank": 4,
+    "pool_order": [
+      "ARC-CV-09",
+      "ARC-CV-10",
+      "ARC-CV-11",
+      "ARC-CV-12"
+    ],
+    "decision_override": null,
+    "provisional_score": false,
+    "never_decision": [],
+    "action": "Tidak dilanjutkan untuk lowongan ini.",
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [
+        "experience_below_minimum"
+      ],
+      "projected_decision": "Reject",
+      "agrees_with_benchmark": true
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-12-Q1",
+      "category": "verification",
+      "question": "Not recommended for this vacancy. If kept for a future junior opening: what exactly did you draw on the puskesmas renovation?",
+      "purpose": "Assess for a junior facility drafter pool",
+      "linked_to": "R3",
+      "good_answer_signals": [
+        "Clear personal contribution"
+      ],
+      "red_flags": [
+        "Unclear role"
+      ]
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Arsitek junior, belum memenuhi syarat pengalaman rumah sakit",
+    "reference_text": "Kandidat lulusan S1 Arsitektur 2024 dengan sekitar 1,4 tahun pengalaman sebagai arsitek junior di konsultan kecil, termasuk gambar renovasi puskesmas di bawah supervisi. Lowongan meminta minimal 5 tahun dan dua proyek rumah sakit, serta lisensi SKK atau STRA yang belum dimiliki. Tidak lolos untuk posisi ini; dapat disimpan untuk lowongan junior.",
+    "must_mention": [
+      {
+        "concept": "short experience",
+        "any_of": [
+          "1,4 tahun",
+          "1.4",
+          "junior"
+        ]
+      },
+      {
+        "concept": "no licence",
+        "any_of": [
+          "SKK",
+          "STRA",
+          "lisensi"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate knows Java programming",
+      "Candidate has hospital experience"
+    ],
+    "forbidden_strings": [
+      "+6289536621048",
+      "Ilham",
+      "Muhammad",
+      "Muhammad Ilham Saputra",
+      "Saputra",
+      "ilham.saputra.arch@gmail.com"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 43.5,
+      "rank": 4,
+      "decision": "Reject",
+      "decision_label_id": "Tidak lolos",
+      "components": {
+        "skills": 60.0,
+        "experience": 14.4,
+        "semantic": 15.6,
+        "education": 100.0
+      },
+      "unassessed": [],
+      "knockout_flags": [
+        "Pengalaman relevan 0.8 tahun, di bawah minimal 5 tahun"
+      ],
+      "relevant_years": 0.8,
+      "experience_entries": 1,
+      "total_experience_months": 17,
+      "education": [
+        [
+          4,
+          "architecture"
+        ]
+      ],
+      "extraction_method": "text",
+      "extraction_confidence": 1.0,
+      "section_confidence": {
+        "summary": 1.0,
+        "experience": 1.0,
+        "education": 1.0,
+        "skills": 1.0
+      },
+      "contact": {
+        "name": "Muhammad Ilham Saputra",
+        "email": "ilham.saputra.arch@gmail.com",
+        "phone": "089536621048"
+      },
+      "skill_ids": [
+        "architecture_design",
+        "autocad",
+        "building_codes",
+        "rendering",
+        "revit",
+        "sketchup"
+      ],
+      "job_reading": {
+        "upload_guard": null,
+        "min_years_experience": 5.0,
+        "degree_fields": [
+          "architecture"
+        ],
+        "min_degree_level": 4
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": true,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": true,
+      "score_in_benchmark_range": false,
+      "name_extracted": true,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": true,
+      "relevant_years_within_tolerance": false,
+      "education_found": true,
+      "no_programming_false_positive": true
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": true,
+      "min_years_read_correctly": true,
+      "degree_field_read": true,
+      "min_degree_level_read_correctly": true,
+      "no_programming_requirement": false
+    },
+    "known_failures": [
+      "score_in_benchmark_range",
+      "relevant_years_within_tolerance",
+      "no_programming_requirement"
+    ]
+  }
+}

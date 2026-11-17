@@ -1,0 +1,646 @@
+{
+  "fixture_version": "1.0",
+  "cv_id": "ARC-CV-17",
+  "target_vacancy": "ARC-VAC-05",
+  "reference_date": "2026-11-17",
+  "files": {
+    "cv": "CV/ARC-CV-17_Alya_Rahmania_Hakim.pdf",
+    "vacancy": "Vacancy/ARC-VAC-05_Architectural_Designer_Residential_Griyakarya.pdf",
+    "benchmark": "Expected_Result/ARC-CV-17.expected.json"
+  },
+  "candidate_profile": "Excellent portfolio",
+  "test_tags": [
+    "canva_style",
+    "two_column",
+    "portfolio_links",
+    "qr_code_placeholder",
+    "image_placeholder",
+    "english",
+    "residential"
+  ],
+  "parser_output": {
+    "extraction_method": "text",
+    "has_text_layer": true,
+    "language": "en",
+    "layout_class": "two_column",
+    "contact": {
+      "name": "Alya Rahmania Hakim",
+      "email": "alya.rahmania@gmail.com",
+      "phone_e164": "+6287821406631",
+      "location": "Dago, Bandung",
+      "links": [
+        "behance.net/alyarahmaniahakim",
+        "issuu.com/alyarahmania/docs/portfolio-2026",
+        "instagram.com/alya.draws.houses"
+      ]
+    },
+    "sections_detected": [
+      {
+        "raw_heading": "Contact",
+        "canonical": "contact"
+      },
+      {
+        "raw_heading": "Portfolio",
+        "canonical": "portfolio"
+      },
+      {
+        "raw_heading": "Education",
+        "canonical": "education"
+      },
+      {
+        "raw_heading": "Tools",
+        "canonical": "skills"
+      },
+      {
+        "raw_heading": "Languages",
+        "canonical": "languages"
+      },
+      {
+        "raw_heading": "Hello",
+        "canonical": "summary"
+      },
+      {
+        "raw_heading": "Experience",
+        "canonical": "experience"
+      },
+      {
+        "raw_heading": "Selected work",
+        "canonical": "projects"
+      },
+      {
+        "raw_heading": "Recognition",
+        "canonical": "other"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Architectural Designer",
+        "company": "Studio Ruang Teduh",
+        "location": "Bandung",
+        "start": "2023-07",
+        "end": "present",
+        "months": 40,
+        "employment_type": "full_time",
+        "relevant": true
+      },
+      {
+        "title": "Junior Designer",
+        "company": "Studio Ruang Teduh",
+        "location": "Bandung",
+        "start": "2022-03",
+        "end": "2023-06",
+        "months": 16,
+        "employment_type": "full_time",
+        "relevant": true
+      }
+    ],
+    "education": [
+      {
+        "level": "S1",
+        "field": "Arsitektur",
+        "institution": "Institut Teknologi Bandung",
+        "start": "2017",
+        "end": "2022",
+        "gpa": 3.71,
+        "gpa_scale": 4.0,
+        "status": "completed"
+      }
+    ],
+    "certifications": [],
+    "languages": [
+      "Indonesian",
+      "English (fluent)",
+      "Sundanese"
+    ],
+    "volunteer": [],
+    "side_business": [],
+    "expected_warnings": [
+      "two_column_layout",
+      "image_placeholder",
+      "qr_code_image"
+    ],
+    "pii_fields_to_mask": [
+      "name",
+      "email",
+      "phone",
+      "location",
+      "institution"
+    ]
+  },
+  "extracted_skills": {
+    "explicit": [
+      {
+        "skill": "SketchUp",
+        "category": "software",
+        "evidence": "SketchUp · D5 Render · Enscape"
+      },
+      {
+        "skill": "D5 Render",
+        "category": "software",
+        "evidence": "SketchUp · D5 Render · Enscape"
+      },
+      {
+        "skill": "Enscape",
+        "category": "software",
+        "evidence": "SketchUp · D5 Render · Enscape"
+      },
+      {
+        "skill": "AutoCAD",
+        "category": "software",
+        "evidence": "AutoCAD · Revit"
+      },
+      {
+        "skill": "Revit",
+        "category": "software",
+        "evidence": "AutoCAD · Revit"
+      },
+      {
+        "skill": "Procreate",
+        "category": "software",
+        "evidence": "Procreate"
+      },
+      {
+        "skill": "Excel",
+        "category": "software",
+        "evidence": "Excel (RAB)"
+      },
+      {
+        "skill": "Landed-house design",
+        "category": "domain",
+        "evidence": "22 landed-house projects"
+      },
+      {
+        "skill": "Narrow-plot design",
+        "category": "domain",
+        "evidence": "narrow-plot specialist (6–8 m frontage)"
+      },
+      {
+        "skill": "RAB checking",
+        "category": "domain",
+        "evidence": "check RAB from the studio's QS spreadsheet"
+      },
+      {
+        "skill": "Client consultation",
+        "category": "soft",
+        "evidence": "Run client sessions from brief to concept approval"
+      },
+      {
+        "skill": "PBG permit drawings",
+        "category": "domain",
+        "evidence": "permit drawings (PBG)"
+      },
+      {
+        "skill": "Interior joinery",
+        "category": "domain",
+        "evidence": "interior joinery drawings"
+      },
+      {
+        "skill": "Design content creation",
+        "category": "domain",
+        "evidence": "Weekly design explainer posts (12k followers)"
+      }
+    ],
+    "must_not_extract": [
+      {
+        "term": "PHOTO",
+        "reason": "photo placeholder label"
+      },
+      {
+        "term": "QR code content",
+        "reason": "image only; links come from sidebar text"
+      }
+    ],
+    "software_rule": "Software counts only when written in the CV; never implied (TDR-0024)."
+  },
+  "experience": {
+    "entries_expected": 2,
+    "total_years": 4.7,
+    "relevant_years": 4.7,
+    "tolerance_years": 0.5,
+    "basis": "Mar 2022 - Nov 2026 in residential design (junior then designer)",
+    "domain_years": {}
+  },
+  "education": {
+    "highest_level": "S1",
+    "highest_field": "Arsitektur",
+    "status": "completed",
+    "gpa": 3.71,
+    "match": "Match",
+    "detail": "S1 Arsitektur ITB 2022, GPA 3.71"
+  },
+  "confidence": {
+    "section_confidence": {
+      "experience": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "education": {
+        "min": 0.6,
+        "max": 0.9
+      },
+      "skills": {
+        "min": 0.7,
+        "max": 1.0
+      },
+      "summary": {
+        "min": 0.7,
+        "max": 1.0
+      }
+    },
+    "parse_quality": "medium",
+    "screening_confidence": {
+      "level": "Tinggi",
+      "reason": "Every requirement evidenced; two-column layout read in correct order expected."
+    }
+  },
+  "explainability": {
+    "requirements": [
+      {
+        "id": "R1",
+        "mandatory": true,
+        "category": "education",
+        "requirement": "S1 Arsitektur",
+        "status": "met",
+        "evidence": "Institut Teknologi Bandung",
+        "note": "S1 Arsitektur"
+      },
+      {
+        "id": "R2",
+        "mandatory": true,
+        "category": "experience",
+        "requirement": "2-4 years designing landed houses with built projects",
+        "status": "met",
+        "evidence": "11 of them are now lived in",
+        "note": "4.7 years, slightly above 2-4"
+      },
+      {
+        "id": "R3",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "SketchUp",
+        "status": "met",
+        "evidence": "SketchUp · D5 Render · Enscape",
+        "note": null
+      },
+      {
+        "id": "R4",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "Enscape, D5 Render or Lumion",
+        "status": "met",
+        "evidence": "SketchUp · D5 Render · Enscape",
+        "note": null
+      },
+      {
+        "id": "R5",
+        "mandatory": true,
+        "category": "software",
+        "requirement": "AutoCAD or Revit",
+        "status": "met",
+        "evidence": "AutoCAD · Revit",
+        "note": null
+      },
+      {
+        "id": "R6",
+        "mandatory": true,
+        "category": "domain",
+        "requirement": "Basic RAB / BoQ",
+        "status": "met",
+        "evidence": "check RAB from the studio's QS spreadsheet",
+        "note": null
+      },
+      {
+        "id": "R7",
+        "mandatory": true,
+        "category": "portfolio",
+        "requirement": "Portfolio showing own design work",
+        "status": "met",
+        "evidence": "behance.net/alyarahmaniahakim",
+        "note": null
+      },
+      {
+        "id": "R8",
+        "mandatory": true,
+        "category": "soft",
+        "requirement": "Clear communication with homeowners",
+        "status": "met",
+        "evidence": "Run client sessions from brief to concept approval",
+        "note": null
+      },
+      {
+        "id": "P1",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Interior design sense",
+        "status": "met",
+        "evidence": "interior joinery drawings",
+        "note": null
+      },
+      {
+        "id": "P2",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Tropical modern houses on narrow plots",
+        "status": "met",
+        "evidence": "narrow-plot specialist (6–8 m frontage)",
+        "note": null
+      },
+      {
+        "id": "P3",
+        "mandatory": false,
+        "category": "domain",
+        "requirement": "Design content creation",
+        "status": "met",
+        "evidence": "Weekly design explainer posts (12k followers)",
+        "note": null
+      }
+    ],
+    "mandatory_summary": {
+      "total": 8,
+      "met": 8,
+      "partial": 0,
+      "not_met": 0,
+      "unknown": 0
+    },
+    "score_components": {
+      "weights": {
+        "skills": 0.35,
+        "experience": 0.25,
+        "semantic": 0.25,
+        "education": 0.15
+      },
+      "weights_source": "backend/app/schemas/screening.py DEFAULT_WEIGHTS @ ea2345f",
+      "formulas_source": "backend/app/services/matching.py score_candidate @ ea2345f",
+      "scale": "0-100 (pipeline stores 0-1)",
+      "intended_job_reading": {
+        "min_years_experience": 2,
+        "min_degree_level": "S1",
+        "degree_field": "architecture"
+      },
+      "expected_ranges": {
+        "skills": {
+          "min": 92,
+          "max": 100
+        },
+        "experience": {
+          "min": 96.0,
+          "max": 100.0
+        },
+        "education": {
+          "min": 100.0,
+          "max": 100.0
+        },
+        "semantic": {
+          "min": 78,
+          "max": 92
+        }
+      },
+      "semantic_note": "semantic range is the E5 target (not verified locally); TF-IDF calibrates far lower",
+      "semantic_tfidf_range": {
+        "min": 22,
+        "max": 42
+      },
+      "excluded_components": [],
+      "implied_weighted_range": {
+        "min": 90.7,
+        "max": 98.0
+      },
+      "implied_weighted_range_tfidf": {
+        "min": 76.7,
+        "max": 85.5
+      },
+      "scoring_model_gap": null
+    },
+    "top_positive_factors": [
+      "S1 Arsitektur",
+      "2-4 years designing landed houses with built projects",
+      "SketchUp",
+      "Enscape, D5 Render or Lumion"
+    ],
+    "top_negative_factors": [],
+    "unknown_is_not_failure": [],
+    "risks": [
+      "4.7 years is slightly above the 2-4 year band; salary may sit at the top of IDR 9-13 million",
+      "Moving from a boutique studio to a productised design library may feel restrictive"
+    ],
+    "reference_explanation": "Strongest candidate in the category for her vacancy: right degree with high GPA, 4.7 years of built residential work, all required tools, RAB awareness, and every preferred item (interiors, narrow-plot tropical modern, design content). Portfolio links and QR are present for reviewers."
+  },
+  "recommendation": {
+    "decision": "Recommended",
+    "decision_label_id": "Direkomendasikan",
+    "score_range": {
+      "min": 88,
+      "max": 95
+    },
+    "rank": 1,
+    "pool_order": [
+      "ARC-CV-17",
+      "ARC-CV-20",
+      "ARC-CV-18",
+      "ARC-CV-19"
+    ],
+    "decision_override": null,
+    "provisional_score": false,
+    "never_decision": [],
+    "action": "Lanjut ke tahap berikutnya sesuai proses lowongan.",
+    "pipeline_rules": {
+      "shortlist_at": 70,
+      "reject_below": 45,
+      "source": "backend/app/core/config.py + explanation.decide @ ea2345f",
+      "benchmark_bands": {
+        "Recommended": 75,
+        "Review": 50
+      },
+      "flags_from_target_components": [],
+      "projected_decision": "Recommended",
+      "agrees_with_benchmark": true
+    }
+  },
+  "interview_questions": [
+    {
+      "id": "ARC-CV-17-Q1",
+      "category": "technical",
+      "question": "Walk us through Rumah Lorong (6 m frontage) from brief to built. Which decision mattered most?",
+      "purpose": "Design process depth",
+      "linked_to": "P2",
+      "good_answer_signals": [
+        "Clear constraint-driven decisions"
+      ],
+      "red_flags": [
+        "Only shows renders"
+      ]
+    },
+    {
+      "id": "ARC-CV-17-Q2",
+      "category": "technical",
+      "question": "You flagged about 8% RAB savings on four projects. What did you change and how did you verify the cost?",
+      "purpose": "Cost awareness",
+      "linked_to": "R6",
+      "good_answer_signals": [
+        "Specific structural/roof changes, QS check"
+      ],
+      "red_flags": [
+        "Vague"
+      ]
+    },
+    {
+      "id": "ARC-CV-17-Q3",
+      "category": "motivation",
+      "question": "Griyakarya adapts base designs rather than designing from scratch. How do you feel about that?",
+      "purpose": "Fit with productised design",
+      "linked_to": "risk:boutique_to_product",
+      "good_answer_signals": [
+        "Sees value, ideas to improve library"
+      ],
+      "red_flags": [
+        "Wants full freedom"
+      ]
+    },
+    {
+      "id": "ARC-CV-17-Q4",
+      "category": "behavioral",
+      "question": "Tell us about a homeowner who could not read plans. How did you get to approval?",
+      "purpose": "Homeowner communication",
+      "linked_to": "R8",
+      "good_answer_signals": [
+        "Visual tools, patience"
+      ],
+      "red_flags": [
+        "Blames client"
+      ]
+    }
+  ],
+  "hr_summary": {
+    "language": "id",
+    "max_words": 120,
+    "headline": "Desainer rumah tinggal dengan portofolio terbangun, semua syarat terpenuhi",
+    "reference_text": "Kandidat lulusan S1 Arsitektur dengan IPK 3,71 dan sekitar 4,7 tahun pengalaman merancang rumah tinggal: 36 rumah dari sketsa sampai gambar, 11 sudah dihuni, spesialis lahan sempit 6-8 m. Menguasai SketchUp, D5, Enscape, AutoCAD, dan Revit, terbiasa mengecek RAB, memimpin sesi klien, dan rutin membuat konten edukasi desain. Portofolio tersedia di Behance dan Issuu. Pengalaman sedikit di atas rentang 2-4 tahun. Direkomendasikan.",
+    "must_mention": [
+      {
+        "concept": "built projects",
+        "any_of": [
+          "dihuni",
+          "terbangun",
+          "11"
+        ]
+      },
+      {
+        "concept": "portfolio",
+        "any_of": [
+          "portofolio",
+          "Behance"
+        ]
+      },
+      {
+        "concept": "narrow plot",
+        "any_of": [
+          "lahan sempit",
+          "6-8 m"
+        ]
+      }
+    ],
+    "must_not_claim": [
+      "Candidate has no built projects",
+      "Candidate lacks a portfolio"
+    ],
+    "forbidden_strings": [
+      "+6287821406631",
+      "Alya",
+      "Alya Rahmania Hakim",
+      "Hakim",
+      "Rahmania",
+      "alya.rahmania@gmail.com"
+    ],
+    "generated_by": "Gemini or template; must not change the decision or score"
+  },
+  "pipeline_baseline": {
+    "commit": "ea2345f",
+    "embedding_backend": "tfidf",
+    "reference_date": "2026-11-17",
+    "observed": {
+      "score": 70.5,
+      "rank": 1,
+      "decision": "Recommended",
+      "decision_label_id": "Direkomendasikan",
+      "components": {
+        "skills": 64.7,
+        "experience": 100.0,
+        "semantic": 31.6,
+        "education": 100.0
+      },
+      "unassessed": [],
+      "knockout_flags": [],
+      "relevant_years": 0.0,
+      "experience_entries": 0,
+      "total_experience_months": 0,
+      "education": [
+        [
+          4,
+          "architecture"
+        ],
+        [
+          0,
+          "architecture"
+        ]
+      ],
+      "extraction_method": "text",
+      "extraction_confidence": 0.7,
+      "section_confidence": {
+        "summary": 0.0,
+        "experience": 0.0,
+        "education": 1.0,
+        "skills": 0.7
+      },
+      "contact": {
+        "name": "Alya Rahmania Hakim",
+        "email": "alya.rahmania@gmail.com",
+        "phone": "6287821406631"
+      },
+      "skill_ids": [
+        "autocad",
+        "building_codes",
+        "procurement",
+        "rendering",
+        "revit",
+        "sketchup",
+        "technical_drawing"
+      ],
+      "job_reading": {
+        "upload_guard": "NotAJobDescriptionError: Dokumen ini tampaknya sebuah CV, bukan deskripsi lowongan. Unggah berkas lowongan di sini, lalu unggah CV pada halaman lowongan.",
+        "min_years_experience": 0.0,
+        "degree_fields": [
+          "architecture"
+        ],
+        "min_degree_level": 4
+      }
+    },
+    "checks": {
+      "decision_matches_benchmark": true,
+      "never_decision_respected": true,
+      "rank_matches_benchmark": true,
+      "score_in_benchmark_range": false,
+      "name_extracted": true,
+      "email_extracted": true,
+      "phone_extracted": true,
+      "experience_entries_found": false,
+      "relevant_years_within_tolerance": false,
+      "education_found": true,
+      "no_programming_false_positive": true
+    },
+    "job_checks": {
+      "vacancy_upload_accepted": false,
+      "min_years_read_correctly": false,
+      "degree_field_read": true,
+      "min_degree_level_read_correctly": true,
+      "no_programming_requirement": false
+    },
+    "known_failures": [
+      "score_in_benchmark_range",
+      "experience_entries_found",
+      "relevant_years_within_tolerance",
+      "vacancy_upload_accepted",
+      "min_years_read_correctly",
+      "no_programming_requirement"
+    ]
+  }
+}

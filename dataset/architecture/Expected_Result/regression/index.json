@@ -1,0 +1,636 @@
+{
+  "dataset": "architecture",
+  "version": "1.0.0",
+  "status": "frozen",
+  "frozen_on": "2026-11-17",
+  "fixture_version": "1.0",
+  "reference_date": "2026-11-17",
+  "schema": "../../../regression_fixture.schema.json",
+  "validation_report": "validation_report.json",
+  "baseline": {
+    "commit": "ea2345f",
+    "branch": "sprint-4",
+    "embedding_backend": "tfidf"
+  },
+  "assertion_levels": {
+    "hard": [
+      "parser_output.contact.email",
+      "parser_output.contact.phone_e164",
+      "parser_output.extraction_method",
+      "parser_output.experience[].start/end",
+      "experience.relevant_years (± tolerance_years)",
+      "education.highest_level",
+      "extracted_skills.explicit[].skill (software category)",
+      "extracted_skills.must_not_extract",
+      "explainability.requirements[].status (mandatory)",
+      "recommendation.decision",
+      "recommendation.never_decision",
+      "recommendation.provisional_score",
+      "hr_summary.forbidden_strings"
+    ],
+    "soft": [
+      "recommendation.score_range",
+      "recommendation.rank (adjacent swaps allowed when score ranges overlap)",
+      "explainability.score_components.expected_ranges",
+      "confidence.section_confidence",
+      "confidence.screening_confidence",
+      "extracted_skills.explicit[].skill (non-software)",
+      "parser_output.sections_detected",
+      "hr_summary.must_mention"
+    ],
+    "reference_only": [
+      "hr_summary.reference_text",
+      "hr_summary.must_not_claim",
+      "interview_questions",
+      "explainability.reference_explanation"
+    ],
+    "regression_snapshot": [
+      "pipeline_baseline.observed (detect unintended change at a new commit; not a target)"
+    ]
+  },
+  "fixtures": [
+    {
+      "cv_id": "ARC-CV-01",
+      "file": "ARC-CV-01.regression.json",
+      "target_vacancy": "ARC-VAC-01",
+      "decision": "Recommended",
+      "rank": 1,
+      "extraction_method": "text",
+      "parse_quality": "high",
+      "warnings": [],
+      "baseline_decision": "Review",
+      "baseline_known_failures": [
+        "decision_matches_benchmark",
+        "score_in_benchmark_range",
+        "relevant_years_within_tolerance",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    {
+      "cv_id": "ARC-CV-02",
+      "file": "ARC-CV-02.regression.json",
+      "target_vacancy": "ARC-VAC-01",
+      "decision": "Review",
+      "rank": 3,
+      "extraction_method": "text",
+      "parse_quality": "high",
+      "warnings": [
+        "override:overqualified"
+      ],
+      "baseline_decision": "Recommended",
+      "baseline_known_failures": [
+        "decision_matches_benchmark",
+        "rank_matches_benchmark",
+        "name_extracted",
+        "relevant_years_within_tolerance",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    {
+      "cv_id": "ARC-CV-03",
+      "file": "ARC-CV-03.regression.json",
+      "target_vacancy": "ARC-VAC-01",
+      "decision": "Recommended",
+      "rank": 2,
+      "extraction_method": "text",
+      "parse_quality": "medium",
+      "warnings": [
+        "two_column_layout",
+        "employment_gap:2021-07..2024-01"
+      ],
+      "baseline_decision": "Review",
+      "baseline_known_failures": [
+        "decision_matches_benchmark",
+        "rank_matches_benchmark",
+        "score_in_benchmark_range",
+        "experience_entries_found",
+        "relevant_years_within_tolerance",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    {
+      "cv_id": "ARC-CV-04",
+      "file": "ARC-CV-04.regression.json",
+      "target_vacancy": "ARC-VAC-01",
+      "decision": "Reject",
+      "rank": 4,
+      "extraction_method": "text",
+      "parse_quality": "high",
+      "warnings": [],
+      "baseline_decision": "Review",
+      "baseline_known_failures": [
+        "decision_matches_benchmark",
+        "experience_entries_found",
+        "relevant_years_within_tolerance",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    {
+      "cv_id": "ARC-CV-05",
+      "file": "ARC-CV-05.regression.json",
+      "target_vacancy": "ARC-VAC-02",
+      "decision": "Recommended",
+      "rank": 2,
+      "extraction_method": "text",
+      "parse_quality": "high",
+      "warnings": [
+        "section_missing:summary",
+        "experience_internship_only"
+      ],
+      "baseline_decision": "Recommended",
+      "baseline_known_failures": [
+        "name_extracted",
+        "experience_entries_found",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    {
+      "cv_id": "ARC-CV-06",
+      "file": "ARC-CV-06.regression.json",
+      "target_vacancy": "ARC-VAC-02",
+      "decision": "Review",
+      "rank": 4,
+      "extraction_method": "text",
+      "parse_quality": "medium",
+      "warnings": [
+        "no_dates",
+        "heading_typo:PENGALMAN KERJA",
+        "section_missing:summary"
+      ],
+      "baseline_decision": "Review",
+      "baseline_known_failures": [
+        "name_extracted",
+        "experience_entries_found",
+        "relevant_years_within_tolerance",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    {
+      "cv_id": "ARC-CV-07",
+      "file": "ARC-CV-07.regression.json",
+      "target_vacancy": "ARC-VAC-02",
+      "decision": "Recommended",
+      "rank": 1,
+      "extraction_method": "ocr",
+      "parse_quality": "medium",
+      "warnings": [
+        "ocr_used",
+        "section_missing:summary"
+      ],
+      "baseline_decision": "Review",
+      "baseline_known_failures": [
+        "decision_matches_benchmark",
+        "score_in_benchmark_range",
+        "name_extracted",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    {
+      "cv_id": "ARC-CV-08",
+      "file": "ARC-CV-08.regression.json",
+      "target_vacancy": "ARC-VAC-02",
+      "decision": "Review",
+      "rank": 3,
+      "extraction_method": "text",
+      "parse_quality": "medium",
+      "warnings": [
+        "table_work_history",
+        "study_overlaps_service:2021..2022"
+      ],
+      "baseline_decision": "Review",
+      "baseline_known_failures": [
+        "name_extracted",
+        "experience_entries_found",
+        "relevant_years_within_tolerance",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    {
+      "cv_id": "ARC-CV-09",
+      "file": "ARC-CV-09.regression.json",
+      "target_vacancy": "ARC-VAC-03",
+      "decision": "Recommended",
+      "rank": 1,
+      "extraction_method": "text",
+      "parse_quality": "high",
+      "warnings": [
+        "study_overlaps_employment:2016..2018"
+      ],
+      "baseline_decision": "Recommended",
+      "baseline_known_failures": [
+        "rank_matches_benchmark",
+        "score_in_benchmark_range",
+        "name_extracted",
+        "no_programming_requirement"
+      ]
+    },
+    {
+      "cv_id": "ARC-CV-10",
+      "file": "ARC-CV-10.regression.json",
+      "target_vacancy": "ARC-VAC-03",
+      "decision": "Review",
+      "rank": 2,
+      "extraction_method": "text",
+      "parse_quality": "medium",
+      "warnings": [
+        "two_column_layout",
+        "icon_glyphs_in_contact"
+      ],
+      "baseline_decision": "Review",
+      "baseline_known_failures": [
+        "rank_matches_benchmark",
+        "score_in_benchmark_range",
+        "relevant_years_within_tolerance",
+        "education_found",
+        "no_programming_false_positive",
+        "no_programming_requirement"
+      ]
+    },
+    {
+      "cv_id": "ARC-CV-11",
+      "file": "ARC-CV-11.regression.json",
+      "target_vacancy": "ARC-VAC-03",
+      "decision": "Review",
+      "rank": 3,
+      "extraction_method": "text",
+      "parse_quality": "medium",
+      "warnings": [
+        "duplicate_section:experience",
+        "duplicate_section:skills",
+        "section_missing:summary",
+        "irregular_spacing"
+      ],
+      "baseline_decision": "Review",
+      "baseline_known_failures": [
+        "score_in_benchmark_range",
+        "relevant_years_within_tolerance",
+        "no_programming_requirement"
+      ]
+    },
+    {
+      "cv_id": "ARC-CV-12",
+      "file": "ARC-CV-12.regression.json",
+      "target_vacancy": "ARC-VAC-03",
+      "decision": "Reject",
+      "rank": 4,
+      "extraction_method": "text",
+      "parse_quality": "high",
+      "warnings": [],
+      "baseline_decision": "Reject",
+      "baseline_known_failures": [
+        "score_in_benchmark_range",
+        "relevant_years_within_tolerance",
+        "no_programming_requirement"
+      ]
+    },
+    {
+      "cv_id": "ARC-CV-13",
+      "file": "ARC-CV-13.regression.json",
+      "target_vacancy": "ARC-VAC-04",
+      "decision": "Recommended",
+      "rank": 1,
+      "extraction_method": "text",
+      "parse_quality": "high",
+      "warnings": [],
+      "baseline_decision": "Recommended",
+      "baseline_known_failures": [
+        "rank_matches_benchmark",
+        "score_in_benchmark_range",
+        "relevant_years_within_tolerance",
+        "min_years_read_correctly",
+        "degree_field_read",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    {
+      "cv_id": "ARC-CV-14",
+      "file": "ARC-CV-14.regression.json",
+      "target_vacancy": "ARC-VAC-04",
+      "decision": "Review",
+      "rank": 3,
+      "extraction_method": "text",
+      "parse_quality": "high",
+      "warnings": [
+        "overlapping_employment:2022-03..2022-12",
+        "freelance_without_employer"
+      ],
+      "baseline_decision": "Recommended",
+      "baseline_known_failures": [
+        "decision_matches_benchmark",
+        "score_in_benchmark_range",
+        "min_years_read_correctly",
+        "degree_field_read",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    {
+      "cv_id": "ARC-CV-15",
+      "file": "ARC-CV-15.regression.json",
+      "target_vacancy": "ARC-VAC-04",
+      "decision": "Recommended",
+      "rank": 2,
+      "extraction_method": "text",
+      "parse_quality": "low",
+      "warnings": [
+        "no_headings",
+        "ligatures_normalized",
+        "hyphenation_across_lines",
+        "dates_in_prose"
+      ],
+      "baseline_decision": "Recommended",
+      "baseline_known_failures": [
+        "rank_matches_benchmark",
+        "name_extracted",
+        "experience_entries_found",
+        "relevant_years_within_tolerance",
+        "education_found",
+        "min_years_read_correctly",
+        "degree_field_read",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    {
+      "cv_id": "ARC-CV-16",
+      "file": "ARC-CV-16.regression.json",
+      "target_vacancy": "ARC-VAC-04",
+      "decision": "Review",
+      "rank": 4,
+      "extraction_method": "text",
+      "parse_quality": "low",
+      "warnings": [
+        "section_missing:education",
+        "section_missing:summary",
+        "missing_email",
+        "years_only_dates",
+        "possible_gap:2024..present"
+      ],
+      "baseline_decision": "Review",
+      "baseline_known_failures": [
+        "relevant_years_within_tolerance",
+        "min_years_read_correctly",
+        "degree_field_read",
+        "min_degree_level_read_correctly"
+      ]
+    },
+    {
+      "cv_id": "ARC-CV-17",
+      "file": "ARC-CV-17.regression.json",
+      "target_vacancy": "ARC-VAC-05",
+      "decision": "Recommended",
+      "rank": 1,
+      "extraction_method": "text",
+      "parse_quality": "medium",
+      "warnings": [
+        "two_column_layout",
+        "image_placeholder",
+        "qr_code_image"
+      ],
+      "baseline_decision": "Recommended",
+      "baseline_known_failures": [
+        "score_in_benchmark_range",
+        "experience_entries_found",
+        "relevant_years_within_tolerance",
+        "vacancy_upload_accepted",
+        "min_years_read_correctly",
+        "no_programming_requirement"
+      ]
+    },
+    {
+      "cv_id": "ARC-CV-18",
+      "file": "ARC-CV-18.regression.json",
+      "target_vacancy": "ARC-VAC-05",
+      "decision": "Review",
+      "rank": 3,
+      "extraction_method": "text",
+      "parse_quality": "high",
+      "warnings": [
+        "volunteer_section",
+        "self_employed"
+      ],
+      "baseline_decision": "Review",
+      "baseline_known_failures": [
+        "rank_matches_benchmark",
+        "score_in_benchmark_range",
+        "name_extracted",
+        "relevant_years_within_tolerance",
+        "vacancy_upload_accepted",
+        "min_years_read_correctly",
+        "no_programming_requirement"
+      ]
+    },
+    {
+      "cv_id": "ARC-CV-19",
+      "file": "ARC-CV-19.regression.json",
+      "target_vacancy": "ARC-VAC-05",
+      "decision": "Reject",
+      "rank": 4,
+      "extraction_method": "text",
+      "parse_quality": "high",
+      "warnings": [],
+      "baseline_decision": "Reject",
+      "baseline_known_failures": [
+        "score_in_benchmark_range",
+        "experience_entries_found",
+        "vacancy_upload_accepted",
+        "min_years_read_correctly",
+        "no_programming_requirement"
+      ]
+    },
+    {
+      "cv_id": "ARC-CV-20",
+      "file": "ARC-CV-20.regression.json",
+      "target_vacancy": "ARC-VAC-05",
+      "decision": "Review",
+      "rank": 2,
+      "extraction_method": "text",
+      "parse_quality": "medium",
+      "warnings": [
+        "unusual_headings",
+        "side_business_section",
+        "section_missing:summary",
+        "lowercase_name"
+      ],
+      "baseline_decision": "Review",
+      "baseline_known_failures": [
+        "rank_matches_benchmark",
+        "experience_entries_found",
+        "relevant_years_within_tolerance",
+        "education_found",
+        "vacancy_upload_accepted",
+        "min_years_read_correctly",
+        "no_programming_requirement"
+      ]
+    }
+  ],
+  "suites": {
+    "contact_extraction": [
+      "ARC-CV-01",
+      "ARC-CV-02",
+      "ARC-CV-03",
+      "ARC-CV-04",
+      "ARC-CV-05",
+      "ARC-CV-06",
+      "ARC-CV-07",
+      "ARC-CV-08",
+      "ARC-CV-09",
+      "ARC-CV-10",
+      "ARC-CV-11",
+      "ARC-CV-12",
+      "ARC-CV-13",
+      "ARC-CV-14",
+      "ARC-CV-15",
+      "ARC-CV-16",
+      "ARC-CV-17",
+      "ARC-CV-18",
+      "ARC-CV-19",
+      "ARC-CV-20"
+    ],
+    "section_detection": [
+      "ARC-CV-01",
+      "ARC-CV-02",
+      "ARC-CV-03",
+      "ARC-CV-04",
+      "ARC-CV-05",
+      "ARC-CV-06",
+      "ARC-CV-07",
+      "ARC-CV-08",
+      "ARC-CV-09",
+      "ARC-CV-10",
+      "ARC-CV-11",
+      "ARC-CV-12",
+      "ARC-CV-13",
+      "ARC-CV-14",
+      "ARC-CV-16",
+      "ARC-CV-17",
+      "ARC-CV-18",
+      "ARC-CV-19",
+      "ARC-CV-20"
+    ],
+    "no_headings_recovery": [
+      "ARC-CV-15"
+    ],
+    "ocr_path": [
+      "ARC-CV-07"
+    ],
+    "two_column_reading_order": [
+      "ARC-CV-03",
+      "ARC-CV-10",
+      "ARC-CV-17"
+    ],
+    "duplicate_section_merge": [
+      "ARC-CV-11"
+    ],
+    "overlapping_employment": [
+      "ARC-CV-14"
+    ],
+    "missing_dates": [
+      "ARC-CV-06",
+      "ARC-CV-16"
+    ],
+    "unknown_is_not_failure": [
+      "ARC-CV-03",
+      "ARC-CV-06",
+      "ARC-CV-14",
+      "ARC-CV-15",
+      "ARC-CV-16",
+      "ARC-CV-18",
+      "ARC-CV-19",
+      "ARC-CV-20"
+    ],
+    "skill_false_positives": [
+      "ARC-CV-01",
+      "ARC-CV-02",
+      "ARC-CV-03",
+      "ARC-CV-04",
+      "ARC-CV-05",
+      "ARC-CV-06",
+      "ARC-CV-07",
+      "ARC-CV-08",
+      "ARC-CV-09",
+      "ARC-CV-10",
+      "ARC-CV-11",
+      "ARC-CV-12",
+      "ARC-CV-13",
+      "ARC-CV-14",
+      "ARC-CV-15",
+      "ARC-CV-16",
+      "ARC-CV-17",
+      "ARC-CV-18",
+      "ARC-CV-19",
+      "ARC-CV-20"
+    ],
+    "provisional_score": [
+      "ARC-CV-16"
+    ],
+    "decision_override": [
+      "ARC-CV-02",
+      "ARC-CV-16"
+    ],
+    "never_reject": [
+      "ARC-CV-07",
+      "ARC-CV-15",
+      "ARC-CV-16"
+    ],
+    "scoring_model_gap": [
+      "ARC-CV-02",
+      "ARC-CV-06",
+      "ARC-CV-08",
+      "ARC-CV-10",
+      "ARC-CV-11",
+      "ARC-CV-14",
+      "ARC-CV-18",
+      "ARC-CV-20"
+    ],
+    "ranking": [
+      "ARC-VAC-01",
+      "ARC-VAC-02",
+      "ARC-VAC-03",
+      "ARC-VAC-04",
+      "ARC-VAC-05"
+    ],
+    "hr_summary_pii": [
+      "ARC-CV-01",
+      "ARC-CV-02",
+      "ARC-CV-03",
+      "ARC-CV-04",
+      "ARC-CV-05",
+      "ARC-CV-06",
+      "ARC-CV-07",
+      "ARC-CV-08",
+      "ARC-CV-09",
+      "ARC-CV-10",
+      "ARC-CV-11",
+      "ARC-CV-12",
+      "ARC-CV-13",
+      "ARC-CV-14",
+      "ARC-CV-15",
+      "ARC-CV-16",
+      "ARC-CV-17",
+      "ARC-CV-18",
+      "ARC-CV-19",
+      "ARC-CV-20"
+    ],
+    "interview_questions": [
+      "ARC-CV-01",
+      "ARC-CV-02",
+      "ARC-CV-03",
+      "ARC-CV-04",
+      "ARC-CV-05",
+      "ARC-CV-06",
+      "ARC-CV-07",
+      "ARC-CV-08",
+      "ARC-CV-09",
+      "ARC-CV-10",
+      "ARC-CV-11",
+      "ARC-CV-12",
+      "ARC-CV-13",
+      "ARC-CV-14",
+      "ARC-CV-15",
+      "ARC-CV-16",
+      "ARC-CV-17",
+      "ARC-CV-18",
+      "ARC-CV-19",
+      "ARC-CV-20"
+    ]
+  }
+}
