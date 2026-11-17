@@ -103,7 +103,7 @@ talentlens-ai/
 │   │       └── screening.py    orkestrasi pipeline
 │   ├── data/taxonomy/          keterampilan dan glosarium Indonesia-Inggris
 │   ├── scripts/                check_ai_backends.py
-│   └── tests/                  71 tes + fixtures sintetis
+│   └── tests/                  73 tes + fixtures sintetis
 ├── frontend/src/
 │   ├── app/                    /, /jobs/[jobId], /jobs/[jobId]/candidates/[candidateId]
 │   ├── components/             komponen fitur; ui/ berisi komponen dasar
@@ -142,7 +142,7 @@ cd frontend && npm run lint && npm run build
 
 | Pemeriksaan | Hasil |
 | --- | --- |
-| `pytest` (71 tes), `ruff`, `npm run lint`, `npm run build` | Lolos |
+| `pytest` (73 tes), `ruff`, `npm run lint`, `npm run build` | Lolos |
 | Keluaran parser CV sama dengan PoC lama pada 14 CV sintetis | Lolos |
 | Kriteria lowongan, skor, peringkat, dan alasan sama dengan PoC lama (13 kandidat, mode TF-IDF) | Lolos |
 | Alur lengkap di peramban: unggah lowongan, unggah CV termasuk hasil scan dan duplikat, screening, peringkat, rincian, ringkasan | Lolos, dengan TF-IDF dan ringkasan templat |

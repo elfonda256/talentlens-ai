@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from fastapi.testclient import TestClient
 
 from app.core.config import Settings, get_settings
@@ -53,3 +55,22 @@ def test_settings_are_overridden_by_environment(monkeypatch):
         assert settings.cors_origin_list == ["http://a.test", "http://b.test"]
     finally:
         get_settings.cache_clear()
+
+
+def test_env_example_can_be_used_as_is():
+    """Copying .env.example must give the same settings as having no .env at all."""
+    example = Path(__file__).resolve().parents[2] / ".env.example"
+
+    from_example = Settings(_env_file=example)
+
+    assert from_example == Settings(_env_file=None)
+    assert from_example.gemini_api_key == "" and from_example.reference_date is None
+
+
+def test_empty_environment_values_count_as_unset(monkeypatch):
+    monkeypatch.setenv("REFERENCE_DATE", "")
+    monkeypatch.setenv("GEMINI_API_KEY", "")
+
+    settings = Settings(_env_file=None)
+
+    assert settings.reference_date is None and settings.gemini_api_key == ""

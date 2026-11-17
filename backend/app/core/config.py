@@ -11,7 +11,13 @@ BACKEND_DIR = Path(__file__).resolve().parents[2]
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        extra="ignore",
+        # "KEY=" means "not set": Docker Compose passes unset variables as empty strings.
+        env_ignore_empty=True,
+    )
 
     app_name: str = "TalentLens AI"
     app_version: str = "0.1.0"
