@@ -1,4 +1,5 @@
-import { ChevronLeft, ScanSearch } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -28,15 +29,16 @@ export function PageShell({
       </a>
       <header className="border-b border-border bg-card">
         <div className="mx-auto flex w-full max-w-6xl items-center gap-3 px-4 py-3 sm:px-6">
-          <Link href="/" className="flex items-center gap-2.5 rounded-md">
-            <span className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-              <ScanSearch className="size-4.5" aria-hidden="true" />
-            </span>
-            <span className="text-base font-semibold tracking-tight">
-              TalentLens AI
-            </span>
+          <Link href="/" className="flex shrink-0 items-center rounded-md">
+            <Image
+              src="/brand/talentlens-logo.png"
+              alt="TalentLens AI"
+              width={155}
+              height={32}
+              priority
+            />
           </Link>
-          <span className="hidden text-sm text-muted-foreground sm:inline">
+          <span className="hidden border-l border-border pl-3 text-sm text-muted-foreground sm:inline">
             Penyaringan CV dengan penjelasan
           </span>
         </div>
