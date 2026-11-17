@@ -10,6 +10,9 @@ target-version = "py312"
 select = ["E", "F", "I", "B", "UP"]
 
 [tool.ruff.lint.per-file-ignores]
-# Regular expressions moved unchanged from the original parser; wrapping them risks changing behaviour.
+# Regular expressions and message templates moved unchanged from the original PoC; wrapping
+# them risks changing behaviour or output.
 "app/services/cv_parsing/extractor.py" = ["E501"]
 "app/services/cv_parsing/pii.py" = ["E501"]
+"app/services/explanation.py" = ["E501"]
+"app/services/matching.py" = ["E501"]

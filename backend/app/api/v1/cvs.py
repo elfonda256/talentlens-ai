@@ -1,18 +1,11 @@
-import shutil
-import tempfile
-from pathlib import Path
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
 
+from app.api.v1.uploads import temporary_copy, validate_upload
 from app.core.config import Settings, get_settings
 from app.schemas.cv import CandidateProfile
-from app.services.cv_parsing import (
-    SUPPORTED_SUFFIXES,
-    UnreadableDocumentError,
-    UnsupportedFormatError,
-    parse_cv,
-)
+from app.services.cv_parsing import UnreadableDocumentError, UnsupportedFormatError, parse_cv
 
 router = APIRouter(prefix="/cvs", tags=["CV"])
 
@@ -32,25 +25,10 @@ def parse_uploaded_cv(
     settings: Annotated[Settings, Depends(get_settings)],
 ) -> CandidateProfile:
     """Nothing is stored: the file is parsed and the temporary copy is deleted."""
-    file_name = file.filename or "cv"
-    suffix = Path(file_name).suffix.lower()
-    if suffix not in SUPPORTED_SUFFIXES:
-        raise HTTPException(
-            415,
-            f"Format {suffix or 'tanpa ekstensi'} tidak didukung. Gunakan PDF, DOCX, atau TXT.",
-        )
-    if file.size is not None and file.size > settings.max_upload_bytes:
-        raise HTTPException(
-            413,
-            f"Ukuran berkas melebihi {settings.max_upload_mb} MB.",
-        )
-
-    with tempfile.TemporaryDirectory() as tmp_dir:
-        tmp_path = Path(tmp_dir) / f"upload{suffix}"
-        with tmp_path.open("wb") as target:
-            shutil.copyfileobj(file.file, target)
+    suffix = validate_upload(file, settings)
+    with temporary_copy(file, suffix) as path:
         try:
-            return parse_cv(tmp_path, file_name=file_name, today=settings.reference_date)
+            return parse_cv(path, file_name=file.filename or "cv", today=settings.reference_date)
         except UnsupportedFormatError as error:
             raise HTTPException(415, str(error)) from error
         except UnreadableDocumentError as error:

@@ -13,7 +13,15 @@ def test_health_reports_ok_with_app_metadata():
     body = response.json()
     assert body["status"] == "ok"
     assert body["app_name"] == "TalentLens AI"
-    assert set(body) == {"status", "app_name", "version", "environment", "timestamp"}
+    assert set(body) == {
+        "status",
+        "app_name",
+        "version",
+        "environment",
+        "timestamp",
+        "embedding_backend",
+        "llm_summary",
+    }
 
 
 def test_every_response_carries_a_request_id():

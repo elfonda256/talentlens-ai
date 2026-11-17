@@ -28,6 +28,22 @@ class Settings(BaseSettings):
     # set it to make parsing results reproducible (tests, demos).
     reference_date: date | None = None
 
+    # --- Screening ---
+    storage_dir: Path = BACKEND_DIR / "storage"
+    glossary_path: Path = BACKEND_DIR / "data" / "taxonomy" / "id_en_glossary.json"
+    # auto = multilingual-e5-small when it can be loaded, otherwise TF-IDF.
+    embedding_backend: Literal["auto", "e5", "tfidf"] = "auto"
+    e5_model_name: str = "intfloat/multilingual-e5-small"
+    # Decision zones on the 0-100 score. Anything in between must be reviewed by a person.
+    shortlist_threshold: float = 70
+    reject_threshold: float = 45
+
+    # --- HR summary (Gemini) ---
+    # Empty key = the deterministic template is used instead of the LLM.
+    gemini_api_key: str = ""
+    gemini_model: str = "gemini-3.6-flash"
+    gemini_timeout_seconds: float = 30
+
     @property
     def max_upload_bytes(self) -> int:
         return self.max_upload_mb * 1024 * 1024

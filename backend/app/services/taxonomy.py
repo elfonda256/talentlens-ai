@@ -28,3 +28,21 @@ def _patterns() -> list[tuple[str, re.Pattern]]:
 
 def find_skills(text: str) -> list[str]:
     return [skill_id for skill_id, pattern in _patterns() if pattern.search(text)]
+
+
+def find_spans(text: str) -> list[tuple[str, int, int]]:
+    spans = []
+    for skill_id, pattern in _patterns():
+        match = pattern.search(text)
+        if match:
+            spans.append((skill_id, match.start(), match.end()))
+    return sorted(spans, key=lambda s: s[1])
+
+
+def label(skill_id: str) -> str:
+    return load().get(skill_id, {}).get("label", skill_id)
+
+
+def describe(skill_id: str) -> str:
+    meta = load().get(skill_id, {})
+    return f"{meta.get('label', skill_id)} {' '.join(meta.get('aliases', []))}"

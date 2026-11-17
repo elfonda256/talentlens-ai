@@ -16,6 +16,13 @@ Satu berkas per keputusan penting, dengan empat bagian yang ditetapkan governanc
 | [0009](0009-stateless-parse-endpoint.md) | Endpoint `POST /api/v1/cvs/parse` sebagai komponen pendukung, tanpa penyimpanan | 2 |
 | [0010](0010-tesseract-optional.md) | Tesseract menjadi dependensi opsional | 2 |
 | [0011](0011-git-workflow.md) | Git menjadi sumber kebenaran, dengan satu cabang per sprint | Pra-Sprint 3 |
+| [0012](0012-e5-default-tfidf-fallback.md) | Embedding E5 lokal sebagai default, TF-IDF sebagai cadangan otomatis | 3 |
+| [0013](0013-faiss-flat-index.md) | FAISS `IndexFlatIP` dengan satu blok ID per kandidat | 3 |
+| [0014](0014-reuse-scoring-pipeline.md) | Parser lowongan, pencocok, dan aturan keputusan dipindahkan tanpa mengubah logika | 3 |
+| [0015](0015-gemini-explains-only.md) | Gemini hanya menjelaskan; REST dengan templat sebagai cadangan | 3 |
+| [0016](0016-json-store-no-real-cvs-in-repo.md) | Penyimpanan JSON; CV asli dan dokumen perusahaan tidak masuk repositori | 3 |
+| [0017](0017-jobs-api-blind-by-default.md) | API berpusat pada lowongan; identitas tersembunyi secara default | 3 |
+| [0018](0018-three-routes-client-fetching.md) | Enam tampilan yang diminta ditempatkan pada tiga rute | 3 |
 
 TDR baru memakai nomor berikutnya dan nama berkas `NNNN-ringkasan-singkat.md`. TDR yang sudah diterima tidak diubah isinya;
 bila keputusan berganti, buat TDR baru yang menyatakan menggantikan yang lama.

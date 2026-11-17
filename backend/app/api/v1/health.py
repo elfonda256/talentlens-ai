@@ -17,4 +17,6 @@ def health(settings: Annotated[Settings, Depends(get_settings)]) -> HealthRespon
         version=settings.app_version,
         environment=settings.app_env,
         timestamp=datetime.now(UTC),
+        embedding_backend=settings.embedding_backend,
+        llm_summary=bool(settings.gemini_api_key),
     )

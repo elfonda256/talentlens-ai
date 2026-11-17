@@ -1,0 +1,1131 @@
+{
+ "job": {
+  "degree_fields": [
+   "architecture",
+   "interior design"
+  ],
+  "min_degree_level": 4,
+  "min_years_experience": 2.0,
+  "requirement_sentences": [
+   "Bachelor degree in architecture or interior design",
+   "Architect / Interior designer with minimum 2 years experience in design and build projects",
+   "Strong technical drawing and conceptual design skills",
+   "Proficient in AutoCAD, SketchUp and Revit",
+   "Good communication and project management skills",
+   "Understanding of building codes and regulations",
+   "Strong presentation and visualization skills"
+  ],
+  "responsibility_sentences": [
+   "Develop conceptual designs and design development for residential and office projects.",
+   "Prepare working drawings and 3D modelling for space planning.",
+   "Coordinate with suppliers to source material specifications, furniture and lighting.",
+   "Plan and monitor the project timeline from start to handover."
+  ],
+  "skills": [
+   {
+    "group": "alt1",
+    "label": "Architectural Design",
+    "priority": "must",
+    "skill_id": "architecture_design"
+   },
+   {
+    "group": "alt1",
+    "label": "Interior Design",
+    "priority": "must",
+    "skill_id": "interior_design"
+   },
+   {
+    "group": "",
+    "label": "Design & Build",
+    "priority": "must",
+    "skill_id": "design_build"
+   },
+   {
+    "group": "",
+    "label": "Technical Drawing",
+    "priority": "must",
+    "skill_id": "technical_drawing"
+   },
+   {
+    "group": "",
+    "label": "Conceptual Design",
+    "priority": "must",
+    "skill_id": "conceptual_design"
+   },
+   {
+    "group": "",
+    "label": "AutoCAD",
+    "priority": "must",
+    "skill_id": "autocad"
+   },
+   {
+    "group": "",
+    "label": "SketchUp",
+    "priority": "must",
+    "skill_id": "sketchup"
+   },
+   {
+    "group": "",
+    "label": "Revit / BIM",
+    "priority": "must",
+    "skill_id": "revit"
+   },
+   {
+    "group": "",
+    "label": "Presentation & Communication",
+    "priority": "nice",
+    "skill_id": "presentation"
+   },
+   {
+    "group": "",
+    "label": "Project Management",
+    "priority": "must",
+    "skill_id": "project_management"
+   },
+   {
+    "group": "",
+    "label": "Building Codes & Regulations",
+    "priority": "must",
+    "skill_id": "building_codes"
+   },
+   {
+    "group": "",
+    "label": "Creative Visualization",
+    "priority": "nice",
+    "skill_id": "visualization"
+   },
+   {
+    "group": "",
+    "label": "Space Planning & 3D Modelling",
+    "priority": "nice",
+    "skill_id": "space_modelling"
+   }
+  ],
+  "title": "Junior Architect",
+  "weights": {
+   "education": 0.15,
+   "experience": 0.25,
+   "semantic": 0.25,
+   "skills": 0.35
+  }
+ },
+ "results": {
+  "cv_andi.docx": {
+   "breakdown": {
+    "education": 0.15,
+    "experience": 0.0,
+    "semantic": 0.171,
+    "skills": 0.0
+   },
+   "candidate_id": "C-6861485F",
+   "contributions": {
+    "education": 2.2,
+    "experience": 0.0,
+    "semantic": 4.3,
+    "skills": 0.0
+   },
+   "evidence": [
+    {
+     "best_match": "Bachelor of Computer Science (S1), [INSTITUSI], 2023",
+     "requirement": "Bachelor degree in architecture or interior design",
+     "similarity": 0.467
+    },
+    {
+     "best_match": "Backend software engineer with 3 years of experience building web services. Software Engineer | PT Solusi Teknologi Andalan | Sep 2023 - Present",
+     "requirement": "Architect / Interior designer with minimum 2 years experience in design and build projects",
+     "similarity": 0.435
+    },
+    {
+     "best_match": "Backend software engineer with 3 years of experience building web services. Software Engineer | PT Solusi Teknologi Andalan | Sep 2023 - Present",
+     "requirement": "Understanding of building codes and regulations",
+     "similarity": 0.25
+    },
+    {
+     "best_match": "Built REST services with Python and SQL Maintained React dashboards and CI pipelines Python, JavaScript, SQL, React, Docker",
+     "requirement": "Coordinate with suppliers to source material specifications, furniture and lighting.",
+     "similarity": 0.114
+    },
+    {
+     "best_match": "Built REST services with Python and SQL Maintained React dashboards and CI pipelines Python, JavaScript, SQL, React, Docker",
+     "requirement": "Develop conceptual designs and design development for residential and office projects.",
+     "similarity": 0.099
+    },
+    {
+     "best_match": "Built REST services with Python and SQL Maintained React dashboards and CI pipelines Python, JavaScript, SQL, React, Docker",
+     "requirement": "Plan and monitor the project timeline from start to handover.",
+     "similarity": 0.097
+    }
+   ],
+   "knockout_flags": [
+    "Pengalaman relevan 0.0 tahun, di bawah minimal 2 tahun",
+    "Bidang pendidikan tidak sesuai dengan yang disyaratkan"
+   ],
+   "matched_skills": [],
+   "missing_must_skills": [
+    "Architectural Design / Interior Design",
+    "Design & Build",
+    "Technical Drawing",
+    "Conceptual Design",
+    "AutoCAD",
+    "SketchUp",
+    "Revit / BIM",
+    "Project Management",
+    "Building Codes & Regulations"
+   ],
+   "missing_nice_skills": [
+    "Presentation & Communication",
+    "Creative Visualization",
+    "Space Planning & 3D Modelling"
+   ],
+   "rank": 12,
+   "reasons": [
+    "Kontributor skor terbesar: Kesesuaian isi CV dengan JD (4.3 poin)",
+    "Keterampilan wajib yang tidak ditemukan: Architectural Design / Interior Design, Design & Build, Technical Drawing, Conceptual Design, AutoCAD, SketchUp, Revit / BIM, Project Management, Building Codes & Regulations",
+    "Pengalaman relevan terhitung 0.0 tahun (syarat minimal 2 tahun)",
+    "Pendidikan: computer science",
+    "Pengalaman relevan 0.0 tahun, di bawah minimal 2 tahun",
+    "Bidang pendidikan tidak sesuai dengan yang disyaratkan",
+    "Bukti terkuat: \"Bachelor of Computer Science (S1), [INSTITUSI], 2023\" untuk syarat \"Bachelor degree in architecture or interior design\""
+   ],
+   "recommendation": "REJECT",
+   "score": 6.5
+  },
+  "cv_bayu.docx": {
+   "breakdown": {
+    "education": 0.6,
+    "experience": 0.942,
+    "semantic": 0.329,
+    "skills": 0.286
+   },
+   "candidate_id": "C-6E19FBAB",
+   "contributions": {
+    "education": 9.0,
+    "experience": 23.5,
+    "semantic": 8.2,
+    "skills": 10.0
+   },
+   "evidence": [
+    {
+     "best_match": "Civil engineer with 5 years of experience in structural design and construction project management. Structural Engineer | PT Wijaya Konstruksi | Jan 2023 - Present",
+     "requirement": "Architect / Interior designer with minimum 2 years experience in design and build projects",
+     "similarity": 0.68
+    },
+    {
+     "best_match": "SAP2000, ETABS, AutoCAD, MS Project, Structural Analysis, Project Management Bachelor of Civil Engineering (S1), [INSTITUSI], 2021",
+     "requirement": "Good communication and project management skills",
+     "similarity": 0.645
+    },
+    {
+     "best_match": "Performed structural analysis using SAP2000 and ETABS for mid-rise buildings Prepared structural shop drawing in AutoCAD Managed project schedule and site supervision",
+     "requirement": "Prepare working drawings and 3D modelling for space planning.",
+     "similarity": 0.408
+    },
+    {
+     "best_match": "Performed structural analysis using SAP2000 and ETABS for mid-rise buildings Prepared structural shop drawing in AutoCAD Managed project schedule and site supervision",
+     "requirement": "Proficient in AutoCAD, SketchUp and Revit",
+     "similarity": 0.364
+    },
+    {
+     "best_match": "SAP2000, ETABS, AutoCAD, MS Project, Structural Analysis, Project Management Bachelor of Civil Engineering (S1), [INSTITUSI], 2021",
+     "requirement": "Bachelor degree in architecture or interior design",
+     "similarity": 0.315
+    },
+    {
+     "best_match": "Performed structural analysis using SAP2000 and ETABS for mid-rise buildings Prepared structural shop drawing in AutoCAD Managed project schedule and site supervision",
+     "requirement": "Strong technical drawing and conceptual design skills",
+     "similarity": 0.24
+    }
+   ],
+   "knockout_flags": [],
+   "matched_skills": [
+    "Technical Drawing",
+    "AutoCAD",
+    "Project Management"
+   ],
+   "missing_must_skills": [
+    "Architectural Design / Interior Design",
+    "Design & Build",
+    "Conceptual Design",
+    "SketchUp",
+    "Revit / BIM",
+    "Building Codes & Regulations"
+   ],
+   "missing_nice_skills": [
+    "Presentation & Communication",
+    "Creative Visualization",
+    "Space Planning & 3D Modelling"
+   ],
+   "rank": 8,
+   "reasons": [
+    "Kontributor skor terbesar: Pengalaman relevan (23.5 poin)",
+    "Keterampilan yang cocok: Technical Drawing, AutoCAD, Project Management",
+    "Keterampilan wajib yang tidak ditemukan: Architectural Design / Interior Design, Design & Build, Conceptual Design, SketchUp, Revit / BIM, Building Codes & Regulations",
+    "Pengalaman relevan terhitung 3.8 tahun (syarat minimal 2 tahun)",
+    "Pendidikan: civil engineering",
+    "Bukti terkuat: \"Civil engineer with 5 years of experience in structural design and construction project management. Structural Engineer | PT Wijaya Konstruk\" untuk syarat \"Architect / Interior designer with minimum 2 years experience in design and build projects\""
+   ],
+   "recommendation": "REVIEW",
+   "score": 50.7
+  },
+  "cv_citra.txt": {
+   "breakdown": {
+    "education": 0.15,
+    "experience": 0.0,
+    "semantic": 0.038,
+    "skills": 0.0
+   },
+   "candidate_id": "C-A9C54544",
+   "contributions": {
+    "education": 2.2,
+    "experience": 0.0,
+    "semantic": 0.9,
+    "skills": 0.0
+   },
+   "evidence": [
+    {
+     "best_match": "Staf akuntansi dengan pengalaman 5 tahun menyusun laporan keuangan dan pajak. Staf Akuntansi | PT Sumber Makmur Sejahtera | Okt 2021 - Sekarang",
+     "requirement": "Architect / Interior designer with minimum 2 years experience in design and build projects",
+     "similarity": 0.181
+    },
+    {
+     "best_match": "Staf akuntansi dengan pengalaman 5 tahun menyusun laporan keuangan dan pajak. Staf Akuntansi | PT Sumber Makmur Sejahtera | Okt 2021 - Sekarang",
+     "requirement": "Plan and monitor the project timeline from start to handover.",
+     "similarity": 0.046
+    },
+    {
+     "best_match": "Staf akuntansi dengan pengalaman 5 tahun menyusun laporan keuangan dan pajak. Staf Akuntansi | PT Sumber Makmur Sejahtera | Okt 2021 - Sekarang",
+     "requirement": "Understanding of building codes and regulations",
+     "similarity": 0.035
+    },
+    {
+     "best_match": "Menyusun laporan keuangan bulanan dan rekonsiliasi bank Mengelola pelaporan pajak dengan Accurate Akuntansi, Accurate, Pajak, Microsoft Excel",
+     "requirement": "Coordinate with suppliers to source material specifications, furniture and lighting.",
+     "similarity": 0.033
+    },
+    {
+     "best_match": "Staf akuntansi dengan pengalaman 5 tahun menyusun laporan keuangan dan pajak. Staf Akuntansi | PT Sumber Makmur Sejahtera | Okt 2021 - Sekarang",
+     "requirement": "Good communication and project management skills",
+     "similarity": 0.029
+    },
+    {
+     "best_match": "Menyusun laporan keuangan bulanan dan rekonsiliasi bank Mengelola pelaporan pajak dengan Accurate Akuntansi, Accurate, Pajak, Microsoft Excel",
+     "requirement": "Develop conceptual designs and design development for residential and office projects.",
+     "similarity": 0.024
+    }
+   ],
+   "knockout_flags": [
+    "Pengalaman relevan 0.0 tahun, di bawah minimal 2 tahun",
+    "Bidang pendidikan tidak sesuai dengan yang disyaratkan"
+   ],
+   "matched_skills": [],
+   "missing_must_skills": [
+    "Architectural Design / Interior Design",
+    "Design & Build",
+    "Technical Drawing",
+    "Conceptual Design",
+    "AutoCAD",
+    "SketchUp",
+    "Revit / BIM",
+    "Project Management",
+    "Building Codes & Regulations"
+   ],
+   "missing_nice_skills": [
+    "Presentation & Communication",
+    "Creative Visualization",
+    "Space Planning & 3D Modelling"
+   ],
+   "rank": 13,
+   "reasons": [
+    "Kontributor skor terbesar: Pendidikan (2.2 poin)",
+    "Keterampilan wajib yang tidak ditemukan: Architectural Design / Interior Design, Design & Build, Technical Drawing, Conceptual Design, AutoCAD, SketchUp, Revit / BIM, Project Management, Building Codes & Regulations",
+    "Pengalaman relevan terhitung 0.0 tahun (syarat minimal 2 tahun)",
+    "Pendidikan: accounting",
+    "Pengalaman relevan 0.0 tahun, di bawah minimal 2 tahun",
+    "Bidang pendidikan tidak sesuai dengan yang disyaratkan",
+    "Bukti terkuat: \"Staf akuntansi dengan pengalaman 5 tahun menyusun laporan keuangan dan pajak. Staf Akuntansi | PT Sumber Makmur Sejahtera | Okt 2021 - Sekar\" untuk syarat \"Architect / Interior designer with minimum 2 years experience in design and build projects\""
+   ],
+   "recommendation": "REJECT",
+   "score": 3.1
+  },
+  "cv_dewi.pdf": {
+   "breakdown": {
+    "education": 1.0,
+    "experience": 0.875,
+    "semantic": 0.787,
+    "skills": 0.762
+   },
+   "candidate_id": "C-93ADE8E9",
+   "contributions": {
+    "education": 15.0,
+    "experience": 21.9,
+    "semantic": 19.7,
+    "skills": 26.7
+   },
+   "evidence": [
+    {
+     "best_match": "AutoCAD, SketchUp, Enscape, Interior Design, Conceptual Design, Procurement, Project Management, Presentation Bachelor of Interior Design (S1), [INSTITUSI], 2024",
+     "requirement": "Bachelor degree in architecture or interior design",
+     "similarity": 1.0
+    },
+    {
+     "best_match": "Interior designer with 2.5 years of design and build experience for villas and hospitality projects. Interior Designer | PT Bali Karya Interior | May 2024 - Present",
+     "requirement": "Architect / Interior designer with minimum 2 years experience in design and build projects",
+     "similarity": 1.0
+    },
+    {
+     "best_match": "Developed concept design and space planning for villa and restaurant projects Prepared technical drawing and detail drawing in AutoCAD, 3D modelling in SketchUp",
+     "requirement": "Strong technical drawing and conceptual design skills",
+     "similarity": 1.0
+    },
+    {
+     "best_match": "Developed concept design and space planning for villa and restaurant projects Prepared technical drawing and detail drawing in AutoCAD, 3D modelling in SketchUp",
+     "requirement": "Prepare working drawings and 3D modelling for space planning.",
+     "similarity": 1.0
+    },
+    {
+     "best_match": "Sourced material specification with supplier for furniture, lighting, accessories and decorations",
+     "requirement": "Coordinate with suppliers to source material specifications, furniture and lighting.",
+     "similarity": 1.0
+    },
+    {
+     "best_match": "Planned and monitored project timeline with the design and build contractor Presented design proposals to clients",
+     "requirement": "Plan and monitor the project timeline from start to handover.",
+     "similarity": 1.0
+    }
+   ],
+   "knockout_flags": [],
+   "matched_skills": [
+    "Interior Design",
+    "Design & Build",
+    "Technical Drawing",
+    "Conceptual Design",
+    "AutoCAD",
+    "SketchUp",
+    "Presentation & Communication",
+    "Project Management",
+    "Space Planning & 3D Modelling"
+   ],
+   "missing_must_skills": [
+    "Revit / BIM",
+    "Building Codes & Regulations"
+   ],
+   "missing_nice_skills": [
+    "Creative Visualization"
+   ],
+   "rank": 4,
+   "reasons": [
+    "Kontributor skor terbesar: Keterampilan (26.7 poin)",
+    "Keterampilan yang cocok: Interior Design, Design & Build, Technical Drawing, Conceptual Design, AutoCAD, SketchUp, Presentation & Communication, Project Management",
+    "Keterampilan wajib yang tidak ditemukan: Revit / BIM, Building Codes & Regulations",
+    "Pengalaman relevan terhitung 2.5 tahun (syarat minimal 2 tahun)",
+    "Pendidikan: interior design",
+    "Bukti terkuat: \"AutoCAD, SketchUp, Enscape, Interior Design, Conceptual Design, Procurement, Project Management, Presentation Bachelor of Interior Design (S\" untuk syarat \"Bachelor degree in architecture or interior design\""
+   ],
+   "recommendation": "SHORTLIST",
+   "score": 83.3
+  },
+  "cv_dimas.pdf": {
+   "breakdown": {
+    "education": 1.0,
+    "experience": 0.875,
+    "semantic": 0.392,
+    "skills": 0.905
+   },
+   "candidate_id": "C-69D59AA6",
+   "contributions": {
+    "education": 15.0,
+    "experience": 21.9,
+    "semantic": 9.8,
+    "skills": 31.7
+   },
+   "evidence": [
+    {
+     "best_match": "Koordinasi proyek dengan tim struktur dan MEP serta presentasi kepada klien Revit, BIM, AutoCAD, SketchUp, Gambar Teknik, Desain Arsitektur, Presentasi",
+     "requirement": "Proficient in AutoCAD, SketchUp and Revit",
+     "similarity": 0.616
+    },
+    {
+     "best_match": "S1 Arsitektur, [INSTITUSI], 2023",
+     "requirement": "Bachelor degree in architecture or interior design",
+     "similarity": 0.588
+    },
+    {
+     "best_match": "Koordinasi proyek dengan tim struktur dan MEP serta presentasi kepada klien Revit, BIM, AutoCAD, SketchUp, Gambar Teknik, Desain Arsitektur, Presentasi",
+     "requirement": "Strong presentation and visualization skills",
+     "similarity": 0.531
+    },
+    {
+     "best_match": "Arsitek Junior | PT Arsitama Konsultan | Mei 2024 - Sekarang Menyusun desain konseptual dan gambar kerja gedung kantor menggunakan Revit dan AutoCAD",
+     "requirement": "Strong technical drawing and conceptual design skills",
+     "similarity": 0.481
+    },
+    {
+     "best_match": "Membuat pemodelan 3D dan visualisasi dengan SketchUp Memastikan desain sesuai peraturan bangunan, SNI dan persyaratan PBG",
+     "requirement": "Understanding of building codes and regulations",
+     "similarity": 0.455
+    },
+    {
+     "best_match": "Arsitek Junior | PT Arsitama Konsultan | Mei 2024 - Sekarang Menyusun desain konseptual dan gambar kerja gedung kantor menggunakan Revit dan AutoCAD",
+     "requirement": "Develop conceptual designs and design development for residential and office projects.",
+     "similarity": 0.419
+    }
+   ],
+   "knockout_flags": [],
+   "matched_skills": [
+    "Architectural Design",
+    "Technical Drawing",
+    "Conceptual Design",
+    "AutoCAD",
+    "SketchUp",
+    "Revit / BIM",
+    "Presentation & Communication",
+    "Project Management",
+    "Building Codes & Regulations",
+    "Creative Visualization",
+    "Space Planning & 3D Modelling"
+   ],
+   "missing_must_skills": [
+    "Design & Build"
+   ],
+   "missing_nice_skills": [],
+   "rank": 5,
+   "reasons": [
+    "Kontributor skor terbesar: Keterampilan (31.7 poin)",
+    "Keterampilan yang cocok: Architectural Design, Technical Drawing, Conceptual Design, AutoCAD, SketchUp, Revit / BIM, Presentation & Communication, Project Management",
+    "Keterampilan wajib yang tidak ditemukan: Design & Build",
+    "Pengalaman relevan terhitung 2.5 tahun (syarat minimal 2 tahun)",
+    "Pendidikan: architecture",
+    "Bukti terkuat: \"Koordinasi proyek dengan tim struktur dan MEP serta presentasi kepada klien Revit, BIM, AutoCAD, SketchUp, Gambar Teknik, Desain Arsitektur,\" untuk syarat \"Proficient in AutoCAD, SketchUp and Revit\""
+   ],
+   "recommendation": "SHORTLIST",
+   "score": 78.4
+  },
+  "cv_fajar.txt": {
+   "breakdown": {
+    "education": 0.42,
+    "experience": 0.912,
+    "semantic": 0.184,
+    "skills": 0.286
+   },
+   "candidate_id": "C-4E3DA926",
+   "contributions": {
+    "education": 6.3,
+    "experience": 22.8,
+    "semantic": 4.6,
+    "skills": 10.0
+   },
+   "evidence": [
+    {
+     "best_match": "AutoCAD, Gambar Teknik, Shop Drawing, SketchUp dasar D3 Teknik Sipil, [INSTITUSI], 2023",
+     "requirement": "Strong technical drawing and conceptual design skills",
+     "similarity": 0.856
+    },
+    {
+     "best_match": "AutoCAD, Gambar Teknik, Shop Drawing, SketchUp dasar D3 Teknik Sipil, [INSTITUSI], 2023",
+     "requirement": "Proficient in AutoCAD, SketchUp and Revit",
+     "similarity": 0.438
+    },
+    {
+     "best_match": "Drafter dengan pengalaman 3 tahun menyusun gambar kerja untuk kontraktor. Drafter | PT Mitra Konstruksi Utama | Agu 2023 - Sekarang",
+     "requirement": "Architect / Interior designer with minimum 2 years experience in design and build projects",
+     "similarity": 0.203
+    },
+    {
+     "best_match": "AutoCAD, Gambar Teknik, Shop Drawing, SketchUp dasar D3 Teknik Sipil, [INSTITUSI], 2023",
+     "requirement": "Prepare working drawings and 3D modelling for space planning.",
+     "similarity": 0.17
+    },
+    {
+     "best_match": "Membuat gambar teknik, shop drawing dan as built drawing dengan AutoCAD Membantu perhitungan RAB dan koordinasi dengan pengawas lapangan",
+     "requirement": "Coordinate with suppliers to source material specifications, furniture and lighting.",
+     "similarity": 0.129
+    },
+    {
+     "best_match": "Membuat gambar teknik, shop drawing dan as built drawing dengan AutoCAD Membantu perhitungan RAB dan koordinasi dengan pengawas lapangan",
+     "requirement": "Understanding of building codes and regulations",
+     "similarity": 0.06
+    }
+   ],
+   "knockout_flags": [
+    "Jenjang pendidikan di bawah yang disyaratkan"
+   ],
+   "matched_skills": [
+    "Technical Drawing",
+    "AutoCAD",
+    "SketchUp"
+   ],
+   "missing_must_skills": [
+    "Architectural Design / Interior Design",
+    "Design & Build",
+    "Conceptual Design",
+    "Revit / BIM",
+    "Project Management",
+    "Building Codes & Regulations"
+   ],
+   "missing_nice_skills": [
+    "Presentation & Communication",
+    "Creative Visualization",
+    "Space Planning & 3D Modelling"
+   ],
+   "rank": 10,
+   "reasons": [
+    "Kontributor skor terbesar: Pengalaman relevan (22.8 poin)",
+    "Keterampilan yang cocok: Technical Drawing, AutoCAD, SketchUp",
+    "Keterampilan wajib yang tidak ditemukan: Architectural Design / Interior Design, Design & Build, Conceptual Design, Revit / BIM, Project Management, Building Codes & Regulations",
+    "Pengalaman relevan terhitung 3.2 tahun (syarat minimal 2 tahun)",
+    "Pendidikan: civil engineering",
+    "Jenjang pendidikan di bawah yang disyaratkan",
+    "Bukti terkuat: \"AutoCAD, Gambar Teknik, Shop Drawing, SketchUp dasar D3 Teknik Sipil, [INSTITUSI], 2023\" untuk syarat \"Strong technical drawing and conceptual design skills\""
+   ],
+   "recommendation": "REJECT",
+   "score": 43.7
+  },
+  "cv_maya.pdf": {
+   "breakdown": {
+    "education": 1.0,
+    "experience": 1.0,
+    "semantic": 0.519,
+    "skills": 0.952
+   },
+   "candidate_id": "C-D113D573",
+   "contributions": {
+    "education": 15.0,
+    "experience": 25.0,
+    "semantic": 13.0,
+    "skills": 33.3
+   },
+   "evidence": [
+    {
+     "best_match": "Senior Interior Designer | PT Karya Griya Interior | Jan 2022 - Sekarang Memimpin desain interior dan fit-out proyek hotel dengan skema desain dan bangun",
+     "requirement": "Bachelor degree in architecture or interior design",
+     "similarity": 0.903
+    },
+    {
+     "best_match": "Senior Interior Designer | PT Karya Griya Interior | Jan 2022 - Sekarang Memimpin desain interior dan fit-out proyek hotel dengan skema desain dan bangun",
+     "requirement": "Architect / Interior designer with minimum 2 years experience in design and build projects",
+     "similarity": 0.873
+    },
+    {
+     "best_match": "Menyusun konsep desain, gambar kerja, dan spesifikasi material menggunakan AutoCAD, SketchUp dan Revit",
+     "requirement": "Proficient in AutoCAD, SketchUp and Revit",
+     "similarity": 0.733
+    },
+    {
+     "best_match": "Memastikan kepatuhan terhadap regulasi bangunan dan standar K3 Desainer Interior | Studio Rupa Ruang | Sep 2019 - Des 2021",
+     "requirement": "Understanding of building codes and regulations",
+     "similarity": 0.611
+    },
+    {
+     "best_match": "Desain interior rumah tinggal dan kantor, tata ruang, serta presentasi kepada klien",
+     "requirement": "Develop conceptual designs and design development for residential and office projects.",
+     "similarity": 0.597
+    },
+    {
+     "best_match": "Bekerja sama dengan supplier dan vendor untuk pengadaan furniture, pencahayaan dan dekorasi Menyusun jadwal proyek dan RAB serta melakukan pengawasan lapangan",
+     "requirement": "Coordinate with suppliers to source material specifications, furniture and lighting.",
+     "similarity": 0.457
+    }
+   ],
+   "knockout_flags": [],
+   "matched_skills": [
+    "Interior Design",
+    "Design & Build",
+    "Technical Drawing",
+    "Conceptual Design",
+    "AutoCAD",
+    "SketchUp",
+    "Revit / BIM",
+    "Presentation & Communication",
+    "Project Management",
+    "Building Codes & Regulations",
+    "Space Planning & 3D Modelling"
+   ],
+   "missing_must_skills": [],
+   "missing_nice_skills": [
+    "Creative Visualization"
+   ],
+   "rank": 3,
+   "reasons": [
+    "Kontributor skor terbesar: Keterampilan (33.3 poin)",
+    "Keterampilan yang cocok: Interior Design, Design & Build, Technical Drawing, Conceptual Design, AutoCAD, SketchUp, Revit / BIM, Presentation & Communication",
+    "Pengalaman relevan terhitung 7.1 tahun (syarat minimal 2 tahun)",
+    "Pendidikan: interior design",
+    "Bukti terkuat: \"Senior Interior Designer | PT Karya Griya Interior | Jan 2022 - Sekarang Memimpin desain interior dan fit-out proyek hotel dengan skema desa\" untuk syarat \"Bachelor degree in architecture or interior design\""
+   ],
+   "recommendation": "SHORTLIST",
+   "score": 86.3
+  },
+  "cv_nadia.docx": {
+   "breakdown": {
+    "education": 1.0,
+    "experience": 0.958,
+    "semantic": 0.81,
+    "skills": 0.81
+   },
+   "candidate_id": "C-992283F0",
+   "contributions": {
+    "education": 15.0,
+    "experience": 23.9,
+    "semantic": 20.2,
+    "skills": 28.4
+   },
+   "evidence": [
+    {
+     "best_match": "Bachelor of Interior Design (S1), [INSTITUSI], 2022",
+     "requirement": "Bachelor degree in architecture or interior design",
+     "similarity": 1.0
+    },
+    {
+     "best_match": "Interior designer with 4 years in design and build, strong in concept design, visualization and material sourcing.",
+     "requirement": "Architect / Interior designer with minimum 2 years experience in design and build projects",
+     "similarity": 1.0
+    },
+    {
+     "best_match": "AutoCAD, SketchUp, Lumion, Adobe Photoshop, Interior Design, Space Planning, Procurement, Project Management, Communication",
+     "requirement": "Good communication and project management skills",
+     "similarity": 1.0
+    },
+    {
+     "best_match": "Interior designer with 4 years in design and build, strong in concept design, visualization and material sourcing.",
+     "requirement": "Strong presentation and visualization skills",
+     "similarity": 1.0
+    },
+    {
+     "best_match": "Worked with supplier to source material specification for fittings, furniture, lighting and decorations",
+     "requirement": "Coordinate with suppliers to source material specifications, furniture and lighting.",
+     "similarity": 1.0
+    },
+    {
+     "best_match": "Created concept design, moodboard and 3D modelling in SketchUp and Lumion",
+     "requirement": "Prepare working drawings and 3D modelling for space planning.",
+     "similarity": 0.813
+    }
+   ],
+   "knockout_flags": [],
+   "matched_skills": [
+    "Interior Design",
+    "Design & Build",
+    "Technical Drawing",
+    "Conceptual Design",
+    "AutoCAD",
+    "SketchUp",
+    "Presentation & Communication",
+    "Project Management",
+    "Creative Visualization",
+    "Space Planning & 3D Modelling"
+   ],
+   "missing_must_skills": [
+    "Revit / BIM",
+    "Building Codes & Regulations"
+   ],
+   "missing_nice_skills": [],
+   "rank": 2,
+   "reasons": [
+    "Kontributor skor terbesar: Keterampilan (28.4 poin)",
+    "Keterampilan yang cocok: Interior Design, Design & Build, Technical Drawing, Conceptual Design, AutoCAD, SketchUp, Presentation & Communication, Project Management",
+    "Keterampilan wajib yang tidak ditemukan: Revit / BIM, Building Codes & Regulations",
+    "Pengalaman relevan terhitung 4.2 tahun (syarat minimal 2 tahun)",
+    "Pendidikan: interior design",
+    "Bukti terkuat: \"Bachelor of Interior Design (S1), [INSTITUSI], 2022\" untuk syarat \"Bachelor degree in architecture or interior design\""
+   ],
+   "recommendation": "SHORTLIST",
+   "score": 87.5
+  },
+  "cv_putri.pdf": {
+   "breakdown": {
+    "education": 0.15,
+    "experience": 0.159,
+    "semantic": 0.3,
+    "skills": 0.095
+   },
+   "candidate_id": "C-C5695E56",
+   "contributions": {
+    "education": 2.2,
+    "experience": 4.0,
+    "semantic": 7.5,
+    "skills": 3.3
+   },
+   "evidence": [
+    {
+     "best_match": "Graphic designer with 4 years of experience in branding and digital campaigns. Graphic Designer | PT Kreasi Digital Nusantara | Apr 2024 - Present",
+     "requirement": "Architect / Interior designer with minimum 2 years experience in design and build projects",
+     "similarity": 0.798
+    },
+    {
+     "best_match": "Adobe Photoshop, Illustrator, Figma, CorelDRAW, Branding, Communication Bachelor of Visual Communication Design (S1), [INSTITUSI], 2022",
+     "requirement": "Good communication and project management skills",
+     "similarity": 0.763
+    },
+    {
+     "best_match": "Adobe Photoshop, Illustrator, Figma, CorelDRAW, Branding, Communication Bachelor of Visual Communication Design (S1), [INSTITUSI], 2022",
+     "requirement": "Bachelor degree in architecture or interior design",
+     "similarity": 0.345
+    },
+    {
+     "best_match": "Adobe Photoshop, Illustrator, Figma, CorelDRAW, Branding, Communication Bachelor of Visual Communication Design (S1), [INSTITUSI], 2022",
+     "requirement": "Strong presentation and visualization skills",
+     "similarity": 0.261
+    },
+    {
+     "best_match": "Designed branding, social media content and marketing collateral Created UI/UX mockups in Figma for landing pages",
+     "requirement": "Understanding of building codes and regulations",
+     "similarity": 0.258
+    },
+    {
+     "best_match": "Designed branding, social media content and marketing collateral Created UI/UX mockups in Figma for landing pages",
+     "requirement": "Develop conceptual designs and design development for residential and office projects.",
+     "similarity": 0.202
+    }
+   ],
+   "knockout_flags": [
+    "Pengalaman relevan 0.4 tahun, di bawah minimal 2 tahun",
+    "Bidang pendidikan tidak sesuai dengan yang disyaratkan"
+   ],
+   "matched_skills": [
+    "Presentation & Communication",
+    "Creative Visualization"
+   ],
+   "missing_must_skills": [
+    "Architectural Design / Interior Design",
+    "Design & Build",
+    "Technical Drawing",
+    "Conceptual Design",
+    "AutoCAD",
+    "SketchUp",
+    "Revit / BIM",
+    "Project Management",
+    "Building Codes & Regulations"
+   ],
+   "missing_nice_skills": [
+    "Space Planning & 3D Modelling"
+   ],
+   "rank": 11,
+   "reasons": [
+    "Kontributor skor terbesar: Kesesuaian isi CV dengan JD (7.5 poin)",
+    "Keterampilan yang cocok: Presentation & Communication, Creative Visualization",
+    "Keterampilan wajib yang tidak ditemukan: Architectural Design / Interior Design, Design & Build, Technical Drawing, Conceptual Design, AutoCAD, SketchUp, Revit / BIM, Project Management, Building Codes & Regulations",
+    "Pengalaman relevan terhitung 0.4 tahun (syarat minimal 2 tahun)",
+    "Pendidikan: visual communication design",
+    "Pengalaman relevan 0.4 tahun, di bawah minimal 2 tahun",
+    "Bidang pendidikan tidak sesuai dengan yang disyaratkan",
+    "Bukti terkuat: \"Graphic designer with 4 years of experience in branding and digital campaigns. Graphic Designer | PT Kreasi Digital Nusantara | Apr 2024 - P\" untuk syarat \"Architect / Interior designer with minimum 2 years experience in design and build projects\""
+   ],
+   "recommendation": "REJECT",
+   "score": 17.0
+  },
+  "cv_raka.pdf": {
+   "breakdown": {
+    "education": 1.0,
+    "experience": 0.912,
+    "semantic": 0.852,
+    "skills": 0.952
+   },
+   "candidate_id": "C-CBCA601A",
+   "contributions": {
+    "education": 15.0,
+    "experience": 22.8,
+    "semantic": 21.3,
+    "skills": 33.3
+   },
+   "evidence": [
+    {
+     "best_match": "Architect with 3+ years of experience in design and build projects, from conceptual design to construction dra",
+     "requirement": "Architect / Interior designer with minimum 2 years experience in design and build projects",
+     "similarity": 1.0
+    },
+    {
+     "best_match": "AutoCAD, SketchUp, Revit, Enscape, Technical Drawing, Conceptual Design, Building Codes, Project Management, P Bachelor of Architecture (S1), [INSTITUSI], 2023",
+     "requirement": "Strong technical drawing and conceptual design skills",
+     "similarity": 1.0
+    },
+    {
+     "best_match": "Junior Architect | PT Graha Cipta Desain | Mar 2024 - Present Developed conceptual design and design development for residential and office projects",
+     "requirement": "Develop conceptual designs and design development for residential and office projects.",
+     "similarity": 1.0
+    },
+    {
+     "best_match": "Produced technical drawing and construction drawing packages in AutoCAD and Revit Built 3D modelling and space planning studies in SketchUp with Enscape rendering",
+     "requirement": "Prepare working drawings and 3D modelling for space planning.",
+     "similarity": 1.0
+    },
+    {
+     "best_match": "Coordinated with supplier and vendor for material specification, lighting and furniture procurement Checked designs against building codes, SNI and PBG requirements",
+     "requirement": "Coordinate with suppliers to source material specifications, furniture and lighting.",
+     "similarity": 1.0
+    },
+    {
+     "best_match": "Produced technical drawing and construction drawing packages in AutoCAD and Revit Built 3D modelling and space planning studies in SketchUp with Enscape rendering",
+     "requirement": "Proficient in AutoCAD, SketchUp and Revit",
+     "similarity": 0.99
+    }
+   ],
+   "knockout_flags": [],
+   "matched_skills": [
+    "Architectural Design",
+    "Design & Build",
+    "Technical Drawing",
+    "Conceptual Design",
+    "AutoCAD",
+    "SketchUp",
+    "Revit / BIM",
+    "Presentation & Communication",
+    "Project Management",
+    "Building Codes & Regulations",
+    "Space Planning & 3D Modelling"
+   ],
+   "missing_must_skills": [],
+   "missing_nice_skills": [
+    "Creative Visualization"
+   ],
+   "rank": 1,
+   "reasons": [
+    "Kontributor skor terbesar: Keterampilan (33.3 poin)",
+    "Keterampilan yang cocok: Architectural Design, Design & Build, Technical Drawing, Conceptual Design, AutoCAD, SketchUp, Revit / BIM, Presentation & Communication",
+    "Pengalaman relevan terhitung 3.2 tahun (syarat minimal 2 tahun)",
+    "Pendidikan: architecture",
+    "Bukti terkuat: \"Architect with 3+ years of experience in design and build projects, from conceptual design to construction dra\" untuk syarat \"Architect / Interior designer with minimum 2 years experience in design and build projects\""
+   ],
+   "recommendation": "SHORTLIST",
+   "score": 92.4
+  },
+  "cv_rizky.docx": {
+   "breakdown": {
+    "education": 1.0,
+    "experience": 0.452,
+    "semantic": 0.373,
+    "skills": 0.333
+   },
+   "candidate_id": "C-1D66BC9B",
+   "contributions": {
+    "education": 15.0,
+    "experience": 11.3,
+    "semantic": 9.3,
+    "skills": 11.7
+   },
+   "evidence": [
+    {
+     "best_match": "Bachelor of Architecture (S1), [INSTITUSI], 2024",
+     "requirement": "Bachelor degree in architecture or interior design",
+     "similarity": 1.0
+    },
+    {
+     "best_match": "Delivered architectural design and conceptual design for two private houses in SketchUp 3D Visualizer | Studio Lensa Ruang | Jan 2025 - Dec 2025",
+     "requirement": "Strong technical drawing and conceptual design skills",
+     "similarity": 0.603
+    },
+    {
+     "best_match": "Produced rendering with Lumion and V-Ray for marketing visuals Post-production in Adobe Photoshop SketchUp, Lumion, V-Ray, Adobe Photoshop, Visualization",
+     "requirement": "Strong presentation and visualization skills",
+     "similarity": 0.57
+    },
+    {
+     "best_match": "Delivered architectural design and conceptual design for two private houses in SketchUp 3D Visualizer | Studio Lensa Ruang | Jan 2025 - Dec 2025",
+     "requirement": "Develop conceptual designs and design development for residential and office projects.",
+     "similarity": 0.421
+    },
+    {
+     "best_match": "Architecture graduate working as a 3D visualizer and freelance architect. Freelance Architect | Self-employed | Jan 2026 - Present",
+     "requirement": "Prepare working drawings and 3D modelling for space planning.",
+     "similarity": 0.374
+    },
+    {
+     "best_match": "Architecture graduate working as a 3D visualizer and freelance architect. Freelance Architect | Self-employed | Jan 2026 - Present",
+     "requirement": "Architect / Interior designer with minimum 2 years experience in design and build projects",
+     "similarity": 0.362
+    }
+   ],
+   "knockout_flags": [
+    "Pengalaman relevan 1.1 tahun, di bawah minimal 2 tahun"
+   ],
+   "matched_skills": [
+    "Architectural Design",
+    "Conceptual Design",
+    "SketchUp",
+    "Creative Visualization"
+   ],
+   "missing_must_skills": [
+    "Design & Build",
+    "Technical Drawing",
+    "AutoCAD",
+    "Revit / BIM",
+    "Project Management",
+    "Building Codes & Regulations"
+   ],
+   "missing_nice_skills": [
+    "Presentation & Communication",
+    "Space Planning & 3D Modelling"
+   ],
+   "rank": 9,
+   "reasons": [
+    "Kontributor skor terbesar: Pendidikan (15.0 poin)",
+    "Keterampilan yang cocok: Architectural Design, Conceptual Design, SketchUp, Creative Visualization",
+    "Keterampilan wajib yang tidak ditemukan: Design & Build, Technical Drawing, AutoCAD, Revit / BIM, Project Management, Building Codes & Regulations",
+    "Pengalaman relevan terhitung 1.1 tahun (syarat minimal 2 tahun)",
+    "Pendidikan: architecture",
+    "Pengalaman relevan 1.1 tahun, di bawah minimal 2 tahun",
+    "Bukti terkuat: \"Bachelor of Architecture (S1), [INSTITUSI], 2024\" untuk syarat \"Bachelor degree in architecture or interior design\""
+   ],
+   "recommendation": "REVIEW",
+   "score": 47.3
+  },
+  "cv_sinta.pdf": {
+   "breakdown": {
+    "education": 1.0,
+    "experience": 0.177,
+    "semantic": 0.486,
+    "skills": 0.571
+   },
+   "candidate_id": "C-D950E960",
+   "contributions": {
+    "education": 15.0,
+    "experience": 4.4,
+    "semantic": 12.2,
+    "skills": 20.0
+   },
+   "evidence": [
+    {
+     "best_match": "Assisted conceptual design and 3D modelling in SketchUp Drafted technical drawing in AutoCAD under supervision",
+     "requirement": "Strong technical drawing and conceptual design skills",
+     "similarity": 1.0
+    },
+    {
+     "best_match": "Assisted conceptual design and 3D modelling in SketchUp Drafted technical drawing in AutoCAD under supervision",
+     "requirement": "Proficient in AutoCAD, SketchUp and Revit",
+     "similarity": 0.776
+    },
+    {
+     "best_match": "Assisted conceptual design and 3D modelling in SketchUp Drafted technical drawing in AutoCAD under supervision",
+     "requirement": "Prepare working drawings and 3D modelling for space planning.",
+     "similarity": 0.762
+    },
+    {
+     "best_match": "Fresh graduate in architecture with internship experience and a strong portfolio in conceptual design. Architecture Intern | PT Studio Tata Ruang | Feb 2026 - Jul 2026",
+     "requirement": "Bachelor degree in architecture or interior design",
+     "similarity": 0.731
+    },
+    {
+     "best_match": "Fresh graduate in architecture with internship experience and a strong portfolio in conceptual design. Architecture Intern | PT Studio Tata Ruang | Feb 2026 - Jul 2026",
+     "requirement": "Architect / Interior designer with minimum 2 years experience in design and build projects",
+     "similarity": 0.661
+    },
+    {
+     "best_match": "AutoCAD, SketchUp, Lumion, Adobe Photoshop, Sketching, Presentation Bachelor of Architecture (S1), [INSTITUSI], 2026",
+     "requirement": "Strong presentation and visualization skills",
+     "similarity": 0.438
+    }
+   ],
+   "knockout_flags": [
+    "Pengalaman relevan 0.4 tahun, di bawah minimal 2 tahun"
+   ],
+   "matched_skills": [
+    "Architectural Design / Interior Design (tersirat)",
+    "Technical Drawing",
+    "Conceptual Design",
+    "AutoCAD",
+    "SketchUp",
+    "Presentation & Communication",
+    "Creative Visualization",
+    "Space Planning & 3D Modelling"
+   ],
+   "missing_must_skills": [
+    "Design & Build",
+    "Revit / BIM",
+    "Project Management",
+    "Building Codes & Regulations"
+   ],
+   "missing_nice_skills": [],
+   "rank": 7,
+   "reasons": [
+    "Kontributor skor terbesar: Keterampilan (20.0 poin)",
+    "Keterampilan yang cocok: Architectural Design / Interior Design (tersirat), Technical Drawing, Conceptual Design, AutoCAD, SketchUp, Presentation & Communication, Creative Visualization, Space Planning & 3D Modelling",
+    "Keterampilan wajib yang tidak ditemukan: Design & Build, Revit / BIM, Project Management, Building Codes & Regulations",
+    "Pengalaman relevan terhitung 0.4 tahun (syarat minimal 2 tahun)",
+    "Pendidikan: architecture",
+    "Pengalaman relevan 0.4 tahun, di bawah minimal 2 tahun",
+    "Bukti terkuat: \"Assisted conceptual design and 3D modelling in SketchUp Drafted technical drawing in AutoCAD under supervision\" untuk syarat \"Strong technical drawing and conceptual design skills\""
+   ],
+   "recommendation": "REVIEW",
+   "score": 51.6
+  },
+  "cv_yoga.pdf": {
+   "breakdown": {
+    "education": 0.7,
+    "experience": 0.921,
+    "semantic": 0.341,
+    "skills": 0.524
+   },
+   "candidate_id": "C-51C56295",
+   "contributions": {
+    "education": 10.5,
+    "experience": 23.0,
+    "semantic": 8.5,
+    "skills": 18.3
+   },
+   "evidence": [
+    {
+     "best_match": "Pengawas proyek interior dengan pengalaman 3 tahun pada kontraktor interior. Site Supervisor Interior | PT Sentra Interior Mandiri | Jun 2023 - Sekarang",
+     "requirement": "Architect / Interior designer with minimum 2 years experience in design and build projects",
+     "similarity": 0.819
+    },
+    {
+     "best_match": "Pengawas proyek interior dengan pengalaman 3 tahun pada kontraktor interior. Site Supervisor Interior | PT Sentra Interior Mandiri | Jun 2023 - Sekarang",
+     "requirement": "Bachelor degree in architecture or interior design",
+     "similarity": 0.711
+    },
+    {
+     "best_match": "Memeriksa gambar kerja dan revisi sederhana dengan AutoCAD Manajemen Proyek, Pengawasan Lapangan, AutoCAD, Pengadaan, Komunikasi D3 Arsitektur, [INSTITUSI], 2022",
+     "requirement": "Good communication and project management skills",
+     "similarity": 0.565
+    },
+    {
+     "best_match": "Pengawasan lapangan pekerjaan fit-out kantor dan ritel Menyusun jadwal proyek dan koordinasi dengan vendor serta supplier material",
+     "requirement": "Coordinate with suppliers to source material specifications, furniture and lighting.",
+     "similarity": 0.395
+    },
+    {
+     "best_match": "Pengawasan lapangan pekerjaan fit-out kantor dan ritel Menyusun jadwal proyek dan koordinasi dengan vendor serta supplier material",
+     "requirement": "Plan and monitor the project timeline from start to handover.",
+     "similarity": 0.339
+    },
+    {
+     "best_match": "Memeriksa gambar kerja dan revisi sederhana dengan AutoCAD Manajemen Proyek, Pengawasan Lapangan, AutoCAD, Pengadaan, Komunikasi D3 Arsitektur, [INSTITUSI], 2022",
+     "requirement": "Proficient in AutoCAD, SketchUp and Revit",
+     "similarity": 0.32
+    }
+   ],
+   "knockout_flags": [
+    "Jenjang pendidikan di bawah yang disyaratkan"
+   ],
+   "matched_skills": [
+    "Interior Design",
+    "Design & Build",
+    "Technical Drawing",
+    "AutoCAD",
+    "Presentation & Communication",
+    "Project Management"
+   ],
+   "missing_must_skills": [
+    "Conceptual Design",
+    "SketchUp",
+    "Revit / BIM",
+    "Building Codes & Regulations"
+   ],
+   "missing_nice_skills": [
+    "Creative Visualization",
+    "Space Planning & 3D Modelling"
+   ],
+   "rank": 6,
+   "reasons": [
+    "Kontributor skor terbesar: Pengalaman relevan (23.0 poin)",
+    "Keterampilan yang cocok: Interior Design, Design & Build, Technical Drawing, AutoCAD, Presentation & Communication, Project Management",
+    "Keterampilan wajib yang tidak ditemukan: Conceptual Design, SketchUp, Revit / BIM, Building Codes & Regulations",
+    "Pengalaman relevan terhitung 3.4 tahun (syarat minimal 2 tahun)",
+    "Pendidikan: architecture",
+    "Jenjang pendidikan di bawah yang disyaratkan",
+    "Bukti terkuat: \"Pengawas proyek interior dengan pengalaman 3 tahun pada kontraktor interior. Site Supervisor Interior | PT Sentra Interior Mandiri | Jun 202\" untuk syarat \"Architect / Interior designer with minimum 2 years experience in design and build projects\""
+   ],
+   "recommendation": "REVIEW",
+   "score": 60.3
+  }
+ }
+}

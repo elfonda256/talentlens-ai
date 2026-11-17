@@ -56,32 +56,36 @@ Tiga keputusan pertama dicatat lengkap sebagai TDR-0001 sampai TDR-0003 di [docs
 | Versi API di path (`/api/v1`) | Kontrak eksplisit; Swagger tetap rapi |
 | Tidak ada folder kosong untuk fitur mendatang | Folder dibuat bersama kode pertamanya, bukan sebagai placeholder |
 
-## Pipeline target (governance v1.1)
+## Pipeline screening (Sprint 3)
 
 ```
-Deterministic Pipeline -> Candidate JSON -> Embedding -> FAISS Similarity
-    -> Weighted Scoring -> Ranking -> Gemini Summary -> Dashboard
+Lowongan -> jd_parsing -> JobProfile
+CV       -> cv_parsing -> CandidateProfile -> embedding -> vector_index (FAISS)
+                                                   -> matching (skor berbobot) -> explanation (keputusan)
+                                                   -> screening (peringkat) -> hr_summary (Gemini)
 ```
 
-Yang sudah ada hanya dua langkah pertama (parser CV menghasilkan `CandidateProfile`).
-Skor kandidat harus tetap deterministik; Gemini hanya menulis ringkasan dan penjelasan.
-
-## Rencana penempatan fitur (belum dibuat)
-
-Tabel ini rencana, bukan kode yang ada. Tiap baris dibuat pada sprint-nya.
-
-| Fitur | Backend | Frontend |
+| Modul di `app/services/` | Tanggung jawab | Bergantung pada |
 | --- | --- | --- |
-| Unggah dan parsing CV | **Sudah ada (Sprint 2):** `api/v1/cvs.py`, `services/cv_parsing/` | halaman kandidat (belum) |
-| Unggah dan parsing lowongan | `api/v1/jobs.py`, `services/jd_parser.py` | halaman lowongan |
-| Embedding dan pencocokan semantik | `services/embedder.py`, `services/matcher.py` | tidak ada |
-| Peringkat, penjelasan, rekomendasi | `services/ranker.py`, `services/explainer.py` | tabel peringkat dan panel rincian |
-| Ringkasan dan penjelasan oleh Gemini | `services/llm.py` | panel pada rincian kandidat |
-| Dashboard | endpoint ringkasan | halaman utama |
+| `cv_parsing/` | Berkas CV menjadi `CandidateProfile` | `taxonomy` |
+| `jd_parsing.py` | Teks lowongan menjadi `JobProfile` | `taxonomy`, konstanta jenjang dari `cv_parsing` |
+| `embedding.py` | Teks menjadi vektor; E5 atau TF-IDF | pengaturan |
+| `vector_index.py` | Indeks FAISS dan pencarian per kandidat | tidak ada |
+| `matching.py` | Kemiripan semantik dan skor berbobot | `embedding`, `vector_index`, `taxonomy` |
+| `explanation.py` | Aturan keputusan dan alasan tertulis | tidak ada |
+| `hr_summary.py` | Ringkasan HR lewat Gemini, dengan templat cadangan | pengaturan |
+| `store.py` | Penyimpanan JSON | skema |
+| `screening.py` | Orkestrasi; satu-satunya modul yang dipanggil API | semua di atas |
 
-Pembaca dokumen, redaksi data pribadi, dan ekstraktor dari PoC sebelumnya (`cv-screening-poc`)
-sudah dipindahkan ke `services/cv_parsing/`; lihat [CV_PARSER.md](CV_PARSER.md). Parser lowongan,
-pencocok, dan audit bias akan dipindahkan dengan cara yang sama, bukan ditulis ulang.
+Skor kandidat deterministik. Gemini hanya menulis ringkasan dari fakta yang sudah dihitung.
+Rincian langkah, rumus skor, dan API ada di [SCREENING.md](SCREENING.md).
+
+**Frontend.** Tiga rute: `/` (lowongan), `/jobs/[jobId]` (kriteria, unggah CV, screening, peringkat),
+dan `/jobs/[jobId]/candidates/[candidateId]` (rincian dan ringkasan AI). Semua halaman adalah Client
+Component yang mengambil data lewat `src/lib/api.ts` dan hook `useApi`.
+
+**Penyimpanan.** `backend/storage/state.json` berisi lowongan, profil kandidat (termasuk data pribadi),
+hasil screening, dan ringkasan. Berkas CV asli tidak disimpan. Folder ini tidak masuk Git.
 
 ## Sengaja tidak dibuat
 

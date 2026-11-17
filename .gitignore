@@ -19,3 +19,6 @@ next-env.d.ts
 .DS_Store
 .idea/
 .vscode/
+
+# Screening data (contains personal data from uploaded CVs)
+backend/storage/

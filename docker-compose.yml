@@ -1,6 +1,9 @@
 services:
   backend:
-    build: ./backend
+    build:
+      context: ./backend
+      args:
+        INSTALL_E5: ${INSTALL_E5:-false}
     ports:
       - "8000:8000"
     environment:
@@ -9,6 +12,12 @@ services:
       CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:3000}
       MAX_UPLOAD_MB: ${MAX_UPLOAD_MB:-5}
       REFERENCE_DATE: ${REFERENCE_DATE:-}
+      EMBEDDING_BACKEND: ${EMBEDDING_BACKEND:-auto}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.6-flash}
+    volumes:
+      # Parsed candidates and results survive a restart; the folder is git-ignored.
+      - ./backend/storage:/srv/storage
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/v1/health')"]
       interval: 10s

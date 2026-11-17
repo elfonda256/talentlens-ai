@@ -48,7 +48,7 @@ salinan sementara dihapus setelah diproses.
 | `total_experience_months` | Total masa kerja; periode tumpang tindih dihitung sekali |
 | `education` | Jenjang (3 = D3, 4 = S1/D4, 5 = S2, 6 = S3) dan bidang |
 | `skills` | ID keterampilan kanonik dari taksonomi |
-| `chunks` | Potongan teks hingga 170 karakter, untuk embedding pada sprint berikutnya |
+| `chunks` | Potongan teks hingga 170 karakter, yang di-embed dan diindeks saat screening |
 | `extraction_confidence` | 0,4 sampai 1,0; dikali 0,85 untuk hasil OCR |
 | `warnings` | Bagian yang tidak terbaca, atau catatan bahwa dokumen dibaca dengan OCR |
 
