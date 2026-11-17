@@ -141,7 +141,7 @@ Walk down the page in this order:
 6. **Kecocokan dengan syarat lowongan.**
    > "Each required skill shows whether it is written in the CV, only implied, or not found.
    > 'Tersirat' means the work described shows the skill even though the CV doesn't name it. It gets
-   > partial credit and goes into the interview questions."
+   > partial credit and is flagged for HR to confirm in the interview."
 7. **Bukti dari CV** (top of the section only).
    > "And here is the exact sentence from the CV behind each match."
 
