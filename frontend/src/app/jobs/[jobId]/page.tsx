@@ -107,7 +107,7 @@ function JobView() {
         <div className="flex flex-wrap items-center gap-2">
           <CvUploadButton
             jobId={jobId}
-            primary={candidateCount === 0}
+            primary={!candidates.loading && candidateCount === 0}
             onError={(error) => setScreenError(errorMessage(error))}
             onUploaded={(outcomes) => {
               setUploads(outcomes);
