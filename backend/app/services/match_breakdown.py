@@ -34,6 +34,16 @@ EDUCATION_TEXT = {
     "not_required": "Lowongan tidak mensyaratkan bidang pendidikan tertentu",
     "unknown": "Belum dapat dinilai: bagian pendidikan tidak terbaca dari CV",
 }
+
+
+def _level_note(education: EducationMatch) -> str:
+    """'tetapi' after a good field, 'dan' after a bad one: both read as one sentence."""
+    if not education.level_below_requirement:
+        return ""
+    joiner = "dan" if education.status == "mismatch" else "tetapi"
+    return f", {joiner} jenjangnya di bawah syarat"
+
+
 EXPERIENCE_UNKNOWN_TEXT = "Belum dapat dinilai: bagian pengalaman kerja tidak terbaca dari CV"
 
 
@@ -218,8 +228,7 @@ def _components(
             "education",
             share["education"],
             result.contributions["education"],
-            EDUCATION_TEXT[education.status]
-            + (", tetapi jenjangnya di bawah syarat" if education.level_below_requirement else ""),
+            EDUCATION_TEXT[education.status] + _level_note(education),
         ),
         (
             "semantic",
