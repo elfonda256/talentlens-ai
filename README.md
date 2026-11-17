@@ -125,10 +125,10 @@ Semua punya nilai default. Untuk menjalankan tanpa Docker, letakkan di `backend/
 | --- | --- | --- |
 | `EMBEDDING_BACKEND` | `auto` | `auto` = E5 bila bisa dimuat, selain itu TF-IDF; `e5` = wajib E5; `tfidf` = selalu TF-IDF |
 | `GEMINI_API_KEY` | kosong | Kunci Google AI Studio untuk ringkasan HR |
-| `GEMINI_MODEL` | `gemini-3.6-flash` | Nama model Gemini; ganti bila tidak tersedia untuk kunci Anda |
-| `GEMINI_FALLBACK_MODEL` | `gemini-3.5-flash-lite` | Dipakai sekali bila model utama sibuk (503), lambat, atau sudah tidak tersedia; kosongkan untuk mematikan |
+| `GEMINI_MODEL` | `gemini-3.5-flash-lite` | Model utama untuk ringkasan HR; di staging menjawab dalam 4–10 detik |
+| `GEMINI_FALLBACK_MODEL` | `gemini-3.6-flash` | Dipakai sekali bila model utama sibuk (503), lambat, atau sudah tidak tersedia; kosongkan untuk mematikan |
 | `GEMINI_THINKING_LEVEL` | `low` | Kedalaman berpikir Gemini 3 (`minimal`, `low`, `medium`, `high`); bawaan Google `high` terlalu lambat untuk ringkasan |
-| `GEMINI_TIMEOUT_SECONDS` | `20` | Batas waktu per percobaan; model utama dicoba 2 kali dengan jeda bertambah, lalu model cadangan sekali |
+| `GEMINI_TIMEOUT_SECONDS` | `15` | Batas waktu per percobaan; model utama dicoba 3 kali dengan jeda 1, 2, dan 4 detik, lalu model cadangan sekali |
 | `SHORTLIST_THRESHOLD` | `70` | Skor minimal untuk "Lolos" |
 | `REJECT_THRESHOLD` | `45` | Skor di bawah ini "Tidak lolos" |
 | `REFERENCE_DATE` | kosong | Tanggal acuan masa kerja "sampai sekarang"; kosong berarti hari ini |
@@ -154,7 +154,7 @@ cd frontend && npm run lint && npm run build
 | Keluaran parser CV, kriteria lowongan, skor, peringkat, dan alasan sama dengan PoC lama | Lolos; tes snapshot tidak berubah sejak Sprint 3 |
 | Alur lengkap di peramban, layar lebar dan ponsel (390 px) | Lolos, dengan CV sintetis, TF-IDF, dan catatan templat |
 | Embedding `multilingual-e5-small` dengan model asli | Lolos di mesin Product Owner pada 17 Nov 2026, **sebelum** QA Phase 2. Peringkat lima CV perusahaan dengan E5 belum diuji ulang |
-| Panggilan Gemini dengan API asli | Lolos untuk panggilan uji (`gemini-3.6-flash`). **Prompt catatan recruiter yang baru (keluaran JSON) belum diuji terhadap API asli**; bila jawabannya tidak terbaca, templat dipakai |
+| Panggilan Gemini dengan API asli | Lolos di staging (18 November 2026): catatan recruiter dalam JSON terbaca dari `gemini-3.5-flash-lite`. `gemini-3.6-flash` melewati batas 20 detik pada setiap percobaan malam itu, sehingga dijadikan cadangan |
 | 5 CV dari perusahaan | Lolos pada QA Phase 2 (17 Nov 2026, TF-IDF): seluruh pengalaman dan pendidikan terbaca, peringkat sesuai penilaian manual. Lihat [QA Report 02](docs/QA_REPORT_02.md) |
 | Tablet (768 px), mode gelap, navigasi keyboard penuh, pembaca layar | **Belum diuji** |
 | `docker compose up --build` | **Belum**: lingkungan pembuatan tidak punya Docker daemon |

@@ -169,7 +169,11 @@ def scripted(*replies):
 
 def gemini_settings(tmp_path):
     return make_settings(
-        tmp_path, gemini_api_key="test-key", gemini_model="main", gemini_fallback_model="lite"
+        tmp_path,
+        gemini_api_key="test-key",
+        gemini_model="main",
+        gemini_fallback_model="lite",
+        gemini_max_attempts=2,
     )
 
 
