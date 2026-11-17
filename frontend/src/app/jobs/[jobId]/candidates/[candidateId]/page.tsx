@@ -6,6 +6,7 @@ import { Suspense, useCallback } from "react";
 import { AiSummary } from "@/components/ai-summary";
 import { AssessmentPanels } from "@/components/assessment-panels";
 import { CandidateBadges } from "@/components/candidate-badges";
+import { DecisionExplainer } from "@/components/decision-explainer";
 import { CvEvidence } from "@/components/cv-evidence";
 import { MatchBreakdown } from "@/components/match-breakdown";
 import { Meter } from "@/components/meter";
@@ -113,6 +114,11 @@ function CandidateView() {
         </CardContent>
       </Card>
       <AiSummary jobId={jobId} candidateId={candidateId} />
+      <DecisionExplainer
+        result={result}
+        extractionMethod={detail.data.extraction_method}
+        extractionConfidence={detail.data.extraction_confidence}
+      />
       <AssessmentPanels assessment={assessment} />
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_20rem]">
         <div className="flex min-w-0 flex-col gap-6">

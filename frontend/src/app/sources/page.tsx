@@ -161,7 +161,7 @@ function ActiveSource() {
         href="/"
         className="inline-flex shrink-0 items-center gap-1 self-start rounded-md text-sm font-medium text-primary hover:underline sm:self-center"
       >
-        Buka dasbor rekrutmen
+        Buka dashboard rekrutmen
         <ChevronRight className="size-4" aria-hidden="true" />
       </Link>
     </Card>

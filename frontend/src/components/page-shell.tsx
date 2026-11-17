@@ -6,7 +6,7 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 const NAV = [
-  { section: "dashboard", href: "/", label: "Dasbor" },
+  { section: "dashboard", href: "/", label: "Dashboard" },
   { section: "sources", href: "/sources", label: "Pengumpulan CV" },
 ] as const;
 

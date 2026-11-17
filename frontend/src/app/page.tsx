@@ -45,7 +45,7 @@ export default function DashboardPage() {
 
   return (
     <PageShell
-      title="Dasbor rekrutmen"
+      title="Dashboard rekrutmen"
       description="Pantau lowongan aktif dan hasil penyaringan kandidat di satu tempat."
       actions={
         <FilePicker

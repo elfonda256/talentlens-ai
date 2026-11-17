@@ -9,6 +9,7 @@ import { JobCriteria } from "@/components/job-criteria";
 import { PageShell } from "@/components/page-shell";
 import { RankingTable } from "@/components/ranking-table";
 import { ScoreLegend } from "@/components/score-composition";
+import { DecisionRules } from "@/components/decision-explainer";
 import { StatStrip, type RankingFilter } from "@/components/stat-strip";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -24,6 +25,7 @@ import {
   runScreening,
   type UploadOutcome,
 } from "@/lib/api";
+import { THRESHOLDS } from "@/lib/decision";
 
 const NOT_SCREENED = 409;
 
@@ -210,8 +212,9 @@ function JobView() {
                   icon={SearchX}
                   title="Tidak ada kandidat pada kelompok ini"
                 >
-                  Pilih kelompok lain pada ringkasan di atas untuk melihat
-                  kandidat lainnya.
+                  {filter === "REJECT"
+                    ? `Tidak ada kandidat yang skornya di bawah ${THRESHOLDS.reject}. Kandidat dengan skor lebih tinggi tetapi belum memenuhi syarat ada di kelompok Perlu ditinjau.`
+                    : "Pilih kelompok lain pada ringkasan di atas untuk melihat kandidat lainnya."}
                 </EmptyState>
               </div>
             )}
@@ -221,6 +224,7 @@ function JobView() {
               tiap komponen; keputusan akhir tetap ada pada HR.
             </p>
           </Card>
+          <DecisionRules results={rows} counts={counts} />
         </>
       )}
     </PageShell>
