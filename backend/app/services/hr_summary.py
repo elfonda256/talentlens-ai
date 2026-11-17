@@ -397,7 +397,15 @@ def _status(error: httpx.HTTPError) -> int | None:
 
 
 def _reason(error: httpx.HTTPError) -> str:
-    return str(_status(error) or type(error).__name__)
+    """'503: The model is overloaded...' or 'ReadTimeout'. Google's message holds no prompt text."""
+    status = _status(error)
+    if status is None:
+        return type(error).__name__
+    try:
+        message = error.response.json()["error"]["message"]
+    except (ValueError, KeyError, TypeError):
+        message = ""
+    return f"{status}: {message[:160]}" if message else str(status)
 
 
 def _parse_note(text: str) -> _Note:
