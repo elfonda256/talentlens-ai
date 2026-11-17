@@ -46,3 +46,13 @@ def label(skill_id: str) -> str:
 def describe(skill_id: str) -> str:
     meta = load().get(skill_id, {})
     return f"{meta.get('label', skill_id)} {' '.join(meta.get('aliases', []))}"
+
+
+def find_terms(text: str) -> dict[str, list[str]]:
+    """Every distinct spelling of each skill that appears in the text, as written there."""
+    terms: dict[str, list[str]] = {}
+    for skill_id, pattern in _patterns():
+        found = sorted({match.group(0) for match in pattern.finditer(text)}, key=str.lower)
+        if found:
+            terms[skill_id] = found
+    return terms

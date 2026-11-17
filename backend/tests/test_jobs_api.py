@@ -82,8 +82,14 @@ def test_full_screening_flow(client):
     assert detail["result"]["reasons"] and detail["result"]["evidence"]
     assert detail["experiences"] and detail["skills"]
 
+    assert top["highlights"]["must_total"] == len(detail["breakdown"]["must_have_skills"]) == 9
+    assert len(detail["breakdown"]["components"]) == 5
+    assert detail["breakdown"]["experiences"][0]["relevance"] == "relevant"
+
     summary = client.post(f"{API}/{job_id}/candidates/{top['candidate_id']}/summary").json()
-    assert summary["source"] == "template" and summary["text"] == detail["result"]["narrative"]
+    assert summary["source"] == "template"
+    assert "layak dilanjutkan ke tahap wawancara" in summary["headline"]
+    assert summary["strengths"] and summary["recommendation_reason"]
 
 
 def test_identities_are_hidden_unless_revealed(client):
@@ -123,6 +129,13 @@ def test_error_responses(client):
     assert client.get(f"{API}/{job_id}/ranking").status_code == 409  # not screened yet
     assert client.post(API, files={"file": ("jd.xlsx", b"x")}).status_code == 415
     assert client.post(API, files={"file": ("jd.txt", b"short")}).status_code == 422
+
+    cv_as_job = client.post(
+        API, files={"file": ("cv.pdf", (SAMPLE_CVS / "cv_raka.pdf").read_bytes())}
+    )
+    assert cv_as_job.status_code == 422
+    assert "tampaknya sebuah CV" in cv_as_job.json()["detail"]
+    assert len(client.get(API).json()) == 1  # nothing was stored for the rejected upload
 
     upload(client, job_id, "cv_raka.pdf")
     client.post(f"{API}/{job_id}/screen")

@@ -16,9 +16,10 @@ from pathlib import Path
 from app.core.config import Settings, get_settings
 from app.schemas.cv import CandidateProfile
 from app.schemas.screening import HRSummary, JobProfile, ScreeningResult
-from app.services import explanation, jd_parsing, matching, taxonomy
+from app.services import explanation, jd_parsing, match_breakdown, matching, taxonomy
 from app.services.cv_parsing import UnreadableDocumentError, parse_cv
 from app.services.cv_parsing.document_loader import load_document
+from app.services.cv_parsing.pii import EMAIL, PHONE
 from app.services.embedding import Embedder, create_embedder
 from app.services.hr_summary import generate_hr_summary
 from app.services.store import JsonStore
@@ -36,6 +37,10 @@ class JobNotFoundError(Exception):
 
 class CandidateNotFoundError(Exception):
     pass
+
+
+class NotAJobDescriptionError(Exception):
+    """The uploaded document looks like a CV, not a vacancy."""
 
 
 class NotScreenedError(Exception):
@@ -59,6 +64,12 @@ class ScreeningService:
             raise UnreadableDocumentError("Dokumen rusak atau tidak dapat dibaca") from error
         if len(text.strip()) < MIN_JOB_TEXT_CHARS:
             raise UnreadableDocumentError("Dokumen tidak berisi teks yang dapat dibaca")
+
+        if _looks_like_cv(text):
+            raise NotAJobDescriptionError(
+                "Dokumen ini tampaknya sebuah CV, bukan deskripsi lowongan. "
+                "Unggah berkas lowongan di sini, lalu unggah CV pada halaman lowongan."
+            )
 
         title = next((line.strip() for line in text.splitlines() if line.strip()), "job")
         slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")[:40] or "job"
@@ -193,7 +204,10 @@ class ScreeningService:
         cached = self._store.get_summary(job_id, candidate_id)
         if cached and not refresh:
             return cached
-        summary = generate_hr_summary(self.get_job(job_id), result, self._settings)
+        job = self.get_job(job_id)
+        profile = self.get_candidate(job_id, candidate_id)
+        breakdown = match_breakdown.build_breakdown(job, profile, result)
+        summary = generate_hr_summary(job, profile, result, breakdown, self._settings)
         if summary.source == "gemini":  # a template is cheap to rebuild and may be upgraded later
             self._store.save_summary(job_id, candidate_id, summary)
         return summary
@@ -202,6 +216,20 @@ class ScreeningService:
         if self._embedder is None:  # loading a model takes seconds, so it is done once
             self._embedder = create_embedder(self._settings)
         return self._embedder
+
+
+JOB_SECTION_HEADING = re.compile(
+    r"^\s*(requirements?|qualifications?|responsibilit(?:y|ies)|job description|kualifikasi|"
+    r"persyaratan|tanggung jawab|deskripsi pekerjaan)\s*:?\s*$",
+    re.IGNORECASE | re.MULTILINE,
+)
+
+
+def _looks_like_cv(text: str) -> bool:
+    """A vacancy has requirement headings; a CV has personal contact details instead."""
+    has_job_heading = JOB_SECTION_HEADING.search(text) is not None
+    has_contact = EMAIL.search(text) is not None or PHONE.search(text) is not None
+    return has_contact and not has_job_heading
 
 
 @lru_cache

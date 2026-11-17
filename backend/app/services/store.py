@@ -93,4 +93,6 @@ class JsonStore:
 
     def get_summary(self, job_id: str, candidate_id: str) -> HRSummary | None:
         data = self._state["summaries"].get(job_id, {}).get(candidate_id)
-        return HRSummary(**data) if data else None
+        if not data or "headline" not in data:  # also skips summaries saved in an older shape
+            return None
+        return HRSummary(**data)

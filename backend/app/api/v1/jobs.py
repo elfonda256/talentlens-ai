@@ -18,10 +18,12 @@ from app.schemas.screening import (
     ScreeningRun,
     UploadOutcome,
 )
+from app.services import match_breakdown
 from app.services.cv_parsing import UnreadableDocumentError, UnsupportedFormatError
 from app.services.screening import (
     CandidateNotFoundError,
     JobNotFoundError,
+    NotAJobDescriptionError,
     NotScreenedError,
     ScreeningService,
     get_screening_service,
@@ -55,7 +57,11 @@ def _name(profile: CandidateProfile, reveal: bool) -> str:
     response_model=JobProfile,
     status_code=201,
     summary="Upload a job description and parse it into screening criteria",
-    responses={413: {}, 415: {}, 422: {"description": "The document could not be read"}},
+    responses={
+        413: {},
+        415: {},
+        422: {"description": "The document could not be read, or it is a CV rather than a vacancy"},
+    },
 )
 def create_job(
     file: Annotated[UploadFile, File(description="Job description as PDF, DOCX or TXT")],
@@ -66,7 +72,7 @@ def create_job(
     with temporary_copy(file, suffix) as path:
         try:
             return service.create_job(path)
-        except UnreadableDocumentError as error:
+        except (UnreadableDocumentError, NotAJobDescriptionError) as error:
             raise HTTPException(422, str(error)) from error
 
 
@@ -185,7 +191,7 @@ def run_screening(job_id: str, service: Service) -> ScreeningRun:
     responses={**NOT_FOUND, **NOT_SCREENED},
 )
 def get_ranking(job_id: str, service: Service, reveal: Reveal = False) -> Ranking:
-    _job_or_404(service, job_id)
+    job = _job_or_404(service, job_id)
     try:
         results, backend = service.get_ranking(job_id)
     except NotScreenedError as error:
@@ -198,6 +204,7 @@ def get_ranking(job_id: str, service: Service, reveal: Reveal = False) -> Rankin
                 **result.model_dump(),
                 file_name=profile.file_name if reveal else "",
                 extraction_method=profile.extraction_method,
+                highlights=match_breakdown.build_highlights(job, profile, result),
                 name=_name(profile, reveal),
             )
         )
@@ -213,7 +220,7 @@ def get_ranking(job_id: str, service: Service, reveal: Reveal = False) -> Rankin
 def get_candidate_detail(
     job_id: str, candidate_id: str, service: Service, reveal: Reveal = False
 ) -> CandidateDetail:
-    _job_or_404(service, job_id)
+    job = _job_or_404(service, job_id)
     try:
         result = service.get_result(job_id, candidate_id)
         profile = service.get_candidate(job_id, candidate_id)
@@ -224,6 +231,7 @@ def get_candidate_detail(
     identity = {k: profile.pii[k] for k in ("name", "email", "phone") if k in profile.pii}
     return CandidateDetail(
         result=result,
+        breakdown=match_breakdown.build_breakdown(job, profile, result),
         summary=profile.summary,
         experiences=[e.model_dump() for e in profile.experiences],
         education=[e.model_dump() for e in profile.education],

@@ -38,7 +38,7 @@ def recall_candidates(
     return [cid for cid, _ in sorted(best.items(), key=lambda kv: -kv[1])[:top_k]]
 
 
-def _requirement_units(job: JobProfile) -> list[dict]:
+def requirement_units(job: JobProfile) -> list[dict]:
     """Merges alternative skills ("A or B") into a single requirement."""
     units: dict[str, dict] = {}
     for req in job.skills:
@@ -107,7 +107,7 @@ def score_candidate(
     cand_skills = set(cand.skills)
     matched, missing_must, missing_nice = [], [], []
     gained = possible = 0.0
-    for unit in _requirement_units(job):
+    for unit in requirement_units(job):
         weight = 1.0 if unit["priority"] == "must" else 0.5
         possible += weight
         hit_ids = [sid for sid in unit["ids"] if sid in cand_skills]
